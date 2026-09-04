@@ -35,11 +35,29 @@ From this tree, opm also reads `seed/` inside the opm repo so search works with 
 
 1. Add a folder with `manifest` and a `.oo` payload (Academy headers required).
 2. From the opm repo, run `opm bot` with this tree as the target to rebuild `catalog`.
-3. Commit the folder and the new `catalog` line.
+3. Sign `catalog` to `index.minisig` with the catalog minisign key.
+4. Commit the folder, `catalog`, `index`, and `index.minisig`.
 
 ## Docs
 
 All design, RFCs, practices, and onboarding live in [openOODA/openOODA](https://github.com/openOODA/openOODA) or at [openooda.org](https://openooda.org).
+
+## The Polyrepo
+
+| Repo | Purpose |
+|------|---------|
+| [openOODA/openOODA](https://github.com/openOODA/openOODA) | Governance, RFCs, laws |
+| [openOODA/ooda](https://github.com/openOODA/ooda) | `ooda` workflow driver |
+| [openOODA/lsp](https://github.com/openOODA/lsp) | Language server |
+| [openOODA/mcp](https://github.com/openOODA/mcp) | MCP server |
+| [openOODA/opm](https://github.com/openOODA/opm) | Package manager |
+| [openOODA/catalog](https://github.com/openOODA/catalog) | Public package catalog |
+| [openOODA/std](https://github.com/openOODA/std) | Standard library |
+| [openOODA/oodar](https://github.com/openOODA/oodar) | Runtime substrate |
+| [openOODA/oodac](https://github.com/openOODA/oodac) | Compiler |
+| [openOODA/website](https://github.com/openOODA/website) | Website source |
+| [openOODA/packaging](https://github.com/openOODA/packaging) | Distribution packaging (apt, dnf, pacman) |
+| [openOODA/.github](https://github.com/openOODA/.github) | Org profile, shared community files, workflows |
 
 ## License
 

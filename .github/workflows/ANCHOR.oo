@@ -1,0 +1,13 @@
+// # Catalog CI Workflows
+//
+// Logline: File-tree gate, auto-release on push to main, Pages deploy.
+//
+// Setup: Structural. YAML consumed by GitHub Actions. No OODA_COMPILER
+//        on the runner. Local scripts still use OODA_COMPILER.
+//
+// Beats:
+//   1. ci.yml catalog-gate checks catalog, CNAME, packages, no VERSION.
+//   2. auto-release runs only after the gate.
+//   3. deploy.yml uploads this tree as GitHub Pages.
+
+// ci.yml and deploy.yml are YAML. Not imported.

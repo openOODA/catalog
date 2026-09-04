@@ -1,0 +1,20 @@
+// # Catalog Scripts Index — Anchor for Agents
+//
+// Logline: Index of the 4 build entry points plus the path guard.
+//          They exec OODA_COMPILER as argv. They do not print fake success.
+//
+// Setup: Each script has a single purpose. They compose: build -> test -> verify -> release.
+//        .github/ is release wiring, not product.
+//
+// Beats:
+//   1. build.oo — oodac check on package ANCHOR.oo files. No payload imports.
+//   2. test.oo — oodac check on qa/ drivers. Double-run.
+//   3. verify.oo — ANCHOR presence, 256-line cap, no VERSION, catalog shape.
+//   4. release.oo — verify + test. Push to main is the release.
+//   5. script_path.oo — refuse `..`, shell metacharacters, and whitespace.
+
+import "build.oo";
+import "test.oo";
+import "verify.oo";
+import "release.oo";
+import "script_path.oo";

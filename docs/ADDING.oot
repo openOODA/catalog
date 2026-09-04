@@ -1,0 +1,21 @@
+# Adding a package
+
+File: catalog/docs/ADDING.oot
+
+A catalog package is a folder, not a GitHub search result.
+
+1. Create `<name>/manifest` with `name`, `version`, `caps`,
+   `deps`, `license`, `payload`, and `sha256` of the payload.
+2. Put the payload next to it. Default name is `<name>.oo`.
+   The payload needs Academy headers (`// # `, `// Logline:`).
+3. Caps must be the real set. opm refuses extra caps on add.
+4. From the opm repo, run `opm bot` with this tree as the target.
+   That verifies each folder and rewrites `catalog` and `index`.
+5. Sign `catalog` to `index.minisig` with the catalog minisign
+   secret. Keep the secret out of git.
+6. Commit the folder, `catalog`, `index`, and `index.minisig`.
+   Push `main`. Pages publishes the files. Auto-release tags.
+
+Do not add a shell recipe. Do not point `opm` at a raw GitHub
+tree as the catalog. Git ingest (`origin=git`) is a different
+path: pin a commit, then lock. Search reads this file tree.

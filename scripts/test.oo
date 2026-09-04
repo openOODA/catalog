@@ -1,0 +1,69 @@
+// # Test Catalog - Typecheck QA Proofs
+//
+// Logline: Typecheck each qa/ driver through oodac check. Fail closed. Double-run.
+//
+// Setup: Run from the catalog repo root. Requires ProcessCap, FsReadCap, EnvCap.
+//        OODA_COMPILER must point at oodac. No PATH hunt.
+//
+// Beats:
+//   1. Resolve oodac from OODA_COMPILER only.
+//   2. oodac check each driver twice. Fail on the first Err or ERR in stdout.
+
+import "script_path.oo";
+
+fn find_oodac(fs: &FsReadCap, env: &EnvCap) -> String {
+    let r: Result[String, String] = env_get(env, "OODA_COMPILER");
+    let p: String = match r { Ok(s) => s, Err(_) => "" };
+    if p == "" {
+        println("ERR\ttest\tOODA_COMPILER required");
+        process_exit(1);
+    }
+    if !cat_script_path_ok(p) {
+        println("ERR\ttest\tOODA_COMPILER path refused");
+        process_exit(1);
+    }
+    if !path_exists(fs, p) {
+        println("ERR\ttest\tOODA_COMPILER missing: " + p);
+        process_exit(1);
+    }
+    return p;
+}
+
+fn run_one(p: &ProcessCap, oodac: String, path: String) -> Bool {
+    println("  Checking " + path);
+    let r1: Result[String, String] = sys_exec(p, oodac, "check", path);
+    if r1.is_err() {
+        let err: String = match r1 { Ok(_) => "", Err(e) => e };
+        println(err);
+        return false;
+    }
+    let out1: String = match r1 { Ok(s) => s, Err(_) => "" };
+    println(out1);
+    if str_index_of(out1, "ERR") >= 0 {
+        println("ERR\ttest\tERR in stdout " + path);
+        return false;
+    }
+    let r2: Result[String, String] = sys_exec(p, oodac, "check", path);
+    if r2.is_err() {
+        let err2: String = match r2 { Ok(_) => "", Err(e) => e };
+        println(err2);
+        return false;
+    }
+    return true;
+}
+
+pub fn main(p: &ProcessCap, fs_r: &FsReadCap, env: &EnvCap, args: List[String]) -> Result[Int, String] {
+    let oodac: String = find_oodac(fs_r, env);
+    let drivers: List[String] = ["qa/catalog_proof.oo"];
+    let mut i: Int = 0;
+    while i < list_len(drivers) {
+        let path: String = list_get(drivers, i);
+        if !run_one(p, oodac, path) {
+            return Err("self-test failures");
+        }
+        i = i + 1;
+    }
+    println("self-test passed");
+    let _a: Int = list_len(args);
+    return Ok(0);
+}

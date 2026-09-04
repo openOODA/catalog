@@ -1,0 +1,26 @@
+# Catalog host
+
+File: catalog/docs/HOST.oot
+
+Host: `https://catalog.openooda.org`
+
+This repo is the file tree GitHub Pages publishes at that host.
+There is no daemon and no account. opm talks to files:
+
+- `GET /catalog` — search index
+- `GET /index.minisig` — minisign of `catalog`
+- `GET /registry.pub` — stock public key
+- `GET /<name>/manifest` — package manifest
+- `GET /<name>/<payload>` — package payload
+
+`opm search` reads `/catalog`. `opm add` over HTTPS also pulls
+the minisig, verifies with `cli/registry.pub` from the opm repo,
+then pulls each named folder.
+
+GitHub Pages needs `.nojekyll` so Jekyll does not hide files.
+`CNAME` is `catalog.openooda.org`. DNS is a CNAME from that name
+to `openooda.github.io`.
+
+Local search does not need this host. The opm repo ships the same
+packages under `seed/`. `opm search hello` works offline from seed.
+This host is the copy the world can fetch with `OODA_CURL`.

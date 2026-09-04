@@ -1,0 +1,129 @@
+// # Catalog index proof
+//
+// Logline: The catalog file lists hello and echo with matching manifest sha256.
+//
+// Setup: Reads catalog, index, CNAME, and each package manifest. No HTTP.
+//        Does not import hello.oo or echo.oo.
+//
+// Beats:
+//   1. catalog equals index and is not empty.
+//   2. Each line is name|version|caps|deps|sha with 64 hex sha.
+//   3. hello and echo rows match their manifest sha256 fields.
+
+fn fail(msg: String) {
+    println("FAIL " + msg);
+    process_exit(1);
+}
+
+fn slurp(fs: &FsReadCap, path: String) -> String {
+    if !path_exists(fs, path) { return ""; }
+    let rr: Result[String, String] = read_file(fs, path);
+    return match rr { Ok(s) => s, Err(_) => "" };
+}
+
+fn kv(text: String, key: String) -> String {
+    let needle: String = key + "=";
+    let n: Int = chars_len(text);
+    let kn: Int = chars_len(needle);
+    let mut start: Int = 0;
+    let mut i: Int = 0;
+    while i <= n {
+        if i == n || char_at(text, i) == "\n" {
+            if i > start {
+                let line: String = str_slice(text, start, i);
+                if chars_len(line) >= kn {
+                    if str_slice(line, 0, kn) == needle {
+                        return str_slice(line, kn, chars_len(line));
+                    }
+                }
+            }
+            start = i + 1;
+        }
+        i = i + 1;
+    }
+    return "";
+}
+
+fn field(line: String, n: Int) -> String {
+    let len: Int = chars_len(line);
+    let mut k: Int = 0;
+    let mut start: Int = 0;
+    let mut i: Int = 0;
+    while i <= len {
+        if i == len || char_at(line, i) == "|" {
+            if k == n {
+                return str_slice(line, start, i);
+            }
+            k = k + 1;
+            start = i + 1;
+        }
+        i = i + 1;
+    }
+    return "";
+}
+
+fn is_hex64(s: String) -> Bool {
+    if chars_len(s) != 64 { return false; }
+    let mut i: Int = 0;
+    while i < 64 {
+        let c: String = char_at(s, i);
+        if str_index_of("0123456789abcdef", c) < 0 { return false; }
+        i = i + 1;
+    }
+    return true;
+}
+
+fn check_line(line: String) -> String {
+    let nm: String = field(line, 0);
+    let ver: String = field(line, 1);
+    let sha: String = field(line, 4);
+    if nm == "" { return "empty name"; }
+    if ver == "" { return "empty version " + nm; }
+    if !is_hex64(sha) { return "bad sha " + nm; }
+    return "";
+}
+
+fn find_line(cat: String, name: String) -> String {
+    let n: Int = chars_len(cat);
+    let mut start: Int = 0;
+    let mut i: Int = 0;
+    while i <= n {
+        if i == n || char_at(cat, i) == "\n" {
+            if i > start {
+                let line: String = str_slice(cat, start, i);
+                if field(line, 0) == name { return line; }
+            }
+            start = i + 1;
+        }
+        i = i + 1;
+    }
+    return "";
+}
+
+fn check_pkg(fs: &FsReadCap, cat: String, name: String, pay: String) -> String {
+    let line: String = find_line(cat, name);
+    if line == "" { return "missing " + name; }
+    let bad: String = check_line(line);
+    if bad != "" { return bad; }
+    if !path_exists(fs, name + "/manifest") { return "missing manifest " + name; }
+    if !path_exists(fs, name + "/" + pay) { return "missing payload " + name; }
+    let man: String = slurp(fs, name + "/manifest");
+    if kv(man, "name") != name { return "manifest name " + name; }
+    if kv(man, "sha256") != field(line, 4) { return "sha drift " + name; }
+    if kv(man, "payload") != pay { return "payload name " + name; }
+    return "";
+}
+
+pub fn main(fs_r: &FsReadCap) {
+    let cat: String = slurp(fs_r, "catalog");
+    if cat == "" { fail("empty catalog"); }
+    if cat != slurp(fs_r, "index") { fail("index mismatch"); }
+    if str_index_of(slurp(fs_r, "CNAME"), "catalog.openooda.org") < 0 { fail("CNAME"); }
+    if !path_exists(fs_r, "registry.pub") { fail("registry.pub"); }
+    if !path_exists(fs_r, "index.minisig") { fail("index.minisig"); }
+    let h: String = check_pkg(fs_r, cat, "hello", "hello.oo");
+    if h != "" { fail(h); }
+    let e: String = check_pkg(fs_r, cat, "echo", "echo.oo");
+    if e != "" { fail(e); }
+    println("catalog_proof: PASSED");
+}

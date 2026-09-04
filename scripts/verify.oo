@@ -1,0 +1,101 @@
+// # Verify Catalog - Line Cap, ANCHOR, Index Shape
+//
+// Logline: Require ANCHOR.oo, cap every .oo/.oot at 256 lines, and refuse a
+//          VERSION file. The catalog file must list hello and echo.
+//
+// Setup: Run from the catalog repo root. Requires &FsReadCap.
+//        Version is the git tag (RFC-0006). No extras file.
+//
+// Beats:
+//   1. Refuse VERSION. Require CNAME catalog.openooda.org.
+//   2. Require ANCHOR.oo in each product dir. Count newlines.
+//   3. Require catalog, matching index, registry.pub, index.minisig.
+//   4. Refuse payload imports from package ANCHOR files.
+
+fn cat_line_count(src: String) -> Int {
+    let n: Int = chars_len(src);
+    if n == 0 { return 0; }
+    let mut count: Int = 1;
+    let mut i: Int = 0;
+    while i < n {
+        if char_at(src, i) == "\n" { count = count + 1; }
+        i = i + 1;
+    }
+    return count;
+}
+
+fn cat_verify_file(fs: &FsReadCap, path: String) -> Result[Int, String] {
+    if !path_exists(fs, path) { return Err("missing " + path); }
+    let rr: Result[String, String] = read_file(fs, path);
+    if !rr.is_ok() { return Err("unreadable " + path); }
+    let src: String = match rr { Ok(s) => s, Err(m) => m };
+    let n: Int = cat_line_count(src);
+    if n > 256 { return Err("over 256 lines: " + path + " n=" + n.to_string()); }
+    return Ok(n);
+}
+
+fn cat_verify_dir(fs: &FsReadCap, dir: String) -> Result[Int, String] {
+    let entries: List[String] = oo_fs_read_dir(fs, dir);
+    let n: Int = list_len(entries);
+    let mut i: Int = 0;
+    let mut files: Int = 0;
+    while i < n {
+        let name: String = list_get(entries, i);
+        let is_oo: Bool = str_ends_with(name, ".oo") || str_ends_with(name, ".oot");
+        if is_oo {
+            let path: String = if dir == "." { name } else { dir + "/" + name };
+            let vr: Result[Int, String] = cat_verify_file(fs, path);
+            if vr.is_err() { return vr; }
+            files = files + 1;
+        }
+        i = i + 1;
+    }
+    return Ok(files);
+}
+
+fn cat_has_text(fs: &FsReadCap, path: String, needle: String) -> Bool {
+    if !path_exists(fs, path) { return false; }
+    let rr: Result[String, String] = read_file(fs, path);
+    let t: String = match rr { Ok(s) => s, Err(_) => "" };
+    return str_index_of(t, needle) >= 0;
+}
+
+fn cat_slurp(fs: &FsReadCap, path: String) -> String {
+    if !path_exists(fs, path) { return ""; }
+    let rr: Result[String, String] = read_file(fs, path);
+    return match rr { Ok(s) => s, Err(_) => "" };
+}
+
+pub fn main(fs_r: &FsReadCap, args: List[String]) -> Result[Int, String] {
+    if path_exists(fs_r, "VERSION") { return Err("VERSION file is banned; version is the git tag"); }
+    let cname: String = cat_slurp(fs_r, "CNAME");
+    if str_index_of(cname, "catalog.openooda.org") < 0 { return Err("CNAME must be catalog.openooda.org"); }
+    if !path_exists(fs_r, "catalog") { return Err("missing catalog"); }
+    if !path_exists(fs_r, "index") { return Err("missing index"); }
+    if !path_exists(fs_r, "registry.pub") { return Err("missing registry.pub"); }
+    if !path_exists(fs_r, "index.minisig") { return Err("missing index.minisig"); }
+    let cat: String = cat_slurp(fs_r, "catalog");
+    let idx: String = cat_slurp(fs_r, "index");
+    if cat == "" { return Err("empty catalog"); }
+    if cat != idx { return Err("index must match catalog"); }
+    if str_index_of(cat, "hello|") < 0 { return Err("catalog missing hello"); }
+    if str_index_of(cat, "echo|") < 0 { return Err("catalog missing echo"); }
+    if cat_has_text(fs_r, "hello/ANCHOR.oo", "import \"hello.oo\"") { return Err("hello/ANCHOR.oo must not import payload"); }
+    if cat_has_text(fs_r, "echo/ANCHOR.oo", "import \"echo.oo\"") { return Err("echo/ANCHOR.oo must not import payload"); }
+    let dirs: List[String] = [".", "hello", "echo", "scripts", "qa", "docs"];
+    let mut i: Int = 0;
+    let mut total: Int = 0;
+    while i < list_len(dirs) {
+        let d: String = list_get(dirs, i);
+        let anchor: String = if d == "." { "ANCHOR.oo" } else { d + "/ANCHOR.oo" };
+        if !path_exists(fs_r, anchor) { return Err("missing " + anchor); }
+        let vr: Result[Int, String] = cat_verify_dir(fs_r, d);
+        if vr.is_err() { return vr; }
+        let n: Int = match vr { Ok(k) => k, Err(_) => 0 };
+        total = total + n;
+        i = i + 1;
+    }
+    println("verify ok files=" + total.to_string());
+    let _a: Int = list_len(args);
+    return Ok(0);
+}

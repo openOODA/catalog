@@ -1,0 +1,39 @@
+name: catalog CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  catalog-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout catalog
+        uses: actions/checkout@v4
+      - name: require catalog tree
+        run: |
+          set -euo pipefail
+          test ! -f VERSION
+          test -f catalog
+          test -f index
+          test -f CNAME
+          test -f .nojekyll
+          test -f ANCHOR.oo
+          test -f registry.pub
+          test -f index.minisig
+          test -f hello/manifest
+          test -f hello/hello.oo
+          test -f echo/manifest
+          test -f echo/echo.oo
+          grep -qx 'catalog.openooda.org' CNAME
+          grep -q '^hello|' catalog
+          grep -q '^echo|' catalog
+          cmp -s catalog index
+          hello_sha=$(awk -F= '/^sha256=/{print $2; exit}' hello/manifest)
+          echo_sha=$(awk -F= '/^sha256=/{print $2; exit}' echo/manifest)
+          grep -q "^hello|.*|${hello_sha}$" catalog
+          grep -q "^echo|.*|${echo_sha}$" catalog
+
+  auto-release:
+    needs: catalog-gate
+    uses: openOODA/openOODA/.github/workflows/auto-release.yml@v1.0.14

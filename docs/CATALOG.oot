@@ -1,0 +1,37 @@
+# Catalog file format
+
+File: catalog/docs/CATALOG.oot
+
+The public index is the file named `catalog` at the repo root.
+opm fetches `https://catalog.openooda.org/catalog`. Each line is
+one package version:
+
+```
+name|version|caps|deps|sha256
+```
+
+The line ends with a newline. `caps` is a comma list. Empty
+`deps` is allowed. `sha256` is 64 lowercase hex digits of the
+payload bytes.
+
+`index` is a byte-for-byte copy of `catalog`. `index.minisig` is
+the minisign signature of `catalog`. `registry.pub` is the public
+key opm pins for the stock origin.
+
+Example:
+
+```
+hello|0.1.0|FsRead||0e31868267f9f1baa1028cdeddade94266420d50a29ade6bb583090618bd97e2
+echo|0.1.0|FsRead||8029d938971696a7e2903d368775356809ccf0fc121ac7f4dd24e46380d64fce
+```
+
+Each child folder is one package. It holds `manifest` plus the
+payload named in `payload=`. Academy headers are required on the
+payload. Rebuild the index from the opm repo:
+
+```
+opm bot .
+```
+
+Run that with this tree as the target. Then re-sign `catalog`
+to `index.minisig` with the catalog minisign key.

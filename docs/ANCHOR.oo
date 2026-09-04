@@ -1,0 +1,14 @@
+// # Catalog Docs Index — Anchor for Agents
+//
+// Logline: Index of the user-facing docs for the public catalog.
+//
+// Setup: Per-package docs (RFC-0005). They travel with this repo.
+//
+// Beats:
+//   1. CATALOG.oot — name|version|caps|deps|sha lines.
+//   2. HOST.oot — catalog.openooda.org file URLs.
+//   3. ADDING.oot — how to add a package folder.
+
+import "CATALOG.oot";
+import "HOST.oot";
+import "ADDING.oot";

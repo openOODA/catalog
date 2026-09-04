@@ -6,9 +6,19 @@
 //        Each child folder is one package (manifest + payload).
 //        Host: https://catalog.openooda.org
 //        Not a registry service. No accounts. No daemon.
+//        Do not import package payloads from this file.
 //
 // Beats:
-//   1. catalog — the search index.
+//   1. catalog — the search index. index is a copy. index.minisig signs it.
 //   2. hello — print hello.
 //   3. echo — print echo.
-//   4. Rebuild the index with: opm bot .
+//   4. scripts/ — build, test, verify, release. Local OODA_COMPILER.
+//   5. qa/ — catalog_proof.oo.
+//   6. docs/ — file format, host, adding a package.
+//   7. Rebuild the index with: opm bot .
+
+import "hello/ANCHOR.oo";
+import "echo/ANCHOR.oo";
+import "scripts/ANCHOR.oo";
+import "qa/ANCHOR.oo";
+import "docs/ANCHOR.oo";
