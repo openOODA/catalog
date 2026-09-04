@@ -1,0 +1,14 @@
+// # OpenOODA public catalog
+//
+// Logline: The list of packages opm search and opm add can install.
+//
+// Setup: This repo is a vendor tree. catalog is name|version|caps|deps|sha.
+//        Each child folder is one package (manifest + payload).
+//        Host: https://catalog.openooda.org
+//        Not a registry service. No accounts. No daemon.
+//
+// Beats:
+//   1. catalog — the search index.
+//   2. hello — print hello.
+//   3. echo — print echo.
+//   4. Rebuild the index with: opm bot .
