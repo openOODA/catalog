@@ -2,7 +2,8 @@
 //
 // Logline: Index of the user-facing docs for the public catalog.
 //
-// Setup: Per-package docs (RFC-0005). They travel with this repo.
+// Setup: RFC-0005. Website Source: openOODA/catalog/docs/.
+//        They travel with this repo.
 //
 // Beats:
 //   1. CATALOG.oot — name|version|caps|deps|sha lines.
