@@ -54,7 +54,8 @@ fn run_one(p: &ProcessCap, oodac: String, path: String) -> Bool {
 
 pub fn main(p: &ProcessCap, fs_r: &FsReadCap, env: &EnvCap, args: List[String]) -> Result[Int, String] {
     let oodac: String = find_oodac(fs_r, env);
-    let drivers: List[String] = ["qa/catalog_proof.oo"];
+    let l0: List[String] = list_new();
+    let drivers: List[String] = list_push(l0, "qa/catalog_proof.oo");
     let mut i: Int = 0;
     while i < list_len(drivers) {
         let path: String = list_get(drivers, i);

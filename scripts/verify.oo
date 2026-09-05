@@ -82,7 +82,13 @@ pub fn main(fs_r: &FsReadCap, args: List[String]) -> Result[Int, String] {
     if str_index_of(cat, "echo|") < 0 { return Err("catalog missing echo"); }
     if cat_has_text(fs_r, "hello/ANCHOR.oo", "import \"hello.oo\"") { return Err("hello/ANCHOR.oo must not import payload"); }
     if cat_has_text(fs_r, "echo/ANCHOR.oo", "import \"echo.oo\"") { return Err("echo/ANCHOR.oo must not import payload"); }
-    let dirs: List[String] = [".", "hello", "echo", "scripts", "qa", "docs"];
+    let l0: List[String] = list_new();
+    let mut dirs: List[String] = list_push(l0, ".");
+    dirs = list_push(dirs, "hello");
+    dirs = list_push(dirs, "echo");
+    dirs = list_push(dirs, "scripts");
+    dirs = list_push(dirs, "qa");
+    dirs = list_push(dirs, "docs");
     let mut i: Int = 0;
     let mut total: Int = 0;
     while i < list_len(dirs) {

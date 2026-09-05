@@ -34,7 +34,9 @@ fn find_oodac(fs: &FsReadCap, env: &EnvCap) -> String {
 pub fn main(p: &ProcessCap, fs_r: &FsReadCap, env: &EnvCap, args: List[String]) -> Result[Int, String] {
     let oodac: String = find_oodac(fs_r, env);
     println("Checking catalog indexes");
-    let paths: List[String] = ["hello/ANCHOR.oo", "echo/ANCHOR.oo"];
+    let l0: List[String] = list_new();
+    let mut paths: List[String] = list_push(l0, "hello/ANCHOR.oo");
+    paths = list_push(paths, "echo/ANCHOR.oo");
     let mut i: Int = 0;
     while i < list_len(paths) {
         let path: String = list_get(paths, i);
@@ -51,5 +53,6 @@ pub fn main(p: &ProcessCap, fs_r: &FsReadCap, env: &EnvCap, args: List[String]) 
         i = i + 1;
     }
     let _a: Int = list_len(args);
+    println("ALL_INDEXES_OK");
     return Ok(0);
 }
