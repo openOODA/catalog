@@ -1,14 +1,15 @@
 // # Catalog index proof
 //
-// Logline: The catalog file lists hello and echo with matching manifest sha256.
+// Logline: Verify package catalog with agile manifest checksums and payload authenticity.
 //
-// Setup: Reads catalog, index, CNAME, and each package manifest. No HTTP.
-//        Does not import hello.oo or echo.oo.
+// Setup: Reads catalog, index, CNAME, manifests, and payload files. No HTTP.
 //
 // Beats:
-//   1. catalog equals index and is not empty.
-//   2. Each line is name|version|caps|deps|sha with 64 hex sha.
-//   3. hello and echo rows match their manifest sha256 fields.
+//   1. Catalog equals index, non-empty, with valid CNAME and signatures.
+//   2. Checksum validation supports bare 64-hex, sha256, blake3, sha3, and sha512.
+//   3. Packages match manifest checksums and authentic on-disk payload digests.
+
+import "std/sec/hash/blake3.oo";
 
 fn fail(msg: String) {
     println("FAIL " + msg);
@@ -31,10 +32,8 @@ fn kv(text: String, key: String) -> String {
         if i == n || char_at(text, i) == "\n" {
             if i > start {
                 let line: String = str_slice(text, start, i);
-                if chars_len(line) >= kn {
-                    if str_slice(line, 0, kn) == needle {
-                        return str_slice(line, kn, chars_len(line));
-                    }
+                if chars_len(line) >= kn && str_slice(line, 0, kn) == needle {
+                    return str_slice(line, kn, chars_len(line));
                 }
             }
             start = i + 1;
@@ -51,9 +50,7 @@ fn field(line: String, n: Int) -> String {
     let mut i: Int = 0;
     while i <= len {
         if i == len || char_at(line, i) == "|" {
-            if k == n {
-                return str_slice(line, start, i);
-            }
+            if k == n { return str_slice(line, start, i); }
             k = k + 1;
             start = i + 1;
         }
@@ -62,15 +59,90 @@ fn field(line: String, n: Int) -> String {
     return "";
 }
 
-fn is_hex64(s: String) -> Bool {
-    if chars_len(s) != 64 { return false; }
+pub fn is_hex_chars(s: String, expected_len: Int) -> Bool {
+    if chars_len(s) != expected_len { return false; }
     let mut i: Int = 0;
-    while i < 64 {
+    while i < expected_len {
         let c: String = char_at(s, i);
         if str_index_of("0123456789abcdef", c) < 0 { return false; }
         i = i + 1;
     }
     return true;
+}
+
+pub fn parse_checksum_algo(raw: String) -> String {
+    let colon: Int = str_index_of(raw, ":");
+    if colon < 0 {
+        if is_hex_chars(raw, 64) { return "sha256"; }
+        return "";
+    }
+    let pfx: String = str_slice(raw, 0, colon);
+    return (pfx).to_lowercase();
+}
+
+pub fn parse_checksum_hex(raw: String) -> String {
+    let colon: Int = str_index_of(raw, ":");
+    if colon < 0 { return raw; }
+    return str_slice(raw, colon + 1, chars_len(raw));
+}
+
+pub fn is_valid_checksum(raw: String) -> Bool {
+    let colon: Int = str_index_of(raw, ":");
+    if colon < 0 { return is_hex_chars(raw, 64); }
+    let algo: String = parse_checksum_algo(raw);
+    let hex: String = parse_checksum_hex(raw);
+    if algo == "sha256" || algo == "blake3" || algo == "sha3" {
+        return is_hex_chars(hex, 64);
+    }
+    if algo == "sha512" { return is_hex_chars(hex, 128); }
+    return false;
+}
+
+pub fn compute_payload_digest(algo: String, text: String) -> String {
+    if algo == "sha256" {
+        let h: String = crypto_sha256_internal(text);
+        if chars_len(h) == 64 { return h; }
+    } else if algo == "blake3" {
+        let h: String = blake3(text);
+        if chars_len(h) == 64 { return h; }
+    } else if algo == "sha3" {
+        let h: String = crypto_sha3_256_internal(text);
+        if chars_len(h) == 64 { return h; }
+    } else if algo == "sha512" {
+        let h: String = crypto_sha512_internal(text);
+        if chars_len(h) == 128 { return h; }
+    }
+    return "";
+}
+
+pub fn get_manifest_checksum(man: String) -> String {
+    let c: String = kv(man, "checksum");
+    if c != "" { return c; }
+    let s256: String = kv(man, "sha256");
+    if s256 != "" { return s256; }
+    let b3: String = kv(man, "blake3");
+    if b3 != "" {
+        if str_index_of(b3, ":") >= 0 { return b3; }
+        return "blake3:" + b3;
+    }
+    let s3: String = kv(man, "sha3");
+    if s3 != "" {
+        if str_index_of(s3, ":") >= 0 { return s3; }
+        return "sha3:" + s3;
+    }
+    let s512: String = kv(man, "sha512");
+    if s512 != "" {
+        if str_index_of(s512, ":") >= 0 { return s512; }
+        return "sha512:" + s512;
+    }
+    return "";
+}
+
+pub fn checksums_match(a: String, b: String) -> Bool {
+    let algo_a: String = parse_checksum_algo(a);
+    let algo_b: String = parse_checksum_algo(b);
+    if algo_a != algo_b || algo_a == "" { return false; }
+    return parse_checksum_hex(a) == parse_checksum_hex(b);
 }
 
 fn check_line(line: String) -> String {
@@ -79,7 +151,7 @@ fn check_line(line: String) -> String {
     let sha: String = field(line, 4);
     if nm == "" { return "empty name"; }
     if ver == "" { return "empty version " + nm; }
-    if !is_hex64(sha) { return "bad sha " + nm; }
+    if !is_valid_checksum(sha) { return "bad sha " + nm; }
     return "";
 }
 
@@ -109,21 +181,65 @@ fn check_pkg(fs: &FsReadCap, cat: String, name: String, pay: String) -> String {
     if !path_exists(fs, name + "/" + pay) { return "missing payload " + name; }
     let man: String = slurp(fs, name + "/manifest");
     if kv(man, "name") != name { return "manifest name " + name; }
-    if kv(man, "sha256") != field(line, 4) { return "sha drift " + name; }
+    let cat_chk: String = field(line, 4);
+    let man_chk: String = get_manifest_checksum(man);
+    if man_chk == "" || !checksums_match(cat_chk, man_chk) { return "sha drift " + name; }
     if kv(man, "payload") != pay { return "payload name " + name; }
+    let pay_content: String = slurp(fs, name + "/" + pay);
+    let algo: String = parse_checksum_algo(cat_chk);
+    let exp_hex: String = parse_checksum_hex(cat_chk);
+    let comp_hex: String = compute_payload_digest(algo, pay_content);
+    if comp_hex == "" || comp_hex != exp_hex { return "payload digest mismatch " + name; }
+    return "";
+}
+
+fn verify_agile_proofs() -> String {
+    let bare: String = "0e31868267f9f1baa1028cdeddade94266420d50a29ade6bb583090618bd97e2";
+    if !is_valid_checksum(bare) { return "bare sha256 invalid"; }
+    if !is_valid_checksum("sha256:" + bare) { return "prefixed sha256 invalid"; }
+    if !is_valid_checksum("blake3:" + bare) { return "blake3 invalid"; }
+    if !is_valid_checksum("sha3:" + bare) { return "sha3 invalid"; }
+    let dummy512: String = "ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f";
+    if !is_valid_checksum("sha512:" + dummy512) { return "sha512 invalid"; }
+    if is_valid_checksum("md5:0123456789abcdef") { return "invalid algo accepted"; }
+    if is_valid_checksum("sha256:short") { return "short hex accepted"; }
+    if is_valid_checksum("sha256:0e31868267f9f1baa1028cdeddade94266420d50a29ade6bb583090618bd97eG") { return "non-hex accepted"; }
+    let h256: String = compute_payload_digest("sha256", "abc");
+    if h256 != "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad" { return "h256 mismatch"; }
+    let hb3: String = compute_payload_digest("blake3", "abc");
+    if hb3 != "6437b3ac38465133ffb63b75273a8db548c558465d79db03fd359c6cd5bd9d85" { return "blake3 mismatch"; }
+    let hs3: String = compute_payload_digest("sha3", "abc");
+    if hs3 != "3a985da74fe225b2045c172d6bd390bd855f086e3e9d525b46bfe24511431532" { return "sha3 mismatch"; }
+    let hs512: String = compute_payload_digest("sha512", "abc");
+    if hs512 != dummy512 { return "sha512 mismatch"; }
+    let man_test: String = "name=foo\nchecksum=blake3:6437b3ac38465133ffb63b75273a8db548c558465d79db03fd359c6cd5bd9d85\n";
+    if get_manifest_checksum(man_test) != "blake3:6437b3ac38465133ffb63b75273a8db548c558465d79db03fd359c6cd5bd9d85" { return "manifest checksum failed"; }
+    let tampered_h: String = compute_payload_digest("sha256", "tampered payload");
+    if tampered_h == h256 { return "tamper check failed"; }
+    return "";
+}
+
+fn run_proofs(fs: &FsReadCap) -> String {
+    let ap: String = verify_agile_proofs();
+    if ap != "" { return ap; }
+    let cat: String = slurp(fs, "catalog");
+    if cat == "" { return "empty catalog"; }
+    if cat != slurp(fs, "index") { return "index mismatch"; }
+    if str_index_of(slurp(fs, "CNAME"), "catalog.openooda.org") < 0 { return "CNAME"; }
+    if !path_exists(fs, "registry.pub") { return "registry.pub"; }
+    if !path_exists(fs, "index.minisig") { return "index.minisig"; }
+    let h: String = check_pkg(fs, cat, "hello", "hello.oo");
+    if h != "" { return h; }
+    let e: String = check_pkg(fs, cat, "echo", "echo.oo");
+    if e != "" { return e; }
     return "";
 }
 
 pub fn main(fs_r: &FsReadCap) {
-    let cat: String = slurp(fs_r, "catalog");
-    if cat == "" { fail("empty catalog"); }
-    if cat != slurp(fs_r, "index") { fail("index mismatch"); }
-    if str_index_of(slurp(fs_r, "CNAME"), "catalog.openooda.org") < 0 { fail("CNAME"); }
-    if !path_exists(fs_r, "registry.pub") { fail("registry.pub"); }
-    if !path_exists(fs_r, "index.minisig") { fail("index.minisig"); }
-    let h: String = check_pkg(fs_r, cat, "hello", "hello.oo");
-    if h != "" { fail(h); }
-    let e: String = check_pkg(fs_r, cat, "echo", "echo.oo");
-    if e != "" { fail(e); }
+    let r1: String = run_proofs(fs_r);
+    if r1 != "" { fail(r1); }
+    let r2: String = run_proofs(fs_r);
+    if r2 != "" { fail(r2); }
+    if r1 != r2 { fail("non-deterministic proof runs"); }
     println("catalog_proof: PASSED");
 }
