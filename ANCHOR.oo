@@ -13,7 +13,8 @@
 //   2. hello — print hello.
 //   3. echo — print echo.
 //   3b. caps — print the 20 language capability tokens.
-//   4. scripts/ — build, test, verify, release. Local OODA_COMPILER.
+//   4. .github/workflows/ci.yml is the build, test, verify, release
+//      entry point (gh-owned; no scripts/ runners).
 //   5. qa/ — catalog_proof.oo.
 //   6. docs/ — file format, host, adding a package.
 //   7. Rebuild the index with: opm bot .
@@ -21,6 +22,5 @@
 import "hello/ANCHOR.oo";
 import "echo/ANCHOR.oo";
 import "caps/ANCHOR.oo";
-import "scripts/ANCHOR.oo";
 import "qa/ANCHOR.oo";
 import "docs/ANCHOR.oo";

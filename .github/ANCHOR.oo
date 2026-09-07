@@ -7,7 +7,7 @@
 // Beats:
 //   1. workflows/ci.yml gates the catalog file, then auto-release.
 //   2. workflows/deploy.yml publishes this tree to GitHub Pages.
-//   3. scripts/verify.oo and scripts/test.oo run locally with OODA_COMPILER.
+//   3. qa/suite.oo typechecks every driver twice (local entry).
 //   4. No VERSION file.
 
 import "workflows/ANCHOR.oo";

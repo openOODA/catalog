@@ -7,5 +7,7 @@
 //
 // Beats:
 //   1. catalog_proof.oo — hello and echo lines, sha matches manifest.
+//   2. suite.oo typechecks every driver twice (local entry; CI wiring pending).
 
 import "catalog_proof.oo";
+import "suite.oo";
