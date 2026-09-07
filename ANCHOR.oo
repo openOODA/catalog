@@ -12,6 +12,7 @@
 //   1. catalog — the search index. index is a copy. index.minisig signs it.
 //   2. hello — print hello.
 //   3. echo — print echo.
+//   3b. caps — print the 20 language capability tokens.
 //   4. scripts/ — build, test, verify, release. Local OODA_COMPILER.
 //   5. qa/ — catalog_proof.oo.
 //   6. docs/ — file format, host, adding a package.
@@ -19,6 +20,7 @@
 
 import "hello/ANCHOR.oo";
 import "echo/ANCHOR.oo";
+import "caps/ANCHOR.oo";
 import "scripts/ANCHOR.oo";
 import "qa/ANCHOR.oo";
 import "docs/ANCHOR.oo";
