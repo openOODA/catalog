@@ -28,11 +28,39 @@ jobs:
           grep -qx 'catalog.openooda.org' CNAME
           grep -q '^hello|' catalog
           grep -q '^echo|' catalog
+          grep -q '^caps|' catalog
           cmp -s catalog index
           hello_sha=$(awk -F= '/^sha256=/{print $2; exit}' hello/manifest)
           echo_sha=$(awk -F= '/^sha256=/{print $2; exit}' echo/manifest)
           grep -q "^hello|.*|${hello_sha}$" catalog
           grep -q "^echo|.*|${echo_sha}$" catalog
+          for p in hello echo caps; do
+            ! grep -q "import \"$p.oo\"" "$p/ANCHOR.oo" || { echo "ERR payload import in $p/ANCHOR.oo"; exit 1; }
+          done
+          for d in . hello echo caps qa docs; do
+            test -f "$d/ANCHOR.oo" || { echo "ERR missing $d/ANCHOR.oo"; exit 1; }
+          done
+          for f in $(find . hello echo caps qa docs -name '*.oo' -o -name '*.oot'); do
+            n=$(wc -l < "$f"); test "$n" -le 256 || { echo "ERR over 256 lines: $f n=$n"; exit 1; }
+          done
+      - name: checkout oodac
+        uses: actions/checkout@v4
+        with:
+          repository: openOODA/oodac
+          path: oodac
+      - name: typecheck proofs twice
+        env:
+          OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
+          OODA_FS_READDIR: ${{ github.workspace }}
+          OODA_FS_WRITEDIR: ${{ github.workspace }}
+        run: |
+          test -x oodac/bin/oodac || chmod +x oodac/bin/oodac
+          for t in qa/catalog_proof.oo; do
+            out=$("${OODA_COMPILER}" check "$t") || { echo "$out"; exit 1; }
+            case "$out" in *ERR*) echo "ERR in stdout $t: $out"; exit 1;; esac
+            out=$("${OODA_COMPILER}" check "$t") || { echo "$out"; exit 1; }
+            case "$out" in *ERR*) echo "ERR in stdout $t: $out"; exit 1;; esac
+          done
 
   auto-release:
     needs: catalog-gate
