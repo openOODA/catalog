@@ -1,0 +1,31 @@
+// # Re-sign the vendor index for opm add
+//
+// Logline: Write index.sig as HMAC-SHA256 of the index body (opm default key).
+//
+// Setup: Run from the catalog root after `opm bot .` rewrites index.
+// Reads index, writes index.sig. catalog_proof.oo verifies the pair;
+// `opm add --vendor` refuses a missing or mismatched signature.
+//
+// Beats:
+//   1. Slurp the index body; refuse an empty index.
+//   2. HMAC with the documented opm local key and write index.sig.
+
+pub fn main(fs_r: &FsReadCap, fs_w: &FsWriteCap) {
+    let rd: Result[String, String] = read_file(fs_r, "index");
+    if rd.is_err() {
+        println("ERR\tsign_index\tunreadable index");
+        process_exit(1);
+    }
+    let body: String = match rd { Ok(s) => s, Err(_) => "" };
+    if body == "" {
+        println("ERR\tsign_index\tempty index");
+        process_exit(1);
+    }
+    let sig: String = crypto_hmac_sha256_internal("ooda-local-pm", body);
+    let wr: Result[Void, String] = write_file(fs_w, "index.sig", sig);
+    if wr.is_err() {
+        println("ERR\tsign_index\twrite failed");
+        process_exit(1);
+    }
+    println("OK\tsign_index");
+}

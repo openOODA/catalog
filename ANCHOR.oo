@@ -13,6 +13,7 @@
 //   2. hello — print hello.
 //   3. echo — print echo.
 //   3b. caps — print the 20 language capability tokens.
+//   3c. sqlite — SQLite boundary adapter demo (pure header decode).
 //   4. .github/workflows/ci.yml is the build, test, verify, release
 //      entry point (gh-owned; no scripts/ runners).
 //   5. qa/ — catalog_proof.oo.
@@ -22,5 +23,6 @@
 import "hello/ANCHOR.oo";
 import "echo/ANCHOR.oo";
 import "caps/ANCHOR.oo";
+import "sqlite/ANCHOR.oo";
 import "qa/ANCHOR.oo";
 import "docs/ANCHOR.oo";

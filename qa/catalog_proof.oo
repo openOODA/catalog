@@ -8,6 +8,7 @@
 //   1. Catalog equals index, non-empty, with valid CNAME and signatures.
 //   2. Checksum validation supports bare 64-hex, sha256, blake3, sha3, and sha512.
 //   3. Packages match manifest checksums and authentic on-disk payload digests.
+//   4. index.sig HMAC-verifies the index body (the `opm add` gate).
 
 import "std/sec/hash/blake3.oo";
 
@@ -228,10 +229,16 @@ fn run_proofs(fs: &FsReadCap) -> String {
     if str_index_of(slurp(fs, "CNAME"), "catalog.openooda.org") < 0 { return "CNAME"; }
     if !path_exists(fs, "registry.pub") { return "registry.pub"; }
     if !path_exists(fs, "index.minisig") { return "index.minisig"; }
+    let sig: String = slurp(fs, "index.sig");
+    if sig == "" { return "index.sig missing"; }
+    let expect: String = crypto_hmac_sha256_internal("ooda-local-pm", cat);
+    if sig != expect { return "index.sig mismatch"; }
     let h: String = check_pkg(fs, cat, "hello", "hello.oo");
     if h != "" { return h; }
     let e: String = check_pkg(fs, cat, "echo", "echo.oo");
     if e != "" { return e; }
+    let s: String = check_pkg(fs, cat, "sqlite", "sqlite.oo");
+    if s != "" { return s; }
     return "";
 }
 

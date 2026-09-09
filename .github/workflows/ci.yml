@@ -21,26 +21,32 @@ jobs:
           test -f ANCHOR.oo
           test -f registry.pub
           test -f index.minisig
+          test -f index.sig
           test -f hello/manifest
           test -f hello/hello.oo
           test -f echo/manifest
           test -f echo/echo.oo
+          test -f sqlite/manifest
+          test -f sqlite/sqlite.oo
           grep -qx 'catalog.openooda.org' CNAME
           grep -q '^hello|' catalog
           grep -q '^echo|' catalog
           grep -q '^caps|' catalog
+          grep -q '^sqlite|' catalog
           cmp -s catalog index
           hello_sha=$(awk -F= '/^sha256=/{print $2; exit}' hello/manifest)
           echo_sha=$(awk -F= '/^sha256=/{print $2; exit}' echo/manifest)
+          sqlite_sha=$(awk -F= '/^sha256=/{print $2; exit}' sqlite/manifest)
           grep -q "^hello|.*|${hello_sha}$" catalog
           grep -q "^echo|.*|${echo_sha}$" catalog
-          for p in hello echo caps; do
+          grep -q "^sqlite|.*|${sqlite_sha}$" catalog
+          for p in hello echo caps sqlite; do
             ! grep -q "import \"$p.oo\"" "$p/ANCHOR.oo" || { echo "ERR payload import in $p/ANCHOR.oo"; exit 1; }
           done
-          for d in . hello echo caps qa docs; do
+          for d in . hello echo caps sqlite qa docs; do
             test -f "$d/ANCHOR.oo" || { echo "ERR missing $d/ANCHOR.oo"; exit 1; }
           done
-          for f in $(find . hello echo caps qa docs -name '*.oo' -o -name '*.oot'); do
+          for f in $(find . hello echo caps sqlite qa docs -name '*.oo' -o -name '*.oot'); do
             n=$(wc -l < "$f"); test "$n" -le 256 || { echo "ERR over 256 lines: $f n=$n"; exit 1; }
           done
       - name: checkout oodac
