@@ -9,7 +9,7 @@
 //   1. CATALOG.oot — name|version|caps|deps|sha lines.
 //   2. HOST.oot — catalog.openooda.org file URLs.
 //   3. ADDING.oot — how to add a package folder.
-
-import "CATALOG.oot";
-import "HOST.oot";
-import "ADDING.oot";
+//
+// Companion documents below are read as text, never imported as code:
+// .oot files are markdown and fail the .oo lexer by design.
+//   docs/CATALOG.oot, docs/HOST.oot, docs/ADDING.oot
