@@ -3,3 +3,6 @@
 .secrets/
 .minisign/
 .ooda-cache/
+
+# Local audit history (not shipped)
+.agents/
