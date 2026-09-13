@@ -6,10 +6,10 @@
 //        They travel with this repo.
 //
 // Beats:
-//   1. CATALOG.oot — name|version|caps|deps|sha lines.
-//   2. HOST.oot — catalog.openooda.org file URLs.
-//   3. ADDING.oot — how to add a package folder.
+//   1. catalog.oot — name|version|caps|deps|sha lines.
+//   2. host.oot — catalog.openooda.org file URLs.
+//   3. adding.oot — how to add a package folder.
 //
 // Companion documents below are read as text, never imported as code:
 // .oot files are markdown and fail the .oo lexer by design.
-//   docs/CATALOG.oot, docs/HOST.oot, docs/ADDING.oot
+//   docs/catalog.oot, docs/host.oot, docs/adding.oot

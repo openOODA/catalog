@@ -1,6 +1,6 @@
 # Catalog file format
 
-File: catalog/docs/CATALOG.oot
+File: catalog/docs/catalog.oot
 
 The public index is the file named `catalog` at the repo root.
 opm fetches `https://catalog.openooda.org/catalog`. Each line is

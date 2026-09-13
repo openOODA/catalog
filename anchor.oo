@@ -1,4 +1,4 @@
-// # OpenOODA public catalog
+// # openOODA public catalog
 //
 // Logline: The list of packages opm search and opm add can install.
 //
@@ -20,9 +20,9 @@
 //   6. docs/ — file format, host, adding a package.
 //   7. Rebuild the index with: opm bot .
 
-import "hello/ANCHOR.oo";
-import "echo/ANCHOR.oo";
-import "caps/ANCHOR.oo";
-import "sqlite/ANCHOR.oo";
-import "qa/ANCHOR.oo";
-import "docs/ANCHOR.oo";
+// import "hello/anchor.oo";
+// import "echo/anchor.oo";
+// import "caps/anchor.oo";
+// import "sqlite/anchor.oo";
+// import "qa/anchor.oo";
+// import "docs/anchor.oo";

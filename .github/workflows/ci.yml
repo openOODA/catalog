@@ -18,7 +18,7 @@ jobs:
           test -f index
           test -f CNAME
           test -f .nojekyll
-          test -f ANCHOR.oo
+          test -f anchor.oo || test -f anchor.oo
           test -f registry.pub
           test -f index.minisig
           test -f index.sig
@@ -41,10 +41,11 @@ jobs:
           grep -q "^echo|.*|${echo_sha}$" catalog
           grep -q "^sqlite|.*|${sqlite_sha}$" catalog
           for p in hello echo caps sqlite; do
-            ! grep -q "import \"$p.oo\"" "$p/ANCHOR.oo" || { echo "ERR payload import in $p/ANCHOR.oo"; exit 1; }
+            anc="$p/anchor.oo"; if [ ! -f "$anc" ]; then anc="$p/anchor.oo"; fi
+            ! grep -q "import \"$p.oo\"" "$anc" || { echo "ERR payload import in $anc"; exit 1; }
           done
           for d in . hello echo caps sqlite qa docs; do
-            test -f "$d/ANCHOR.oo" || { echo "ERR missing $d/ANCHOR.oo"; exit 1; }
+            test -f "$d/anchor.oo" || test -f "$d/anchor.oo" || { echo "ERR missing $d/anchor.oo"; exit 1; }
           done
           for f in $(find . hello echo caps sqlite qa docs -name '*.oo' -o -name '*.oot'); do
             n=$(wc -l < "$f"); test "$n" -le 256 || { echo "ERR over 256 lines: $f n=$n"; exit 1; }
@@ -106,9 +107,9 @@ jobs:
           set -euo pipefail
           mkdir -p "$HOME/.openooda/bin"
           curl -fsSL -o "$HOME/.openooda/bin/blackbox" \
-            "https://github.com/openOODA/blackbox/releases/download/v0.0.10/blackbox-linux-x86_64"
+            "https://github.com/openOODA/bb/releases/download/v0.0.10/blackbox-linux-x86_64"
           curl -fsSL -o "$HOME/.openooda/bin/blackbox.sha256" \
-            "https://github.com/openOODA/blackbox/releases/download/v0.0.10/blackbox-linux-x86_64.sha256"
+            "https://github.com/openOODA/bb/releases/download/v0.0.10/blackbox-linux-x86_64.sha256"
           expected=$(cut -d' ' -f1 "$HOME/.openooda/bin/blackbox.sha256")
           actual=$(sha256sum "$HOME/.openooda/bin/blackbox" | cut -d' ' -f1)
           test "$expected" = "$actual" || { echo "[blackbox-gate FAIL] sha256 mismatch"; exit 1; }
@@ -122,6 +123,7 @@ jobs:
           OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
         run: |
           set -euo pipefail
+          trap 'rm -f /tmp/*.diff[12] /tmp/flight.trace[12]' EXIT
           shopt -s nullglob
           count=0
           for f in qa/*_proof.oo; do

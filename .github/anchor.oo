@@ -10,4 +10,4 @@
 //   3. qa/suite.oo typechecks every driver twice (local entry).
 //   4. No VERSION file.
 
-import "workflows/ANCHOR.oo";
+import "workflows/anchor.oo";
