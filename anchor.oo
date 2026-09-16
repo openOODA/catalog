@@ -16,7 +16,7 @@
 //   3c. sqlite — SQLite boundary adapter demo (pure header decode).
 //   4. .github/workflows/ci.yml is the build, test, verify, release
 //      entry point (gh-owned; no scripts/ runners).
-//   5. qa/ — catalog_proof.oo.
+//   5. qa/ — catalog_proof.oo, sign_index.oo, suite.oo.
 //   6. docs/ — file format, host, adding a package.
 //   7. Rebuild the index with: opm bot .
 

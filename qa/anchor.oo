@@ -6,9 +6,9 @@
 //        fails, the catalog fails to release. Do not import package payloads.
 //
 // Beats:
-//   1. catalog_proof.oo — hello, echo, and sqlite lines, sha matches manifest.
+//   1. catalog_proof.oo — hello, echo, caps, and sqlite lines, sha matches manifest.
 //   2. sign_index.oo — re-sign index.sig after `opm bot .` rewrites index.
-//   3. suite.oo typechecks every driver twice (local entry; CI wiring pending).
+//   3. suite.oo typechecks every driver twice. CI typechecks catalog_proof.oo.
 
 import "catalog_proof.oo";
 import "sign_index.oo";
