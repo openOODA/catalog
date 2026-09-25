@@ -63,6 +63,15 @@ jobs:
         with:
           repository: openOODA/std
           path: std
+      - name: checkout oodar
+        uses: actions/checkout@v4
+        with:
+          repository: openOODA/oodar
+          path: oodar
+      - name: clang
+        run: sudo apt-get update && sudo apt-get install -y clang
+      - name: build oodar libs
+        run: make -C oodar/scripts -f Makefile modular
       - name: typecheck proofs twice
         env:
           OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
@@ -70,12 +79,21 @@ jobs:
           OODA_FS_WRITEDIR: ${{ github.workspace }}
         run: |
           test -x oodac/bin/oodac || chmod +x oodac/bin/oodac
-          for t in qa/catalog_proof.oo; do
+          for t in qa/catalog_proof.oo qa/str_ascii.oo; do
             out=$("${OODA_COMPILER}" check "$t") || { echo "$out"; exit 1; }
             case "$out" in *ERR*) echo "ERR in stdout $t: $out"; exit 1;; esac
             out=$("${OODA_COMPILER}" check "$t") || { echo "$out"; exit 1; }
             case "$out" in *ERR*) echo "ERR in stdout $t: $out"; exit 1;; esac
           done
+      - name: build and run catalog proof
+        env:
+          OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
+          OODA_FS_READDIR: ${{ github.workspace }}
+          OODA_FS_WRITEDIR: ${{ github.workspace }}
+          OODA_NO_JAIL: '1'
+        run: |
+          "${OODA_COMPILER}" build qa/catalog_proof.oo -o /tmp/catalog_proof
+          test "$(/tmp/catalog_proof)" = "catalog_proof: PASSED"
 
   blackbox-gate:
     needs: [catalog-gate]

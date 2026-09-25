@@ -11,7 +11,7 @@
 //   4. index.sig HMAC-verifies the index body (the `opm add` gate).
 
 import "std/sec/hash/blake3.oo";
-import "catalog/qa/str_ascii.oo";
+import "qa/str_ascii.oo";
 
 fn fail(msg: String) {
     println("FAIL " + msg);
