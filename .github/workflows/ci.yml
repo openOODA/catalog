@@ -2,7 +2,7 @@ name: catalog CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   catalog-gate:
