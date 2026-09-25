@@ -11,6 +11,7 @@
 //   4. index.sig HMAC-verifies the index body (the `opm add` gate).
 
 import "std/sec/hash/blake3.oo";
+import "catalog/qa/str_ascii.oo";
 
 fn fail(msg: String) {
     println("FAIL " + msg);
@@ -78,7 +79,7 @@ pub fn parse_checksum_algo(raw: String) -> String {
         return "";
     }
     let pfx: String = str_slice(raw, 0, colon);
-    return (pfx).to_lowercase();
+    return ascii_lower(pfx);
 }
 
 pub fn parse_checksum_hex(raw: String) -> String {

@@ -1,0 +1,25 @@
+// # ASCII string helpers
+//
+// Logline: Lowercase ASCII without the to_lowercase method.
+//
+// Setup: Pure. No caps.
+//
+// Beats:
+//   1. ascii_lower maps A-Z to a-z, passes all other chars through.
+//
+
+pub fn ascii_lower(s: String) -> String {
+    let mut out: String = "";
+    let mut i: Int = 0;
+    while i < chars_len(s) {
+        let c: String = char_at(s, i);
+        let b: Int = byte_at(c, 0);
+        if b >= 65 && b <= 90 {
+            out = out + char_at("abcdefghijklmnopqrstuvwxyz", b - 65);
+        } else {
+            out = out + c;
+        }
+        i = i + 1;
+    }
+    return out;
+}
