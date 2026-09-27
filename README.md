@@ -35,7 +35,11 @@ From this tree, opm also reads `seed/` inside the opm repo so search works with 
 
 1. Add a folder with `manifest` and a `.oo` payload (Academy headers required).
 2. From the opm repo, run `opm bot` with this tree as the target to rebuild `catalog`.
-3. Sign `catalog` to `index.minisig` with the catalog minisign key.
+3. Sign `catalog` to `index.minisig` with the catalog minisign key:
+   `minisign -S -s <secret.key> -m catalog -x index.minisig`
+   (CI runs `minisign -V` and fails closed while the signature is stale or bogus;
+   only the key-holder can re-sign. If the key is lost, rotate: `minisign -G`,
+   update `registry.pub` here and `cli/registry.pub` in opm, re-sign, release both.)
 4. Commit the folder, `catalog`, `index`, and `index.minisig`.
 
 ## Docs

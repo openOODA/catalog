@@ -53,6 +53,11 @@ jobs:
           for f in $(find . hello echo caps sqlite qa docs -name '*.oo' -o -name '*.oot'); do
             n=$(wc -l < "$f"); test "$n" -le 256 || { echo "ERR over 256 lines: $f n=$n"; exit 1; }
           done
+      - name: verify minisig (fail closed)
+        run: |
+          set -euo pipefail
+          sudo apt-get update && sudo apt-get install -y minisign
+          minisign -V -p registry.pub -m catalog -x index.minisig
       - name: checkout oodac
         uses: actions/checkout@v4
         with:
