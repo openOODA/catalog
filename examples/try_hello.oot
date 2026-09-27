@@ -1,0 +1,32 @@
+# Example: fetch hello and try it
+
+File: catalog/examples/try_hello.oot
+
+One full trip around the shelf: search, add, look, run.
+
+## 1. Search
+
+From the opm repo root, run `opm search hello`. Expect one line:
+the name `hello`, version `0.1.0`, and a fingerprint. From anywhere
+else the disk copy is not found, so run it there or use network.
+No line means you are reading an old or empty shelf.
+
+## 2. Add
+
+Run `opm add hello`. Expect a new `hello` folder with two
+things inside: `manifest` (the label) and `hello.oo` (the part).
+If `opm` refuses, it will say the fingerprint failed. Delete
+the folder and fetch again. Never force a refused part.
+
+## 3. Look
+
+Open `manifest`. It says the part's name, version, and what it
+is allowed to touch (`caps=FsRead`: it may read files, nothing
+more). Open `hello.oo`. The top lines describe what it does.
+
+## 4. Run
+
+Build and run the part with the main controls (`cli run`
+on the file). Expect one greeting line and a clean stop.
+For what a broken build looks like, see the main controls
+guide at `cli/docs/start.oot`.

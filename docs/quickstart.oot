@@ -1,0 +1,38 @@
+# Catalog quick start: fetch a package in four steps
+
+File: catalog/docs/quickstart.oot
+
+The catalog is the public shelf of ready-made openOODA parts.
+`opm` (the parts shop tool) reads the `catalog` file to see what
+is on the shelf. This page gets you from nothing to one working
+part. For putting your own part on the shelf, see `adding.oot`.
+
+## The four steps
+
+1. Search the shelf: from the opm repo root, run `opm search hello`.
+   You should see one line for the `hello` part. (The disk copy of
+   the shelf is found from that folder; elsewhere needs network.)
+2. Take it home: `opm add hello`.
+   This copies the part's folder onto your machine.
+3. Look at what you got: open the `hello` folder.
+   It holds a `manifest` (the label) and `hello.oo` (the part).
+4. Run the part's own check, if it ships one.
+   `hello` prints one line. See `examples/try_hello.oot`.
+
+## How you know the shelf is honest
+
+- The `catalog` file and the `index` file are byte-for-byte copies.
+- Every part's file matches the fingerprint in its manifest line.
+- `index.sig` proves the shelf for local use; `index.minisig`
+  proves it for the world. Never edit these by hand. The signing
+  steps in `adding.oot` rebuild them.
+
+## When something breaks
+
+1. `opm search` finds nothing: check you are reading this shelf
+   and not an old copy. The live shelf lives at the address in
+   the `CNAME` file.
+2. `opm add` refuses the part: the fingerprint did not match.
+   Delete your copy and fetch again. Do not force it.
+3. A part misbehaves: read its label (`manifest`) first. It names
+   what the part is allowed to touch.

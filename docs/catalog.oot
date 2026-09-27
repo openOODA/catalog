@@ -37,3 +37,10 @@ opm bot .
 
 Run that with this tree as the target. Then re-sign `catalog`
 to `index.minisig` with the catalog minisign key.
+
+Freshness warning: no automated check verifies that `index.minisig`
+matches the current `catalog`. Verify by hand after every re-sign
+(`minisign -V -p registry.pub -m catalog`). As of 2026-09-25 the
+shipped signature is stale (made before the caps/sqlite entries);
+the key holder must re-sign before this shelf can be called fully
+proven. Local use stays protected by `index.sig` meanwhile.

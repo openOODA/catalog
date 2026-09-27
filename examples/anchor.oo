@@ -1,0 +1,12 @@
+// # Catalog Examples — Anchor for Agents
+//
+// Logline: Walkthroughs that fetch a shelf part and try it.
+//
+// Setup: Each example is a plain-text trip: search, add, look, run.
+//
+// Beats:
+//   1. try_hello.oot — fetch the hello part and run it.
+//   2. New examples follow the same four-beat trip.
+
+// Sibling example documents (.oot files):
+// - try_hello.oot
