@@ -39,8 +39,14 @@ Run that with this tree as the target. Then re-sign `catalog`
 to `index.minisig` with the catalog minisign key.
 
 Freshness warning: no automated check verifies that `index.minisig`
-matches the current `catalog`. Verify by hand after every re-sign
-(`minisign -V -p registry.pub -m catalog`). As of 2026-09-25 the
-shipped signature is stale (made before the caps/sqlite entries);
-the key holder must re-sign before this shelf can be called fully
-proven. Local use stays protected by `index.sig` meanwhile.
+matches the current `catalog` (a `minisign -V` CI step is ready to
+land in `.github/workflows/ci.yml` the moment a fresh signature
+exists). Verify by hand after every re-sign
+(`minisign -V -p registry.pub -m catalog`). As of 2026-09-27 the
+shipped signature (2026-09-04) verifies against NOTHING in history,
+not even the bytes committed beside it — it is bogus from birth, not
+merely stale. The key holder must re-sign from current `catalog`
+before this shelf can be called fully proven. Local use stays
+protected by `index.sig` meanwhile. Do NOT build the automated check
+on std's ed25519 (verified broken 2026-09-27: hashes hex text instead
+of raw bytes, wrong scalar clamp, zero tests); use reference minisign.
