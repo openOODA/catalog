@@ -58,6 +58,21 @@ jobs:
           set -euo pipefail
           sudo apt-get update && sudo apt-get install -y minisign
           minisign -V -p registry.pub -m catalog -x index.minisig
+      - name: minisig roundtrip with ephemeral key
+        run: |
+          set -euo pipefail
+          work=$(mktemp -d)
+          trap 'rm -rf "$work"' EXIT
+          cp catalog "$work/catalog"
+          cd "$work"
+          minisign -G -W -p rt.pub -s rt.key
+          minisign -S -W -s rt.key -m catalog -x catalog.minisig -c "ci roundtrip"
+          minisign -V -p rt.pub -m catalog -x catalog.minisig
+          printf 'X' >> catalog
+          if minisign -V -p rt.pub -m catalog -x catalog.minisig; then
+            echo "ERR tampered catalog verified"; exit 1
+          fi
+          echo "[minisig-roundtrip OK] ephemeral sign/verify passes, tamper rejected"
       - name: checkout oodac
         uses: actions/checkout@v4
         with:
