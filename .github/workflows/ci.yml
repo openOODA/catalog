@@ -126,14 +126,14 @@ jobs:
       - name: independent index.sig HMAC check (python oracle)
         run: |
           set -euo pipefail
-          python3 -c "
-import hmac
-body = open('index','rb').read()
-sig = open('index.sig').read().strip()
-calc = hmac.new(b'ooda-local-pm', body, 'sha256').hexdigest()
-assert hmac.compare_digest(calc, sig), 'index.sig HMAC mismatch'
-print('[hmac-oracle OK] index.sig matches python HMAC-SHA256')
-"
+          python3 <<'EOF'
+          import hmac
+          body = open('index','rb').read()
+          sig = open('index.sig').read().strip()
+          calc = hmac.new(b'ooda-local-pm', body, 'sha256').hexdigest()
+          assert hmac.compare_digest(calc, sig), 'index.sig HMAC mismatch'
+          print('[hmac-oracle OK] index.sig matches python HMAC-SHA256')
+          EOF
       - name: sign_index reproduces index.sig
         env:
           OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
