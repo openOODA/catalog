@@ -114,6 +114,51 @@ jobs:
         run: |
           "${OODA_COMPILER}" build qa/catalog_proof.oo -o /tmp/catalog_proof
           test "$(/tmp/catalog_proof)" = "catalog_proof: PASSED"
+      - name: run qa suite (double-check drivers)
+        env:
+          OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
+          OODA_FS_READDIR: ${{ github.workspace }}
+          OODA_FS_WRITEDIR: ${{ github.workspace }}
+          OODA_NO_JAIL: '1'
+        run: |
+          "${OODA_COMPILER}" build qa/suite.oo -o /tmp/catalog_suite
+          /tmp/catalog_suite
+      - name: independent index.sig HMAC check (python oracle)
+        run: |
+          set -euo pipefail
+          python3 -c "
+import hmac
+body = open('index','rb').read()
+sig = open('index.sig').read().strip()
+calc = hmac.new(b'ooda-local-pm', body, 'sha256').hexdigest()
+assert hmac.compare_digest(calc, sig), 'index.sig HMAC mismatch'
+print('[hmac-oracle OK] index.sig matches python HMAC-SHA256')
+"
+      - name: sign_index reproduces index.sig
+        env:
+          OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
+          OODA_FS_READDIR: ${{ github.workspace }}
+          OODA_FS_WRITEDIR: ${{ github.workspace }}
+          OODA_NO_JAIL: '1'
+        run: |
+          set -euo pipefail
+          work=$(mktemp -d)
+          trap 'rm -rf "$work"' EXIT
+          cp index "$work/index"
+          export OODA_FS_READDIR="${{ github.workspace }}:$work"
+          export OODA_FS_WRITEDIR="${{ github.workspace }}:$work"
+          "${OODA_COMPILER}" build qa/sign_index.oo -o "$work/sign_index"
+          (cd "$work" && ./sign_index)
+          cmp index.sig "$work/index.sig"
+          echo "[sign-index OK] re-sign byte-identical"
+      - name: index.html lists catalog packages
+        run: |
+          set -euo pipefail
+          while IFS='|' read -r name _; do
+            [ -n "$name" ] || continue
+            grep -q "href=\"/$name/manifest\"" index.html || { echo "ERR $name missing from index.html"; exit 1; }
+          done < catalog
+          echo "[index-html OK] all catalog packages linked"
 
   blackbox-gate:
     needs: [catalog-gate]
