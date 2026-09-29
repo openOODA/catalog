@@ -7,9 +7,12 @@
 //
 // Beats:
 //   1. Resolve oodac from OODA_COMPILER only.
-//   2. oodac check each driver twice. Fail on the first Err or ERR in stdout.
+//   2. Enumerate qa/*.oo (drop-ins included, suite.oo + anchor.oo excluded).
+//   3. oodac check each driver twice. Fail on the first Err or ERR in stdout.
+//   4. Fail closed when fewer than 4 drivers are double-checked.
 
 import "script_path.oo";
+import "std/fs/file/glob.oo";
 
 fn find_oodac(fs: &FsReadCap, env: &EnvCap) -> String {
     let r: Result[String, String] = env_get(env, "OODA_COMPILER");
@@ -52,20 +55,49 @@ fn run_one(p: &ProcessCap, oodac: String, path: String) -> Bool {
     return true;
 }
 
+fn include_file(fs: &FsReadCap, path: String) -> Bool {
+    if str_index_of(path, "qa/suite.oo") >= 0 {
+        return false;
+    }
+    if str_index_of(path, "qa/anchor.oo") >= 0 {
+        return false;
+    }
+    if str_index_of(path, ".oo") < 0 {
+        return false;
+    }
+    if !path_exists(fs, path) {
+        return false;
+    }
+    return true;
+}
+
 pub fn main(p: &ProcessCap, fs_r: &FsReadCap, env: &EnvCap, args: List[String]) -> Result[Int, String] {
     let oodac: String = find_oodac(fs_r, env);
-    let l0: List[String] = list_new();
-    let l1: List[String] = list_push(l0, "qa/catalog_proof.oo");
-    let drivers: List[String] = list_push(l1, "qa/sign_index.oo");
+    let mut drivers: List[String] = list_new();
+    let files: List[String] = glob_scan_dir(fs_r, "qa", "*.oo");
+    let mut j: Int = 0;
+    while j < list_len(files) {
+        let path: String = list_get(files, j);
+        if include_file(fs_r, path) {
+            drivers = list_push(drivers, path);
+        }
+        j = j + 1;
+    }
+    if list_len(drivers) < 4 {
+        println("ERR\ttest\tself-test enumeration too small: count " + list_len(drivers).to_string());
+        return Err("self-test enumeration too small");
+    }
+    let mut n: Int = 0;
     let mut i: Int = 0;
     while i < list_len(drivers) {
         let path: String = list_get(drivers, i);
         if !run_one(p, oodac, path) {
             return Err("self-test failures");
         }
+        n = n + 1;
         i = i + 1;
     }
-    println("self-test passed");
+    println("self-test passed: checked " + n.to_string());
     let _a: Int = list_len(args);
     return Ok(0);
 }
