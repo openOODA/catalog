@@ -160,7 +160,7 @@ jobs:
           done < catalog
           echo "[index-html OK] all catalog packages linked"
 
-  blackbox-gate:
+  determinism-gate:
     needs: [catalog-gate]
     if: always()
     runs-on: ubuntu-latest
@@ -225,5 +225,5 @@ jobs:
           echo "[blackbox-gate OK] $count probes deterministic across double-run (oodac-native gate)"
 
   auto-release:
-    needs: [catalog-gate, blackbox-gate]
+    needs: [catalog-gate, determinism-gate]
     uses: openOODA/openOODA/.github/workflows/auto-release.yml@v2.10.44
