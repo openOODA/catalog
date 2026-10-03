@@ -2,9 +2,7 @@
 //
 // Logline: Write index.sig as HMAC-SHA256 of the index body (opm default key).
 //
-// Setup: Run from the catalog root after `opm bot .` rewrites index.
-// Reads index, writes index.sig. catalog_proof.oo verifies the pair;
-// `opm add --vendor` refuses a missing or mismatched signature.
+// Setup: Run from the catalog root after `opm bot .` rewrites index. Reads index, writes index.sig. catalog_proof.oo verifies the pair; `opm add --vendor` refuses a missing or mismatched signature.
 //
 // Beats:
 //   1. Slurp the index body; refuse an empty index.

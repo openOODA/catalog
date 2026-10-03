@@ -2,8 +2,7 @@
 //
 // Logline: Typecheck each qa/ driver through oodac check. Fail closed. Double-run.
 //
-// Setup: Run from the catalog repo root. Requires ProcessCap, FsReadCap, EnvCap.
-//        OODA_COMPILER must point at oodac. No PATH hunt.
+// Setup: Run from the catalog repo root. Requires ProcessCap, FsReadCap, EnvCap. OODA_COMPILER must point at oodac. No PATH hunt.
 //
 // Beats:
 //   1. Resolve oodac from OODA_COMPILER only.

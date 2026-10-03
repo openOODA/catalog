@@ -2,11 +2,7 @@
 //
 // Logline: The list of packages opm search and opm add can install.
 //
-// Setup: This repo is a vendor tree. catalog is name|version|caps|deps|sha.
-//        Each child folder is one package (manifest + payload).
-//        Host: https://catalog.openooda.org
-//        Not a registry service. No accounts. No daemon.
-//        Do not import package payloads from this file.
+// Setup: This repo is a vendor tree. catalog is name|version|caps|deps|sha. Each child folder is one package (manifest + payload). Host: https://catalog.openooda.org Not a registry service. No accounts. No daemon. Do not import package payloads from this file.
 //
 // Beats:
 //   1. catalog — the search index. index is a copy. index.minisig signs it.
@@ -19,7 +15,6 @@
 //   5. qa/ — catalog_proof.oo, sign_index.oo, suite.oo.
 //   6. docs/ — file format, host, adding a package.
 //   7. Rebuild the index with: opm bot .
-
 // import "hello/anchor.oo";
 // import "echo/anchor.oo";
 // import "caps/anchor.oo";

@@ -2,8 +2,7 @@
 //
 // Logline: Break-test drivers that ship with the catalog tree.
 //
-// Setup: Each proof is a hostile test for the published index. If a driver
-//        fails, the catalog fails to release. Do not import package payloads.
+// Setup: Each proof is a hostile test for the published index. If a driver fails, the catalog fails to release. Do not import package payloads.
 //
 // Beats:
 //   1. catalog_proof.oo — hello, echo, caps, and sqlite lines, sha matches manifest.

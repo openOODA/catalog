@@ -2,9 +2,7 @@
 //
 // Logline: Boundary SQLite adapter demo for the openOODA catalog. Safe to launch.
 //
-// Setup: Folder shape is manifest plus payload. Do not import sqlite.oo
-//        from this file. sqlite.oo has main() and is the payload, not an index.
-//        Pure demo. Not a database. Full adapter lands here later.
+// Setup: Folder shape is manifest plus payload. Do not import sqlite.oo from this file. sqlite.oo has main() and is the payload, not an index. Pure demo. Not a database. Full adapter lands here later.
 //
 // Beats:
 //   1. manifest — name, version, caps, sha256 of sqlite.oo.

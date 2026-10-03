@@ -2,8 +2,7 @@
 //
 // Logline: Stock catalog package that prints the 20 language capability tokens.
 //
-// Setup: Folder shape is manifest plus payload. Do not import caps.oo
-//        from this file.
+// Setup: Folder shape is manifest plus payload. Do not import caps.oo from this file.
 //
 // Beats:
 //   1. manifest — name, version, caps, sha256 of caps.oo.
