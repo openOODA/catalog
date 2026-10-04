@@ -2,7 +2,8 @@
 //
 // Logline: Decode one SQLite b-tree page header sample. Boundary adapter demo.
 //
-// Setup: Pure. No caps. Not a database. Not file-format compatible. Mirrors std/app/data/database/sqlite_page_header.oo on one sample.
+// Setup: Pure. No caps. Not a database. Not file-format compatible.
+//        Mirrors std/app/data/database/sqlite_page_header.oo on one sample.
 //
 // Beats:
 //   1. Build an 8-byte header sample for a table leaf page.
