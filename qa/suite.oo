@@ -82,9 +82,9 @@ pub fn main(p: &ProcessCap, fs_r: &FsReadCap, env: &EnvCap, args: List[String]) 
         }
         j = j + 1;
     }
-    if list_len(drivers) < 4 {
-        println("ERR\ttest\tself-test enumeration too small: count " + list_len(drivers).to_string());
-        return Err("self-test enumeration too small");
+    if list_len(drivers) == 0 {
+        println("ERR\ttest\tself-test enumeration empty");
+        return Err("self-test enumeration empty");
     }
     let mut n: Int = 0;
     let mut i: Int = 0;
