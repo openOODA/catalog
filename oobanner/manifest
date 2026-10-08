@@ -1,0 +1,9 @@
+name=oobanner
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oobanner.oo
+commit=
+sha256=e43920ae61536cb31ba90251676ce25b56d1ecd94c7786d9e3f3db01cc699cd2
+sig=

@@ -1,0 +1,14 @@
+// # ootoken package
+//
+// Logline: Stock catalog package for ootoken.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ootoken.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootoken.oo.
+//   2. ootoken.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ootoken_pkg() -> String {
+    return "ootoken";
+}

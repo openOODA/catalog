@@ -1,0 +1,9 @@
+name=ooscp
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ooscp.oo
+commit=
+sha256=aa7bd7f50034dc12c91c0beba1b350620040b2eb866bbd5d46b2786cdce6a0d3
+sig=

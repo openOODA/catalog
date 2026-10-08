@@ -1,0 +1,9 @@
+name=oofile
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oofile.oo
+commit=
+sha256=1ffa6477bed20391f1710287d1836e68e9be2eeb1c0cc62317ed5931924e80f0
+sig=

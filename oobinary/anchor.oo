@@ -1,0 +1,14 @@
+// # oobinary package
+//
+// Logline: Stock catalog package for oobinary.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oobinary.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oobinary.oo.
+//   2. oobinary.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oobinary_pkg() -> String {
+    return "oobinary";
+}

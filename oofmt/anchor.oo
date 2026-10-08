@@ -1,0 +1,14 @@
+// # oofmt package
+//
+// Logline: Stock catalog package for oofmt.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oofmt.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oofmt.oo.
+//   2. oofmt.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oofmt_pkg() -> String {
+    return "oofmt";
+}

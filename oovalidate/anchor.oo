@@ -1,0 +1,14 @@
+// # oovalidate package
+//
+// Logline: Stock catalog package for oovalidate.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oovalidate.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oovalidate.oo.
+//   2. oovalidate.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oovalidate_pkg() -> String {
+    return "oovalidate";
+}

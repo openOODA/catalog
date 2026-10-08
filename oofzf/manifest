@@ -1,0 +1,9 @@
+name=oofzf
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oofzf.oo
+commit=
+sha256=e3b8e22fb8d127de865f353563a49b92808556d55dbb9e18a9e335079fdca0d0
+sig=

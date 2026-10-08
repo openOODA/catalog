@@ -1,0 +1,9 @@
+name=oospinner
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oospinner.oo
+commit=
+sha256=f884d79d667594c7a4c1c80ad0e94474b7c9298e147887392c92cc313a76a6a1
+sig=

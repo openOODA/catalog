@@ -1,0 +1,14 @@
+// # ooredact package
+//
+// Logline: Stock catalog package for ooredact.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooredact.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooredact.oo.
+//   2. ooredact.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooredact_pkg() -> String {
+    return "ooredact";
+}

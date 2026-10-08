@@ -1,0 +1,14 @@
+// # oorealpath package
+//
+// Logline: Stock catalog package for oorealpath.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oorealpath.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oorealpath.oo.
+//   2. oorealpath.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oorealpath_pkg() -> String {
+    return "oorealpath";
+}

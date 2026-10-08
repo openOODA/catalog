@@ -1,0 +1,14 @@
+// # ooreadlink package
+//
+// Logline: Stock catalog package for ooreadlink.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooreadlink.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooreadlink.oo.
+//   2. ooreadlink.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooreadlink_pkg() -> String {
+    return "ooreadlink";
+}

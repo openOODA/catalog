@@ -1,0 +1,14 @@
+// # ootput package
+//
+// Logline: Stock catalog package for ootput.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ootput.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootput.oo.
+//   2. ootput.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ootput_pkg() -> String {
+    return "ootput";
+}

@@ -1,0 +1,14 @@
+// # oosystemctl package
+//
+// Logline: Stock catalog package for oosystemctl.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oosystemctl.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oosystemctl.oo.
+//   2. oosystemctl.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oosystemctl_pkg() -> String {
+    return "oosystemctl";
+}

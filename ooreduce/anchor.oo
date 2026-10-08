@@ -1,0 +1,14 @@
+// # ooreduce package
+//
+// Logline: Stock catalog package for ooreduce.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooreduce.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooreduce.oo.
+//   2. ooreduce.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooreduce_pkg() -> String {
+    return "ooreduce";
+}

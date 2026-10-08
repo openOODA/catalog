@@ -1,0 +1,9 @@
+name=ookeygen
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=ookeygen.oo
+commit=
+sha256=e31a83762e617c86aad551b66afcae148d3b03b3e0ca085c01060c30c6386b43
+sig=

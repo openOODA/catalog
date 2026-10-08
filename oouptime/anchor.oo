@@ -1,0 +1,14 @@
+// # oouptime package
+//
+// Logline: Stock catalog package for oouptime.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oouptime.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oouptime.oo.
+//   2. oouptime.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oouptime_pkg() -> String {
+    return "oouptime";
+}

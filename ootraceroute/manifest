@@ -1,0 +1,9 @@
+name=ootraceroute
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ootraceroute.oo
+commit=
+sha256=92a7d8082fdb35a4640ca7c8dc7c4b6e519a3e2aeef51726b6f2276a06ecc859
+sig=

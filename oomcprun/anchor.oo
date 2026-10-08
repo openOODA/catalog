@@ -1,0 +1,14 @@
+// # oomcprun package
+//
+// Logline: Stock catalog package for oomcprun.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oomcprun.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomcprun.oo.
+//   2. oomcprun.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oomcprun_pkg() -> String {
+    return "oomcprun";
+}

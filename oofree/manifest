@@ -1,0 +1,9 @@
+name=oofree
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oofree.oo
+commit=
+sha256=3a7761f29097678196796f34bb44cc21907b1f17bbe5ff5fa49c4d2b11d6e3d3
+sig=

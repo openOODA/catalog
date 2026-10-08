@@ -1,0 +1,9 @@
+name=oomd5
+version=0.1.0
+caps=FsRead,Stream,Mcp
+deps=
+license=Apache-2.0
+payload=oomd5.oo
+commit=
+sha256=d65ac955e996c4434b34121a38c926df336717845b8aee3e1ece79e4a3671636
+sig=

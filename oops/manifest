@@ -1,0 +1,9 @@
+name=oops
+version=0.2.0
+caps=FsRead,Process,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oops.oo
+commit=
+sha256=599ad4810d045169763b7d1bc010f8546843114873c8575d172aaf8e02b77d5f
+sig=

@@ -1,0 +1,9 @@
+name=oohwinfo
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oohwinfo.oo
+commit=
+sha256=bf5ae0a66290810b24e300c606ca5ef9939266735231df9cf312d50a871cb968
+sig=

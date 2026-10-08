@@ -1,0 +1,9 @@
+name=oocgroupv2
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oocgroupv2.oo
+commit=
+sha256=98ac20bf41e0dd2749912a5b03c20d3c121375abfb038518774ebe993b5d5618
+sig=

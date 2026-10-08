@@ -1,0 +1,9 @@
+name=oopower
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oopower.oo
+commit=
+sha256=01a2e818d15460a58a6126c03bb441f3475422679e73ba215e43eb13afb62990
+sig=

@@ -1,0 +1,9 @@
+name=oocolor
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oocolor.oo
+commit=
+sha256=809b0b7a83d49f86e3d5cf179623259c388ebd96bd47179145120eb23207d44b
+sig=

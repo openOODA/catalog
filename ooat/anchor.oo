@@ -1,0 +1,14 @@
+// # ooat package
+//
+// Logline: Stock catalog package for ooat.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooat.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooat.oo.
+//   2. ooat.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooat_pkg() -> String {
+    return "ooat";
+}

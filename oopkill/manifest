@@ -1,0 +1,9 @@
+name=oopkill
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oopkill.oo
+commit=
+sha256=df679aebe94fff0bc46fb7696ad866e18dd08f367373504413203ead5b512fba
+sig=

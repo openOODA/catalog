@@ -1,0 +1,9 @@
+name=ooguard
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=ooguard.oo
+commit=
+sha256=2b8f3227086f0a4fec544c17d19a7d7a4dfebd1a6708a3ad65839eb7d31c111b
+sig=

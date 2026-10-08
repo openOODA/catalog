@@ -1,0 +1,14 @@
+// # oonetcat package
+//
+// Logline: Stock catalog package for oonetcat.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oonetcat.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oonetcat.oo.
+//   2. oonetcat.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oonetcat_pkg() -> String {
+    return "oonetcat";
+}

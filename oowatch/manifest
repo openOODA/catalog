@@ -1,0 +1,9 @@
+name=oowatch
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oowatch.oo
+commit=
+sha256=62f91ff4c97e2671bbcc3d5300be033d74aedd294522ec4c9d464246bf9a5514
+sig=

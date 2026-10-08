@@ -1,0 +1,9 @@
+name=oochown
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oochown.oo
+commit=
+sha256=2b172cb22d7094a5468f450d74604839074b606e9de7eaf60173a5c062a91455
+sig=

@@ -1,0 +1,9 @@
+name=ootac
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=ootac.oo
+commit=
+sha256=9a17ee7676c0a5d45dbcbb27d85ab14a9f622422c08b7c744078735fe7ef3f7b
+sig=

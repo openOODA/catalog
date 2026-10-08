@@ -1,0 +1,9 @@
+name=ooreadlink
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=ooreadlink.oo
+commit=
+sha256=4367d5fa73ac5816accd4185fed39082cef8a73b02e1de438e0b432f4e7f9a80
+sig=

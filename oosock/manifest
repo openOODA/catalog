@@ -1,0 +1,9 @@
+name=oosock
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oosock.oo
+commit=
+sha256=b32c44ab9d0a3412bf1207359b7f546cf385b6281084a2647de9bcaafb517139
+sig=

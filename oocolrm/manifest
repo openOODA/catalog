@@ -1,0 +1,9 @@
+name=oocolrm
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oocolrm.oo
+commit=
+sha256=a07257ff2c32d2ac1088e5cf2cc5748ace50477ee380d01e2442cd266bc295af
+sig=

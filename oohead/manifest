@@ -1,0 +1,9 @@
+name=oohead
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oohead.oo
+commit=
+sha256=dc15cbc0cc5c274020235e7f4ea4fcc4f163f1d60e15eee73b3bc6a82963fcb1
+sig=

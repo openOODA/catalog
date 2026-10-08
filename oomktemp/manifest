@@ -1,0 +1,9 @@
+name=oomktemp
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oomktemp.oo
+commit=
+sha256=a11b41035fb9005464b7ab1018b0d1dea281e9a20e7a183475c4cc0e893cec30
+sig=

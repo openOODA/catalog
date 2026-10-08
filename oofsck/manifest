@@ -1,0 +1,9 @@
+name=oofsck
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oofsck.oo
+commit=
+sha256=5042178eb64d72ad80e8fb65b1793ba94f67712589cc277bbe43a73ca5fbd747
+sig=

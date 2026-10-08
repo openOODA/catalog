@@ -1,0 +1,9 @@
+name=oosort
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oosort.oo
+commit=
+sha256=ab75dfc927616dec0d3012e38f72b825568217b42ca5d3d20f960779f8177b8a
+sig=

@@ -1,0 +1,9 @@
+name=ootunnel
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ootunnel.oo
+commit=
+sha256=e6e856bd02cc84321d81e2d92aa573454aaafce8a12a2bcc98f311161d758ab0
+sig=

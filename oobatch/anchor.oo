@@ -1,0 +1,14 @@
+// # oobatch package
+//
+// Logline: Stock catalog package for oobatch.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oobatch.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oobatch.oo.
+//   2. oobatch.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oobatch_pkg() -> String {
+    return "oobatch";
+}

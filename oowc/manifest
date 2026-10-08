@@ -1,0 +1,9 @@
+name=oowc
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oowc.oo
+commit=
+sha256=b6da1bb39f1db35f5f1e0d56ec5778c18fc2666893352e361fe1f7cb2f668462
+sig=

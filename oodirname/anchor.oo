@@ -1,0 +1,14 @@
+// # oodirname package
+//
+// Logline: Stock catalog package for oodirname.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oodirname.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oodirname.oo.
+//   2. oodirname.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oodirname_pkg() -> String {
+    return "oodirname";
+}

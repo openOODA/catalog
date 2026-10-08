@@ -1,0 +1,9 @@
+name=oobound
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oobound.oo
+commit=
+sha256=00576f0bb7cfed47fba96a5f0ba9fe8e1cdf62bc796948959aa8c136172043e1
+sig=

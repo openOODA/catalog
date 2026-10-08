@@ -1,0 +1,14 @@
+// # ootrue package
+//
+// Logline: Stock catalog package for ootrue.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ootrue.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootrue.oo.
+//   2. ootrue.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ootrue_pkg() -> String {
+    return "ootrue";
+}

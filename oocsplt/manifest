@@ -1,0 +1,9 @@
+name=oocsplt
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oocsplt.oo
+commit=
+sha256=ef4bf68cf29f9bcd8b0c3e6db1578d561fc35555d008e30806ef96083fbea291
+sig=

@@ -1,0 +1,9 @@
+name=ooumask
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=ooumask.oo
+commit=
+sha256=5912ff82549dd0c4bdb7fd320efcac8a3cf508b5670f46237bffb6737299695e
+sig=

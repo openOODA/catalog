@@ -1,0 +1,9 @@
+name=oolimits
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oolimits.oo
+commit=
+sha256=11a79deeba5b56fa629ee7bd0c0f937291ba56e98b9b61c1148b92d6b72021d3
+sig=

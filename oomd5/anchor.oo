@@ -1,0 +1,14 @@
+// # oomd5 package
+//
+// Logline: Stock catalog package for oomd5.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oomd5.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomd5.oo.
+//   2. oomd5.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oomd5_pkg() -> String {
+    return "oomd5";
+}

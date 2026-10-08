@@ -1,0 +1,9 @@
+name=oocp
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oocp.oo
+commit=
+sha256=e60d339eb87c4dc06e2fbf549a4716fd544444616f5b2e1369ca318980ca8857
+sig=

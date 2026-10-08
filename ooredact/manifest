@@ -1,0 +1,9 @@
+name=ooredact
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=ooredact.oo
+commit=
+sha256=6c359055e9a8a569c98673a3c048590d4d1d432771037e061c875f1808212156
+sig=

@@ -1,0 +1,9 @@
+name=ooifconfig
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ooifconfig.oo
+commit=
+sha256=19dd059a934c14b0e9a3ebd592f6e8c11fdaa31aee0936e6c6aa7f81a429a5a0
+sig=

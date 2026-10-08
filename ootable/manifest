@@ -1,0 +1,9 @@
+name=ootable
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=ootable.oo
+commit=
+sha256=a86010735bb6590ec141d6cf0b99040ccbb7db0a91b28059b770eb48dedf048c
+sig=

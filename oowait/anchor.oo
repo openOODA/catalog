@@ -1,0 +1,14 @@
+// # oowait package
+//
+// Logline: Stock catalog package for oowait.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oowait.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oowait.oo.
+//   2. oowait.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oowait_pkg() -> String {
+    return "oowait";
+}

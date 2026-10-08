@@ -1,0 +1,14 @@
+// # oorgb package
+//
+// Logline: Stock catalog package for oorgb.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oorgb.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oorgb.oo.
+//   2. oorgb.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oorgb_pkg() -> String {
+    return "oorgb";
+}

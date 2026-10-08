@@ -1,0 +1,14 @@
+// # oobar package
+//
+// Logline: Stock catalog package for oobar.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oobar.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oobar.oo.
+//   2. oobar.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oobar_pkg() -> String {
+    return "oobar";
+}

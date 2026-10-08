@@ -1,0 +1,9 @@
+name=oonaa
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oonaa.oo
+commit=
+sha256=f6bcd0ee4ac8a28db35a1aff84d82655a99e4799540233ba4db2d5bd677307c0
+sig=

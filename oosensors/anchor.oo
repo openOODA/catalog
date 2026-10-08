@@ -1,0 +1,14 @@
+// # oosensors package
+//
+// Logline: Stock catalog package for oosensors.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oosensors.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oosensors.oo.
+//   2. oosensors.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oosensors_pkg() -> String {
+    return "oosensors";
+}

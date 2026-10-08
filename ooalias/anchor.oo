@@ -1,0 +1,14 @@
+// # ooalias package
+//
+// Logline: Stock catalog package for ooalias.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooalias.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooalias.oo.
+//   2. ooalias.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooalias_pkg() -> String {
+    return "ooalias";
+}

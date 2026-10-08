@@ -1,0 +1,9 @@
+name=oosh
+version=1.0.1
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oosh.oo
+commit=
+sha256=567e777b1d555c477ba4883942170f217bd7448cc29d720ca52efdac2e9270f0
+sig=

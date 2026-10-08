@@ -1,0 +1,9 @@
+name=oopreset
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oopreset.oo
+commit=
+sha256=34d637940ce9bb41ea77abbe62a3b58c161b9cd8c4bce32ee340134f923a5028
+sig=

@@ -1,0 +1,14 @@
+// # ooglyph package
+//
+// Logline: Stock catalog package for ooglyph.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooglyph.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooglyph.oo.
+//   2. ooglyph.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooglyph_pkg() -> String {
+    return "ooglyph";
+}

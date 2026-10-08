@@ -1,0 +1,14 @@
+// # oosign package
+//
+// Logline: Stock catalog package for oosign.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oosign.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oosign.oo.
+//   2. oosign.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oosign_pkg() -> String {
+    return "oosign";
+}

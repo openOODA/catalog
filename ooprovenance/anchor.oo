@@ -1,0 +1,14 @@
+// # ooprovenance package
+//
+// Logline: Stock catalog package for ooprovenance.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooprovenance.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooprovenance.oo.
+//   2. ooprovenance.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooprovenance_pkg() -> String {
+    return "ooprovenance";
+}

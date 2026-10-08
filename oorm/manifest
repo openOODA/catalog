@@ -1,0 +1,9 @@
+name=oorm
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oorm.oo
+commit=
+sha256=0e2c75bdc84276d00a93669d6b852e0dd785295cc85970f731ec7a63cac18888
+sig=

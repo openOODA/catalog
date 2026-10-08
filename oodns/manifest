@@ -1,0 +1,9 @@
+name=oodns
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oodns.oo
+commit=
+sha256=ae43cfa1fa7d2a82d5e28f7cb8bcd7bcb796fca2961b02f7dec7c57b4cef4200
+sig=

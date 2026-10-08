@@ -1,0 +1,9 @@
+name=oounzip
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oounzip.oo
+commit=
+sha256=d06504f4eb4a46c6d67faca8fdf89b1a0fb3d3e724c1c0470a295c2e45de5f86
+sig=

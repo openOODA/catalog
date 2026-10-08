@@ -1,0 +1,9 @@
+name=ooaudit
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=ooaudit.oo
+commit=
+sha256=fa650bf2687ffa9a563ccff4b648c03e2e3d1e7de7bec61ded7568d2c439b078
+sig=

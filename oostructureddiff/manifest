@@ -1,0 +1,9 @@
+name=oostructureddiff
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oostructureddiff.oo
+commit=
+sha256=6ab1bcd96fd6a23aeda82e66e70a4917d6f199e4b5858ae6e53fe2944c21e1c6
+sig=

@@ -1,0 +1,9 @@
+name=oogitdiff
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oogitdiff.oo
+commit=
+sha256=8c2f47d2b2be85ce867bc5a40b155c5b52d76130a2040df6a46629d81cd3aa97
+sig=

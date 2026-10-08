@@ -1,0 +1,9 @@
+name=ooripl
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=ooripl.oo
+commit=
+sha256=4e60929a0a8147d366333cfbe039db5647528f6a40aadb0762fc6038b9397a19
+sig=

@@ -1,0 +1,9 @@
+name=oote
+version=1.0.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oote.oo
+commit=
+sha256=dbdc616cfefedd3ee7f2317f3fcba1e5036388419653fa758e60a28d8812cb9d
+sig=

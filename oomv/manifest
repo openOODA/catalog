@@ -1,0 +1,9 @@
+name=oomv
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oomv.oo
+commit=
+sha256=f21b0018dd70c57c4804920719c6745c860e8e20dc4c35164320fa97d6019acb
+sig=

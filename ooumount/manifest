@@ -1,0 +1,9 @@
+name=ooumount
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=ooumount.oo
+commit=
+sha256=374539ba25e19a69c33239da9f74f10f9f40a38734ef91d0ca78d6bde7d4fb52
+sig=

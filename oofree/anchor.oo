@@ -1,0 +1,14 @@
+// # oofree package
+//
+// Logline: Stock catalog package for oofree.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oofree.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oofree.oo.
+//   2. oofree.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oofree_pkg() -> String {
+    return "oofree";
+}

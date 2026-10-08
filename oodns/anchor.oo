@@ -1,0 +1,14 @@
+// # oodns package
+//
+// Logline: Stock catalog package for oodns.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oodns.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oodns.oo.
+//   2. oodns.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oodns_pkg() -> String {
+    return "oodns";
+}

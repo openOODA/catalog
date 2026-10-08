@@ -1,0 +1,9 @@
+name=ooss
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ooss.oo
+commit=
+sha256=aa7b7594a0d8d87e201c2b500f8d4fa54d5ac68a0974268ea1cf9f9e2df9ffa0
+sig=

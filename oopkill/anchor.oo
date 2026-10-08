@@ -1,0 +1,14 @@
+// # oopkill package
+//
+// Logline: Stock catalog package for oopkill.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oopkill.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oopkill.oo.
+//   2. oopkill.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oopkill_pkg() -> String {
+    return "oopkill";
+}

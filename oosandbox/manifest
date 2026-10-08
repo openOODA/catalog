@@ -1,0 +1,9 @@
+name=oosandbox
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oosandbox.oo
+commit=
+sha256=6fe4bccba3f0dfa6b9b88d0a90248d4fdf7e35cb26480a2c25225af4d08d2d39
+sig=

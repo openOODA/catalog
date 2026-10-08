@@ -1,0 +1,14 @@
+// # oocpio package
+//
+// Logline: Stock catalog package for oocpio.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oocpio.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oocpio.oo.
+//   2. oocpio.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oocpio_pkg() -> String {
+    return "oocpio";
+}

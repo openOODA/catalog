@@ -1,0 +1,9 @@
+name=oobasename
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oobasename.oo
+commit=
+sha256=7e4cb27b19eca7b9f3b184b39e54bd9ec83e2320175e39bd779923aef50d0297
+sig=

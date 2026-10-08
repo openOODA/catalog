@@ -1,0 +1,14 @@
+// # oocbor package
+//
+// Logline: Stock catalog package for oocbor.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oocbor.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oocbor.oo.
+//   2. oocbor.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oocbor_pkg() -> String {
+    return "oocbor";
+}

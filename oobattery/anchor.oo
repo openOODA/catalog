@@ -1,0 +1,14 @@
+// # oobattery package
+//
+// Logline: Stock catalog package for oobattery.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oobattery.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oobattery.oo.
+//   2. oobattery.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oobattery_pkg() -> String {
+    return "oobattery";
+}

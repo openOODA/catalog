@@ -1,0 +1,14 @@
+// # oocurl package
+//
+// Logline: Stock catalog package for oocurl.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oocurl.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oocurl.oo.
+//   2. oocurl.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oocurl_pkg() -> String {
+    return "oocurl";
+}

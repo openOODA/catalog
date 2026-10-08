@@ -1,0 +1,9 @@
+name=ooxxd
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=ooxxd.oo
+commit=
+sha256=03a28d02b8889715d66f1ed51afa8c8440177bfe4ac4e91170f75a893a74d400
+sig=

@@ -1,0 +1,9 @@
+name=oomtr
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oomtr.oo
+commit=
+sha256=c8e006cfd85fc4a735b125061fdf12c897112847f58a1b239ed4e863522667fe
+sig=

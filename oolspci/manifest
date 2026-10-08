@@ -1,0 +1,9 @@
+name=oolspci
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oolspci.oo
+commit=
+sha256=27e9eab10a820eb68210ec039bac7bd7039b21a5163211ae7ccad85ec92b3007
+sig=

@@ -1,0 +1,14 @@
+// # oorenice package
+//
+// Logline: Stock catalog package for oorenice.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oorenice.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oorenice.oo.
+//   2. oorenice.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oorenice_pkg() -> String {
+    return "oorenice";
+}

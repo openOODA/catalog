@@ -1,0 +1,9 @@
+name=oovmstat
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oovmstat.oo
+commit=
+sha256=36ab575f20b928fd5e3b74ba9db3a4f7757b1451a8ed7ea3b55842c3fb9f4464
+sig=

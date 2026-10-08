@@ -1,0 +1,9 @@
+name=ooprogress
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=ooprogress.oo
+commit=
+sha256=58ff9619093fd769c6727b421b6ac39f07b06a53abaf3f34198023754a3f44aa
+sig=

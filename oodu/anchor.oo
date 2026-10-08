@@ -1,0 +1,14 @@
+// # oodu package
+//
+// Logline: Stock catalog package for oodu.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oodu.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oodu.oo.
+//   2. oodu.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oodu_pkg() -> String {
+    return "oodu";
+}

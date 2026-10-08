@@ -1,0 +1,9 @@
+name=oo7z
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oo7z.oo
+commit=
+sha256=6925a6a74ad241a30a76daf5c725188466b3dc040af5b21f3bd7d46e97c642ea
+sig=

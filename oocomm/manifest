@@ -1,0 +1,9 @@
+name=oocomm
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oocomm.oo
+commit=
+sha256=52cafa5074d060401a48c66c1e96f36f9668ebfcb9128c3af4aa9d39efdeb103
+sig=

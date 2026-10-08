@@ -1,0 +1,14 @@
+// # oo7z package
+//
+// Logline: Stock catalog package for oo7z.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oo7z.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oo7z.oo.
+//   2. oo7z.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oo7z_pkg() -> String {
+    return "oo7z";
+}

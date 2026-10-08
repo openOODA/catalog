@@ -1,0 +1,14 @@
+// # ooudevadm package
+//
+// Logline: Stock catalog package for ooudevadm.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooudevadm.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooudevadm.oo.
+//   2. ooudevadm.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooudevadm_pkg() -> String {
+    return "ooudevadm";
+}

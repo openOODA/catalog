@@ -1,0 +1,9 @@
+name=oosplit
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oosplit.oo
+commit=
+sha256=486fec63c13f53a30b1816949ed322791b00eb0ef9bcd8be3b94836852249056
+sig=

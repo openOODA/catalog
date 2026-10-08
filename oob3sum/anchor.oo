@@ -1,0 +1,14 @@
+// # oob3sum package
+//
+// Logline: Stock catalog package for oob3sum.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oob3sum.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oob3sum.oo.
+//   2. oob3sum.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oob3sum_pkg() -> String {
+    return "oob3sum";
+}

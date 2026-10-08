@@ -1,0 +1,9 @@
+name=oogzip
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oogzip.oo
+commit=
+sha256=9dd6c76d00e84e138d62d2c3c297ab2ff334309163428b2627c270a5c5ca663d
+sig=

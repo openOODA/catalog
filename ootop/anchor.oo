@@ -1,0 +1,14 @@
+// # ootop package
+//
+// Logline: Stock catalog package for ootop.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ootop.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootop.oo.
+//   2. ootop.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ootop_pkg() -> String {
+    return "ootop";
+}

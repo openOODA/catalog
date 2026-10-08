@@ -1,0 +1,14 @@
+// # ooshopt package
+//
+// Logline: Stock catalog package for ooshopt.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooshopt.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooshopt.oo.
+//   2. ooshopt.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooshopt_pkg() -> String {
+    return "ooshopt";
+}

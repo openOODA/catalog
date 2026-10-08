@@ -1,0 +1,9 @@
+name=oothrottle
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oothrottle.oo
+commit=
+sha256=a936c4040482344838de6ff774176193a9a8f7b92787b1abbcca97784668b030
+sig=

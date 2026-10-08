@@ -1,0 +1,14 @@
+// # ooprompt package
+//
+// Logline: Stock catalog package for ooprompt.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooprompt.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooprompt.oo.
+//   2. ooprompt.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooprompt_pkg() -> String {
+    return "ooprompt";
+}

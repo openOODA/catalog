@@ -1,0 +1,14 @@
+// # oobase58 package
+//
+// Logline: Stock catalog package for oobase58.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oobase58.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oobase58.oo.
+//   2. oobase58.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oobase58_pkg() -> String {
+    return "oobase58";
+}

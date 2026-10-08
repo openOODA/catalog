@@ -1,0 +1,14 @@
+// # oomonitor package
+//
+// Logline: Stock catalog package for oomonitor.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oomonitor.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomonitor.oo.
+//   2. oomonitor.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oomonitor_pkg() -> String {
+    return "oomonitor";
+}

@@ -1,0 +1,14 @@
+// # oofilter package
+//
+// Logline: Stock catalog package for oofilter.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oofilter.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oofilter.oo.
+//   2. oofilter.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oofilter_pkg() -> String {
+    return "oofilter";
+}

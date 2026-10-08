@@ -1,0 +1,14 @@
+// # oolimits package
+//
+// Logline: Stock catalog package for oolimits.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oolimits.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oolimits.oo.
+//   2. oolimits.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oolimits_pkg() -> String {
+    return "oolimits";
+}

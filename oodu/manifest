@@ -1,0 +1,9 @@
+name=oodu
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oodu.oo
+commit=
+sha256=005b80c31bd6f4a34885f51633f5fb8ace7c94b468ddc10e6b57d7a796302d7b
+sig=

@@ -1,0 +1,14 @@
+// # ootouch package
+//
+// Logline: Stock catalog package for ootouch.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ootouch.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootouch.oo.
+//   2. ootouch.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ootouch_pkg() -> String {
+    return "ootouch";
+}

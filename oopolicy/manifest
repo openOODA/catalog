@@ -1,0 +1,9 @@
+name=oopolicy
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oopolicy.oo
+commit=
+sha256=5c68ec93c9cb5f1433575a8cee4a04a42473b4baf749e8553d6fb8f4ffe0ba77
+sig=

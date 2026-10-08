@@ -1,0 +1,9 @@
+name=ooboundary
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ooboundary.oo
+commit=
+sha256=56bf0d4fd6d840f1a618fd89fb3ce09fdcf8ff5e66d87b9eb883a35054ca9325
+sig=

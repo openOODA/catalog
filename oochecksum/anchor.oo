@@ -1,0 +1,14 @@
+// # oochecksum package
+//
+// Logline: Stock catalog package for oochecksum.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oochecksum.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oochecksum.oo.
+//   2. oochecksum.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oochecksum_pkg() -> String {
+    return "oochecksum";
+}

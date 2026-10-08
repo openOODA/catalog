@@ -1,0 +1,9 @@
+name=ootsv
+version=0.1.0
+caps=FsRead,Stream,Mcp
+deps=
+license=Apache-2.0
+payload=ootsv.oo
+commit=
+sha256=def90c12da55a8740584f6b70b1f3eb1578d75d71abcdb904104ef3a816376b6
+sig=

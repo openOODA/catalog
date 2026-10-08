@@ -1,0 +1,9 @@
+name=ooshopt
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ooshopt.oo
+commit=
+sha256=f9da8313ab288cbb8d24734f5f606a3f602c68e34704e4c7962cea6e8292bdc0
+sig=

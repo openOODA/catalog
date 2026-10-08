@@ -1,0 +1,9 @@
+name=ooreset
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ooreset.oo
+commit=
+sha256=8db4c30d98b9d4a109b318c490f5f41ff0a918aab771836c859a99156c935e59
+sig=

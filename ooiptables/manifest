@@ -1,0 +1,9 @@
+name=ooiptables
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ooiptables.oo
+commit=
+sha256=b3ec5c35a3da72f8b85f7b8d0be0b94eb29ce53dd0fb719abed86e733a7354ae
+sig=

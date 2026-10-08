@@ -1,0 +1,9 @@
+name=oobattery
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oobattery.oo
+commit=
+sha256=32180cf2460e8fbc19da41342ebdebb7686078ddd4788a56de18f2d38e4097bc
+sig=

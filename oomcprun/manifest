@@ -1,0 +1,9 @@
+name=oomcprun
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oomcprun.oo
+commit=
+sha256=c9e261ea064832f02115cd9c52f2302fd8e4c1757d5ef376a59e6fa307b2267f
+sig=

@@ -1,0 +1,14 @@
+// # oovmstat package
+//
+// Logline: Stock catalog package for oovmstat.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oovmstat.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oovmstat.oo.
+//   2. oovmstat.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oovmstat_pkg() -> String {
+    return "oovmstat";
+}

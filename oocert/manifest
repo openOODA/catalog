@@ -1,0 +1,9 @@
+name=oocert
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oocert.oo
+commit=
+sha256=d795b2ba1e507d3abf2f40a25f2121ebcd22bc530fd2d3608e0240c04d49f179
+sig=

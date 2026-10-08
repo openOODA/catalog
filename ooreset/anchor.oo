@@ -1,0 +1,14 @@
+// # ooreset package
+//
+// Logline: Stock catalog package for ooreset.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooreset.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooreset.oo.
+//   2. ooreset.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooreset_pkg() -> String {
+    return "ooreset";
+}

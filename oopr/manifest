@@ -1,0 +1,9 @@
+name=oopr
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oopr.oo
+commit=
+sha256=8a2c40435eab1b77cde3b5bd9fbe361a8fbcca297559ebdb375b92efdc66598d
+sig=

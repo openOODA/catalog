@@ -1,0 +1,9 @@
+name=ootimeout
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ootimeout.oo
+commit=
+sha256=0820516b7ee3ce4dbec738438a042cb1c1194e33a60293743cb5cc4ffb36d5c1
+sig=

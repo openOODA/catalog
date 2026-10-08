@@ -1,0 +1,9 @@
+name=oosleep
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=oosleep.oo
+commit=
+sha256=f4e6aa6f7ef7bb578f197e428625079f2f1ff92a54c301575730b4983e45a45f
+sig=

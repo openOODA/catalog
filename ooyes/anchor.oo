@@ -1,0 +1,14 @@
+// # ooyes package
+//
+// Logline: Stock catalog package for ooyes.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooyes.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooyes.oo.
+//   2. ooyes.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooyes_pkg() -> String {
+    return "ooyes";
+}

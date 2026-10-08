@@ -1,0 +1,9 @@
+name=oormdir
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oormdir.oo
+commit=
+sha256=18dcf2c570f9638d96a95feb6cc6ef58dd13cdea6cb02421109baac16e25f264
+sig=

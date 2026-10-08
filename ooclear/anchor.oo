@@ -1,0 +1,14 @@
+// # ooclear package
+//
+// Logline: Stock catalog package for ooclear.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooclear.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooclear.oo.
+//   2. ooclear.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooclear_pkg() -> String {
+    return "ooclear";
+}

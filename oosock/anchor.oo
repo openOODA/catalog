@@ -1,0 +1,14 @@
+// # oosock package
+//
+// Logline: Stock catalog package for oosock.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oosock.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oosock.oo.
+//   2. oosock.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oosock_pkg() -> String {
+    return "oosock";
+}

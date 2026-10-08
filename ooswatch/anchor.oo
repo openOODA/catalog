@@ -1,0 +1,14 @@
+// # ooswatch package
+//
+// Logline: Stock catalog package for ooswatch.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooswatch.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooswatch.oo.
+//   2. ooswatch.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooswatch_pkg() -> String {
+    return "ooswatch";
+}

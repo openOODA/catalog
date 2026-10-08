@@ -1,0 +1,14 @@
+// # oojoin package
+//
+// Logline: Stock catalog package for oojoin.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oojoin.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oojoin.oo.
+//   2. oojoin.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oojoin_pkg() -> String {
+    return "oojoin";
+}

@@ -1,0 +1,9 @@
+name=oorealpath
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oorealpath.oo
+commit=
+sha256=11f8a7e4676144bb093480fd39e1bcfa034a95550923e276399734d0bc43d5f9
+sig=

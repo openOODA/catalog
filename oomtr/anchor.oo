@@ -1,0 +1,14 @@
+// # oomtr package
+//
+// Logline: Stock catalog package for oomtr.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oomtr.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomtr.oo.
+//   2. oomtr.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oomtr_pkg() -> String {
+    return "oomtr";
+}

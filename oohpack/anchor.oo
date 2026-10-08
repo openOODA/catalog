@@ -1,0 +1,14 @@
+// # oohpack package
+//
+// Logline: Stock catalog package for oohpack.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oohpack.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oohpack.oo.
+//   2. oohpack.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oohpack_pkg() -> String {
+    return "oohpack";
+}

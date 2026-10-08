@@ -1,0 +1,9 @@
+name=oodialog
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oodialog.oo
+commit=
+sha256=cf17a9c3bf3d2616cdef04b31af7281e2cdf0063245e682d2932b6e0fccac722
+sig=

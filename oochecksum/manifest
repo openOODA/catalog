@@ -1,0 +1,9 @@
+name=oochecksum
+version=0.1.0
+caps=FsRead,Stream,Mcp
+deps=
+license=Apache-2.0
+payload=oochecksum.oo
+commit=
+sha256=d11bfe556ce15f0e2ee3b4a4313d726e963730f883b70c343e2bd4b7a42f6df5
+sig=

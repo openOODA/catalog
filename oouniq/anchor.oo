@@ -1,0 +1,14 @@
+// # oouniq package
+//
+// Logline: Stock catalog package for oouniq.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oouniq.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oouniq.oo.
+//   2. oouniq.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oouniq_pkg() -> String {
+    return "oouniq";
+}

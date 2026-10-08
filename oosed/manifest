@@ -1,0 +1,9 @@
+name=oosed
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oosed.oo
+commit=
+sha256=5769aaaec83203a2b49b3b8cc127465014f54848065e44c1bb8f571be4783bea
+sig=

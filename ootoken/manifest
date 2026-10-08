@@ -1,0 +1,9 @@
+name=ootoken
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=ootoken.oo
+commit=
+sha256=c8d47290f81ec8081ecbbd492285fb5a50d073ba8b6ec81d8e20469f734184a2
+sig=

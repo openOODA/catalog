@@ -1,0 +1,9 @@
+name=oosync
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oosync.oo
+commit=
+sha256=f200d99636f76ab99e5ff498895b8a99e1737ad46c463a4e4a30a81a8da5ce3a
+sig=

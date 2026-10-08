@@ -1,0 +1,9 @@
+name=oonftables
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oonftables.oo
+commit=
+sha256=e42abfa39c014fb25fd6c54d69957aed08b74f448701dc7ff0265d4b6837c808
+sig=

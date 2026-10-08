@@ -1,0 +1,9 @@
+name=ooudevadm
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=ooudevadm.oo
+commit=
+sha256=80e42e8902e6470b45fda40d0893b7d8380f40a9e4887900ee592671ebc6548f
+sig=

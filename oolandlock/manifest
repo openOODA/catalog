@@ -1,0 +1,9 @@
+name=oolandlock
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oolandlock.oo
+commit=
+sha256=b45e3efc4ee7e5292cf5604bd59137468657994dffa2b6263af7387aeb3825d7
+sig=

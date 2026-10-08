@@ -1,0 +1,9 @@
+name=oobackup
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oobackup.oo
+commit=
+sha256=b22cd339bd157c8da8a649cf67d0464cc7bbaca88323145536ae434a20aab740
+sig=

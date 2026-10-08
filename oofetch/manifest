@@ -1,0 +1,9 @@
+name=oofetch
+version=0.2.1
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oofetch.oo
+commit=
+sha256=1642ad1887d8c6a5eee45464947a6d4e18c1e853d7fb7c883385299ae3b5451a
+sig=

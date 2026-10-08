@@ -1,0 +1,9 @@
+name=ooansi
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=ooansi.oo
+commit=
+sha256=3bdf8fce138c43a232ade2f6ca7afed0ac1034a8a31a77b9e4e6e013991c7975
+sig=

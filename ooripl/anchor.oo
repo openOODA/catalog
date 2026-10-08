@@ -1,0 +1,14 @@
+// # ooripl package
+//
+// Logline: Stock catalog package for ooripl.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooripl.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooripl.oo.
+//   2. ooripl.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooripl_pkg() -> String {
+    return "ooripl";
+}

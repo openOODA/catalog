@@ -1,0 +1,14 @@
+// # oossl package
+//
+// Logline: Stock catalog package for oossl.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oossl.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oossl.oo.
+//   2. oossl.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oossl_pkg() -> String {
+    return "oossl";
+}

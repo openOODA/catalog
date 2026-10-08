@@ -1,0 +1,14 @@
+// # oorproxy package
+//
+// Logline: Stock catalog package for oorproxy.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oorproxy.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oorproxy.oo.
+//   2. oorproxy.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oorproxy_pkg() -> String {
+    return "oorproxy";
+}

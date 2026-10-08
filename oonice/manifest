@@ -1,0 +1,9 @@
+name=oonice
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oonice.oo
+commit=
+sha256=b69fee554cadcf4d8aba37d0e96af6e06449cdeaa4524e200099d9dfe2cc14d3
+sig=

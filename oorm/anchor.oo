@@ -1,0 +1,14 @@
+// # oorm package
+//
+// Logline: Stock catalog package for oorm.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oorm.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oorm.oo.
+//   2. oorm.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oorm_pkg() -> String {
+    return "oorm";
+}

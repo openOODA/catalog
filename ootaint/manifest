@@ -1,0 +1,9 @@
+name=ootaint
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=ootaint.oo
+commit=
+sha256=6c979d53b0e9a04083fe03022da3819fc6b1ba700fd28102b4c3427f6cdd52a0
+sig=

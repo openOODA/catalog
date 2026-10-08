@@ -1,0 +1,9 @@
+name=oochroot
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oochroot.oo
+commit=
+sha256=729b30c711cbc7718684eaa6f0fb6aa9d37ff1fc685e1b31b8e8140bef75e812
+sig=

@@ -1,0 +1,9 @@
+name=ooxz
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=ooxz.oo
+commit=
+sha256=37f4c34302604055cdac1d23b72950c92e963d9176897385a9c2ec33504b3c55
+sig=

@@ -1,0 +1,9 @@
+name=oohost
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oohost.oo
+commit=
+sha256=0eb4403f943dcbe336523915224558760e638c2d112a067a96d613a76db4ba65
+sig=

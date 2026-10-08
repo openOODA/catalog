@@ -1,0 +1,9 @@
+name=ooglyph
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=ooglyph.oo
+commit=
+sha256=32557abbfa53134d9e99a528e7a7544ccdc97b51dcf6bcfc73efe6b01165f27a
+sig=

@@ -1,0 +1,14 @@
+// # ooschema package
+//
+// Logline: Stock catalog package for ooschema.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooschema.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooschema.oo.
+//   2. ooschema.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooschema_pkg() -> String {
+    return "ooschema";
+}

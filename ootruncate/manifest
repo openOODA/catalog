@@ -1,0 +1,9 @@
+name=ootruncate
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=ootruncate.oo
+commit=
+sha256=d78b10591da41f9dbc6be0e749823a16b3e75425b27257250f4f895b4bd06146
+sig=

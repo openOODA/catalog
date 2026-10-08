@@ -1,0 +1,9 @@
+name=oobase64
+version=0.1.0
+caps=FsRead,Stream,Mcp
+deps=
+license=Apache-2.0
+payload=oobase64.oo
+commit=
+sha256=8a10d732dccd1dbbfbab48a05572772ebc713fb21740060af752cb372062a398
+sig=

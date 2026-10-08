@@ -1,0 +1,9 @@
+name=oohex
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oohex.oo
+commit=
+sha256=bd232d561127c998ff7243335479203b1157f6314945f9160b3ee816e9f92661
+sig=

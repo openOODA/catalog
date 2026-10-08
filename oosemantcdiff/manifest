@@ -1,0 +1,9 @@
+name=oosemantcdiff
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oosemantcdiff.oo
+commit=
+sha256=f218781c4f97473e1384cb7da445dff13b76412c67a21d1576a67235b5e06750
+sig=

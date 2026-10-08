@@ -1,0 +1,14 @@
+// # oofetch package
+//
+// Logline: Stock catalog package for oofetch.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oofetch.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oofetch.oo.
+//   2. oofetch.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oofetch_pkg() -> String {
+    return "oofetch";
+}

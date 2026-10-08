@@ -1,0 +1,9 @@
+name=oocron
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=oocron.oo
+commit=
+sha256=a1484f0b0b9aefdba4abd4f6d2585b1a78609dba96e9c71a2f0a62887c943186
+sig=

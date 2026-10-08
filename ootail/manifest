@@ -1,0 +1,9 @@
+name=ootail
+version=0.2.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=ootail.oo
+commit=
+sha256=7f73635e5e2023860acba427332d66c345101130ddbcc2790a2363326ab29115
+sig=

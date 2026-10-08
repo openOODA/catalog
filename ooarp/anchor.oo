@@ -1,0 +1,14 @@
+// # ooarp package
+//
+// Logline: Stock catalog package for ooarp.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooarp.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooarp.oo.
+//   2. ooarp.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooarp_pkg() -> String {
+    return "ooarp";
+}

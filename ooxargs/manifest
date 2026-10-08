@@ -1,0 +1,9 @@
+name=ooxargs
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ooxargs.oo
+commit=
+sha256=4360720baf4bddfe65dfd4bb639b87bfec13b3f63af51b1df7aa5ca16c8d3665
+sig=

@@ -1,0 +1,9 @@
+name=ooprovenance
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=ooprovenance.oo
+commit=
+sha256=4504c29ac3bcd91d6db44ed68fc7bd786ec7291c7a784dd1e0689004b5eeacd1
+sig=

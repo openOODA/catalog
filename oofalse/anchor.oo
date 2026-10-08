@@ -1,0 +1,14 @@
+// # oofalse package
+//
+// Logline: Stock catalog package for oofalse.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oofalse.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oofalse.oo.
+//   2. oofalse.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oofalse_pkg() -> String {
+    return "oofalse";
+}

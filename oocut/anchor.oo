@@ -1,0 +1,14 @@
+// # oocut package
+//
+// Logline: Stock catalog package for oocut.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oocut.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oocut.oo.
+//   2. oocut.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oocut_pkg() -> String {
+    return "oocut";
+}

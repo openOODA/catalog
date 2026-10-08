@@ -1,0 +1,14 @@
+// # oobackup package
+//
+// Logline: Stock catalog package for oobackup.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oobackup.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oobackup.oo.
+//   2. oobackup.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oobackup_pkg() -> String {
+    return "oobackup";
+}

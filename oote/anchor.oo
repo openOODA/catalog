@@ -1,0 +1,14 @@
+// # oote package
+//
+// Logline: Stock catalog package for oote.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oote.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oote.oo.
+//   2. oote.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oote_pkg() -> String {
+    return "oote";
+}

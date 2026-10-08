@@ -1,0 +1,9 @@
+name=oorenice
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oorenice.oo
+commit=
+sha256=7f9169689e710acc8f877c310a8770c09dbc8a96fa1deeef6a54d5bba8fce8b1
+sig=

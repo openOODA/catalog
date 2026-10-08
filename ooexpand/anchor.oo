@@ -1,0 +1,14 @@
+// # ooexpand package
+//
+// Logline: Stock catalog package for ooexpand.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooexpand.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooexpand.oo.
+//   2. ooexpand.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooexpand_pkg() -> String {
+    return "ooexpand";
+}

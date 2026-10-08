@@ -1,0 +1,14 @@
+// # oomeminfo package
+//
+// Logline: Stock catalog package for oomeminfo.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oomeminfo.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomeminfo.oo.
+//   2. oomeminfo.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oomeminfo_pkg() -> String {
+    return "oomeminfo";
+}

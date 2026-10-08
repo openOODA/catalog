@@ -1,0 +1,9 @@
+name=oorproxy
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oorproxy.oo
+commit=
+sha256=46100e8f9ffd9c2d57028192af5334e7e4d61cb98d41764f143e9e4f7c0c98a7
+sig=

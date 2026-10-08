@@ -1,0 +1,9 @@
+name=oocap
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oocap.oo
+commit=
+sha256=4486157cb85d778bd41f2a033a3c6d887e4b5ea5f730aa8b2029b010e98f2d18
+sig=

@@ -1,0 +1,9 @@
+name=ooswatch
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=ooswatch.oo
+commit=
+sha256=6a1addb01cb3ebeba2cb6dd845059786af16974d7f90d504d89e0e365c954b2e
+sig=

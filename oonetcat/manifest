@@ -1,0 +1,9 @@
+name=oonetcat
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oonetcat.oo
+commit=
+sha256=9a6f8705b5b0e210a2d6864216523c183e6647c891b266104a19342733275484
+sig=

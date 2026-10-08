@@ -1,0 +1,9 @@
+name=oonl
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oonl.oo
+commit=
+sha256=f23ec1e8ef2b991478f6a3bce36c575a452634a9e29f71c0c7e009f4358b0a3d
+sig=

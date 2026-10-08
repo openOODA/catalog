@@ -1,0 +1,14 @@
+// # oodf package
+//
+// Logline: Stock catalog package for oodf.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oodf.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oodf.oo.
+//   2. oodf.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oodf_pkg() -> String {
+    return "oodf";
+}

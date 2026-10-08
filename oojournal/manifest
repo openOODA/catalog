@@ -1,0 +1,9 @@
+name=oojournal
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oojournal.oo
+commit=
+sha256=fb83cd7ea624457524894ae6d8be3c60d01d6610a7c1478034c4cdf9996da0b6
+sig=

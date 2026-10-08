@@ -36,7 +36,7 @@ From this tree, opm also reads `seed/` inside the opm repo so search works with 
 1. Add a folder with `manifest` and a `.oo` payload (Academy headers required).
 2. From the opm repo, run `opm bot` with this tree as the target to rebuild `catalog`.
 3. Sign `catalog` to `index.minisig` with the catalog minisign key
-   (`~/.config/minisign/catalog.key`, key id FA452AEB5F649A79):
+   (`~/.config/minisign/catalog.key`, key id 277FA16619093695):
    `printf '\n' | minisign -S -s ~/.config/minisign/catalog.key -m catalog -x index.minisig -c "openOODA catalog"`
    (CI runs `minisign -V` and fails closed while the signature is stale or bogus.
    Back up `catalog.key`: whoever holds it can publish catalog updates, and if it

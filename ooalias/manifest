@@ -1,0 +1,9 @@
+name=ooalias
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ooalias.oo
+commit=
+sha256=af8a5cd214f6b769c85c0e64e97c7843d1186d655e8c89867824d9769817dd48
+sig=

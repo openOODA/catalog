@@ -1,0 +1,14 @@
+// # oosleep package
+//
+// Logline: Stock catalog package for oosleep.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oosleep.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oosleep.oo.
+//   2. oosleep.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oosleep_pkg() -> String {
+    return "oosleep";
+}

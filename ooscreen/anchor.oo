@@ -1,0 +1,14 @@
+// # ooscreen package
+//
+// Logline: Stock catalog package for ooscreen.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooscreen.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooscreen.oo.
+//   2. ooscreen.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooscreen_pkg() -> String {
+    return "ooscreen";
+}

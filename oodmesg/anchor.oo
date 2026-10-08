@@ -1,0 +1,14 @@
+// # oodmesg package
+//
+// Logline: Stock catalog package for oodmesg.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oodmesg.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oodmesg.oo.
+//   2. oodmesg.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oodmesg_pkg() -> String {
+    return "oodmesg";
+}

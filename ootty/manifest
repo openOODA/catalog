@@ -1,0 +1,9 @@
+name=ootty
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ootty.oo
+commit=
+sha256=1284f8f42af82a15856f1248f8f6c2bbf781bbd50d111c29d0cdf1b5de16571a
+sig=

@@ -1,0 +1,9 @@
+name=oompstat
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oompstat.oo
+commit=
+sha256=d12bccb97cf27ec9ba1672cf00490b7f8266397188a7ffbfdd4778bdae1d722b
+sig=

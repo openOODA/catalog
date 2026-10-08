@@ -1,0 +1,14 @@
+// # oomenubar package
+//
+// Logline: Stock catalog package for oomenubar.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oomenubar.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomenubar.oo.
+//   2. oomenubar.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oomenubar_pkg() -> String {
+    return "oomenubar";
+}

@@ -1,0 +1,9 @@
+name=oosysctl
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oosysctl.oo
+commit=
+sha256=9ed7fb6aade0a6491ee69b91b9bce092578db2df5e7bf24479f708e83dc33aea
+sig=

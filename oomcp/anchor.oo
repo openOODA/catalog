@@ -1,0 +1,14 @@
+// # oomcp package
+//
+// Logline: Stock catalog package for oomcp.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oomcp.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomcp.oo.
+//   2. oomcp.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oomcp_pkg() -> String {
+    return "oomcp";
+}

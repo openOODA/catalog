@@ -1,0 +1,9 @@
+name=ooarp
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ooarp.oo
+commit=
+sha256=0aa5cddbd79e3f8e1ac9d0e8c121e4f09ea4f8294f3296c2a6e19ec86301e15a
+sig=

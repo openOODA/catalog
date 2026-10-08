@@ -1,0 +1,9 @@
+name=ooworker
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ooworker.oo
+commit=
+sha256=2598032ff0b576f163b972c2638c56acdabfe8616222f296a3eb544cf96ead21
+sig=

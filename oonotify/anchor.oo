@@ -1,0 +1,14 @@
+// # oonotify package
+//
+// Logline: Stock catalog package for oonotify.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oonotify.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oonotify.oo.
+//   2. oonotify.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oonotify_pkg() -> String {
+    return "oonotify";
+}

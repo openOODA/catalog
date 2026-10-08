@@ -1,0 +1,9 @@
+name=oocol
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oocol.oo
+commit=
+sha256=6194e41b63f6d590c507e927c7c9be53bd0881b94174f2c60a9e6000f7e763da
+sig=

@@ -1,0 +1,9 @@
+name=oocurl
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oocurl.oo
+commit=
+sha256=12c32978e65a5b796bd77cd3ede1610bf5a7514c81539fea7a5455de49c3664f
+sig=

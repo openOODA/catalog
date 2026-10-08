@@ -1,0 +1,14 @@
+// # oood package
+//
+// Logline: Stock catalog package for oood.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oood.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oood.oo.
+//   2. oood.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oood_pkg() -> String {
+    return "oood";
+}

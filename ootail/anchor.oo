@@ -1,0 +1,14 @@
+// # ootail package
+//
+// Logline: Stock catalog package for ootail.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ootail.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootail.oo.
+//   2. ootail.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ootail_pkg() -> String {
+    return "ootail";
+}

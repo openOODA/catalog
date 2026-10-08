@@ -1,0 +1,9 @@
+name=oosystemctl
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oosystemctl.oo
+commit=
+sha256=49f0cfa345be16a9cb16cd50dbc90e3b8f3b3152e872322d95ae3063e5d9829b
+sig=

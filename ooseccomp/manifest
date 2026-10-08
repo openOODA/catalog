@@ -1,0 +1,9 @@
+name=ooseccomp
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=ooseccomp.oo
+commit=
+sha256=7a56df50ae127ade4ba0740ddfaa5dad0845c77d01a29138487554d1012a31ca
+sig=

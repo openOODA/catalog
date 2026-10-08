@@ -1,0 +1,9 @@
+name=ootree
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=ootree.oo
+commit=
+sha256=f0b4af0f6849b7f27dd0bc49bf9775964d00cae603ed3608ce412f76d8f074e7
+sig=

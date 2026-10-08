@@ -1,0 +1,9 @@
+name=oosha256
+version=0.1.0
+caps=FsRead,Stream,Mcp
+deps=
+license=Apache-2.0
+payload=oosha256.oo
+commit=
+sha256=0404e7e9666e90c94940df86ba6e8595171d51fb34cd417697f8f6770f79b9f2
+sig=

@@ -1,0 +1,9 @@
+name=oofirewall
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oofirewall.oo
+commit=
+sha256=fdf3467cf0840a896d51a4019d865ec7e61810ab916056e4623bd5aa54d703e3
+sig=

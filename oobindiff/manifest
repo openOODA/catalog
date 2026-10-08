@@ -1,0 +1,9 @@
+name=oobindiff
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oobindiff.oo
+commit=
+sha256=96a6bee43ed3941d8e19204d190c0760d238f7d012bdd1c31b2dc0e76c59fa08
+sig=

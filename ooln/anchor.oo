@@ -1,0 +1,14 @@
+// # ooln package
+//
+// Logline: Stock catalog package for ooln.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooln.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooln.oo.
+//   2. ooln.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooln_pkg() -> String {
+    return "ooln";
+}

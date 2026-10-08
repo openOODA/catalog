@@ -1,0 +1,14 @@
+// # ooverify package
+//
+// Logline: Stock catalog package for ooverify.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooverify.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooverify.oo.
+//   2. ooverify.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooverify_pkg() -> String {
+    return "ooverify";
+}

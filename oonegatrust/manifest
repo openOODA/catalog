@@ -1,0 +1,9 @@
+name=oonegatrust
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oonegatrust.oo
+commit=
+sha256=d3cc32968c1fd49d9f3b23afcef5ea85df782608fa11cc1e38eae68c4acad52e
+sig=

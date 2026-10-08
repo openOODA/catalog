@@ -1,0 +1,9 @@
+name=oofigure
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oofigure.oo
+commit=
+sha256=5bd45aac8c7e469f46614e9ab233743c8536dcce5a83cd512ad2013d0e8324e7
+sig=

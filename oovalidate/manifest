@@ -1,0 +1,9 @@
+name=oovalidate
+version=0.1.0
+caps=FsRead,Stream,Mcp
+deps=
+license=Apache-2.0
+payload=oovalidate.oo
+commit=
+sha256=ed66e78cb332f78797d87a33700f757c65744da53dfc4205f87f296c42028275
+sig=

@@ -1,0 +1,9 @@
+name=oocpio
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oocpio.oo
+commit=
+sha256=6d90dbd9bf2effa2ae06368d827eb9c431333799f2cbed52ed031bfb003e29b7
+sig=

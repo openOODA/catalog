@@ -1,0 +1,9 @@
+name=oosign
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oosign.oo
+commit=
+sha256=74c709adbddba0624ea6de40d1be6f98c871e50bd275e645e0099e96ee4983a6
+sig=

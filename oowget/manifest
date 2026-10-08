@@ -1,0 +1,9 @@
+name=oowget
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oowget.oo
+commit=
+sha256=7dde9b9a038bad35cb3a6bdb5b6763608a32ff3c02a6d33237ef9bdbfa763a7b
+sig=

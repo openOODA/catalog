@@ -1,0 +1,14 @@
+// # oonice package
+//
+// Logline: Stock catalog package for oonice.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oonice.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oonice.oo.
+//   2. oonice.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oonice_pkg() -> String {
+    return "oonice";
+}

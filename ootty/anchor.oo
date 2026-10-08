@@ -1,0 +1,14 @@
+// # ootty package
+//
+// Logline: Stock catalog package for ootty.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ootty.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootty.oo.
+//   2. ootty.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ootty_pkg() -> String {
+    return "ootty";
+}

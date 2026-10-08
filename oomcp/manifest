@@ -1,0 +1,9 @@
+name=oomcp
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oomcp.oo
+commit=
+sha256=9be24b40f5f2ac02290eec03a99155778066688e86ada33eea17e824db1a5e6e
+sig=

@@ -1,0 +1,9 @@
+name=ooschemadiff
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=ooschemadiff.oo
+commit=
+sha256=36b3584a896df70702612534bb3aa274ef025a4c58811ddb0bc1accf3dc2160b
+sig=

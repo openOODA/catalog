@@ -1,0 +1,14 @@
+// # oobanner package
+//
+// Logline: Stock catalog package for oobanner.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oobanner.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oobanner.oo.
+//   2. oobanner.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oobanner_pkg() -> String {
+    return "oobanner";
+}

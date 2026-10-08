@@ -1,0 +1,9 @@
+name=ootmux
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ootmux.oo
+commit=
+sha256=82d1370248abf2a6d079a4a22388ed045acc06871f1560b7279de1228ad2a7a9
+sig=

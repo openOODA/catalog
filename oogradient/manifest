@@ -1,0 +1,9 @@
+name=oogradient
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oogradient.oo
+commit=
+sha256=72a33222dcf17e00dfdb2578ccb4f4f8092e3b957637978bb02c11ab8938f102
+sig=

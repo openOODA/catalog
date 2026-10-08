@@ -1,0 +1,14 @@
+// # oogzip package
+//
+// Logline: Stock catalog package for oogzip.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oogzip.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oogzip.oo.
+//   2. oogzip.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oogzip_pkg() -> String {
+    return "oogzip";
+}

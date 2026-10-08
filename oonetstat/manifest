@@ -1,0 +1,9 @@
+name=oonetstat
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oonetstat.oo
+commit=
+sha256=e15b37970cda8d78e72d65a2964cc86696cb0d83151db31af532b0851e20e754
+sig=

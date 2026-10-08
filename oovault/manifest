@@ -1,0 +1,9 @@
+name=oovault
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oovault.oo
+commit=
+sha256=b0430dffceafb285d98030560a384696629a8333e158993df48a06eb8f01be5e
+sig=

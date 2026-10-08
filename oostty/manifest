@@ -1,0 +1,9 @@
+name=oostty
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=oostty.oo
+commit=
+sha256=f83d48c21ab0cfaac8ff6f788791a30606ca385c22cd08ec46dc62b72abd10c7
+sig=

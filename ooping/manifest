@@ -1,0 +1,9 @@
+name=ooping
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ooping.oo
+commit=
+sha256=9270d32efd25d98aa05050b7b0aadb7d07088f688204da3e55e57fed916b22bd
+sig=

@@ -1,0 +1,9 @@
+name=ooless
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=ooless.oo
+commit=
+sha256=7ea0867817de06e3649246cbdd3bdcbeaf0b9524de6851cb25ae014859f2754a
+sig=

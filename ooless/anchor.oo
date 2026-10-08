@@ -1,0 +1,14 @@
+// # ooless package
+//
+// Logline: Stock catalog package for ooless.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooless.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooless.oo.
+//   2. ooless.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooless_pkg() -> String {
+    return "ooless";
+}

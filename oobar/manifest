@@ -1,0 +1,9 @@
+name=oobar
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oobar.oo
+commit=
+sha256=1810d124cb3f080a8ea5ba2f8ab6b0278dd86afa0ea5d4685eb3bbc61f23adca
+sig=

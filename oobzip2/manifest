@@ -1,0 +1,9 @@
+name=oobzip2
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oobzip2.oo
+commit=
+sha256=b117f3f307a457cbf6a27fbf7fdfdf469124d053bc606ce03fb711022bc10593
+sig=

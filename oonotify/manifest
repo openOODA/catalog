@@ -1,0 +1,9 @@
+name=oonotify
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oonotify.oo
+commit=
+sha256=eddb6613d8763f7c48c9329b80f36f4fa52c8f18ee11b391d2e5fb5080b9597b
+sig=

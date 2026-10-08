@@ -1,0 +1,14 @@
+// # oossh package
+//
+// Logline: Stock catalog package for oossh.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oossh.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oossh.oo.
+//   2. oossh.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oossh_pkg() -> String {
+    return "oossh";
+}

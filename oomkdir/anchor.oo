@@ -1,0 +1,14 @@
+// # oomkdir package
+//
+// Logline: Stock catalog package for oomkdir.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oomkdir.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomkdir.oo.
+//   2. oomkdir.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oomkdir_pkg() -> String {
+    return "oomkdir";
+}

@@ -1,0 +1,9 @@
+name=oonslookup
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oonslookup.oo
+commit=
+sha256=a723103cbd1671cbe907100a22805c9b21088d9c2c80bb8c523b19864d3be9ba
+sig=

@@ -1,0 +1,9 @@
+name=ooprompt
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ooprompt.oo
+commit=
+sha256=f1d82888dd02392a5ac28d7cc7d08d66eaf213928b988d128b9693e35d512c9a
+sig=

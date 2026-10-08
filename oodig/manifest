@@ -1,0 +1,9 @@
+name=oodig
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oodig.oo
+commit=
+sha256=cbc8434553d64a25d33cc12ede3fe013480b5339f6295ecb119df3feece5c9f4
+sig=

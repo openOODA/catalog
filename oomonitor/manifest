@@ -1,0 +1,9 @@
+name=oomonitor
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=oomonitor.oo
+commit=
+sha256=5f2e487a8a342b3d7b23300445619f92eef7b5bb477d985839caf09823c737be
+sig=

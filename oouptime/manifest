@@ -1,0 +1,9 @@
+name=oouptime
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oouptime.oo
+commit=
+sha256=0a6ae7266d6a9f7defed28b149f27165c3bd1d52a7f4a85c890b5ab246b42752
+sig=

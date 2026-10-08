@@ -1,0 +1,9 @@
+name=oodmesg
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oodmesg.oo
+commit=
+sha256=2b5c47cead17743dffdce34331182c1e7fe0ef013c36ca974ee0c0f3dbc2a944
+sig=

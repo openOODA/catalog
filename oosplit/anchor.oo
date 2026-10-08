@@ -1,0 +1,14 @@
+// # oosplit package
+//
+// Logline: Stock catalog package for oosplit.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oosplit.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oosplit.oo.
+//   2. oosplit.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oosplit_pkg() -> String {
+    return "oosplit";
+}

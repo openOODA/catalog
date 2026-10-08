@@ -1,0 +1,9 @@
+name=oohistory
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=oohistory.oo
+commit=
+sha256=7e099c6781c24d4d08d54afe3dd6a2acb7d53cb666b7b950a91d62a9190a2569
+sig=

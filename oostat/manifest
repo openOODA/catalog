@@ -1,0 +1,9 @@
+name=oostat
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oostat.oo
+commit=
+sha256=be5def62d04cc1ebb85c3c0317dc488977ec0622e30552bca88ba4c9a4bba08c
+sig=

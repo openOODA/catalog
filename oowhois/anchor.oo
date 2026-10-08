@@ -1,0 +1,14 @@
+// # oowhois package
+//
+// Logline: Stock catalog package for oowhois.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oowhois.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oowhois.oo.
+//   2. oowhois.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oowhois_pkg() -> String {
+    return "oowhois";
+}

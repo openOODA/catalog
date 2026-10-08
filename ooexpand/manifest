@@ -1,0 +1,9 @@
+name=ooexpand
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=ooexpand.oo
+commit=
+sha256=7a25ef6579ccc95a9a125cd57617b0afc1bb8d5ab25003efac4122851389917d
+sig=

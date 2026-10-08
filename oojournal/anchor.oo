@@ -1,0 +1,14 @@
+// # oojournal package
+//
+// Logline: Stock catalog package for oojournal.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oojournal.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oojournal.oo.
+//   2. oojournal.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oojournal_pkg() -> String {
+    return "oojournal";
+}

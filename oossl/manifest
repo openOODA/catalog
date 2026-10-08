@@ -1,0 +1,9 @@
+name=oossl
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oossl.oo
+commit=
+sha256=e82ba00335923b278e0da641a1085c31d4522eb2cd4955302315de5f5a372e02
+sig=

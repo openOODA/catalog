@@ -1,0 +1,14 @@
+// # ooiptables package
+//
+// Logline: Stock catalog package for ooiptables.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooiptables.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooiptables.oo.
+//   2. ooiptables.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooiptables_pkg() -> String {
+    return "ooiptables";
+}

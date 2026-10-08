@@ -1,0 +1,9 @@
+name=ooapparmor
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=ooapparmor.oo
+commit=
+sha256=72eefcbc3de5477dd3c8d67cf83efa6d8983f8c76b1d2721185d618450815033
+sig=

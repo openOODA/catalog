@@ -1,0 +1,9 @@
+name=oodirname
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oodirname.oo
+commit=
+sha256=3dd25370300c77adfa6b21834456254190f08a7041223a3192142c39945ce578
+sig=

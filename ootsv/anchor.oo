@@ -1,0 +1,14 @@
+// # ootsv package
+//
+// Logline: Stock catalog package for ootsv.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ootsv.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootsv.oo.
+//   2. ootsv.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ootsv_pkg() -> String {
+    return "ootsv";
+}

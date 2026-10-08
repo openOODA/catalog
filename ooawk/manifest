@@ -1,0 +1,9 @@
+name=ooawk
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=ooawk.oo
+commit=
+sha256=076601f255db64e73e2e4d865ee2454ac3d62367023aa587be851f9fb961a668
+sig=

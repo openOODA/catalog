@@ -1,0 +1,14 @@
+// # ooattest package
+//
+// Logline: Stock catalog package for ooattest.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooattest.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooattest.oo.
+//   2. ooattest.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooattest_pkg() -> String {
+    return "ooattest";
+}

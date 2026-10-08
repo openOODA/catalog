@@ -1,0 +1,14 @@
+// # oohead package
+//
+// Logline: Stock catalog package for oohead.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oohead.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oohead.oo.
+//   2. oohead.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oohead_pkg() -> String {
+    return "oohead";
+}

@@ -1,0 +1,9 @@
+name=oomore
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oomore.oo
+commit=
+sha256=38ea755d6573396a0f5039d4dcde65567c910cfed8da7f9ab26bc10790f7a0bb
+sig=

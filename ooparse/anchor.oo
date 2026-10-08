@@ -1,0 +1,14 @@
+// # ooparse package
+//
+// Logline: Stock catalog package for ooparse.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooparse.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooparse.oo.
+//   2. ooparse.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooparse_pkg() -> String {
+    return "ooparse";
+}

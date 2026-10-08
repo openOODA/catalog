@@ -1,0 +1,9 @@
+name=ooenv
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=ooenv.oo
+commit=
+sha256=b4f9f0d1b21c1100c3402fe4b5a570437e5ea619b27f0e4c205c214a401f4cf4
+sig=

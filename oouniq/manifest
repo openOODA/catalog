@@ -1,0 +1,9 @@
+name=oouniq
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oouniq.oo
+commit=
+sha256=afaa78889fb054931ef6a67ce012a1576db4561a749122180bac4d9bb3836a83
+sig=

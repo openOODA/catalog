@@ -1,0 +1,9 @@
+name=oosdiff
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oosdiff.oo
+commit=
+sha256=f02a53da3d9be428d3c5d1de5faff0d517621c6e401749759e551efdad42d675
+sig=

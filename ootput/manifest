@@ -1,0 +1,9 @@
+name=ootput
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ootput.oo
+commit=
+sha256=40de6ba14ef05ee0f0182e31f3853c53bd9b2af74738059766f05e7884c41583
+sig=

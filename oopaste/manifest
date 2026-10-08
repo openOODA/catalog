@@ -1,0 +1,9 @@
+name=oopaste
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oopaste.oo
+commit=
+sha256=da7526a12bbd2a49cf7f8fcf13e3b52c44b18b8707ab58e916cf2a6a25132044
+sig=

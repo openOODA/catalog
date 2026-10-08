@@ -1,0 +1,9 @@
+name=oozstd
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oozstd.oo
+commit=
+sha256=bc5d2fe52efae52f19a3cc4d0402418c06e47798b493fe5fb5364916402c27c8
+sig=

@@ -1,0 +1,14 @@
+// # ooscp package
+//
+// Logline: Stock catalog package for ooscp.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooscp.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooscp.oo.
+//   2. ooscp.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooscp_pkg() -> String {
+    return "ooscp";
+}

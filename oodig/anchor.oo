@@ -1,0 +1,14 @@
+// # oodig package
+//
+// Logline: Stock catalog package for oodig.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oodig.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oodig.oo.
+//   2. oodig.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oodig_pkg() -> String {
+    return "oodig";
+}

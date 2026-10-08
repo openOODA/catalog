@@ -1,0 +1,14 @@
+// # ootree package
+//
+// Logline: Stock catalog package for ootree.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ootree.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootree.oo.
+//   2. ootree.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ootree_pkg() -> String {
+    return "ootree";
+}

@@ -1,0 +1,9 @@
+name=oosensors
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oosensors.oo
+commit=
+sha256=f579c6e2cdb1951ae15804f3ffbb757872c41996d5d6b2a7228f980723122352
+sig=

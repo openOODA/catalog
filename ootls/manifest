@@ -1,0 +1,9 @@
+name=ootls
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ootls.oo
+commit=
+sha256=21d46eef0a17ca01b1156366ebe7f942ab4d8c92b5f648c93c36003264e031f2
+sig=

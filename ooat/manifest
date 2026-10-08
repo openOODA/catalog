@@ -1,0 +1,9 @@
+name=ooat
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ooat.oo
+commit=
+sha256=19fa6c656b0d33cbfb81cfe1ffeb933bb0ae9ffda77b189e7d3ba4802b7a3a13
+sig=

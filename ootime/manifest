@@ -1,0 +1,9 @@
+name=ootime
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ootime.oo
+commit=
+sha256=83cb5873dc73e30bb90d6a4c2888674761b7a05c701fb0beb098fe23fb7a8f8a
+sig=

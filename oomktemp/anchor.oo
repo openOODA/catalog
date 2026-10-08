@@ -1,0 +1,14 @@
+// # oomktemp package
+//
+// Logline: Stock catalog package for oomktemp.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oomktemp.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomktemp.oo.
+//   2. oomktemp.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oomktemp_pkg() -> String {
+    return "oomktemp";
+}

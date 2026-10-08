@@ -1,0 +1,14 @@
+// # oocat package
+//
+// Logline: Stock catalog package for oocat.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oocat.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oocat.oo.
+//   2. oocat.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oocat_pkg() -> String {
+    return "oocat";
+}

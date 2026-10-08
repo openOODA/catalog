@@ -1,0 +1,14 @@
+// # oolshw package
+//
+// Logline: Stock catalog package for oolshw.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oolshw.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oolshw.oo.
+//   2. oolshw.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oolshw_pkg() -> String {
+    return "oolshw";
+}

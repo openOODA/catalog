@@ -1,0 +1,14 @@
+// # ooworker package
+//
+// Logline: Stock catalog package for ooworker.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooworker.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooworker.oo.
+//   2. ooworker.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooworker_pkg() -> String {
+    return "ooworker";
+}

@@ -1,0 +1,14 @@
+// # oofirewall package
+//
+// Logline: Stock catalog package for oofirewall.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oofirewall.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oofirewall.oo.
+//   2. oofirewall.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oofirewall_pkg() -> String {
+    return "oofirewall";
+}

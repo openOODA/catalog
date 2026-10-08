@@ -1,0 +1,14 @@
+// # oomv package
+//
+// Logline: Stock catalog package for oomv.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oomv.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomv.oo.
+//   2. oomv.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oomv_pkg() -> String {
+    return "oomv";
+}

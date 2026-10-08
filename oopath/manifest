@@ -1,0 +1,9 @@
+name=oopath
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oopath.oo
+commit=
+sha256=df9fec37bb01ce2379d1ad4ee7777b21193164e707ee65f82bd69c27e035e521
+sig=

@@ -1,0 +1,14 @@
+// # oogrep package
+//
+// Logline: Stock catalog package for oogrep.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oogrep.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oogrep.oo.
+//   2. oogrep.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oogrep_pkg() -> String {
+    return "oogrep";
+}

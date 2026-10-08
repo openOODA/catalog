@@ -1,0 +1,14 @@
+// # oojq package
+//
+// Logline: Stock catalog package for oojq.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oojq.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oojq.oo.
+//   2. oojq.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oojq_pkg() -> String {
+    return "oojq";
+}

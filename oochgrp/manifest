@@ -1,0 +1,9 @@
+name=oochgrp
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oochgrp.oo
+commit=
+sha256=3d40f10eb82d5f299bca1461d92df2f91aba6e09fde40d6d710873088a21d7f1
+sig=

@@ -1,0 +1,9 @@
+name=oocut
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oocut.oo
+commit=
+sha256=97c386c2aa2a85ab87822c1a4c519b0cb5ca613965dc6d51527260b245c62725
+sig=

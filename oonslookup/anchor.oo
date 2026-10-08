@@ -1,0 +1,14 @@
+// # oonslookup package
+//
+// Logline: Stock catalog package for oonslookup.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oonslookup.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oonslookup.oo.
+//   2. oonslookup.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oonslookup_pkg() -> String {
+    return "oonslookup";
+}

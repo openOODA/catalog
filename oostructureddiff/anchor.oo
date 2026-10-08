@@ -1,0 +1,14 @@
+// # oostructureddiff package
+//
+// Logline: Stock catalog package for oostructureddiff.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oostructureddiff.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oostructureddiff.oo.
+//   2. oostructureddiff.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oostructureddiff_pkg() -> String {
+    return "oostructureddiff";
+}

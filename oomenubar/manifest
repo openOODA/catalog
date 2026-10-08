@@ -1,0 +1,9 @@
+name=oomenubar
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oomenubar.oo
+commit=
+sha256=842f0a47c2664d4ad04049e97a47c9faaff45a3a0f92db4355f6e8971c51dfa2
+sig=

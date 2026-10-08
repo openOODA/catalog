@@ -1,0 +1,14 @@
+// # ootunnel package
+//
+// Logline: Stock catalog package for ootunnel.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ootunnel.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootunnel.oo.
+//   2. ootunnel.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ootunnel_pkg() -> String {
+    return "ootunnel";
+}

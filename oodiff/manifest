@@ -1,0 +1,9 @@
+name=oodiff
+version=0.3.1
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oodiff.oo
+commit=
+sha256=d1d583deffd782837d07be584e1e82a9c30f2c8e78683d3d1dbeb0ce860b4765
+sig=

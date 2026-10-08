@@ -1,0 +1,14 @@
+// # oosha256 package
+//
+// Logline: Stock catalog package for oosha256.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oosha256.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oosha256.oo.
+//   2. oosha256.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oosha256_pkg() -> String {
+    return "oosha256";
+}

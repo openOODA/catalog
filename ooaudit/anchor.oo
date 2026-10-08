@@ -1,0 +1,14 @@
+// # ooaudit package
+//
+// Logline: Stock catalog package for ooaudit.
+//
+// Setup: Folder shape is manifest plus payload. Do not import ooaudit.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooaudit.oo.
+//   2. ooaudit.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_ooaudit_pkg() -> String {
+    return "ooaudit";
+}

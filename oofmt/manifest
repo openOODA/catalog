@@ -1,0 +1,9 @@
+name=oofmt
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oofmt.oo
+commit=
+sha256=b0e9393546de9313ae92f107dedb8eee5650394ddf9382097e7c3f88ae3c783a
+sig=

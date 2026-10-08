@@ -1,0 +1,9 @@
+name=oood
+version=0.1.0
+caps=FsRead,Term,Mcp
+deps=
+license=Apache-2.0
+payload=oood.oo
+commit=
+sha256=473fefe4d3f81d4e3fa2fb5e01448b0731a3be93aace69e46dde677091eff67b
+sig=

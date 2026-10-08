@@ -1,0 +1,9 @@
+name=ooattest
+version=0.1.0
+caps=Sec,Agent,Mcp
+deps=
+license=Apache-2.0
+payload=ooattest.oo
+commit=
+sha256=2abf695856e09a19837569d5cf80adfbcd930ae3e93b364c8ec341a0bb3909cb
+sig=

@@ -1,0 +1,9 @@
+name=ooclear
+version=0.1.0
+caps=Term,Env,Proc,Mcp
+deps=
+license=Apache-2.0
+payload=ooclear.oo
+commit=
+sha256=0d3c4dd4d1ea97caf60702d2a94a7a14d9b072de18ec8e7b00f9f0f7507dc0bf
+sig=

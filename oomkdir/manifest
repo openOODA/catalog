@@ -1,0 +1,9 @@
+name=oomkdir
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oomkdir.oo
+commit=
+sha256=b24026f1d4989e0c0b9c256254c6bf0e149fe02d0a6ae27cc9c880866afd38ba
+sig=

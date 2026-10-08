@@ -1,0 +1,9 @@
+name=ooip
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=ooip.oo
+commit=
+sha256=65102563472fbfb57d985038af2c77627aa2d76e0f6defdf1a90b06938e0bdff
+sig=

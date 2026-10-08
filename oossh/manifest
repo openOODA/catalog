@@ -1,0 +1,9 @@
+name=oossh
+version=0.1.0
+caps=Net,Tls,Mcp
+deps=
+license=Apache-2.0
+payload=oossh.oo
+commit=
+sha256=0010a6adfcd60f9ba6600b61803bedd915a8954196fa2ba0de127367bd630a20
+sig=

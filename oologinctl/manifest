@@ -1,0 +1,9 @@
+name=oologinctl
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oologinctl.oo
+commit=
+sha256=e1e520d45635822e8319c4d081b032b4092a99ce6d65d2bac510000e6557786e
+sig=

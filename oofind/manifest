@@ -1,0 +1,9 @@
+name=oofind
+version=0.3.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=oofind.oo
+commit=
+sha256=cbbe4fb02fbe1e3732e2bcd49ba0f4c9ceb4c38301d46bd160c13699e6a3f0f0
+sig=

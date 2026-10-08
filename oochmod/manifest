@@ -1,0 +1,9 @@
+name=oochmod
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=oochmod.oo
+commit=
+sha256=49929fb7f73b31e81dd39e26fbb8b175f35e4619d1a4c895e6f4a91889a24d59
+sig=

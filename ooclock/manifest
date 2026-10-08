@@ -1,0 +1,9 @@
+name=ooclock
+version=0.1.0
+caps=FsRead,Mcp
+deps=
+license=Apache-2.0
+payload=ooclock.oo
+commit=
+sha256=b3b781e9a3199779b0ba247d1647340cd53ffd8ca5f851e981af209048f8dc66
+sig=

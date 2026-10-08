@@ -1,0 +1,9 @@
+name=ooarchive
+version=0.1.0
+caps=FsRead,FsWrite,Mcp
+deps=
+license=Apache-2.0
+payload=ooarchive.oo
+commit=
+sha256=cf2622dd3c90485512d351563928ee218ed1b67ec425d5823b947c738a3ffa1a
+sig=

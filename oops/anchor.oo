@@ -1,0 +1,14 @@
+// # oops package
+//
+// Logline: Stock catalog package for oops.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oops.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oops.oo.
+//   2. oops.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oops_pkg() -> String {
+    return "oops";
+}

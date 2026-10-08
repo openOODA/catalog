@@ -1,0 +1,9 @@
+name=oomeminfo
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+license=Apache-2.0
+payload=oomeminfo.oo
+commit=
+sha256=d0a7532afd1c4ff0c2417b632a0767846b409640c41eb2e94a6acae257b1c0ce
+sig=

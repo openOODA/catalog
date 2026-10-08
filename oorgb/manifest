@@ -1,0 +1,9 @@
+name=oorgb
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+license=Apache-2.0
+payload=oorgb.oo
+commit=
+sha256=54b8a46719d51e2b8020b663152f4c2083fbd83f206b2dbf7b5e5547ad4b1fc5
+sig=
