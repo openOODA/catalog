@@ -8,64 +8,21 @@
       /_/                   \___/ \___/|____/_/   \_\
 </pre>
 
-### openOODA — Primary Systems Language for the AI Era
+### openOODA — Capability-Secure Computing Stack for the AI Era (Stealth Pre-Release)
 
-[openooda.org](https://openooda.org)
+[openooda.org](https://openooda.org) • [@openOODA](https://github.com/openOODA)
 
 </div>
 
 ---
 
-## This repo: catalog
+> **Status: Stealth Mode (Private Pre-Release Development)**
+>
+> `openOODA` is currently in private pre-release development across Layers 0 through 7 and is not publicly released yet. Keep an eye on [openooda.org](https://openooda.org) and [@openOODA](https://github.com/openOODA) for our upcoming public launch.
 
-The public list of openOODA packages. `opm search` reads the `catalog` file. `opm add` installs a child folder (manifest plus `.oo` payload). This is a file tree, not a registry service.
+## This Repository (`catalog`)
 
-Host: `https://catalog.openooda.org`
-
-## Use
-
-```sh
-opm search hello
-opm add hello
-```
-
-From this tree, opm also reads `seed/` inside the opm repo so search works with no network. This catalog repo is the copy the world can fetch.
-
-## Add a package
-
-1. Add a folder with `manifest` and a `.oo` payload (Academy headers required).
-2. From the opm repo, run `opm bot` with this tree as the target to rebuild `catalog`.
-3. Sign `catalog` to `index.minisig` with the catalog minisign key
-   (`~/.config/minisign/catalog.key`, key id 277FA16619093695):
-   `printf '\n' | minisign -S -s ~/.config/minisign/catalog.key -m catalog -x index.minisig -c "openOODA catalog"`
-   (CI runs `minisign -V` and fails closed while the signature is stale or bogus.
-   Back up `catalog.key`: whoever holds it can publish catalog updates, and if it
-   is lost the only fix is rotation — `minisign -G`, update `registry.pub` here
-   and `cli/registry.pub` in opm, re-sign, release both.)
-4. Commit the folder, `catalog`, `index`, and `index.minisig`.
-
-## Docs
-
-All design, RFCs, practices, and onboarding live in [openOODA/openOODA](https://github.com/openOODA/openOODA) or at [openooda.org](https://openooda.org).
-
-## The Polyrepo
-
-| Repo | Purpose |
-|------|---------|
-| [openOODA/openOODA](https://github.com/openOODA/openOODA) | Governance, RFCs, laws |
-| [openOODA-core/oodar](https://github.com/openOODA-core/oodar) | Runtime substrate |
-| [openOODA-core/oodac](https://github.com/openOODA-core/oodac) | Compiler |
-| [openOODA-core/std](https://github.com/openOODA-core/std) | Standard library |
-| [openOODA-core/ooda](https://github.com/openOODA-core/ooda) | `ooda` workflow driver |
-| [openOODA/install](https://github.com/openOODA/install) | How the toolchain lands (install.sh, apt, dnf, pacman) |
-| [openOODA-core/opm](https://github.com/openOODA-core/opm) | Package manager |
-| [openOODA/catalog](https://github.com/openOODA/catalog) | Public package catalog |
-| [openOODA-core/lsp](https://github.com/openOODA-core/lsp) | Language Server Protocol daemon |
-| [openOODA-core/cli](https://github.com/openOODA-core/cli) | Sovereign developer driver (build, test, fmt, qa) |
-| [openOODA-core/mcp](https://github.com/openOODA-core/mcp) | MCP server, flight recording, and telemetry engine |
-| [openOODA-core/tui](https://github.com/openOODA-core/tui) | Interactive terminal UI and coding harness |
-| [openOODA/website](https://github.com/openOODA/website) | Website source |
-| [openOODA/.github](https://github.com/openOODA/.github) | Org profile, shared community files, workflows |
+Cryptographically signed public package catalog index for `openOODA`. Every package manifest declares its explicit capability requirements ahead of installation.
 
 ## License
 
