@@ -1,0 +1,14 @@
+// # oosqlite package
+//
+// Logline: Stock catalog package for oosqlite.
+//
+// Setup: Folder shape is manifest plus payload. Do not import oosqlite.oo from this file.
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oosqlite.oo.
+//   2. oosqlite.oo — payload. Academy headers required.
+//   3. Rebuild the parent catalog with: opm bot .
+
+pub fn cat_oosqlite_pkg() -> String {
+    return "oosqlite";
+}
