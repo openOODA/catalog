@@ -157,7 +157,6 @@ oorm|0.1.0|FsRead,FsWrite,Mcp||0e2c75bdc84276d00a93669d6b852e0dd785295cc85970f73
 oormdir|0.1.0|FsRead,FsWrite,Mcp||18dcf2c570f9638d96a95feb6cc6ef58dd13cdea6cb02421109baac16e25f264
 ooroute|0.1.0|Net,Tls,Mcp||3fd2f424e48e0127d6dd4f01dba86c5fec19ce77f0b5495cb017d80e6008d920
 oorproxy|0.1.0|Net,Tls,Mcp||46100e8f9ffd9c2d57028192af5334e7e4d61cb98d41764f143e9e4f7c0c98a7
-oosandbox|0.1.0|Sec,Agent,Mcp||6fe4bccba3f0dfa6b9b88d0a90248d4fdf7e35cb26480a2c25225af4d08d2d39
 ooschema|0.1.0|FsRead,Stream,Mcp||d1ca60415e3ca12299bc6903382ed7bdc722d78542c6f148ebdbd4f18b3a846d
 ooschemadiff|0.1.0|FsRead,Mcp||36b3584a896df70702612534bb3aa274ef025a4c58811ddb0bc1accf3dc2160b
 ooscp|0.1.0|Net,Tls,Mcp||aa7bd7f50034dc12c91c0beba1b350620040b2eb866bbd5d46b2786cdce6a0d3
