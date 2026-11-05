@@ -75,6 +75,15 @@ fn resolve_color_choice(opts_color: String, fs: &FsReadCap, env: &EnvCap) -> Boo
     return true;
 }
 
+fn print_top_frame(show_header: Bool, show_borders: Bool, display_title: String, total: Int, gw: Int, use_color: Bool) {
+    if show_header {
+        let hdr: String = render_header(display_title, to_string(total) + " lines", gw, 70, use_color);
+        println(hdr);
+    } else if show_borders {
+        println(render_top_border(gw, 70, use_color));
+    }
+}
+
 fn render_file(path: String, opts: CatOpts, fs: &FsReadCap, default_theme: String, use_color: Bool) -> Int {
     let res: Result[String, String] = read_input_source(fs, path);
     if res.is_err() {
@@ -104,12 +113,7 @@ fn render_file(path: String, opts: CatOpts, fs: &FsReadCap, default_theme: Strin
     let show_header: Bool = opts.style == "full" && path != "-";
     let show_nums: Bool = opts.number || opts.number_nonblank || opts.style == "numbers" || opts.style == "grid" || opts.style == "full";
 
-    if show_header {
-        let hdr: String = render_header(display_title, to_string(total) + " lines", gw, 70, use_color);
-        println(hdr);
-    } else if show_borders {
-        println(render_top_border(gw, 70, use_color));
-    }
+    print_top_frame(show_header, show_borders, display_title, total, gw, use_color);
 
     let mut nb_counter: Int = 1;
     let mut i: Int = 0;

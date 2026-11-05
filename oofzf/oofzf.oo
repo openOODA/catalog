@@ -78,6 +78,46 @@ fn resolve_color_mode(opts: FzfOpts, env: &EnvCap) -> Bool {
     return true;
 }
 
+fn read_input(opts: FzfOpts, fs: &FsReadCap) -> String {
+    if opts.input_file != "" {
+        let r: Result[String, String] = read_file(fs, opts.input_file);
+        if r.is_err() {
+            println("oofzf: cannot open file: " + opts.input_file);
+            process_exit(2);
+            return "";
+        }
+        return match r { Ok(s) => s, Err(_) => "" };
+    }
+    return read_all_stdin(fs);
+}
+
+fn render_picker(ranked: List[Candidate], query: String, matched_count: Int, total_count: Int, opts: FzfOpts, fs: &FsReadCap, env: &EnvCap) {
+    let use_color: Bool = resolve_color_mode(opts, env);
+    let theme: String = if opts.theme_override != "" { opts.theme_override } else { resolve_fzf_theme(fs, env) };
+    if use_color {
+        println(format_prompt_bar(theme, query, matched_count, total_count));
+        println(format_header_separator(60));
+        let max_show: Int = if matched_count < 15 { matched_count } else { 15 };
+        let mut j: Int = 0;
+        while j < max_show {
+            let cand: Candidate = list_get(ranked, j);
+            println(render_candidate_line(theme, cand, query, j == 0, 80));
+            j = j + 1;
+        }
+    } else {
+        println("> " + query + " [" + to_string(matched_count) + "/" + to_string(total_count) + "]");
+        println("────────────────────────────────────────────────────────────");
+        let max_show: Int = if matched_count < 15 { matched_count } else { 15 };
+        let mut j: Int = 0;
+        while j < max_show {
+            let cand: Candidate = list_get(ranked, j);
+            let pointer: String = if j == 0 { "> " } else { "  " };
+            println(pointer + cand.text);
+            j = j + 1;
+        }
+    }
+}
+
 pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[String]) -> Result[Int, String] {
     let opts: FzfOpts = parse_fzf_args(args);
 
@@ -94,18 +134,7 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
         return Ok(0);
     }
 
-    let mut raw_content: String = "";
-    if opts.input_file != "" {
-        let r: Result[String, String] = read_file(fs, opts.input_file);
-        if r.is_err() {
-            println("oofzf: cannot open file: " + opts.input_file);
-            process_exit(2);
-            return Ok(2);
-        }
-        raw_content = match r { Ok(s) => s, Err(_) => "" };
-    } else {
-        raw_content = read_all_stdin(fs);
-    }
+    let raw_content: String = read_input(opts, fs);
 
     let items: List[String] = split_input_lines(raw_content);
     let total_count: Int = list_len(items);
@@ -148,31 +177,6 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
         return Ok(0);
     }
 
-    let use_color: Bool = resolve_color_mode(opts, env);
-    let theme: String = if opts.theme_override != "" { opts.theme_override } else { resolve_fzf_theme(fs, env) };
-
-    if use_color {
-        println(format_prompt_bar(theme, query, matched_count, total_count));
-        println(format_header_separator(60));
-        let max_show: Int = if matched_count < 15 { matched_count } else { 15 };
-        let mut j: Int = 0;
-        while j < max_show {
-            let cand: Candidate = list_get(ranked, j);
-            println(render_candidate_line(theme, cand, query, j == 0, 80));
-            j = j + 1;
-        }
-    } else {
-        println("> " + query + " [" + to_string(matched_count) + "/" + to_string(total_count) + "]");
-        println("────────────────────────────────────────────────────────────");
-        let max_show: Int = if matched_count < 15 { matched_count } else { 15 };
-        let mut j: Int = 0;
-        while j < max_show {
-            let cand: Candidate = list_get(ranked, j);
-            let pointer: String = if j == 0 { "> " } else { "  " };
-            println(pointer + cand.text);
-            j = j + 1;
-        }
-    }
-
+    render_picker(ranked, query, matched_count, total_count, opts, fs, env);
     return Ok(0);
 }

@@ -46,6 +46,59 @@ fn render_help() -> String {
         "  -v, --version          Print version information and exit\n";
 }
 
+fn create_archive(opts: TarOpts, fs: &FsReadCap, fs_write: &FsWriteCap) -> Result[Int, String] {
+    let mut tar_body: String = "";
+    let n: Int = list_len(opts.files);
+    let mut i: Int = 0;
+    while i < n {
+        let file_name: String = list_get(opts.files, i);
+        let r: Result[String, String] = read_file(fs, file_name);
+        if r.is_ok() {
+            let content: String = match r { Ok(s) => s, Err(_) => "" };
+            let size: Int = chars_len(content);
+            tar_body = tar_body + create_file_header(file_name, size) + content;
+            let pad_rem: Int = size % 512;
+            if pad_rem > 0 {
+                tar_body = tar_body + pad_spaces(512 - pad_rem);
+            }
+        }
+        i = i + 1;
+    }
+    tar_body = tar_body + spaces_512() + spaces_512();
+
+    if opts.archive_file != "" {
+        let wr: Result[Void, String] = write_file(fs_write, opts.archive_file, tar_body);
+        if wr.is_err() {
+            println("ootar: failed to write archive: " + opts.archive_file);
+            process_exit(2);
+            return Ok(2);
+        }
+    } else {
+        print(tar_body);
+    }
+    return Ok(0);
+}
+
+fn extract_archive(entries: List[TarHeader], archive_content: String, opts: TarOpts, fs_write: &FsWriteCap) -> Result[Int, String] {
+    let n_entries: Int = list_len(entries);
+    let mut i: Int = 0;
+    while i < n_entries {
+        let h: TarHeader = list_get(entries, i);
+        if !h.is_safe {
+            println("ootar: SKIPPED unsafe path escape: " + h.name);
+        } else if !h.is_dir {
+            let file_data: String = get_entry_content(archive_content, h.name);
+            let target: String = if opts.target_dir == "." { sanitize_path(h.name) } else { opts.target_dir + "/" + sanitize_path(h.name) };
+            let wr: Result[Void, String] = write_file(fs_write, target, file_data);
+            if wr.is_err() {
+                println("ootar: failed to extract file: " + target);
+            }
+        }
+        i = i + 1;
+    }
+    return Ok(0);
+}
+
 pub fn main(
     fs: &FsReadCap,
     fs_write: &FsWriteCap,
@@ -69,36 +122,7 @@ pub fn main(
     }
 
     if opts.create_mode {
-        let mut tar_body: String = "";
-        let n: Int = list_len(opts.files);
-        let mut i: Int = 0;
-        while i < n {
-            let file_name: String = list_get(opts.files, i);
-            let r: Result[String, String] = read_file(fs, file_name);
-            if r.is_ok() {
-                let content: String = match r { Ok(s) => s, Err(_) => "" };
-                let size: Int = chars_len(content);
-                tar_body = tar_body + create_file_header(file_name, size) + content;
-                let pad_rem: Int = size % 512;
-                if pad_rem > 0 {
-                    tar_body = tar_body + pad_spaces(512 - pad_rem);
-                }
-            }
-            i = i + 1;
-        }
-        tar_body = tar_body + spaces_512() + spaces_512();
-
-        if opts.archive_file != "" {
-            let wr: Result[Void, String] = write_file(fs_write, opts.archive_file, tar_body);
-            if wr.is_err() {
-                println("ootar: failed to write archive: " + opts.archive_file);
-                process_exit(2);
-                return Ok(2);
-            }
-        } else {
-            print(tar_body);
-        }
-        return Ok(0);
+        return create_archive(opts, fs, fs_write);
     }
 
     let mut archive_content: String = "";
@@ -118,22 +142,7 @@ pub fn main(
     let n_entries: Int = list_len(entries);
 
     if opts.extract_mode {
-        let mut i: Int = 0;
-        while i < n_entries {
-            let h: TarHeader = list_get(entries, i);
-            if !h.is_safe {
-                println("ootar: SKIPPED unsafe path escape: " + h.name);
-            } else if !h.is_dir {
-                let file_data: String = get_entry_content(archive_content, h.name);
-                let target: String = if opts.target_dir == "." { sanitize_path(h.name) } else { opts.target_dir + "/" + sanitize_path(h.name) };
-                let wr: Result[Void, String] = write_file(fs_write, target, file_data);
-                if wr.is_err() {
-                    println("ootar: failed to extract file: " + target);
-                }
-            }
-            i = i + 1;
-        }
-        return Ok(0);
+        return extract_archive(entries, archive_content, opts, fs_write);
     }
 
     let mut j: Int = 0;
