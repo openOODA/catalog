@@ -5,5 +5,5 @@ deps=
 license=Apache-2.0
 payload=oomsgpack.oo
 commit=
-sha256=a73a1747b814d51fa9ff5e09bd479b7f74ba99726cf7bf907610621d924be8ae
+sha256=e624353ed61bda1825ea25cfc7c3b65f9a6bd33ab1e7cdf725655414c66e3cf7
 sig=

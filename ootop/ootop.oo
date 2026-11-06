@@ -1,6 +1,6 @@
 // # ootop Entry Point - Real-Time Dashboard Runtime
 //
-// Logline: Sovereign capability-bounded real-time system monitor with systemd slice awareness.
+// Logline: Bounded capability-bounded real-time system monitor with systemd slice awareness.
 //
 // Setup: Bound to FsReadCap, TimeCap, and EnvCap. Zero ambient authority.
 //
@@ -18,7 +18,7 @@ import "std/fs/time/chrono.oo";
 import "std/fs/process/env.oo";
 
 fn print_help() {
-    println("ootop 0.2.0 (openOODA sovereign top)");
+    println("ootop 0.2.0 (openOODA bounded top)");
     println("Usage: ootop [OPTIONS]");
     println("");
     println("Real-time TUI dashboard and system monitor with systemd slice grouping.");
@@ -37,7 +37,7 @@ fn print_help() {
 fn print_version() {
     println("ootop 0.2.0");
     println("Copyright (C) 2026 openOODA Project.");
-    println("License: Apache 2.0. Sovereign capability-bounded system dashboard.");
+    println("License: Apache 2.0. Bounded capability-bounded system dashboard.");
 }
 
 fn render_cycle(fs: &FsReadCap, theme: String, use_color: Bool, term_width: Int) {

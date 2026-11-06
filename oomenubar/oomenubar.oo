@@ -1,6 +1,6 @@
 // # oomenubar Main Entry Point
 //
-// Logline: Renders sovereign status bars with dynamic telemetry widgets and oote colors.
+// Logline: Renders bounded status bars with dynamic telemetry widgets and oote colors.
 //
 // Setup: Demands explicit capability tokens and standard argument list.
 //
@@ -10,9 +10,9 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "oomenubar 0.1.0 (openOODA sovereign theme & styling)\n"
+    return "oomenubar 0.1.0 (openOODA bounded theme & styling)\n"
         + "usage: oomenubar [options] [ARGUMENTS]...\n\n"
-        + "Renders sovereign status bars with dynamic telemetry widgets and oote colors.\n\n"
+        + "Renders bounded status bars with dynamic telemetry widgets and oote colors.\n\n"
         + "Options:\n"
         + "  -h, --help           display this help and exit\n"
         + "  -v, --version        output version information and exit\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "oomenubar 0.1.0 (openOODA sovereign theme & styling)\n";
+    return "oomenubar 0.1.0 (openOODA bounded theme & styling)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("oomenubar: sovereign capability-bounded utility ready\n");
+    print("oomenubar: bounded capability-bounded utility ready\n");
     return 0;
 }

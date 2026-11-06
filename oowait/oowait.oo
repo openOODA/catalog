@@ -1,6 +1,6 @@
 // # oowait Main Entry Point
 //
-// Logline: Sovereign synchronization primitive waiting on systemd units, child PIDs, or sockets.
+// Logline: Bounded synchronization primitive waiting on systemd units, child PIDs, or sockets.
 //
 // Setup: Demands explicit capability tokens and standard argument list.
 //
@@ -10,9 +10,9 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "oowait 0.1.0 (openOODA sovereign shell & terminal)\n"
+    return "oowait 0.1.0 (openOODA bounded shell & terminal)\n"
         + "usage: oowait [options] [ARGUMENTS]...\n\n"
-        + "Sovereign synchronization primitive waiting on systemd units, child PIDs, or sockets.\n\n"
+        + "Bounded synchronization primitive waiting on systemd units, child PIDs, or sockets.\n\n"
         + "Options:\n"
         + "  -h, --help           display this help and exit\n"
         + "  -v, --version        output version information and exit\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "oowait 0.1.0 (openOODA sovereign shell & terminal)\n";
+    return "oowait 0.1.0 (openOODA bounded shell & terminal)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("oowait: sovereign capability-bounded utility ready\n");
+    print("oowait: bounded capability-bounded utility ready\n");
     return 0;
 }

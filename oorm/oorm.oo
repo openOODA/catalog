@@ -10,7 +10,7 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "oorm 0.1.0 (openOODA sovereign files & navigation)\n"
+    return "oorm 0.1.0 (openOODA bounded files & navigation)\n"
         + "usage: oorm [options] [ARGUMENTS]...\n\n"
         + "Negative-trust file and tree unlinker with optional multi-pass cryptographic shred.\n\n"
         + "Options:\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "oorm 0.1.0 (openOODA sovereign files & navigation)\n";
+    return "oorm 0.1.0 (openOODA bounded files & navigation)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("oorm: sovereign capability-bounded utility ready\n");
+    print("oorm: bounded capability-bounded utility ready\n");
     return 0;
 }

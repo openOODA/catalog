@@ -2,11 +2,15 @@
 //
 // Logline: Print hello. A first package for the openOODA catalog.
 //
-// Setup: No extra caps. Safe to launch.
+// Setup: Bound to &FsReadCap. Safe to launch. No filesystem writes,
+//        no network, no subprocesses — the payload is a single line.
 //
 // Beats:
-//   1. Print hello.
+//   1. Print hello to standard output.
+//   2. The manifest beside this page pins the package sha256.
+//   3. `opm add hello` installs this payload; `opm bot .` rebuilds the
+//      parent catalog index after any change.
 
-pub fn main() {
+pub fn main(fs_r: &FsReadCap) {
     println("hello");
 }

@@ -10,7 +10,7 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "ooglyph 0.1.0 (openOODA sovereign theme & styling)\n"
+    return "ooglyph 0.1.0 (openOODA bounded theme & styling)\n"
         + "usage: ooglyph [options] [ARGUMENTS]...\n\n"
         + "Interactive glyph search and viewer for Nerd Font symbols and Unicode iconography.\n\n"
         + "Options:\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "ooglyph 0.1.0 (openOODA sovereign theme & styling)\n";
+    return "ooglyph 0.1.0 (openOODA bounded theme & styling)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("ooglyph: sovereign capability-bounded utility ready\n");
+    print("ooglyph: bounded capability-bounded utility ready\n");
     return 0;
 }

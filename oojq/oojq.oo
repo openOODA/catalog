@@ -22,7 +22,6 @@ import "ipc/mcp_serve.oo";
 pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[String]) -> Result[Int, String] {
     if list_len(args) == 0 {
         print(render_usage("no filter given"));
-        process_exit(2);
         return Ok(2);
     }
     let first: String = list_get(args, 0);
@@ -41,7 +40,6 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
         match served {
             Err(e) => {
                 print("oojq: mcp: " + e + "\n");
-                process_exit(2);
                 return Ok(2);
             }
             Ok(c) => { return Ok(c); }
@@ -51,7 +49,6 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
     match resolve_args(fs, args) {
         Err(e) => {
             print(render_usage(e));
-            process_exit(2);
             return Ok(2);
         }
         Ok(q) => {
@@ -63,11 +60,9 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
             match run_query(fs, active_q, theme) {
                 Err(e) => {
                     print("oojq: " + e + "\n");
-                    process_exit(2);
                     return Ok(2);
                 }
                 Ok(code) => {
-                    if code != 0 { process_exit(code); }
                     return Ok(code);
                 }
             }

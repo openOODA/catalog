@@ -1,4 +1,4 @@
-// # ootree Entry Point - Sovereign Directory Hierarchy Visualizer
+// # ootree Entry Point - Bounded Directory Hierarchy Visualizer
 //
 // Logline: Argument gate, hierarchy traversal orchestrator, and tree layout renderer.
 //
@@ -16,7 +16,7 @@ import "ipc/anchor.oo";
 
 fn render_help() -> String {
     return "Usage: ootree [OPTIONS] [DIRECTORY]\n\n" +
-        "Sovereign directory hierarchy and tree visualizer.\n\n" +
+        "Bounded directory hierarchy and tree visualizer.\n\n" +
         "Options:\n" +
         "  -L <depth>             Descend only level directories deep\n" +
         "  -a, --all              Print all files (including hidden files)\n" +
@@ -36,7 +36,7 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
         return Ok(0);
     }
     if opts.version_mode {
-        println("ootree 0.1.0 (openOODA sovereign tree visualizer)");
+        println("ootree 0.1.0 (openOODA bounded tree visualizer)");
         return Ok(0);
     }
     if opts.mcp_mode {
@@ -48,7 +48,6 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
     let sz: Int = fs_file_size(fs, opts.root_path);
     if !is_dir && sz < 0 {
         println("ootree: " + opts.root_path + ": No such file or directory");
-        process_exit(2);
         return Ok(2);
     }
 

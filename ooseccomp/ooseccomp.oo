@@ -10,7 +10,7 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "ooseccomp 0.1.0 (openOODA sovereign agent & security)\n"
+    return "ooseccomp 0.1.0 (openOODA bounded agent & security)\n"
         + "usage: ooseccomp [options] [ARGUMENTS]...\n\n"
         + "Applies BPF seccomp filters restricting dangerous syscalls like ptrace and unshare.\n\n"
         + "Options:\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "ooseccomp 0.1.0 (openOODA sovereign agent & security)\n";
+    return "ooseccomp 0.1.0 (openOODA bounded agent & security)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("ooseccomp: sovereign capability-bounded utility ready\n");
+    print("ooseccomp: bounded capability-bounded utility ready\n");
     return 0;
 }

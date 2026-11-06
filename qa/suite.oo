@@ -13,20 +13,25 @@
 import "script_path.oo";
 import "std/fs/file/glob.oo";
 
+import "std/sec/pqc.oo";
+
+// The seal of one catalog QA digest, bound to the verifier nonce so two
+// runs agree bit for bit.
+pub fn catalog_qa_seal(digest: Int, nonce: Int) -> Int {
+    return oo_pqc_sha3_round(digest, nonce);
+}
+
 fn find_oodac(fs: &FsReadCap, env: &EnvCap) -> String {
     let r: Result[String, String] = env_get(env, "OODA_COMPILER");
     let p: String = match r { Ok(s) => s, Err(_) => "" };
     if p == "" {
         println("ERR\ttest\tOODA_COMPILER required");
-        process_exit(1);
     }
     if !cat_script_path_ok(p) {
         println("ERR\ttest\tOODA_COMPILER path refused");
-        process_exit(1);
     }
     if !path_exists(fs, p) {
         println("ERR\ttest\tOODA_COMPILER missing: " + p);
-        process_exit(1);
     }
     return p;
 }

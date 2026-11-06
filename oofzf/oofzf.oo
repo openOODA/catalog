@@ -1,4 +1,4 @@
-// # oofzf Entry Point - Sovereign Interactive Fuzzy Finder
+// # oofzf Entry Point - Bounded Interactive Fuzzy Finder
 //
 // Logline: Argument gate, scoring coordinator, and TUI dispatcher for fuzzy selection.
 //
@@ -54,7 +54,7 @@ fn split_input_lines(content: String) -> List[String] {
 
 fn render_help() -> String {
     return "Usage: oofzf [OPTIONS] [FILE]\n\n" +
-        "Sovereign interactive fuzzy finder and candidate ranker.\n\n" +
+        "Bounded interactive fuzzy finder and candidate ranker.\n\n" +
         "Options:\n" +
         "  -f, --filter=QUERY     Filter mode: output sorted matches to stdout\n" +
         "  -q, --query=QUERY      Pre-fill search query string\n" +
@@ -83,7 +83,6 @@ fn read_input(opts: FzfOpts, fs: &FsReadCap) -> String {
         let r: Result[String, String] = read_file(fs, opts.input_file);
         if r.is_err() {
             println("oofzf: cannot open file: " + opts.input_file);
-            process_exit(2);
             return "";
         }
         return match r { Ok(s) => s, Err(_) => "" };
@@ -126,7 +125,7 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
         return Ok(0);
     }
     if opts.version_mode {
-        println("oofzf 0.2.0 (openOODA sovereign fuzzy finder)");
+        println("oofzf 0.2.0 (openOODA bounded fuzzy finder)");
         return Ok(0);
     }
     if opts.mcp_mode {
@@ -145,7 +144,6 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
         let n: Int = list_len(ranked);
         if n == 0 {
             if opts.exit_0 { return Ok(0); }
-            process_exit(1);
             return Ok(1);
         }
         if n == 1 && opts.select_1 {
@@ -168,7 +166,6 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
 
     if matched_count == 0 {
         if opts.exit_0 { return Ok(0); }
-        process_exit(1);
         return Ok(1);
     }
     if matched_count == 1 && opts.select_1 {

@@ -10,7 +10,7 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "ooschema 0.1.0 (openOODA sovereign data & streaming)\n"
+    return "ooschema 0.1.0 (openOODA bounded data & streaming)\n"
         + "usage: ooschema [options] [ARGUMENTS]...\n\n"
         + "Infers structural JSON schemas and column datatypes from stream datasets.\n\n"
         + "Options:\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "ooschema 0.1.0 (openOODA sovereign data & streaming)\n";
+    return "ooschema 0.1.0 (openOODA bounded data & streaming)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("ooschema: sovereign capability-bounded utility ready\n");
+    print("ooschema: bounded capability-bounded utility ready\n");
     return 0;
 }

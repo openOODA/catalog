@@ -1,4 +1,4 @@
-// # oosed Entry Point - Sovereign Stream Editor
+// # oosed Entry Point - Bounded Stream Editor
 //
 // Logline: Argument gate, text stream pipeline router, and in-place file writer.
 //
@@ -53,7 +53,7 @@ fn split_lines(content: String) -> List[String] {
 
 fn render_help() -> String {
     return "Usage: oosed [OPTIONS] [SCRIPT] [FILE]\n\n" +
-        "Sovereign capability-bounded stream editor.\n\n" +
+        "Bounded capability-bounded stream editor.\n\n" +
         "Options:\n" +
         "  -e SCRIPT              Add the script to the commands to be executed\n" +
         "  -i, --in-place         Edit files in place (requires FsWriteCap)\n" +
@@ -77,7 +77,7 @@ pub fn main(
         return Ok(0);
     }
     if opts.version_mode {
-        println("oosed 0.1.0 (openOODA sovereign stream editor)");
+        println("oosed 0.1.0 (openOODA bounded stream editor)");
         return Ok(0);
     }
     if opts.mcp_mode {
@@ -90,7 +90,6 @@ pub fn main(
         let r: Result[String, String] = read_file(fs, opts.input_file);
         if r.is_err() {
             println("oosed: cannot read file: " + opts.input_file);
-            process_exit(2);
             return Ok(2);
         }
         raw_content = match r { Ok(s) => s, Err(_) => "" };
@@ -113,7 +112,6 @@ pub fn main(
         let wr: Result[Void, String] = write_file(fs_write, opts.input_file, out);
         if wr.is_err() {
             println("oosed: failed to write file in place: " + opts.input_file);
-            process_exit(2);
             return Ok(2);
         }
         return Ok(0);

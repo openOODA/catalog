@@ -10,7 +10,7 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "ootmux 0.1.0 (openOODA sovereign shell & terminal)\n"
+    return "ootmux 0.1.0 (openOODA bounded shell & terminal)\n"
         + "usage: ootmux [options] [ARGUMENTS]...\n\n"
         + "Capability-bounded terminal session multiplexer with split panes and stdio sockets.\n\n"
         + "Options:\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "ootmux 0.1.0 (openOODA sovereign shell & terminal)\n";
+    return "ootmux 0.1.0 (openOODA bounded shell & terminal)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("ootmux: sovereign capability-bounded utility ready\n");
+    print("ootmux: bounded capability-bounded utility ready\n");
     return 0;
 }

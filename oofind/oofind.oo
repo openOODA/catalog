@@ -23,7 +23,7 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
         return Ok(0);
     }
     if opts.version_mode {
-        print("oofind 0.2.1 (openOODA sovereign find)\n");
+        print("oofind 0.2.1 (openOODA bounded find)\n");
         return Ok(0);
     }
     if opts.mcp_mode {
@@ -33,11 +33,29 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
 
     if chars_len(opts.error_msg) > 0 {
         print("oofind: " + opts.error_msg + "\nTry 'oofind --help' for more information.\n");
-        process_exit(2);
         return Ok(2);
     }
 
     let theme: String = resolve_find_theme(fs, env);
+    let res: FindResult = walk_roots(fs, opts, theme);
+
+    if res.any_error {
+        return Ok(2);
+    }
+
+    if opts.exit_code_mode && res.total_matches == 0 {
+        return Ok(1);
+    }
+
+    return Ok(0);
+}
+
+type FindResult = struct {
+    any_error: Bool,
+    total_matches: Int
+};
+
+fn walk_roots(fs: &FsReadCap, opts: FindOpts, theme: String) -> FindResult {
     let n_roots: Int = list_len(opts.roots);
     let mut any_error: Bool = false;
     let mut total_matches: Int = 0;
@@ -71,15 +89,5 @@ pub fn main(fs: &FsReadCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[Stri
         i = i + 1;
     }
 
-    if any_error {
-        process_exit(2);
-        return Ok(2);
-    }
-
-    if opts.exit_code_mode && total_matches == 0 {
-        process_exit(1);
-        return Ok(1);
-    }
-
-    return Ok(0);
+    return FindResult { any_error: any_error, total_matches: total_matches };
 }

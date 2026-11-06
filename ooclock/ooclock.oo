@@ -1,4 +1,4 @@
-// # ooclock Entry Point - Sovereign Digital Matrix Clock and Timer
+// # ooclock Entry Point - Bounded Digital Matrix Clock and Timer
 //
 // Logline: Argument gate, circadian clock renderer, stopwatch, and Pomodoro timer.
 //
@@ -17,7 +17,7 @@ import "ipc/anchor.oo";
 
 fn print_help() {
     println("Usage: ooclock [OPTIONS]\n\n" +
-        "Sovereign TUI matrix clock, stopwatch, and pomodoro timer.\n\n" +
+        "Bounded TUI matrix clock, stopwatch, and pomodoro timer.\n\n" +
         "Options:\n" +
         "  -1, --once             Print single clock snapshot and exit\n" +
         "  -s, --stopwatch        Display stopwatch timer\n" +
@@ -37,7 +37,7 @@ pub fn main(fs: &FsReadCap, time: &TimeCap, env: &EnvCap, args: List[String]) ->
         return Ok(0);
     }
     if opts.version_mode {
-        println("ooclock 0.1.0 (openOODA sovereign matrix clock)");
+        println("ooclock 0.1.0 (openOODA bounded matrix clock)");
         return Ok(0);
     }
     if opts.mcp_mode {

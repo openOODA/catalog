@@ -18,7 +18,7 @@ import "ipc/mcp_serve.oo";
 
 fn print_help() {
     println("Usage: oowatch [OPTIONS] [--] <command>...\n\n" +
-        "Sovereign continuous command scheduler and delta watcher.\n\n" +
+        "Bounded continuous command scheduler and delta watcher.\n\n" +
         "Options:\n" +
         "  -n, --interval <SECS>  Interval between updates in seconds (default: 2)\n" +
         "  -d, --differences      Highlight changes between successive updates\n" +
@@ -68,6 +68,10 @@ pub fn main(proc: &ProcessCap, time: &TimeCap, fs: &FsReadCap, env: &EnvCap, arg
     }
 
     let theme: String = if opts.theme_override != "" { opts.theme_override } else { resolve_watch_theme(fs, env) };
+    return watch_loop(proc, time, opts, theme);
+}
+
+fn watch_loop(proc: &ProcessCap, time: &TimeCap, opts: WatchOpts, theme: String) -> Result[Int, String] {
     let mut prev_lines: List[String] = list_new();
     let mut count: Int = 0;
     let mut running: Bool = true;

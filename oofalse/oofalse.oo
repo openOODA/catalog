@@ -10,7 +10,7 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "oofalse 0.1.0 (openOODA sovereign shell & terminal)\n"
+    return "oofalse 0.1.0 (openOODA bounded shell & terminal)\n"
         + "usage: oofalse [options] [ARGUMENTS]...\n\n"
         + "Instant zero-byte binary returning exit status 1 without runtime overhead.\n\n"
         + "Options:\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "oofalse 0.1.0 (openOODA sovereign shell & terminal)\n";
+    return "oofalse 0.1.0 (openOODA bounded shell & terminal)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("oofalse: sovereign capability-bounded utility ready\n");
+    print("oofalse: bounded capability-bounded utility ready\n");
     return 0;
 }

@@ -10,7 +10,7 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "oofigure 0.1.0 (openOODA sovereign theme & styling)\n"
+    return "oofigure 0.1.0 (openOODA bounded theme & styling)\n"
         + "usage: oofigure [options] [ARGUMENTS]...\n\n"
         + "Renders beautiful Unicode box-drawing tables, callouts, and code borders.\n\n"
         + "Options:\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "oofigure 0.1.0 (openOODA sovereign theme & styling)\n";
+    return "oofigure 0.1.0 (openOODA bounded theme & styling)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("oofigure: sovereign capability-bounded utility ready\n");
+    print("oofigure: bounded capability-bounded utility ready\n");
     return 0;
 }

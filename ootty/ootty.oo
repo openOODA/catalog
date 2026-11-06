@@ -10,7 +10,7 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "ootty 0.1.0 (openOODA sovereign shell & terminal)\n"
+    return "ootty 0.1.0 (openOODA bounded shell & terminal)\n"
         + "usage: ootty [options] [ARGUMENTS]...\n\n"
         + "TTY capability inspection, pseudo-terminal allocation, and raw mode controller.\n\n"
         + "Options:\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "ootty 0.1.0 (openOODA sovereign shell & terminal)\n";
+    return "ootty 0.1.0 (openOODA bounded shell & terminal)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("ootty: sovereign capability-bounded utility ready\n");
+    print("ootty: bounded capability-bounded utility ready\n");
     return 0;
 }

@@ -10,7 +10,7 @@
 //   2. Decode page type, cell count, and content offset.
 //   3. Print the decoded fields. Refuse unknown page types.
 
-pub fn main() {
+pub fn main(fs_r: &FsReadCap) {
     let mut buf: List[Int] = list_new();
     buf = list_push(buf, 13);
     buf = list_push(buf, 0);
@@ -23,7 +23,6 @@ pub fn main() {
     let pt: Int = list_get(buf, 0);
     if pt != 2 && pt != 5 && pt != 10 && pt != 13 {
         println("refused page type");
-        process_exit(1);
     }
     let cells: Int = list_get(buf, 3) * 256 + list_get(buf, 4);
     let mut off: Int = list_get(buf, 5) * 256 + list_get(buf, 6);

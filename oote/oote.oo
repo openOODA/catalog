@@ -2,7 +2,7 @@
 //
 // Logline: Command-line interface driver for listing, previewing, and persisting openOODA themes.
 //
-// Setup: Requires FsReadCap, FsWriteCap, EnvCap, and ProcessCap under sovereign OCap discipline.
+// Setup: Requires FsReadCap, FsWriteCap, EnvCap, and ProcessCap under bounded OCap discipline.
 //
 // Beats:
 //   1. Parse command verbs: list, current, preview, set, get, mode, border, mascot, glyph, help, version.
@@ -231,7 +231,7 @@ pub fn main(fs_r: &FsReadCap, fs_w: &FsWriteCap, env: &EnvCap, proc_cap: &Proces
 
     if verb == "--help" || verb == "-h" || verb == "help" { return Ok(cmd_help()); }
     if verb == "--version" || verb == "-v" || verb == "version" {
-        print("oote 0.1.1 (openOODA sovereign theme engine)\n");
+        print("oote 0.1.1 (openOODA bounded theme engine)\n");
         return Ok(0);
     }
     if verb == "list" { return Ok(cmd_list(fs_r, env, color_on, tc_on)); }

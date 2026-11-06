@@ -10,7 +10,7 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "oossh 0.1.0 (openOODA sovereign network & egress)\n"
+    return "oossh 0.1.0 (openOODA bounded network & egress)\n"
         + "usage: oossh [options] [ARGUMENTS]...\n\n"
         + "Capability-bounded SSH client with hardware security key authentication.\n\n"
         + "Options:\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "oossh 0.1.0 (openOODA sovereign network & egress)\n";
+    return "oossh 0.1.0 (openOODA bounded network & egress)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("oossh: sovereign capability-bounded utility ready\n");
+    print("oossh: bounded capability-bounded utility ready\n");
     return 0;
 }

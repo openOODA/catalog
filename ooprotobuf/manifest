@@ -5,5 +5,5 @@ deps=
 license=Apache-2.0
 payload=ooprotobuf.oo
 commit=
-sha256=715b4496d7b87e515efa6a0260572cda51efc31b90e15085b73aabb189a3992e
+sha256=acf1ead856cd61871571974afeba7f7e5d1277db342d4615205ef9cfda51e1e9
 sig=

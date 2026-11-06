@@ -1,6 +1,6 @@
 // # oocat Entry Point
 //
-// Logline: Sovereign capability-bounded syntax-highlighting file viewer and pager.
+// Logline: Bounded capability-bounded syntax-highlighting file viewer and pager.
 //
 // Setup: Bound to &FsReadCap and &EnvCap. Zero ambient authority.
 //
@@ -16,7 +16,7 @@ import "ipc/anchor.oo";
 import "std/fs/process/env.oo";
 
 fn print_help() {
-    println("oocat 0.2.0 (openOODA sovereign cat)");
+    println("oocat 0.2.0 (openOODA bounded cat)");
     println("Usage: oocat [OPTIONS] [FILE]...");
     println("");
     println("Concatenate FILE(s) to standard output with syntax highlighting and line numbers.");
@@ -41,7 +41,7 @@ fn print_help() {
 fn print_version() {
     println("oocat 0.2.0");
     println("Copyright (C) 2026 openOODA Project.");
-    println("License: Apache 2.0. Sovereign capability-bounded file viewer.");
+    println("License: Apache 2.0. Bounded capability-bounded file viewer.");
 }
 
 fn resolve_color_choice(opts_color: String, fs: &FsReadCap, env: &EnvCap) -> Bool {
@@ -114,7 +114,16 @@ fn render_file(path: String, opts: CatOpts, fs: &FsReadCap, default_theme: Strin
     let show_nums: Bool = opts.number || opts.number_nonblank || opts.style == "numbers" || opts.style == "grid" || opts.style == "full";
 
     print_top_frame(show_header, show_borders, display_title, total, gw, use_color);
+    emit_lines(raw_lines, range, opts, show_nums, show_borders, gw, lang, theme, use_color);
 
+    if show_borders {
+        println(render_bottom_border(gw, 70, use_color));
+    }
+    return 0;
+}
+
+fn emit_lines(raw_lines: List[String], range: LineRange, opts: CatOpts, show_nums: Bool, show_borders: Bool, gw: Int, lang: String, theme: String, use_color: Bool) {
+    let total: Int = list_len(raw_lines);
     let mut nb_counter: Int = 1;
     let mut i: Int = 0;
     while i < total {
@@ -145,14 +154,9 @@ fn render_file(path: String, opts: CatOpts, fs: &FsReadCap, default_theme: Strin
         }
         i = i + 1;
     }
-
-    if show_borders {
-        println(render_bottom_border(gw, 70, use_color));
-    }
-    return 0;
 }
 
-pub fn main(args: List[String], fs: &FsReadCap, env: &EnvCap) -> Int {
+pub fn main(fs_r: &FsReadCap, args: List[String], fs: &FsReadCap, env: &EnvCap) -> Int {
     let opts: CatOpts = parse_cat_opts(args);
     if opts.show_help {
         print_help();

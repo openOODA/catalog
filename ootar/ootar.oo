@@ -34,7 +34,7 @@ fn read_all_stdin(fs: &FsReadCap) -> String {
 
 fn render_help() -> String {
     return "Usage: ootar [OPTIONS] [FILES...]\n\n" +
-        "Sovereign traversal-resistant archive manager (USTAR/tar).\n\n" +
+        "Bounded traversal-resistant archive manager (USTAR/tar).\n\n" +
         "Options:\n" +
         "  -t, --list             List the contents of an archive\n" +
         "  -x, --extract          Extract files from an archive (safe from zip-slip)\n" +
@@ -70,7 +70,6 @@ fn create_archive(opts: TarOpts, fs: &FsReadCap, fs_write: &FsWriteCap) -> Resul
         let wr: Result[Void, String] = write_file(fs_write, opts.archive_file, tar_body);
         if wr.is_err() {
             println("ootar: failed to write archive: " + opts.archive_file);
-            process_exit(2);
             return Ok(2);
         }
     } else {
@@ -85,7 +84,7 @@ fn extract_archive(entries: List[TarHeader], archive_content: String, opts: TarO
     while i < n_entries {
         let h: TarHeader = list_get(entries, i);
         if !h.is_safe {
-            println("ootar: SKIPPED unsafe path escape: " + h.name);
+            println("ootar: SKIPPED blocked path escape: " + h.name);
         } else if !h.is_dir {
             let file_data: String = get_entry_content(archive_content, h.name);
             let target: String = if opts.target_dir == "." { sanitize_path(h.name) } else { opts.target_dir + "/" + sanitize_path(h.name) };
@@ -113,7 +112,7 @@ pub fn main(
         return Ok(0);
     }
     if opts.version_mode {
-        println("ootar 0.1.0 (openOODA sovereign archive manager)");
+        println("ootar 0.1.0 (openOODA bounded archive manager)");
         return Ok(0);
     }
     if opts.mcp_mode {
@@ -130,7 +129,6 @@ pub fn main(
         let r: Result[String, String] = read_file(fs, opts.archive_file);
         if r.is_err() {
             println("ootar: cannot open archive: " + opts.archive_file);
-            process_exit(2);
             return Ok(2);
         }
         archive_content = match r { Ok(s) => s, Err(_) => "" };

@@ -5,5 +5,5 @@ deps=
 license=Apache-2.0
 payload=oocpuinfo.oo
 commit=
-sha256=cb30c51b616e5c35b5606330d09f47657279e7c13ed549d3a8f837d8dc4f5159
+sha256=c40ddd0a4c5c68eba161629854d88b83c7f05ee433c048c08faf5fd5ca7948ee
 sig=

@@ -1,6 +1,6 @@
 // # ools Main Entry Point
 //
-// Logline: Sovereign directory listing and metadata classification CLI utility.
+// Logline: Bounded directory listing and metadata classification CLI utility.
 //
 // Setup: Demands &FsReadCap for directory reads and &EnvCap for terminal/palette discovery.
 //
@@ -15,7 +15,7 @@ import "render/anchor.oo";
 import "ipc/anchor.oo";
 
 fn render_help() -> String {
-    return "ools 0.1.0 (openOODA sovereign directory lister)\n"
+    return "ools 0.1.0 (openOODA bounded directory lister)\n"
         + "usage: ools [options] [FILE]...\n\n"
         + "List information about the FILEs (the current directory by default).\n\n"
         + "Options:\n"
@@ -39,7 +39,7 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "ools 0.1.0 (openOODA sovereign directory lister)\n";
+    return "ools 0.1.0 (openOODA bounded directory lister)\n";
 }
 
 fn main(cap_fs: &FsReadCap, cap_env: &EnvCap, args: List[String]) -> Int {

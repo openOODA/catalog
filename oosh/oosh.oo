@@ -1,12 +1,12 @@
 // # oosh Main - Argv Router and Interactive Shell Entry
 //
-// Logline: Parse startup flags, validate environment, and launch sovereign shell, script, or Varlink daemon.
+// Logline: Parse startup flags, validate environment, and launch bounded shell, script, or Varlink daemon.
 //
 // Setup: Wire capability tokens per openOODA capability model. Handle flags, scripts, .ooshrc, and REPL.
 //
 // Beats:
 //   1. Pre-pass --help, --version, and flags without side effects.
-//   2. Support positional .oosh script execution and shebang #!/usr/bin/env oosh with args.
+//   2. Support positional .oosh script execution and shebang env invocation of oosh with args.
 //   3. Source ~/.ooshrc configuration into session environment and alias table.
 //   4. Initialize prompt and dispatch to the OODA REPL engine with FfiCap.
 
@@ -26,15 +26,15 @@ fn validate_argv(args: List[String]) -> Result[String, String] {
     let mut i: Int = 0;
     while i < n {
         let a: String = list_get(args, i);
-        if a == "--help" || a == "-h" { println("oosh - openOODA sovereign shell\nusage: oosh [flags] [script.oosh] [args...] [-c <command>]\n\nflags:\n  -c <command>           execute specified command and exit\n  -h, --help             display this help message\n  -v, --version          display oosh version\n  -l, --login            launch as a login shell\n  -i                     force interactive shell mode\n  -s                     read commands from standard input\n      --norc             do not source ~/.ooshrc startup file\n      --noprofile        do not source profile files\n      --no-banner        suppress startup banner\n      --daemon           launch headless Varlink IPC control daemon\n      --varlink          launch headless Varlink IPC control daemon\n      --varlink-daemon   launch headless Varlink IPC control daemon\n      --varlink-call <s> execute single-shot Varlink IPC JSON call"); return Ok("showed-help"); }
+        if a == "--help" || a == "-h" { println("oosh - openOODA bounded shell\nusage: oosh [flags] [script.oosh] [args...] [-c <command>]\n\nflags:\n  -c <command>           execute specified command and exit\n  -h, --help             display this help message\n  -v, --version          display oosh version\n  -l, --login            launch as a login shell\n  -i                     force interactive shell mode\n  -s                     read commands from standard input\n      --norc             do not source ~/.ooshrc startup file\n      --noprofile        do not source profile files\n      --no-banner        suppress startup banner\n      --daemon           launch headless Varlink IPC control daemon\n      --varlink          launch headless Varlink IPC control daemon\n      --varlink-daemon   launch headless Varlink IPC control daemon\n      --varlink-call <s> execute single-shot Varlink IPC JSON call"); return Ok("showed-help"); }
         if a == "--version" || a == "-v" { println("oosh " + oosh_version()); return Ok("showed-version"); }
         if a == "--" { return Ok("validated"); }
         if a == "--help" || a == "--version" || a == "--no-banner" || a == "--daemon" || a == "--varlink" || a == "--varlink-daemon" || a == "--login" || a == "--norc" || a == "--noprofile" { i = i + 1; }
         else if a == "--varlink-call" {
-            if i + 1 >= n { println("ERR\toosh\t--varlink-call requires a JSON string"); process_exit(2); return Err("missing --varlink-call arg"); }
+            if i + 1 >= n { println("ERR\toosh\t--varlink-call requires a JSON string"); return Err("missing --varlink-call arg"); }
             i = i + 2;
         } else if str_starts_with(a, "--") {
-            println("ERR\toosh\tunknown flag: " + a); process_exit(2); return Err("unknown flag");
+            println("ERR\toosh\tunknown flag: " + a); return Err("unknown flag");
         } else if str_starts_with(a, "-") && chars_len(a) > 1 {
             let clen: Int = chars_len(a); let mut ci: Int = 1; let mut has_c: Bool = false; let mut valid: Bool = true;
             while ci < clen {
@@ -43,9 +43,9 @@ fn validate_argv(args: List[String]) -> Result[String, String] {
                 else if ch != "l" && ch != "i" && ch != "s" && ch != "v" && ch != "h" { valid = false; }
                 ci = ci + 1;
             }
-            if !valid { println("ERR\toosh\tunknown flag: " + a); process_exit(2); return Err("unknown flag"); }
+            if !valid { println("ERR\toosh\tunknown flag: " + a); return Err("unknown flag"); }
             if has_c {
-                if i + 1 >= n { println("ERR\toosh\t" + a + " requires a command string"); process_exit(2); return Err("missing -c arg"); }
+                if i + 1 >= n { println("ERR\toosh\t" + a + " requires a command string"); return Err("missing -c arg"); }
                 i = i + 2;
             } else { i = i + 1; }
         } else { return Ok("validated"); }
@@ -163,7 +163,6 @@ fn is_login_invocation(fs_r: &FsReadCap, is_login_flag: Bool) -> Bool {
 }
 
 pub fn main(bind: &BindCap, fs_r: &FsReadCap, sys: &ProcessCap, sys_cap: &SysCap, env: &EnvCap, time: &TimeCap, fs_w: &FsWriteCap, alloc: &AllocCap, thread: &ThreadCap, ffi: &FfiCap, args: List[String]) -> Result[Int, String] {
-    let _h = dlopen(ffi, "");
     let pre: Result[String, String] = validate_argv(args);
     let kind: String = match pre { Ok(s) => s, Err(_) => "validated" };
     if kind == "showed-help" || kind == "showed-version" { return Ok(0); }
@@ -171,9 +170,8 @@ pub fn main(bind: &BindCap, fs_r: &FsReadCap, sys: &ProcessCap, sys_cap: &SysCap
     let n: Int = list_len(args);
     let mut one_shot_cmd: String = ""; let mut has_c_flag: Bool = false; let mut is_daemon: Bool = false;
     let mut is_login_flag: Bool = false; let mut is_interactive_forced: Bool = false; let mut is_stdin: Bool = false;
-    let mut no_rc: Bool = false; let mut no_profile: Bool = false; let mut has_varlink_call: Bool = false;
-    let mut varlink_payload: String = ""; let mut script_file: String = ""; let mut script_args: List[String] = list_new();
-    let mut i: Int = 0; let mut stop_opts: Bool = false;
+    let mut no_rc: Bool = false; let mut no_profile: Bool = false; let mut has_varlink_call: Bool = false; let mut varlink_payload: String = "";
+    let mut script_file: String = ""; let mut script_args: List[String] = list_new(); let mut i: Int = 0; let mut stop_opts: Bool = false;
     while i < n {
         let a: String = list_get(args, i);
         if stop_opts { if script_file == "" && !is_stdin { script_file = a; } else { script_args = list_push(script_args, a); } i = i + 1; } else if a == "--" { stop_opts = true; i = i + 1; }
@@ -222,8 +220,8 @@ pub fn main(bind: &BindCap, fs_r: &FsReadCap, sys: &ProcessCap, sys_cap: &SysCap
     if has_c_flag {
         if str_trim(one_shot_cmd) == "" { return Ok(0); }
         let res: DispatchResult = dispatch_line(fs_r, fs_w, sys, env, ffi, one_shot_cmd, rec, session);
-        if res.exit_code != 0 { process_exit(res.exit_code); } return Ok(res.exit_code);
+        if res.exit_code != 0 { } return Ok(res.exit_code);
     }
     let fin_rc: Int = if script_file != "" { run_script_file(fs_r, fs_w, sys, env, ffi, script_file, script_args, rec, session) } else { run_engine(fs_r, sys, env, time, bind, fs_w, ffi, session) };
-    if fin_rc != 0 { process_exit(fin_rc); } return Ok(fin_rc);
+    if fin_rc != 0 { } return Ok(fin_rc);
 }

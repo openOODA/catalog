@@ -17,7 +17,7 @@ import "tail_opts.oo";
 import "std/fs/time/chrono.oo";
 
 fn render_help() -> String {
-    return "ootail 0.2.0 (openOODA sovereign tail)\n"
+    return "ootail 0.2.0 (openOODA bounded tail)\n"
         + "usage: ootail [options] [FILE]...\n"
         + "\n"
         + "Print the last 10 lines of each FILE to standard output.\n"
@@ -181,10 +181,9 @@ fn tail_follow_loop(fs: &FsReadCap, sys: &SysCap, time: &TimeCap, env: &EnvCap, 
 pub fn main(fs: &FsReadCap, sys: &SysCap, time: &TimeCap, proc_cap: &ProcessCap, env: &EnvCap, args: List[String]) -> Result[Int, String] {
     let opt: TailOptions = parse_tail_args(args);
     if opt.show_help { print(render_help()); return Ok(0); }
-    if opt.show_version { print("ootail 0.2.0 (openOODA sovereign tail)\n"); return Ok(0); }
+    if opt.show_version { print("ootail 0.2.0 (openOODA bounded tail)\n"); return Ok(0); }
     if opt.error_msg != "" {
         print("ootail: " + opt.error_msg + "\nTry 'ootail --help' for more information.\n");
-        process_exit(2);
         return Ok(2);
     }
     if opt.mcp_mode {
@@ -197,7 +196,6 @@ pub fn main(fs: &FsReadCap, sys: &SysCap, time: &TimeCap, proc_cap: &ProcessCap,
     let mut rc: Int = 0;
     if num_files == 0 || (num_files == 1 && list_get(opt.files, 0) == "-") {
         rc = tail_stdin(fs, opt, theme, color_on);
-        if rc != 0 { process_exit(rc); }
         return Ok(rc);
     }
     let show_hdr: Bool = (num_files > 1 || opt.verbose) && !opt.quiet;
@@ -211,6 +209,5 @@ pub fn main(fs: &FsReadCap, sys: &SysCap, time: &TimeCap, proc_cap: &ProcessCap,
     if opt.follow {
         tail_follow_loop(fs, sys, time, env, opt, theme, color_on, show_hdr);
     }
-    if rc != 0 { process_exit(rc); }
     return Ok(rc);
 }

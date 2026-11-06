@@ -5,5 +5,5 @@ deps=
 license=Apache-2.0
 payload=ooseccomp.oo
 commit=
-sha256=7a56df50ae127ade4ba0740ddfaa5dad0845c77d01a29138487554d1012a31ca
+sha256=1c6f34995a6498d272a5a91045fbfc51c1976a1d664d9f8135722352c30a575a
 sig=

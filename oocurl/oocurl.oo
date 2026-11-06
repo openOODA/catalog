@@ -46,7 +46,7 @@ pub fn main(
         return Ok(0);
     }
     if opts.version_mode {
-        println("oocurl 0.2.0 (openOODA sovereign HTTP client)");
+        println("oocurl 0.2.0 (openOODA bounded HTTP client)");
         return Ok(0);
     }
     if opts.mcp_mode {
@@ -59,6 +59,10 @@ pub fn main(
         return Ok(2);
     }
 
+    return fetch_and_render(tcp, fs_write, opts);
+}
+
+fn fetch_and_render(tcp: &TcpCap, fs_write: &FsWriteCap, opts: CurlOpts) -> Result[Int, String] {
     let parsed: ParsedUrl = parse_url(opts.url);
     if !parsed.is_valid {
         println("oocurl: could not parse URL: " + opts.url);

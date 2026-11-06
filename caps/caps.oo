@@ -7,7 +7,7 @@
 // Beats:
 //   1. Print each of the 32 explicit capabilities in the 64-bit capability register architecture.
 
-pub fn main() {
+pub fn main(fs_r: &FsReadCap) {
     println("FsReadCap");
     println("FsWriteCap");
     println("FsCap");

@@ -10,7 +10,7 @@
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "oobound 0.1.0 (openOODA sovereign agent & security)\n"
+    return "oobound 0.1.0 (openOODA bounded agent & security)\n"
         + "usage: oobound [options] [ARGUMENTS]...\n\n"
         + "Dynamic memory, CPU cycle, and file descriptor clamp for unvetted subprocesses.\n\n"
         + "Options:\n"
@@ -23,10 +23,10 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "oobound 0.1.0 (openOODA sovereign agent & security)\n";
+    return "oobound 0.1.0 (openOODA bounded agent & security)\n";
 }
 
-fn main(args: List[String]) -> Int {
+fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
     let num_args: Int = list_len(args);
     let mut i: Int = 0;
 
@@ -47,6 +47,6 @@ fn main(args: List[String]) -> Int {
         i = i + 1;
     }
 
-    print("oobound: sovereign capability-bounded utility ready\n");
+    print("oobound: bounded capability-bounded utility ready\n");
     return 0;
 }
