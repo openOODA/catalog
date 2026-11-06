@@ -1,9 +1,7 @@
 name: catalog CI
 
 on:
-  push:
-    branches: [master]
-
+  workflow_dispatch:
 jobs:
   catalog-gate:
     runs-on: ubuntu-latest
