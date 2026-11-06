@@ -1,9 +1,0 @@
-name=sqlite
-version=0.1.0
-caps=
-deps=
-license=MIT
-payload=sqlite.oo
-commit=
-sha256=30fc16e25afd5c74eac1d5b8e691d737327aae61e1d626f6b7172436e71de08b
-sig=

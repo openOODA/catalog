@@ -1,9 +1,0 @@
-name=oofold
-version=0.1.0
-caps=FsRead,Term,Mcp
-deps=
-license=Apache-2.0
-payload=oofold.oo
-commit=
-sha256=9b52561383fd94dde9e3f465271adec48f0cb7307c2e14dc8529381049290f39
-sig=

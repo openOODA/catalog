@@ -1,9 +1,0 @@
-name=ootrue
-version=0.1.0
-caps=Term,Env,Proc,Mcp
-deps=
-license=Apache-2.0
-payload=ootrue.oo
-commit=
-sha256=a25796d3c49d5bf174e4d0008ef45ed08ca88631e6823c723bd30fea3f50e422
-sig=

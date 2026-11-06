@@ -1,9 +1,0 @@
-name=oowait
-version=0.1.0
-caps=Term,Env,Proc,Mcp
-deps=
-license=Apache-2.0
-payload=oowait.oo
-commit=
-sha256=06f811a2717dcc469fe9d525eba3cc4417969eba350b628d144c5e08393d3271
-sig=

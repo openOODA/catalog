@@ -1,9 +1,0 @@
-name=ooastdiff
-version=0.1.0
-caps=FsRead,Mcp
-deps=
-license=Apache-2.0
-payload=ooastdiff.oo
-commit=
-sha256=1732049889db05f051322db00586e836cc72c698098c6812470d378fe00ac2c3
-sig=

@@ -1,9 +1,0 @@
-name=oocmp
-version=0.1.0
-caps=FsRead,Mcp
-deps=
-license=Apache-2.0
-payload=oocmp.oo
-commit=
-sha256=25e27d000d7c25de8b82b42b380c00e90b0748d9acc36bbd574c5b02f6eff602
-sig=

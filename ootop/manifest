@@ -1,9 +1,0 @@
-name=ootop
-version=0.2.0
-caps=FsRead,Mcp
-deps=
-license=Apache-2.0
-payload=ootop.oo
-commit=
-sha256=a5984429ef5ffe3050802ad4345fb933be6cafc01ee9dc4ef63c04f4247c4362
-sig=

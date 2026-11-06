@@ -1,9 +1,0 @@
-name=ooiostat
-version=0.1.0
-caps=Proc,SysInfo,Mcp
-deps=
-license=Apache-2.0
-payload=ooiostat.oo
-commit=
-sha256=78ae2cf7bd6e9ba6b85a476b9bc3161393db9561485a03abd1c92ebb354bf57e
-sig=

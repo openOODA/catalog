@@ -1,9 +1,0 @@
-name=oobash
-version=0.1.0
-caps=Term,Env,Proc,Mcp
-deps=
-license=Apache-2.0
-payload=oobash.oo
-commit=
-sha256=5d3e4cba7b3a3886a8c645f9e103944041fe8fe0edea83f118171847e8d54b97
-sig=

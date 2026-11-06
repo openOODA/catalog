@@ -1,9 +1,0 @@
-name=oocpuinfo
-version=0.1.0
-caps=Proc,SysInfo,Mcp
-deps=
-license=Apache-2.0
-payload=oocpuinfo.oo
-commit=
-sha256=c40ddd0a4c5c68eba161629854d88b83c7f05ee433c048c08faf5fd5ca7948ee
-sig=

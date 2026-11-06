@@ -1,9 +1,0 @@
-name=ooyes
-version=0.1.0
-caps=Term,Env,Proc,Mcp
-deps=
-license=Apache-2.0
-payload=ooyes.oo
-commit=
-sha256=e5dd9b256e198ef39084773178fa64130723904bdfbc07e6cbe7b9ff579121f3
-sig=

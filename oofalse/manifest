@@ -1,9 +1,0 @@
-name=oofalse
-version=0.1.0
-caps=Term,Env,Proc,Mcp
-deps=
-license=Apache-2.0
-payload=oofalse.oo
-commit=
-sha256=945a4857c4b735ec60c69f97c83c53112947aee5fdcc48169f6265a526ad62ba
-sig=

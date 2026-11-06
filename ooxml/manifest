@@ -1,9 +1,0 @@
-name=ooxml
-version=0.1.0
-caps=FsRead,Stream,Mcp
-deps=
-license=Apache-2.0
-payload=ooxml.oo
-commit=
-sha256=c40528240330c09762a04b84fd3d7b586dc01942c1e5c60a2820debf54333775
-sig=

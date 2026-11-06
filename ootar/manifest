@@ -1,9 +1,0 @@
-name=ootar
-version=0.1.0
-caps=FsRead,Mcp
-deps=
-license=Apache-2.0
-payload=ootar.oo
-commit=
-sha256=e53f41a5581a60efcd7fcb9a4d27e88af7cf6db54fdd2aeb1ef7120ae5a55747
-sig=

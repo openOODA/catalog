@@ -1,9 +1,0 @@
-name=oojoin
-version=0.1.0
-caps=FsRead,Term,Mcp
-deps=
-license=Apache-2.0
-payload=oojoin.oo
-commit=
-sha256=a11a1c527883ff837de37332ab7f97ef99d1dd16bb091de2f7aefe8565d7d36e
-sig=

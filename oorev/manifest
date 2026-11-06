@@ -1,9 +1,0 @@
-name=oorev
-version=0.1.0
-caps=FsRead,Term,Mcp
-deps=
-license=Apache-2.0
-payload=oorev.oo
-commit=
-sha256=384432692dac9f25ad42d98bf190e7d61556b4918a7a38bf25fb1771e13dd928
-sig=

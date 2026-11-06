@@ -1,9 +1,0 @@
-name=ooborder
-version=0.1.0
-caps=Term,Env,Mcp
-deps=
-license=Apache-2.0
-payload=ooborder.oo
-commit=
-sha256=bbd26bd5d50d58fcb65f4e88b12a43c73f664c32ef0e65de47050144f7a5dfec
-sig=

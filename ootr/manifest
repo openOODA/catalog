@@ -1,9 +1,0 @@
-name=ootr
-version=0.1.0
-caps=FsRead,Term,Mcp
-deps=
-license=Apache-2.0
-payload=ootr.oo
-commit=
-sha256=666942180945f1726bb4320bee2619a6864b2e2fc38f06faebdf059343abdebb
-sig=
