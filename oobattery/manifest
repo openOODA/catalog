@@ -1,6 +1,6 @@
 name=oobattery
-version=0.1.0
-caps=Proc,SysInfo,Mcp
+version=0.2.3
+caps=FsRead,Process,Env,Mcp
 deps=
 license=Apache-2.0
 payload=oobattery.oo

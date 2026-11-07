@@ -1,6 +1,6 @@
 name=ooless
-version=0.1.0
-caps=FsRead,Term,Mcp
+version=0.2.4
+caps=FsRead,Process
 deps=
 license=Apache-2.0
 payload=ooless.oo

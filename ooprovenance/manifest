@@ -1,6 +1,6 @@
 name=ooprovenance
-version=0.1.0
-caps=Sec,Agent,Mcp
+version=0.2.4
+caps=Sec,Agent,Mcp,FsRead
 deps=
 license=Apache-2.0
 payload=ooprovenance.oo

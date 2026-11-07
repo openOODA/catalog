@@ -1,6 +1,6 @@
 name=ooprogress
-version=0.1.0
-caps=Term,Env,Mcp
+version=0.2.4
+caps=Term,Env,Mcp,FsRead,FsWrite,Process
 deps=
 license=Apache-2.0
 payload=ooprogress.oo

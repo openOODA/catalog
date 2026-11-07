@@ -1,6 +1,6 @@
 name=oosh
-version=1.0.1
-caps=FsRead,Mcp
+version=1.0.2
+caps=Bind,FsRead,Process,Sys,Env,Time,FsWrite,Alloc,Thread,Ffi
 deps=
 license=Apache-2.0
 payload=oosh.oo

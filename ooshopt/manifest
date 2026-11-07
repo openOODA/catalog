@@ -1,5 +1,5 @@
 name=ooshopt
-version=0.1.0
+version=0.2.4
 caps=Term,Env,Proc,Mcp
 deps=
 license=Apache-2.0

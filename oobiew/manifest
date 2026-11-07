@@ -1,6 +1,6 @@
 name=oobiew
-version=0.1.0
-caps=FsRead,Term,Mcp
+version=0.2.3
+caps=FsRead,Process,Env,Mcp
 deps=
 license=Apache-2.0
 payload=oobiew.oo

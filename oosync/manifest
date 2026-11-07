@@ -1,6 +1,6 @@
 name=oosync
-version=0.1.0
-caps=FsRead,FsWrite,Mcp
+version=0.2.4
+caps=FsRead,FsWrite,Mcp,FsReadCap
 deps=
 license=Apache-2.0
 payload=oosync.oo

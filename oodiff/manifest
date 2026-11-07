@@ -1,5 +1,5 @@
 name=oodiff
-version=0.3.1
+version=0.3.6
 caps=FsRead,Mcp
 deps=
 license=Apache-2.0

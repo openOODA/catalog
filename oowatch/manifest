@@ -1,5 +1,5 @@
 name=oowatch
-version=0.1.0
+version=0.2.3
 caps=FsRead,Mcp
 deps=
 license=Apache-2.0

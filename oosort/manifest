@@ -1,6 +1,6 @@
 name=oosort
-version=0.1.0
-caps=FsRead,Term,Mcp
+version=0.2.7
+caps=FsRead,FsWrite,Process
 deps=
 license=Apache-2.0
 payload=oosort.oo

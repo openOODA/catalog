@@ -1,6 +1,6 @@
 name=oodig
-version=0.1.0
-caps=Net,Tls,Mcp
+version=0.2.3
+caps=Net,Tls,Mcp,FsRead,Process,Env
 deps=
 license=Apache-2.0
 payload=oodig.oo

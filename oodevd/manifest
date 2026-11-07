@@ -1,6 +1,6 @@
 name=oodevd
 version=0.4.0
-caps=FsRead,FsWrite,Proc
+caps=Process,FsRead,FsWrite
 deps=
 license=Apache-2.0
 payload=oodevd.oo

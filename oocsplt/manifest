@@ -1,6 +1,6 @@
 name=oocsplt
-version=0.1.0
-caps=FsRead,Term,Mcp
+version=0.2.3
+caps=FsRead,FsWrite,Process,Env,Mcp
 deps=
 license=Apache-2.0
 payload=oocsplt.oo

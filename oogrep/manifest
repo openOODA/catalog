@@ -1,6 +1,6 @@
 name=oogrep
-version=0.3.2
-caps=FsRead,Mcp
+version=0.3.6
+caps=FsRead,Process,Env,Mcp
 deps=
 license=Apache-2.0
 payload=oogrep.oo

@@ -1,6 +1,6 @@
 name=oovault
-version=0.2.3
-caps=Sec,Agent,Mcp
+version=0.2.5
+caps=Sec,Agent,Mcp,FsRead
 deps=
 license=Apache-2.0
 payload=oovault.oo

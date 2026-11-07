@@ -1,6 +1,6 @@
 name=ootimeout
-version=0.1.0
-caps=Term,Env,Proc,Mcp
+version=0.2.4
+caps=Term,Env,Proc,Mcp,FsReadCap
 deps=
 license=Apache-2.0
 payload=ootimeout.oo

@@ -1,6 +1,6 @@
 name=oonftables
-version=0.1.0
-caps=Net,Tls,Mcp
+version=0.2.4
+caps=Net,Tls,FsReadCap,ProcessCap,Mcp
 deps=
 license=Apache-2.0
 payload=oonftables.oo

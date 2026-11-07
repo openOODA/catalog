@@ -1,6 +1,6 @@
 name=oomap
-version=0.1.0
-caps=FsRead,Stream,Mcp
+version=0.2.4
+caps=FsRead,Stream,FsReadCap,Mcp
 deps=
 license=Apache-2.0
 payload=oomap.oo

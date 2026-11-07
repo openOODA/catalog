@@ -1,6 +1,6 @@
 name=oocat
-version=0.2.0
-caps=FsRead,Mcp
+version=0.2.5
+caps=FsRead,FsWrite,Process,Env,Mcp
 deps=
 license=Apache-2.0
 payload=oocat.oo

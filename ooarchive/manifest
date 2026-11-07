@@ -1,6 +1,6 @@
 name=ooarchive
-version=0.1.0
-caps=FsRead,FsWrite,Mcp
+version=0.2.5
+caps=FsRead,FsWrite,Process,Env,Mcp
 deps=
 license=Apache-2.0
 payload=ooarchive.oo

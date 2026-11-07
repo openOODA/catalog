@@ -1,6 +1,6 @@
 name=oofirewall
-version=0.1.0
-caps=Net,Tls,Mcp
+version=0.2.3
+caps=FsRead,Net,Process,Env,Mcp
 deps=
 license=Apache-2.0
 payload=oofirewall.oo

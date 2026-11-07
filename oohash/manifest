@@ -1,6 +1,6 @@
 name=oohash
-version=0.1.0
-caps=FsRead,Stream,Mcp
+version=0.2.15
+caps=FsRead,Process,Env,Mcp
 deps=
 license=Apache-2.0
 payload=oohash.oo
