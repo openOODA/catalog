@@ -1,0 +1,103 @@
+// # Index Queries - Lookup, Grammar, and Determinism Probes
+//
+// Logline: Prove every signed index entry resolves on disk, carries strict version and digest grammar, and re-reads byte-identically.
+//
+// Setup: Reads the catalog index and package manifests under FsReadCap. No network.
+//
+// Beats:
+//   1. Require every indexed name to resolve to an on-disk manifest directory.
+//   2. Require version fields in X.Y.Z grammar and sha256 fields as 64 lowercase hex.
+//   3. Require repeated index reads to return byte-identical content.
+
+import "std/core/primitives/str.oo";
+import "std/fs/os/fs.oo";
+import "qa/check_pkg.oo";
+
+fn iq_expect(cond: Bool, label: String) -> Bool {
+    if cond {
+        println("ok " + label);
+        return true;
+    }
+    println("FAIL " + label);
+    return false;
+}
+
+fn iq_digits(s: String) -> Bool {
+    let n: Int = bytes_len(s);
+    if n == 0 { return false; }
+    let mut i: Int = 0;
+    while i < n {
+        let c: Int = byte_at(s, i);
+        if c < 48 || c > 57 { return false; }
+        i = i + 1;
+    }
+    return true;
+}
+
+fn iq_ver_ok(v: String) -> Bool {
+    let parts: List[String] = str_split(v, ".");
+    if list_len(parts) != 3 { return false; }
+    let mut i: Int = 0;
+    while i < 3 {
+        if !iq_digits(list_get(parts, i)) { return false; }
+        i = i + 1;
+    }
+    return true;
+}
+
+fn iq_sha_ok(s: String) -> Bool {
+    if bytes_len(s) != 64 { return false; }
+    let mut i: Int = 0;
+    while i < 64 {
+        let c: Int = byte_at(s, i);
+        let ok: Bool = (c >= 48 && c <= 57) || (c >= 97 && c <= 102);
+        if !ok { return false; }
+        i = i + 1;
+    }
+    return true;
+}
+
+fn iq_row_ok(ln: String) -> Bool {
+    let mut pipes: Int = 0;
+    let mut rest: String = byte_slice(ln, 0, bytes_len(ln));
+    while bytes_len(rest) > 0 {
+        let pp: Int = str_index_of(rest, "|");
+        if pp < 0 { break; }
+        pipes = pipes + 1;
+        rest = byte_slice(rest, pp + 1, bytes_len(rest));
+    }
+    if pipes != 4 { return false; }
+    return iq_ver_ok(cat_field(ln, 1)) && iq_sha_ok(cat_field(ln, 4));
+}
+
+fn iq_resolves(fs: &FsReadCap, names: List[String]) -> Bool {
+    let mut i: Int = 0;
+    while i < list_len(names) {
+        let nm: String = list_get(names, i);
+        if !path_exists(fs, nm + "/manifest") { return false; }
+        i = i + 1;
+    }
+    return true;
+}
+
+pub fn index_queries(fs: &FsReadCap, p: Int) -> Int {
+    let mut np: Int = p;
+    let idx: String = slurp(fs, "index");
+    let rows: List[String] = str_split(idx, "\n");
+    let mut names: List[String] = list_new();
+    let mut rows_ok: Bool = true;
+    let mut r: Int = 0;
+    while r < list_len(rows) {
+        let rw: String = list_get(rows, r);
+        r = r + 1;
+        if bytes_len(rw) == 0 { continue; }
+        if !iq_row_ok(rw) { rows_ok = false; }
+        names = list_push(names, cat_field(rw, 0));
+    }
+    if iq_expect(iq_resolves(fs, names) && list_len(names) > 0,
+        "90 every indexed name resolves to an on-disk manifest") { np = np + 1; }
+    if iq_expect(rows_ok, "91 version and sha256 fields keep strict grammar") { np = np + 1; }
+    if iq_expect(slurp(fs, "index") == idx && list_len(names) > 0,
+        "92 repeated index reads stay byte-identical") { np = np + 1; }
+    return np;
+}
