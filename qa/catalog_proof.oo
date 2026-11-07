@@ -52,12 +52,43 @@ fn verify_agile_proofs() -> String {
     return "";
 }
 
+// One index name must be a safe slug AND carry the canonical oo*
+// prefix — the only admitted exceptions are the three fixture packages
+// (caps, echo, hello). Legacy hyphenated ooda-* names never resolve.
+fn check_index_name(nm: String) -> String {
+    if !pkg_name_safe(nm) { return "refused index name " + nm; }
+    if nm == "caps" || nm == "echo" || nm == "hello" { return ""; }
+    if str_index_of(nm, "oo") != 0 { return "non-canonical name " + nm; }
+    return "";
+}
+
+fn check_canonical(cat: String) -> String {
+    let lines: List[String] = str_split(cat, "\n");
+    let mut seen: Int = 0;
+    let mut i: Int = 0;
+    while i < list_len(lines) {
+        let line: String = list_get(lines, i);
+        let bar: Int = str_index_of(line, "|");
+        let nm: String = if bar < 0 { line } else { str_slice(line, 0, bar) };
+        if nm != "" {
+            seen = seen + 1;
+            let bad: String = check_index_name(nm);
+            if bad != "" { return bad; }
+        }
+        i = i + 1;
+    }
+    if seen == 0 { return "empty index sweep"; }
+    return "";
+}
+
 fn run_proofs(fs: &FsReadCap) -> String {
     let ap: String = verify_agile_proofs();
     if ap != "" { return ap; }
     let cat: String = slurp(fs, "catalog");
     if cat == "" { return "empty catalog"; }
     if cat != slurp(fs, "index") { return "index mismatch"; }
+    let cn: String = check_canonical(cat);
+    if cn != "" { return cn; }
     if str_index_of(slurp(fs, "CNAME"), "catalog.openooda.org") < 0 { return "CNAME"; }
     if !path_exists(fs, "registry.pub") { return "registry.pub"; }
     if !path_exists(fs, "index.minisig") { return "index.minisig"; }
