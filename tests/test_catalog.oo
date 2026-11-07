@@ -170,6 +170,8 @@ fn check_roundtrip(fs: &FsReadCap, p: Int) -> Int {
     let mut val_ok: Bool = true;
     let mut res_ok: Bool = true;
     let mut dup_ok: Bool = true;
+    let mut par_ok: Bool = true;
+    let mut caps_ok: Bool = true;
     let mut seen: List[String] = list_new();
     let mut n: Int = 0;
     let mut i: Int = 0;
@@ -189,6 +191,11 @@ fn check_roundtrip(fs: &FsReadCap, p: Int) -> Int {
             let bad_res: Bool = kv(man, "name") != nm || kv(man, "payload") == "" ||
                 get_manifest_checksum(man) == "";
             if bad_res { res_ok = false; }
+            let bad_par: Bool = kv(man, "version") != cat_field(line, 1) ||
+                kv(man, "caps") != cat_field(line, 2) ||
+                !checksums_match(get_manifest_checksum(man), cat_field(line, 4));
+            if bad_par { par_ok = false; }
+            if cat_field(line, 2) == "" { caps_ok = false; }
             let mut dup: Bool = false;
             let mut w: Int = 0;
             while w < list_len(seen) {
@@ -213,6 +220,8 @@ fn check_roundtrip(fs: &FsReadCap, p: Int) -> Int {
     let r13: String = check_pkg(fs, cat, "HELLO", "hello.oo");
     if test_expect_has(r13, "refused name", "80 refuses case-drifted package name") { p = p + 1; }
     if test_expect(dup_ok, "81 catalog names are unique") { p = p + 1; }
+    if test_expect(par_ok, "82 index line matches manifest version, caps, and checksum") { p = p + 1; }
+    if test_expect(caps_ok, "83 every entry declares a capability set") { p = p + 1; }
     return p;
 }
 
@@ -231,8 +240,8 @@ pub fn main(
     p = check_digests(p);
     p = check_pkg_refusals(fs_r, p);
     p = check_roundtrip(fs_r, p);
-    if p == 81 {
-        println("catalog tests: 81/81 passed");
+    if p == 83 {
+        println("catalog tests: 83/83 passed");
         return Ok(0);
     }
     println("catalog tests: FAILED (" + to_string(p) + "/81)");
