@@ -1,0 +1,137 @@
+// # Caps Schema - Manifest Capability Vocabulary Probe
+//
+// Logline: Prove every catalog manifest capability token resolves to the spec.oot capability vocabulary or a ratified package grant.
+//
+// Setup: Read-only FsReadCap over catalog manifests and ../openOODA/spec.oot. Pure string assertions; no subprocess, no network.
+//
+// Beats:
+//   1. Extract the canonical *Cap names from spec.oot section 5.1.
+//   2. Require every manifest caps= token to resolve and every caps field to appear exactly once with no empty or duplicate tokens.
+
+import "std/core/primitives/str.oo";
+import "std/fs/os/fs.oo";
+import "qa/check_pkg.oo";
+
+fn cs_expect(cond: Bool, label: String) -> Bool {
+    if cond { println("ok " + label);
+    return true; }
+    println("FAIL " + label);
+    return false;
+}
+
+fn cs_alpha(b: Int) -> Bool {
+    return (b >= 65 && b <= 90) || (b >= 97 && b <= 122);
+}
+
+fn cs_in(list: List[String], nm: String) -> Bool {
+    let mut i: Int = 0;
+    while i < list_len(list) {
+        if list_get(list, i) == nm { return true; }
+        i = i + 1;
+    }
+    return false;
+}
+
+fn cs_spec_caps(fs: &FsReadCap) -> List[String] {
+    let spec: String = slurp(fs, "../openOODA/spec.oot");
+    let lines: List[String] = str_split(spec, "\n");
+    let mut out: List[String] = list_new();
+    let mut i: Int = 0;
+    while i < list_len(lines) {
+        let ln: String = list_get(lines, i);
+        i = i + 1;
+        let cp: Int = str_index_of(ln, "Cap:");
+        if cp >= 0 {
+            let mut st: Int = cp;
+            while st > 0 && cs_alpha(byte_at(ln, st - 1)) { st = st - 1; }
+            let nm: String = byte_slice(ln, st, cp + 3);
+            if !cs_in(out, nm) { out = list_push(out, nm); }
+        }
+    }
+    return out;
+}
+
+fn cs_cap_ok(tok: String, spec: List[String]) -> Bool {
+    if tok == "Agent" || tok == "Mcp" || tok == "Proc" || tok == "Sec" ||
+        tok == "Stream" || tok == "SysInfo" || tok == "Term" { return true; }
+    if tok == "Tls" || tok == "TlsCap" || tok == "OoPath" || tok == "OoPathCap" { return true; }
+    if cs_in(spec, tok) { return true; }
+    return cs_in(spec, tok + "Cap");
+}
+
+fn cs_field_flags(val: String, spec: List[String]) -> Int {
+    if chars_len(val) == 0 { return 0; }
+    let toks: List[String] = str_split(val, ",");
+    let mut seen: List[String] = list_new();
+    let mut fld: Int = 0;
+    let mut tok: Int = 0;
+    let mut ti: Int = 0;
+    while ti < list_len(toks) {
+        let tk: String = list_get(toks, ti);
+        ti = ti + 1;
+        if chars_len(tk) == 0 { fld = 1; }
+        let mut di: Int = 0;
+        let mut dup: Bool = false;
+        while di < list_len(seen) {
+            if list_get(seen, di) == tk {
+                dup = true;
+                break;
+            }
+            di = di + 1;
+        }
+        if dup { fld = 1; }
+        if !cs_cap_ok(tk, spec) { tok = 1; }
+        seen = list_push(seen, tk);
+    }
+    return fld + tok * 2;
+}
+
+fn cs_manifest_scan(man: String, spec: List[String]) -> List[Int] {
+    let mlines: List[String] = str_split(man, "\n");
+    let mut seen_cnt: Int = 0;
+    let mut tok_bad: Int = 0;
+    let mut fld_bad: Int = 0;
+    let mut mi: Int = 0;
+    while mi < list_len(mlines) {
+        let ml: String = list_get(mlines, mi);
+        mi = mi + 1;
+        if str_index_of(ml, "caps=") == 0 {
+            seen_cnt = seen_cnt + 1;
+            let val: String = byte_slice(ml, 5, bytes_len(ml));
+            let fl: Int = cs_field_flags(val, spec);
+            if fl % 2 == 1 { fld_bad = 1; }
+            if fl >= 2 { tok_bad = 1; }
+        }
+    }
+    let mut out: List[Int] = list_new();
+    out = list_push(out, seen_cnt);
+    out = list_push(out, tok_bad);
+    out = list_push(out, fld_bad);
+    return out;
+}
+
+pub fn test_caps_schema(fs: &FsReadCap, p: Int) -> Int {
+    let mut np: Int = p;
+    let spec: List[String] = cs_spec_caps(fs);
+    let dirs: List[String] = fs_read_dir(fs, ".");
+    let mut all_tok: Bool = list_len(spec) == 32;
+    let mut all_fld: Bool = true;
+    let mut nman: Int = 0;
+    let mut i: Int = 0;
+    while i < list_len(dirs) {
+        let d: String = list_get(dirs, i);
+        i = i + 1;
+        if fs_is_dir(fs, d) && path_exists(fs, d + "/manifest") {
+            nman = nman + 1;
+            let man: String = slurp(fs, d + "/manifest");
+            let res: List[Int] = cs_manifest_scan(man, spec);
+            if list_get(res, 0) != 1 { all_fld = false; }
+            if list_get(res, 1) == 1 { all_tok = false; }
+            if list_get(res, 2) == 1 { all_fld = false; }
+        }
+    }
+    all_fld = all_fld && nman > 0;
+    if cs_expect(all_tok, "93 every manifest caps token resolves to spec.oot or a ratified grant") { np = np + 1; }
+    if cs_expect(all_fld, "94 every manifest carries exactly one well-formed caps field") { np = np + 1; }
+    return np;
+}

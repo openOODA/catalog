@@ -21,6 +21,7 @@ import "qa/check_pkg.oo";
 import "qa/digest.oo";
 import "tests/index_parity.oo";
 import "tests/index_queries.oo";
+import "tests/caps_schema.oo";
 
 fn test_expect(cond: Bool, label: String) -> Bool {
     if cond {
@@ -245,10 +246,11 @@ pub fn main(
     p = check_roundtrip(fs_r, p);
     p = index_parity(fs_r, p);
     p = index_queries(fs_r, p);
-    if p == 92 {
-        println("catalog tests: 92/92 passed");
+    p = test_caps_schema(fs_r, p);
+    if p == 94 {
+        println("catalog tests: 94/94 passed");
         return Ok(0);
     }
-    println("catalog tests: FAILED (" + to_string(p) + "/92)");
+    println("catalog tests: FAILED (" + to_string(p) + "/94)");
     return Ok(1);
 }
