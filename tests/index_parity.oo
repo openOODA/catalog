@@ -9,6 +9,7 @@
 //   2. Collect manifest-bearing dirs absent from the index and pin them to the seven withdrawn persona double-ships.
 //   3. Report the pass count back to the caller for the suite total.
 
+import "std/core/primitives/str.oo";
 import "std/fs/os/fs.oo";
 import "qa/check_pkg.oo";
 
@@ -74,5 +75,26 @@ pub fn index_parity(fs: &FsReadCap, p: Int) -> Int {
         i = i + 1;
     }
     if ip_expect(all_w, "85 unindexed manifest dirs equal the seven withdrawn persona packages") { np = np + 1; }
+    let cat_eq: Bool = slurp(fs, "catalog") == slurp(fs, "index");
+    if ip_expect(cat_eq, "86 catalog blob stays byte-identical to the signed index") { np = np + 1; }
+    let html: String = slurp(fs, "index.html");
+    let names: List[String] = ip_names(fs);
+    let mut missing: Int = 0;
+    let mut i2: Int = 0;
+    while i2 < list_len(names) {
+        let nm: String = list_get(names, i2);
+        if !str_contains(html, "/" + nm + "/manifest") { missing = missing + 1; }
+        i2 = i2 + 1;
+    }
+    let mut links: Int = 0;
+    let mut hrest: String = html;
+    while bytes_len(hrest) > 0 {
+        let hp: Int = str_index_of(hrest, "/manifest\"");
+        if hp < 0 { break; }
+        links = links + 1;
+        hrest = byte_slice(hrest, hp + 10, bytes_len(hrest));
+    }
+    let html_ok: Bool = missing == 0 && links == list_len(names) && list_len(names) > 0;
+    if ip_expect(html_ok, "87 index.html manifest links cover every signed index entry") { np = np + 1; }
     return np;
 }
