@@ -1,0 +1,78 @@
+// # Index Parity - Catalog distribution consistency probes
+//
+// Logline: Prove the signed index, on-disk package dirs, and withdrawn persona set stay mutually consistent.
+//
+// Setup: Reads the catalog index, package manifests, and signature artifacts under FsReadCap. No network.
+//
+// Beats:
+//   1. Require index.sig, index.minisig, and registry.pub to exist non-empty.
+//   2. Collect manifest-bearing dirs absent from the index and pin them to the seven withdrawn persona double-ships.
+//   3. Report the pass count back to the caller for the suite total.
+
+import "std/fs/os/fs.oo";
+import "qa/check_pkg.oo";
+
+fn ip_expect(cond: Bool, label: String) -> Bool {
+    if cond { println("ok " + label);
+    return true; }
+    println("FAIL " + label);
+    return false;
+}
+
+fn ip_names(fs: &FsReadCap) -> List[String] {
+    let idx: String = slurp(fs, "index");
+    let lines: List[String] = str_split(idx, "\n");
+    let mut out: List[String] = list_new();
+    let mut i: Int = 0;
+    while i < list_len(lines) {
+        let ln: String = list_get(lines, i);
+        i = i + 1;
+        if chars_len(ln) > 0 { out = list_push(out, cat_field(ln, 0)); }
+    }
+    return out;
+}
+
+fn ip_orphans(fs: &FsReadCap, names: List[String]) -> List[String] {
+    let dirs: List[String] = fs_read_dir(fs, ".");
+    let mut out: List[String] = list_new();
+    let mut i: Int = 0;
+    while i < list_len(dirs) {
+        let d: String = list_get(dirs, i);
+        i = i + 1;
+        if fs_is_dir(fs, d) && path_exists(fs, d + "/manifest") {
+            let mut found: Bool = false;
+            let mut j: Int = 0;
+            while j < list_len(names) {
+                if list_get(names, j) == d {
+                    found = true;
+                    break;
+                }
+                j = j + 1;
+            }
+            if !found { out = list_push(out, d); }
+        }
+    }
+    return out;
+}
+
+fn ip_withdrawn(nm: String) -> Bool {
+    return nm == "ooarp" || nm == "oodig" || nm == "oodns" || nm == "oohost" ||
+        nm == "ooping" || nm == "ootraceroute" || nm == "oowhois";
+}
+
+pub fn index_parity(fs: &FsReadCap, p: Int) -> Int {
+    let mut np: Int = p;
+    let sig_ok: Bool = bytes_len(slurp(fs, "index.sig")) > 0 &&
+        bytes_len(slurp(fs, "index.minisig")) > 0 &&
+        bytes_len(slurp(fs, "registry.pub")) > 0;
+    if ip_expect(sig_ok, "84 signed-index artifacts ship complete and non-empty") { np = np + 1; }
+    let orphans: List[String] = ip_orphans(fs, ip_names(fs));
+    let mut all_w: Bool = list_len(orphans) == 7;
+    let mut i: Int = 0;
+    while i < list_len(orphans) {
+        if !ip_withdrawn(list_get(orphans, i)) { all_w = false; }
+        i = i + 1;
+    }
+    if ip_expect(all_w, "85 unindexed manifest dirs equal the seven withdrawn persona packages") { np = np + 1; }
+    return np;
+}

@@ -13,11 +13,13 @@
 //   6. Refuse hostile catalog lines (bad fields, traversal, bad sha) via check_pkg.
 //   7. Round-trip every catalog line through the parser and resolve each manifest.
 //   8. Fuzz byte-level hostile inputs and prove index name uniqueness.
+//   9. Assert signed-index artifacts ship and unindexed dirs equal the withdrawn persona set.
 
 import "std/sec/pqc.oo";
 import "hello/anchor.oo";
 import "qa/check_pkg.oo";
 import "qa/digest.oo";
+import "tests/index_parity.oo";
 
 fn test_expect(cond: Bool, label: String) -> Bool {
     if cond {
@@ -240,10 +242,11 @@ pub fn main(
     p = check_digests(p);
     p = check_pkg_refusals(fs_r, p);
     p = check_roundtrip(fs_r, p);
-    if p == 83 {
-        println("catalog tests: 83/83 passed");
+    p = index_parity(fs_r, p);
+    if p == 85 {
+        println("catalog tests: 85/85 passed");
         return Ok(0);
     }
-    println("catalog tests: FAILED (" + to_string(p) + "/81)");
+    println("catalog tests: FAILED (" + to_string(p) + "/85)");
     return Ok(1);
 }
