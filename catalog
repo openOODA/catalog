@@ -3,7 +3,6 @@ echo|0.1.0|FsRead||14d389c387ed6503fd1632236fefaf6608b218ce28c91faa4522ddf409e18
 hello|0.1.0|FsRead||6498c89ac067d10897e8eb3dfe2800ace2efa3c3228df2c2a78e9e84bc4019df
 ooapparmor|0.1.0|Sec,Agent,Mcp||1877a07a3b6eed6bc2a18ddfe2a13f94cfbd65ac2df9187f89baab316bad3405
 ooarchive|0.1.0|FsRead,FsWrite,Mcp||efefa865e7d44ccee9887711dd77f040bce90548534e3cf2ea57b84271bdd004
-ooarp|0.1.0|Net,Tls,Mcp||a42e50d1acffdc588e961355b13625ac45019656f11f0230cf54c9beec49b98e
 ooat|0.1.0|Term,Env,Proc,Mcp||f858a824e4fde4cd28ac24d92b4b70dc250ef63a4150fe47f4882d431b4befc1
 ooattest|0.1.0|Sec,Agent,Mcp||d6183e0820ed6a9892eff2698e7eb8fb1c2f070999acd42131d02a33c9ad7efc
 ooaudit|0.1.0|Sec,Agent,Mcp||d75760144067d34ac4443e4751066c581a5cadc898428cddf4034b273de1758d
@@ -17,7 +16,7 @@ oobinary|0.1.0|FsRead,Stream,Mcp||36457643d4347583e9ea40af72a31e5b82962de5e910d6
 oobound|0.1.0|Sec,Agent,Mcp||995c131ea2b648ec166aa3fb2f10945c1bf77aca41ff7ae8b7912792cfaf6380
 ooboundary|0.1.0|Net,Tls,Mcp||487be36c9242bf9606a75e35b2261346811a5e11947f2b2bad8bbef8a77fddf1
 oocap|0.1.0|Sec,Agent,Mcp||5a5a19ec70baf692d928f6d7110d13cd0f548f5efa8b809aad085d6d8bf9d263
-oocat|0.2.0|FsRead,Mcp||425228e56bfec01b3b010db9b2b5c3106f786d913dc397f491cf3f81cc699a5d
+oocat|0.2.0|FsRead,Mcp||a51625edcf6566ce4bc06fea6f61e97e73a9434ae5bde876a200496d9390403b
 oocgroup|0.1.0|Proc,SysInfo,Mcp||b871fd14c74f86589856ba813dd2b53863605a035b5cee0ad3090cfeacb08f36
 oocgroupv2|0.1.0|Proc,SysInfo,Mcp||83df47af8f70d950857a003733fbffb812887938bdd4b0c39ab6c27841a236be
 oochgrp|0.1.0|FsRead,FsWrite,Mcp||6e3e6094223a271f392f2e2d85df430881837fcd0a8f5d5dff0a595293ff3bc8
@@ -30,28 +29,26 @@ oocp|0.1.0|FsRead,FsWrite,Mcp||da0838554d39092c223562d6c5c269531f3ac02bd83776a71
 oocron|0.1.0|Term,Env,Proc,Mcp||9c82dd749929684772a7342edf380d6e45fdc2ca453b03f45a4c110a2073be1e
 oocsplt|0.1.0|FsRead,Term,Mcp||f1ceb80b76a0698a655872ca4fd4383f6fa2173c418a8fa1d3bd8c59e89e6d72
 oocurl|0.1.0|FsRead,Mcp||f2a6c20af066d9b395bf07a35a9c8c842bdf0b1b6695edb4ca5f218ec85a9171
+oodevd|0.4.0|FsRead,FsWrite,Proc||3938346a8176e0f714fb211c849b456a0904a4f3ced43ee9d3364e88a54c9937
 oodialog|0.1.0|Term,Env,Mcp||ff743c6e5a51b02f867372849919afb76016fb9769e2f07b6baf084ebe6ac98f
 oodiff|0.3.1|FsRead,Mcp||40529712b74423c3cd03dc39e17334cac9bbf1ae5612db9f33641d307f0537ee
 oodiff3|0.1.0|FsRead,Mcp||ed36f71746a7806d4cd6334996a4c1c006d54a41d9a737ed74899311df19acc9
-oodig|0.1.0|Net,Tls,Mcp||f9049edea3d67e1c199266a7c87cc21dddadb0c592f44b441b0373679f150df6
 oodirname|0.1.0|FsRead,FsWrite,Mcp||c0dd8791782ab4ad3046d5f0a9128a1e965d755473723da08e780a745d4e49b1
 oodmesg|0.1.0|Proc,SysInfo,Mcp||d6f8c9f20bb294c71da9a5c36210a5727bde987aef8e0d73b13cc376f89c85ee
-oodns|0.1.0|Net,Tls,Mcp||54cce16a561d4e221a55f3e719b4f3c697fdf838d8ac0afe79015ae21a7d49fb
 ooenv|0.1.0|FsRead,Mcp||895bdbc875b8b114fac83e96d5915940ad729a652f088075d8d5d7237ef61d50
 oofigure|0.1.0|Term,Env,Mcp||004df6c20323e9bc5c19f115edd706c1807ae151e6d12ca5c0f9c34fd6197a1f
 oofind|0.3.0|FsRead,Mcp||04dfffb36b3aa3e545f8be82df74722f6ed1a17ea5c200cb564c7553499bc82d
 oofirewall|0.1.0|Net,Tls,Mcp||fba2421eebfd9f579a4c0d407a37d87220edc7765f40851c83d7a69efaede2ae
 oofsck|0.1.0|FsRead,FsWrite,Mcp||e8b7551aa5bcd66b7819ae80c5b430dfd59cd403f9268ff4c2e064c278031a7a
-oofzf|0.1.0|FsRead,Mcp||f876115fbf93073998edb42eb5e3c82444ff8907ac7b7b7fe3ddd8731d19dc45
+oofzf|0.1.0|FsRead,Mcp||5cb5d0acea32a1788830193aa8f5b9a3b1d0047094be34d1a61a1a8596fe8d6d
 oogitdiff|0.1.0|FsRead,Mcp||6a6bd3d0d2f2dc8be2405adf9cb874794ed0f5774f5204fa7046659cd9870bb6
 ooglyph|0.1.0|Term,Env,Mcp||8165d97966d2ea9f92189b9536a0fa8da97bea86fea71ce74b7b438a191422dd
 oogradient|0.1.0|Term,Env,Mcp||2ef5310047cd84bb54ea13aa1d796b3567ebe9e698ebcc34e64a98b7a5d8d124
-oogrep|0.3.2|FsRead,Mcp||6a30e750d6bd096b02fb0ea52eb3ff9b0620d9d1ec682bef77b2c7bbdc8e2acb
-oogrepz|0.1.0|FsRead,Term,Mcp||51226bfe0b1c9fc80279fbb87f7776f6abb944dde8aee97cc40f09cf84ac758a
+oogrep|0.3.2|FsRead,Mcp||9e601ef7b7c6fb6237d31cf23ebd1c1ff99c0c8ba739d264be607783aa57b427
+oogrepz|0.1.0|FsRead,Term,Mcp||2331ea59664a77e6bbdf27f170bd73efe67ce41a2cb260804ce496b57f0b0116
 ooguard|0.1.0|Sec,Agent,Mcp||8c1d2259d07d0ba81c00f10ecf7e8a61a4129c444fcd27b3c9fd9db0c7fc3aab
 oohash|0.1.0|FsRead,Stream,Mcp||4b6a6d900c629508e9b46402823bfabe352ab9d7508a11975bd649a453fcd5cb
 oohistory|0.1.0|Term,Env,Proc,Mcp||0864c1c8e377bc558e0e28530e75d20432149b0f6d2f027494a505d7d1bae4c6
-oohost|0.1.0|Net,Tls,Mcp||5cedfb130b6bbb024b975e255e63163e95567c8daea998abe00928f0ac3d096f
 oohpack|0.1.0|Net,Tls,Mcp||0fcd64564ba9e5a02063bc560cbdb625bd6ab9b317f59f1d76675c7907f07ea4
 oohsl|0.1.0|Term,Env,Mcp||1a6166e643c19ff54422bda2656eefb2095b266ed995f092912180ddaf16c6ce
 oohwinfo|0.1.0|Proc,SysInfo,Mcp||f18a7eef5aaf7809d5e7aa09b9d0a9aeffbc937663722c5b021bfaf8557baeb6
@@ -59,7 +56,7 @@ ooifconfig|0.1.0|Net,Tls,Mcp||e818d49dd37176e71920d34c02b3d7afdee560882d94e027b7
 ooip|0.1.0|Net,Tls,Mcp||7dd604fbb8368750aaf53e9af0d9d09ad457e5b036d24a5f37a1e1176ac4121e
 ooiptables|0.1.0|Net,Tls,Mcp||b8c61f83364673c539e29e5ed5de2c110101242174b32371af0f138062325a72
 oojournal|0.1.0|Proc,SysInfo,Mcp||7fa8f71ee4028688ee18fc603cebea48ae3c1404196c6f362a87b8485e7a1b12
-oojq|0.3.0|FsRead,Mcp||32c49d398059cdc1196b401391584906acaa1f8738c957c7f58d808adcf8c72b
+oojq|0.3.0|FsRead,Mcp||4d563cc165a8f905f44f3779b324f1a6ff08eb3c6f1bb4b6f328e0114302f0d1
 ookeygen|0.1.0|Sec,Agent,Mcp||8cf3d6cee76e644e52f8743efed98bc84bd3f43f933f647b8cc3e24daa1580f3
 oolandlock|0.1.0|Sec,Agent,Mcp||98f09edef0a8d371d26cac9a7fcd4e775e9b9ce46c4a3ee9e024890bee2793e4
 ooless|0.1.0|FsRead,Term,Mcp||b703f77fb42ea7cd017b8f52aa0742988b3fa4c9331e3c438477208a84c8f482
@@ -83,6 +80,7 @@ oomtr|0.1.0|Net,Tls,Mcp||f868b281681b3d4cd30666c7ad814a922c8384d628254983199c20d
 oomv|0.1.0|FsRead,FsWrite,Mcp||b4416236c8bb83a4a802f0a728e5dd96461655613a0f0c7ecc1fb605dd9b88a0
 oonaa|0.1.0|Sec,Agent,Mcp||63ed8a4edddbc33d27a0c6771e35fabdcdd13660a0f0b8c0895ec3c56517b233
 oonegatrust|0.1.0|Sec,Agent,Mcp||c3bf77d679d89f2b3a8118aaecaad0b960b5a025c5539389ab4984716d5dd787
+oonet|0.1.0|FsRead,Net,Proc,Env,Mcp||d86656d5dd46860f7a0bf2793221a0335e109814d8bdca2d2ebdaab22c2b614e
 oonetcat|0.1.0|Net,Tls,Mcp||f13ed50894a0788dbed66cb9b4d346387e2d9667f4373387d70c91395766bec7
 oonetstat|0.1.0|Proc,SysInfo,Mcp||5e4ea178ffa150b375c1857d15ce984f8ae8e651001a080d7e4294f1e7f5d82c
 oonftables|0.1.0|Net,Tls,Mcp||66695189c0ec7cbb087bb92c2bed03fe327fa8e1f2d054a29f1d338afc1e4bde
@@ -91,7 +89,6 @@ oonslookup|0.1.0|Net,Tls,Mcp||c3630ad651e2c1caab81fe8e6d5bfef857fbab4407d06762ad
 oood|0.1.0|FsRead,Term,Mcp||669aede9047d756737f2cffc07aa4b20e7d6e1e9f7feef9e809aa539e5c8f203
 ooparse|0.1.0|FsRead,Stream,Mcp||1d61a7efe555f806f04336f1e81b2612bfe17233462826e4464d6f4ae92a347c
 oopath|0.1.0|FsRead,FsWrite,Mcp||d6a8f04ffe9379b4e728a77d35e6ce858eb819ead64ba1609239197f561b196f
-ooping|0.1.0|Net,Tls,Mcp||0091b10d9e858e3b20e474679111ffe791c1c7f8441446bb42f5423408c4f862
 oopolicy|0.1.0|Sec,Agent,Mcp||d376932763574a6423c5904a092cff3f01c1f17199029cbe1bd797850b74b7b6
 oopower|0.1.0|Proc,SysInfo,Mcp||921bc9afc79d5e3fcb6341beaabba3023321a4ba4a80ae7ca55b5434b060dfe1
 oopr|0.1.0|FsRead,Term,Mcp||8eff7d221185306f4f1f5a3376c13259184a0374dee630038fdec49ff24370c1
@@ -121,7 +118,7 @@ oosed|0.1.0|FsRead,Mcp||a31aca7853524838893b7ff85424568bc1128db0a3bd43055c094349
 oosemantcdiff|0.1.0|FsRead,Mcp||ec8e14b5919a7215d7583e1f978bc0d796f7b67726e96cd843527a937c3c710c
 oosensors|0.1.0|Proc,SysInfo,Mcp||c0585f9d2a7341314e3fee7dc9a1474ecdd33bcf5fdc01bdc7f31374194566c9
 oosftp|0.1.0|Net,Tls,Mcp||a68cb78a6dd24f6be6f3918d52ef84e9c6f935f3cf38e31a5415ceaa124112a8
-oosh|1.0.1|FsRead,Mcp||0c60bbe79b155e341297317493561289bfe524221791b459b60ae3a041972c66
+oosh|1.0.1|FsRead,Mcp||6ad331a5478ee34e1f0a4da94de51a8bd7f76890b71457ad0f45d1a6bdbf5442
 ooshopt|0.1.0|Term,Env,Proc,Mcp||483a902ca0695cc1da5ce6930ecee8b57a48ec81ba36f9ab8d7cc486e0b0c94a
 ooshred|0.1.0|FsRead,FsWrite,Mcp||ed9057ffcee6a41d2305c3f8e4118fbfe717a1b31590e838ef96d230f0f1c95a
 ooshutdown|0.1.0|Proc,SysInfo,Mcp||aca31d1c0df2f63e0f9d8e71c08d6140ce0c7e40fdb4a2aad520b89d5edc7bc8
@@ -152,7 +149,6 @@ ootmux|0.1.0|Term,Env,Proc,Mcp||e24a1676ea3fe082732b194bfac32fbc3d8dcc6651b57865
 ootoken|0.1.0|Sec,Agent,Mcp||a8b5df3d0a81a89be8c5720b3230bc956aa81553a39b52857e53b7a399111c5c
 ootouch|0.1.0|FsRead,FsWrite,Mcp||48e1ff941b995bf232b58e0b42f3b7ae02cd3d39ada8d399dd1bffe91084a42d
 ootput|0.1.0|Term,Env,Proc,Mcp||6f3434f39535b1089ffe60a3956daccf778105c10cbea886e1dc7b2ef076aa30
-ootraceroute|0.1.0|Net,Tls,Mcp||0680efec5a36976f9bbea66c3a5ce9ea71e9cd49e29e50d3ffcb873cce0eddd3
 ootruncate|0.1.0|FsRead,FsWrite,Mcp||0958081f00023b8622b18d00693cc903679df1545f10260a2e2f1b89196aeeda
 ootsv|0.1.0|FsRead,Stream,Mcp||9dea18f0fb9b1e6de6c1f1a7ef1d764249e343f3518762e07fb9f6f1260e63d9
 ootty|0.1.0|Term,Env,Proc,Mcp||30aa204419282ade4e35b8e528ef265b656b602ce7aa5372a1f33c33eaef713a
@@ -164,5 +160,4 @@ oovalidate|0.1.0|FsRead,Stream,Mcp||ab97420bd002621267cec4c5a02f445a0d891e09a79c
 oovault|0.2.3|Sec,Agent,Mcp||72540d75a98599a27a7fe0c11e3275ed2a0a9ce3d20510d71187c467b65664d9
 ooverify|0.1.0|Sec,Agent,Mcp||4f82e8fdda424ea233794d4d343f0aa6f9d5a1ed00804be5a59bbfc767a2bed1
 oowatch|0.1.0|FsRead,Mcp||c81112d5d3916ff648b8039963eb06026b8d3e414c90b4ca7afb35a859c7fd50
-oowhois|0.1.0|Net,Tls,Mcp||8ad175d3478d13db485271b849acb508843dceb295c0c0d929fe2bbee3d166a1
 ooworker|0.1.0|Term,Env,Proc,Mcp||b87427919005f708e06b1bf5f16652af30f649d6b3d94d2cd7b879e6ff945169
