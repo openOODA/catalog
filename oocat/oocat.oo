@@ -67,7 +67,8 @@ fn resolve_color_choice(opts_color: String, fs: &FsReadCap, env: &EnvCap) -> Boo
     let res: Result[String, String] = read_file(fs, "/proc/self/fdinfo/1");
     if res.is_ok() {
         let info: String = match res { Ok(s) => s, Err(_) => "" };
-        if str_contains(info, "flags:\t0100002") || str_contains(info, "flags:\t02\n") || str_contains(info, "flags: 0100002") || str_contains(info, "flags: 02\n") {
+        if str_contains(info, "flags:\t0100002") || str_contains(info, "flags:\t02\n")
+            || str_contains(info, "flags: 0100002") || str_contains(info, "flags: 02\n") {
             return true;
         }
         return false;
@@ -111,10 +112,15 @@ fn render_file(path: String, opts: CatOpts, fs: &FsReadCap, default_theme: Strin
 
     let show_borders: Bool = opts.style == "full" || opts.style == "grid";
     let show_header: Bool = opts.style == "full" && path != "-";
-    let show_nums: Bool = opts.number || opts.number_nonblank || opts.style == "numbers" || opts.style == "grid" || opts.style == "full";
+    let show_nums: Bool = opts.number || opts.number_nonblank
+        || opts.style == "numbers" || opts.style == "grid" || opts.style == "full";
 
     print_top_frame(show_header, show_borders, display_title, total, gw, use_color);
-    emit_lines(raw_lines, range, opts, show_nums, show_borders, gw, lang, theme, use_color);
+    let view: EmitView = EmitView {
+        show_nums: show_nums, show_borders: show_borders, gw: gw,
+        lang: lang, theme: theme, use_color: use_color
+    };
+    emit_lines(raw_lines, range, opts, view);
 
     if show_borders {
         println(render_bottom_border(gw, 70, use_color));
@@ -122,7 +128,16 @@ fn render_file(path: String, opts: CatOpts, fs: &FsReadCap, default_theme: Strin
     return 0;
 }
 
-fn emit_lines(raw_lines: List[String], range: LineRange, opts: CatOpts, show_nums: Bool, show_borders: Bool, gw: Int, lang: String, theme: String, use_color: Bool) {
+type EmitView = struct {
+    show_nums: Bool,
+    show_borders: Bool,
+    gw: Int,
+    lang: String,
+    theme: String,
+    use_color: Bool,
+};
+
+fn emit_lines(raw_lines: List[String], range: LineRange, opts: CatOpts, view: EmitView) {
     let total: Int = list_len(raw_lines);
     let mut nb_counter: Int = 1;
     let mut i: Int = 0;
@@ -134,22 +149,19 @@ fn emit_lines(raw_lines: List[String], range: LineRange, opts: CatOpts, show_num
                 line_text = apply_show_all(line_text);
             }
             let is_blank: Bool = str_trim(line_text) == "";
-            let gutter: String = if show_nums {
-                if opts.number_nonblank {
-                    if is_blank {
-                        format_empty_gutter(gw, show_borders || opts.style == "numbers", use_color)
-                    } else {
-                        let g: String = format_gutter(nb_counter, gw, show_borders || opts.style == "numbers", use_color);
-                        nb_counter = nb_counter + 1;
-                        g
-                    }
-                } else {
-                    format_gutter(line_num, gw, show_borders || opts.style == "numbers", use_color)
-                }
-            } else {
-                ""
-            };
-            let hl: String = highlight_line(line_text, lang, theme, use_color);
+            let numbered: Bool = view.show_borders || opts.style == "numbers";
+            let mut gutter: String = "";
+            if view.show_nums && opts.number_nonblank && is_blank {
+                gutter = format_empty_gutter(view.gw, numbered, view.use_color);
+            }
+            if view.show_nums && opts.number_nonblank && !is_blank {
+                gutter = format_gutter(nb_counter, view.gw, numbered, view.use_color);
+                nb_counter = nb_counter + 1;
+            }
+            if view.show_nums && !opts.number_nonblank {
+                gutter = format_gutter(line_num, view.gw, numbered, view.use_color);
+            }
+            let hl: String = highlight_line(line_text, view.lang, view.theme, view.use_color);
             println(gutter + hl);
         }
         i = i + 1;

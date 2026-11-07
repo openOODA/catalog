@@ -90,7 +90,8 @@ fn read_input(opts: FzfOpts, fs: &FsReadCap) -> String {
     return read_all_stdin(fs);
 }
 
-fn render_picker(ranked: List[Candidate], query: String, matched_count: Int, total_count: Int, opts: FzfOpts, fs: &FsReadCap, env: &EnvCap) {
+fn render_picker(ranked: List[Candidate], query: String, matched_count: Int,
+    total_count: Int, opts: FzfOpts, fs: &FsReadCap, env: &EnvCap) {
     let use_color: Bool = resolve_color_mode(opts, env);
     let theme: String = if opts.theme_override != "" { opts.theme_override } else { resolve_fzf_theme(fs, env) };
     if use_color {

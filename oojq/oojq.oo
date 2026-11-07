@@ -94,7 +94,10 @@ pub fn run_query(fs: &FsReadCap, q: Query, theme: String) -> Result[Int, String]
     let mut roots: List[Int] = list_new();
     match filter_eval(doc, filt) {
         Err(e) => { return Err("filter \"" + filt + "\": " + e); }
-        Ok(r) => { out_doc = r.doc; roots = r.out; }
+        Ok(r) => {
+            out_doc = r.doc;
+            roots = r.out;
+        }
     }
     if list_len(roots) == 0 {
         if exit_status { return Ok(4); }

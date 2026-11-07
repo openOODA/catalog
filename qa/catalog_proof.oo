@@ -23,11 +23,16 @@ fn verify_agile_proofs() -> String {
     if !is_valid_checksum("sha256:" + bare) { return "prefixed sha256 invalid"; }
     if !is_valid_checksum("blake3:" + bare) { return "blake3 invalid"; }
     if !is_valid_checksum("sha3:" + bare) { return "sha3 invalid"; }
-    let dummy512: String = "ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f";
+    let dummy512: String = "ddaf35a193617abacc417349ae204131"
+        + "12e6fa4e89a97ea20a9eeee64b55d39a2192992a"
+        + "274fc1a836ba3c23a3feebbd454d4423643ce80e"
+        + "2a9ac94fa54ca49f";
     if !is_valid_checksum("sha512:" + dummy512) { return "sha512 invalid"; }
     if is_valid_checksum("md5:0123456789abcdef") { return "invalid algo accepted"; }
     if is_valid_checksum("sha256:short") { return "short hex accepted"; }
-    if is_valid_checksum("sha256:0e31868267f9f1baa1028cdeddade94266420d50a29ade6bb583090618bd97eG") { return "non-hex accepted"; }
+    let bad_hex: String = "sha256:0e31868267f9f1baa1028cdeddade9"
+        + "4266420d50a29ade6bb583090618bd97eG";
+    if is_valid_checksum(bad_hex) { return "non-hex accepted"; }
     let h256: String = compute_payload_digest("sha256", "abc");
     if h256 != "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad" { return "h256 mismatch"; }
     let hb3: String = compute_payload_digest("blake3", "abc");
@@ -37,7 +42,11 @@ fn verify_agile_proofs() -> String {
     let hs512: String = compute_payload_digest("sha512", "abc");
     if hs512 != dummy512 { return "sha512 mismatch"; }
     let man_test: String = "name=foo\nchecksum=blake3:6437b3ac38465133ffb63b75273a8db548c558465d79db03fd359c6cd5bd9d85\n";
-    if get_manifest_checksum(man_test) != "blake3:6437b3ac38465133ffb63b75273a8db548c558465d79db03fd359c6cd5bd9d85" { return "manifest checksum failed"; }
+    let want: String = "blake3:6437b3ac38465133ffb63b75273a8db5"
+        + "48c558465d79db03fd359c6cd5bd9d85";
+    if get_manifest_checksum(man_test) != want {
+        return "manifest checksum failed";
+    }
     let tampered_h: String = compute_payload_digest("sha256", "tampered payload");
     if tampered_h == h256 { return "tamper check failed"; }
     return "";

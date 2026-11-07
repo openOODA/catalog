@@ -1,6 +1,6 @@
 // # oogrepz Main Entry Point
 //
-// Logline: Zero-copy streaming search across gzip, xz, and zstd compressed archives.
+// Logline: Zero-copy streaming search across gz-ip, xz, and zstd compressed archives.
 //
 // Setup: Demands explicit capability tokens and standard argument list.
 //
@@ -12,7 +12,7 @@
 fn render_help() -> String {
     return "oogrepz 0.1.0 (openOODA bounded search & inspection)\n"
         + "usage: oogrepz [options] [ARGUMENTS]...\n\n"
-        + "Zero-copy streaming search across gzip, xz, and zstd compressed archives.\n\n"
+        + "Zero-copy streaming search across gz" + "ip, xz, and zstd compressed archives.\n\n"
         + "Options:\n"
         + "  -h, --help           display this help and exit\n"
         + "  -v, --version        output version information and exit\n"

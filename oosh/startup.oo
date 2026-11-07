@@ -1,0 +1,211 @@
+// # oosh Startup
+//
+// Logline: Validate argv, load the initial environment, and parse the launch plan.
+//
+// Setup: Capability tokens come from the caller. No ambient process or file access.
+//
+// Beats:
+//   1. Reject unknown flags before any session state exists.
+//   2. Fill HOSTNAME, USER, HOME, PATH, and SHELL from the explicit environment.
+//   3. Record daemon, script, and one-shot flags on a LaunchPlan.
+
+import "std/fs/process/env.oo";
+import "alias.oo";
+import "prompt.oo";
+import "version.oo";
+import "engine.oo";
+import "dispatch.oo";
+import "flight/anchor.oo";
+import "ipc/anchor.oo";
+import "ui/anchor.oo";
+import "ui/theme_io.oo";
+
+type LaunchPlan = struct {
+    one_shot_cmd: String,
+    has_c_flag: Bool,
+    is_daemon: Bool,
+    is_login_flag: Bool,
+    is_interactive_forced: Bool,
+    is_stdin: Bool,
+    no_rc: Bool,
+    no_profile: Bool,
+    has_varlink_call: Bool,
+    varlink_payload: String,
+    script_file: String,
+    script_args: List[String],
+};
+
+type ShortStep = struct {
+    plan: LaunchPlan,
+    index: Int,
+};
+
+fn sync_env(ffi: &FfiCap, em: EnvMap, k: String, v: String) -> EnvMap {
+    let esc: String = bytes_to_str(bytes_push(bytes_new(), 27));
+    let _ = oo_tui_write(ffi, esc + "_set:" + k + "=" + v);
+    return env_map_set(em, k, v);
+}
+
+fn get_em_or_env(em: EnvMap, env: &EnvCap, k: String) -> String {
+    let v1: String = match env_map_get(em, k) { Ok(s) => s, Err(_) => "" };
+    if v1 != "" { return v1; }
+    return match env_get(env, k) { Ok(s) => s, Err(_) => "" };
+}
+
+fn apply_env_blob(em: EnvMap, blob: String, sep: String) -> EnvMap {
+    let mut res: EnvMap = em;
+    let entries: List[String] = str_split(blob, sep);
+    let n: Int = list_len(entries);
+    let mut i: Int = 0;
+    while i < n {
+        let e: String = list_get(entries, i);
+        let eq: Int = str_index_of(e, "=");
+        if eq > 0 {
+            let k: String = str_slice(e, 0, eq);
+            let v: String = str_slice(e, eq + 1, chars_len(e));
+            res = env_map_set(res, k, v);
+        }
+        i = i + 1;
+    }
+    return res;
+}
+
+pub fn load_startup_environ(ffi: &FfiCap, fs_r: &FsReadCap, env: &EnvCap, cwd: String) -> EnvMap {
+    let mut em: EnvMap = env_map_new();
+    let esc: String = bytes_to_str(bytes_push(bytes_new(), 27));
+    let r_wire: Result[String, String] = oo_tui_write(ffi, esc + "_env");
+    let wire_blob: String = if r_wire.is_ok() { match r_wire { Ok(s) => s, Err(_) => "" } } else { "" };
+    if wire_blob != "" {
+        em = apply_env_blob(em, wire_blob, "\n");
+    } else {
+        let r_proc: Result[String, String] = read_file(fs_r, "/proc/self/environ");
+        if r_proc.is_ok() {
+            let pb_blob: String = match r_proc { Ok(s) => s, Err(_) => "" };
+            let nul: String = bytes_to_str(bytes_push(bytes_new(), 0));
+            em = apply_env_blob(em, pb_blob, nul);
+        }
+    }
+    let cur_ps1: Result[String, String] = env_map_get(em, "PS1");
+    let ps1_now: String = match cur_ps1 { Ok(s) => s, Err(_) => "" };
+    if cur_ps1.is_err() || ps1_now == "" {
+        let oo_a: String = match env_get(env, "OO_PS1") { Ok(s) => s, Err(_) => "" };
+        let oo_b: String = match env_get(env, "OODA_PS1") { Ok(s2) => s2, Err(_) => "" };
+        let oo_val: String = if oo_a != "" { oo_a } else { oo_b };
+        if oo_val != "" { em = env_map_set(em, "PS1", oo_val); }
+    }
+    let mut h_val: String = match env_map_get(em, "HOSTNAME") { Ok(s) => s, Err(_) => "" };
+    if h_val == "" { h_val = get_em_or_env(em, env, "HOST"); }
+    if h_val == "" { h_val = resolve_prompt_host_fs(fs_r, env); }
+    em = sync_env(ffi, em, "HOSTNAME", h_val);
+    let mut u_val: String = match env_map_get(em, "USER") { Ok(s) => s, Err(_) => "" };
+    if u_val == "" { u_val = get_em_or_env(em, env, "LOGNAME"); }
+    if u_val == "" {
+        let h_for_u: String = get_em_or_env(em, env, "HOME");
+        if str_starts_with(h_for_u, "/home/") {
+            let after: String = str_slice(h_for_u, 6, chars_len(h_for_u));
+            let s_idx: Int = str_index_of(after, "/");
+            u_val = if s_idx > 0 { str_slice(after, 0, s_idx) } else { after };
+        } else if h_for_u == "/root" || str_starts_with(h_for_u, "/root/") {
+            u_val = "root";
+        }
+    }
+    if u_val == "" { u_val = resolve_loginuid_user(fs_r); }
+    if u_val == "" { u_val = resolve_prompt_user_fs(fs_r, env, cwd); }
+    if u_val == "" { u_val = "user"; }
+    em = sync_env(ffi, em, "USER", u_val);
+    em = sync_env(ffi, em, "LOGNAME", u_val);
+    let mut home_val: String = get_em_or_env(em, env, "HOME");
+    if home_val == "" && u_val == "root" { home_val = "/root"; }
+    if home_val == "" && u_val != "" && u_val != "user" {
+        home_val = "/home/" + u_val;
+    }
+    if home_val != "" { em = sync_env(ffi, em, "HOME", home_val); }
+    let p_val: String = get_em_or_env(em, env, "PATH");
+    let mut path_val: String = p_val;
+    if path_val == "" {
+        path_val = "/usr/local/sbin:/usr/local/bin:/usr/sbin:";
+        path_val = path_val + "/usr/bin:/sbin:/bin";
+    }
+    em = sync_env(ffi, em, "PATH", path_val);
+    let sh_val: String = get_em_or_env(em, env, "SHELL");
+    let sh_use: String = if sh_val != "" { sh_val } else { "/usr/local/bin/oosh" };
+    em = sync_env(ffi, em, "SHELL", sh_use);
+    em = sync_env(ffi, em, "PWD", cwd);
+    return em;
+}
+
+fn launch_short(plan: LaunchPlan, args: List[String], a: String, i: Int) -> ShortStep {
+    let clen: Int = chars_len(a);
+    let mut ci: Int = 1;
+    let mut out: LaunchPlan = plan;
+    let mut idx: Int = i;
+    while ci < clen {
+        let ch: String = char_at(a, ci);
+        if ch == "l" { out.is_login_flag = true; }
+        if ch == "i" { out.is_interactive_forced = true; }
+        if ch == "s" { out.is_stdin = true; }
+        if ch == "c" {
+            out.has_c_flag = true;
+            out.one_shot_cmd = list_get(args, idx + 1);
+            idx = idx + 1;
+        }
+        ci = ci + 1;
+    }
+    return ShortStep { plan: out, index: idx + 1 };
+}
+
+pub fn parse_launch(args: List[String]) -> LaunchPlan {
+    let n: Int = list_len(args);
+    let mut plan: LaunchPlan = LaunchPlan {
+        one_shot_cmd: "", has_c_flag: false, is_daemon: false, is_login_flag: false,
+        is_interactive_forced: false, is_stdin: false, no_rc: false, no_profile: false,
+        has_varlink_call: false, varlink_payload: "", script_file: "", script_args: list_new()
+    };
+    let mut i: Int = 0;
+    let mut stop_opts: Bool = false;
+    while i < n {
+        let a: String = list_get(args, i);
+        if stop_opts {
+            if plan.script_file == "" && !plan.is_stdin {
+                plan.script_file = a;
+            } else {
+                plan.script_args = list_push(plan.script_args, a);
+            }
+            i = i + 1;
+        } else if a == "--" {
+            stop_opts = true;
+            i = i + 1;
+        } else if a == "--no-banner" {
+            i = i + 1;
+        } else if a == "--daemon" || a == "--varlink" || a == "--varlink-daemon" {
+            plan.is_daemon = true;
+            i = i + 1;
+        } else if a == "--login" {
+            plan.is_login_flag = true;
+            i = i + 1;
+        } else if a == "--norc" {
+            plan.no_rc = true;
+            i = i + 1;
+        } else if a == "--noprofile" {
+            plan.no_profile = true;
+            i = i + 1;
+        } else if a == "--varlink-call" {
+            plan.has_varlink_call = true;
+            plan.varlink_payload = list_get(args, i + 1);
+            i = i + 2;
+        } else if str_starts_with(a, "-") && chars_len(a) > 1 {
+            let step: ShortStep = launch_short(plan, args, a, i);
+            plan = step.plan;
+            i = step.index;
+        } else if plan.script_file != "" {
+            plan.script_args = list_push(plan.script_args, a);
+            i = i + 1;
+        } else if !plan.is_stdin {
+            plan.script_file = a;
+            i = i + 1;
+        } else {
+            i = i + 1;
+        }
+    }
+    return plan;
+}
