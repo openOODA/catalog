@@ -8,6 +8,7 @@
 //   1. Locate the package line in the catalog and validate its fields.
 //   2. Confirm manifest name, payload name, and checksum agreement.
 //   3. Recompute the payload digest and compare it to the catalog checksum.
+//   4. Refuse malformed names, versions, field counts, and path traversal.
 
 import "qa/digest.oo";
 
@@ -33,12 +34,80 @@ fn field(line: String, n: Int) -> String {
     return "";
 }
 
+// Package names are lowercase slug tokens: [a-z0-9] then [a-z0-9-].
+// Anything else (separators, dots, uppercase, whitespace, empty) fails closed.
+pub fn pkg_name_safe(nm: String) -> Bool {
+    let n: Int = chars_len(nm);
+    if n == 0 || n > 64 { return false; }
+    let mut i: Int = 0;
+    while i < n {
+        let c: String = char_at(nm, i);
+        if str_index_of("abcdefghijklmnopqrstuvwxyz0123456789-", c) < 0 { return false; }
+        i = i + 1;
+    }
+    return str_index_of("abcdefghijklmnopqrstuvwxyz0123456789", char_at(nm, 0)) >= 0;
+}
+
+// Versions are strict X.Y.Z: three dot-separated numeric components,
+// no empty component, no leading zeros, no suffixes.
+pub fn pkg_version_safe(v: String) -> Bool {
+    let n: Int = chars_len(v);
+    if n < 5 { return false; }
+    let mut start: Int = 0;
+    let mut dots: Int = 0;
+    let mut i: Int = 0;
+    while i <= n {
+        if i == n || char_at(v, i) == "." {
+            dots = dots + 1;
+            if dots > 3 { return false; }
+            let clen: Int = i - start;
+            if clen == 0 { return false; }
+            if clen > 1 && char_at(v, start) == "0" { return false; }
+            let mut k: Int = start;
+            while k < i {
+                let b: Int = byte_at(char_at(v, k), 0);
+                if b < 48 || b > 57 { return false; }
+                k = k + 1;
+            }
+            start = i + 1;
+        }
+        i = i + 1;
+    }
+    return dots == 3;
+}
+
+// Payload names are bare relative filenames: no separators, no dot
+// segments, no leading dot, no pipe, restricted charset.
+pub fn pkg_relfile_safe(p: String) -> Bool {
+    let n: Int = chars_len(p);
+    if n == 0 || n > 128 { return false; }
+    if char_at(p, 0) == "." { return false; }
+    if str_index_of(p, "..") >= 0 { return false; }
+    if str_index_of(p, "/") >= 0 || str_index_of(p, "\\") >= 0 { return false; }
+    if str_index_of(p, "|") >= 0 { return false; }
+    let mut i: Int = 0;
+    while i < n {
+        let c: String = char_at(p, i);
+        if str_index_of("abcdefghijklmnopqrstuvwxyz0123456789._-", c) < 0 { return false; }
+        i = i + 1;
+    }
+    return true;
+}
+
 fn check_line(line: String) -> String {
     let nm: String = field(line, 0);
     let ver: String = field(line, 1);
     let sha: String = field(line, 4);
-    if nm == "" { return "empty name"; }
-    if ver == "" { return "empty version " + nm; }
+    let mut pipes: Int = 0;
+    let ln: Int = chars_len(line);
+    let mut i: Int = 0;
+    while i < ln {
+        if char_at(line, i) == "|" { pipes = pipes + 1; }
+        i = i + 1;
+    }
+    if pipes != 4 { return "bad fields " + nm; }
+    if !pkg_name_safe(nm) { return "bad name " + nm; }
+    if !pkg_version_safe(ver) { return "bad version " + nm; }
     if !is_valid_checksum(sha) { return "bad sha " + nm; }
     return "";
 }
@@ -61,6 +130,8 @@ fn find_line(cat: String, name: String) -> String {
 }
 
 pub fn check_pkg(fs: &FsReadCap, cat: String, name: String, pay: String) -> String {
+    if !pkg_name_safe(name) { return "refused name " + name; }
+    if !pkg_relfile_safe(pay) { return "refused payload " + pay; }
     let line: String = find_line(cat, name);
     if line == "" { return "missing " + name; }
     let bad: String = check_line(line);
