@@ -12,6 +12,7 @@
 //   5. Refuse corrupted sha256 digests and mismatched checksum pairs.
 //   6. Refuse hostile catalog lines (bad fields, traversal, bad sha) via check_pkg.
 //   7. Round-trip every catalog line through the parser and resolve each manifest.
+//   8. Fuzz byte-level hostile inputs and prove index name uniqueness.
 
 import "std/sec/pqc.oo";
 import "hello/anchor.oo";
@@ -168,6 +169,8 @@ fn check_roundtrip(fs: &FsReadCap, p: Int) -> Int {
     let mut rt_ok: Bool = true;
     let mut val_ok: Bool = true;
     let mut res_ok: Bool = true;
+    let mut dup_ok: Bool = true;
+    let mut seen: List[String] = list_new();
     let mut n: Int = 0;
     let mut i: Int = 0;
     while i < list_len(lines) {
@@ -186,6 +189,14 @@ fn check_roundtrip(fs: &FsReadCap, p: Int) -> Int {
             let bad_res: Bool = kv(man, "name") != nm || kv(man, "payload") == "" ||
                 get_manifest_checksum(man) == "";
             if bad_res { res_ok = false; }
+            let mut dup: Bool = false;
+            let mut w: Int = 0;
+            while w < list_len(seen) {
+                if list_get(seen, w) == nm { dup = true; }
+                w = w + 1;
+            }
+            if dup { dup_ok = false; }
+            seen = list_push(seen, nm);
         }
         i = i + 1;
     }
@@ -193,6 +204,15 @@ fn check_roundtrip(fs: &FsReadCap, p: Int) -> Int {
     if test_expect(val_ok, "73 every catalog line validates name, version, and sha") { p = p + 1; }
     if test_expect(res_ok, "74 every indexed name resolves a consistent manifest") { p = p + 1; }
     if test_expect(n >= 150, "75 catalog holds a sane entry count") { p = p + 1; }
+    // Adversarial fuzz battery: byte-level hostile inputs the name,
+    // version, and digest validators plus check_pkg must refuse.
+    if test_expect(!pkg_name_safe("oös"), "76 name refuses UTF-8 high bytes") { p = p + 1; }
+    if test_expect(!pkg_name_safe("oo sign"), "77 name refuses embedded space") { p = p + 1; }
+    if test_expect(!pkg_version_safe("1.2.3 "), "78 version refuses trailing whitespace") { p = p + 1; }
+    if test_expect(!is_valid_checksum(zeros64() + "\n"), "79 checksum refuses trailing newline") { p = p + 1; }
+    let r13: String = check_pkg(fs, cat, "HELLO", "hello.oo");
+    if test_expect_has(r13, "refused name", "80 refuses case-drifted package name") { p = p + 1; }
+    if test_expect(dup_ok, "81 catalog names are unique") { p = p + 1; }
     return p;
 }
 
@@ -211,10 +231,10 @@ pub fn main(
     p = check_digests(p);
     p = check_pkg_refusals(fs_r, p);
     p = check_roundtrip(fs_r, p);
-    if p == 75 {
-        println("catalog tests: 75/75 passed");
+    if p == 81 {
+        println("catalog tests: 81/81 passed");
         return Ok(0);
     }
-    println("catalog tests: FAILED (" + to_string(p) + "/75)");
+    println("catalog tests: FAILED (" + to_string(p) + "/81)");
     return Ok(1);
 }
