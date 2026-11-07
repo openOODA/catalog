@@ -128,7 +128,7 @@ oosock|0.1.0|Net,Tls,Mcp||295ed83d4dfe4ef14417e11e3e27a0ff8024393aae50e1fcde99c4
 oosort|0.2.7|FsRead,FsWrite,Process||4ba2311007b5052c037e6cd6ec02e686f4cdd3fcad860686c2dbd151241d4ffa
 oosparkline|0.1.0|Term,Env,Mcp||9e4ade11cec961733bac40bddf22157af65885b0c2c7698d641630446a20af98
 oosplit|0.1.0|FsRead,Term,Mcp||e1f5f0f37992df79bc5280a985e62cdfa2d72c8f031cd5ac31581eb7246981cf
-oosqlite|0.1.0|FsRead,Stream,Mcp||ed09967252dbf8cb0a80e1da4453082b9b45adc7559d7f74943067d2b0ca3609
+ooquery|0.1.0|FsRead,Stream,Mcp||73836cf5fbeda779a448a77cd349275dee9e1d0a3658d7c2d9379d41efc80b4a
 ooss|0.1.0|Net,Tls,Mcp||f5b46e7ea3126eccf4a98386b57146f157e2874fef3dce95e20f6c160dc69647
 oossh|0.2.4|Process||61f967b337229465f4cee973bc78994a4c6dab01dd8b33919ec384432b22958b
 oossl|0.2.4|Net,Tls,FsReadCap,ProcessCap,Mcp||ad482b9c9e6e08d04f863802c8e23210f680dbae861f0b815ee976a5880e6cee

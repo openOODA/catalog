@@ -1,4 +1,4 @@
-// # oosqlite Main Entry Point
+// # ooquery Main Entry Point
 //
 // Logline: Zero-dependency embedded SQL query runner querying stdin streams in memory.
 //
@@ -6,12 +6,12 @@
 //
 // Beats:
 //   1. Parse command-line options and dispatch --help, --version, or --mcp.
-//   2. Execute capability-bounded oosqlite operations.
+//   2. Execute capability-bounded ooquery operations.
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "oosqlite 0.1.0 (openOODA bounded data & streaming)\n"
-        + "usage: oosqlite [options] [ARGUMENTS]...\n\n"
+    return "ooquery 0.1.0 (openOODA bounded data & streaming)\n"
+        + "usage: ooquery [options] [ARGUMENTS]...\n\n"
         + "Zero-dependency embedded SQL query runner querying stdin streams in memory.\n\n"
         + "Options:\n"
         + "  -h, --help           display this help and exit\n"
@@ -23,7 +23,7 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "oosqlite 0.1.0 (openOODA bounded data & streaming)\n";
+    return "ooquery 0.1.0 (openOODA bounded data & streaming)\n";
 }
 
 fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
@@ -41,12 +41,12 @@ fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
             return 0;
         }
         if arg == "--mcp" {
-            print("{\"jsonrpc\":\"2.0\",\"result\":{\"status\":\"ready\",\"tool\":\"oosqlite\"}}\n");
+            print("{\"jsonrpc\":\"2.0\",\"result\":{\"status\":\"ready\",\"tool\":\"ooquery\"}}\n");
             return 0;
         }
         i = i + 1;
     }
 
-    print("oosqlite: bounded capability-bounded utility ready\n");
+    print("ooquery: bounded capability-bounded utility ready\n");
     return 0;
 }
