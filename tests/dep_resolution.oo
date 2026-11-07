@@ -1,0 +1,105 @@
+// # Dep Resolution - Manifest Identity and Dependency Grammar Probe
+//
+// Logline: Prove manifest name fields match their directory and index entry, deps fields stay singular and index-resolvable, and no index name shadows a withdrawn persona package.
+//
+// Setup: Read-only FsReadCap over the catalog index and package manifests. Pure string assertions; no subprocess, no network.
+//
+// Beats:
+//   1. Require every manifest name= field to equal its directory and index entry (three-way identity).
+//   2. Require every deps= field to appear exactly once and reference only indexed package names.
+//   3. Require index names to stay disjoint from the seven withdrawn persona double-ship names.
+
+import "std/core/primitives/str.oo";
+import "std/fs/os/fs.oo";
+import "qa/check_pkg.oo";
+
+fn dr_expect(cond: Bool, label: String) -> Bool {
+    if cond { println("ok " + label);
+    return true; }
+    println("FAIL " + label);
+    return false;
+}
+
+fn dr_withdrawn(nm: String) -> Bool {
+    return nm == "ooarp" || nm == "oodig" || nm == "oodns" || nm == "oohost" ||
+        nm == "ooping" || nm == "ootraceroute" || nm == "oowhois";
+}
+
+fn dr_in(list: List[String], nm: String) -> Bool {
+    let mut i: Int = 0;
+    while i < list_len(list) {
+        if list_get(list, i) == nm { return true; }
+        i = i + 1;
+    }
+    return false;
+}
+
+fn dr_deps_ok(val: String, names: List[String]) -> Int {
+    if chars_len(val) == 0 { return 1; }
+    let toks: List[String] = str_split(val, ",");
+    let mut ok: Int = 1;
+    let mut ti: Int = 0;
+    while ti < list_len(toks) {
+        let tk: String = list_get(toks, ti);
+        ti = ti + 1;
+        if chars_len(tk) == 0 || !dr_in(names, tk) { ok = 0; }
+    }
+    return ok;
+}
+
+fn dr_scan(fs: &FsReadCap, nm: String, names: List[String]) -> List[Int] {
+    let man: String = slurp(fs, nm + "/manifest");
+    let mlines: List[String] = str_split(man, "\n");
+    let mut name_ok: Int = 1;
+    let mut deps_ok: Int = 1;
+    let mut name_seen: Int = 0;
+    let mut deps_seen: Int = 0;
+    let mut mi: Int = 0;
+    while mi < list_len(mlines) {
+        let ml: String = list_get(mlines, mi);
+        mi = mi + 1;
+        if str_index_of(ml, "name=") == 0 {
+            name_seen = name_seen + 1;
+            if byte_slice(ml, 5, bytes_len(ml)) != nm { name_ok = 0; }
+        }
+        if str_index_of(ml, "deps=") == 0 {
+            deps_seen = deps_seen + 1;
+            let val: String = byte_slice(ml, 5, bytes_len(ml));
+            if dr_deps_ok(val, names) == 0 { deps_ok = 0; }
+        }
+    }
+    if name_seen != 1 || deps_seen != 1 { deps_ok = 0; }
+    let mut out: List[Int] = list_new();
+    out = list_push(out, name_ok);
+    out = list_push(out, deps_ok);
+    return out;
+}
+
+pub fn dep_resolution(fs: &FsReadCap, p: Int) -> Int {
+    let mut np: Int = p;
+    let idx: String = slurp(fs, "index");
+    let rows: List[String] = str_split(idx, "\n");
+    let mut names: List[String] = list_new();
+    let mut r: Int = 0;
+    while r < list_len(rows) {
+        let rw: String = list_get(rows, r);
+        r = r + 1;
+        if bytes_len(rw) > 0 { names = list_push(names, cat_field(rw, 0)); }
+    }
+    let mut all_name: Bool = list_len(names) > 0;
+    let mut all_deps: Bool = true;
+    let mut all_alias: Bool = true;
+    let mut i: Int = 0;
+    while i < list_len(names) {
+        let nm: String = list_get(names, i);
+        i = i + 1;
+        if dr_withdrawn(nm) { all_alias = false; }
+        let res: List[Int] = dr_scan(fs, nm, names);
+        if list_get(res, 0) == 0 { all_name = false; }
+        if list_get(res, 1) == 0 { all_deps = false; }
+    }
+    if dr_expect(all_name, "95 every manifest name field matches its directory and index entry") { np = np + 1; }
+    if dr_expect(all_deps, "96 deps fields stay singular and resolve only to indexed packages") { np = np + 1; }
+    if dr_expect(all_alias, "97 no index entry shadows a withdrawn persona package name") { np = np + 1; }
+    return np;
+}

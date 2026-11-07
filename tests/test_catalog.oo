@@ -247,10 +247,10 @@ pub fn main(
     p = index_parity(fs_r, p);
     p = index_queries(fs_r, p);
     p = test_caps_schema(fs_r, p);
-    if p == 94 {
-        println("catalog tests: 94/94 passed");
+    if p == 97 {
+        println("catalog tests: 97/97 passed");
         return Ok(0);
     }
-    println("catalog tests: FAILED (" + to_string(p) + "/94)");
+    println("catalog tests: FAILED (" + to_string(p) + "/97)");
     return Ok(1);
 }

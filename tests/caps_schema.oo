@@ -11,6 +11,7 @@
 import "std/core/primitives/str.oo";
 import "std/fs/os/fs.oo";
 import "qa/check_pkg.oo";
+import "tests/dep_resolution.oo";
 
 fn cs_expect(cond: Bool, label: String) -> Bool {
     if cond { println("ok " + label);
@@ -133,5 +134,6 @@ pub fn test_caps_schema(fs: &FsReadCap, p: Int) -> Int {
     all_fld = all_fld && nman > 0;
     if cs_expect(all_tok, "93 every manifest caps token resolves to spec.oot or a ratified grant") { np = np + 1; }
     if cs_expect(all_fld, "94 every manifest carries exactly one well-formed caps field") { np = np + 1; }
+    np = dep_resolution(fs, np);
     return np;
 }
