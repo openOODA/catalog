@@ -11,6 +11,7 @@
 //   4. Refuse malformed package names, versions, and payload paths.
 //   5. Refuse corrupted sha256 digests and mismatched checksum pairs.
 //   6. Refuse hostile catalog lines (bad fields, traversal, bad sha) via check_pkg.
+//   7. Round-trip every catalog line through the parser and resolve each manifest.
 
 import "std/sec/pqc.oo";
 import "hello/anchor.oo";
@@ -156,6 +157,45 @@ fn check_pkg_refusals(fs: &FsReadCap, p: Int) -> Int {
     return p;
 }
 
+fn check_roundtrip(fs: &FsReadCap, p: Int) -> Int {
+    // Serialize->parse round-trip: every catalog line must re-emit
+    // byte-identically from its parsed fields, pass the field
+    // validators, and resolve a consistent on-disk manifest.
+    let cat: String = slurp(fs, "catalog");
+    let idx: String = slurp(fs, "index");
+    if test_expect(cat == idx, "71 catalog and index are byte-identical") { p = p + 1; }
+    let lines: List[String] = str_split(cat, "\n");
+    let mut rt_ok: Bool = true;
+    let mut val_ok: Bool = true;
+    let mut res_ok: Bool = true;
+    let mut n: Int = 0;
+    let mut i: Int = 0;
+    while i < list_len(lines) {
+        let line: String = list_get(lines, i);
+        if line != "" {
+            n = n + 1;
+            let re: String = cat_field(line, 0) + "|" + cat_field(line, 1) + "|" +
+                cat_field(line, 2) + "|" + cat_field(line, 3) + "|" + cat_field(line, 4);
+            if re != line { rt_ok = false; }
+            let nm: String = cat_field(line, 0);
+            let bad_val: Bool = !pkg_name_safe(nm) ||
+                !pkg_version_safe(cat_field(line, 1)) ||
+                !is_valid_checksum(cat_field(line, 4));
+            if bad_val { val_ok = false; }
+            let man: String = slurp(fs, nm + "/manifest");
+            let bad_res: Bool = kv(man, "name") != nm || kv(man, "payload") == "" ||
+                get_manifest_checksum(man) == "";
+            if bad_res { res_ok = false; }
+        }
+        i = i + 1;
+    }
+    if test_expect(rt_ok, "72 every catalog line round-trips through the parser") { p = p + 1; }
+    if test_expect(val_ok, "73 every catalog line validates name, version, and sha") { p = p + 1; }
+    if test_expect(res_ok, "74 every indexed name resolves a consistent manifest") { p = p + 1; }
+    if test_expect(n >= 150, "75 catalog holds a sane entry count") { p = p + 1; }
+    return p;
+}
+
 pub fn main(
     fs_r: &FsReadCap,
     args: List[String]
@@ -170,10 +210,11 @@ pub fn main(
     p = check_validators(p);
     p = check_digests(p);
     p = check_pkg_refusals(fs_r, p);
-    if p == 70 {
-        println("catalog tests: 70/70 passed");
+    p = check_roundtrip(fs_r, p);
+    if p == 75 {
+        println("catalog tests: 75/75 passed");
         return Ok(0);
     }
-    println("catalog tests: FAILED (" + to_string(p) + "/70)");
+    println("catalog tests: FAILED (" + to_string(p) + "/75)");
     return Ok(1);
 }

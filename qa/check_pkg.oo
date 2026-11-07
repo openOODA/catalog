@@ -18,7 +18,7 @@ pub fn slurp(fs: &FsReadCap, path: String) -> String {
     return match rr { Ok(s) => s, Err(_) => "" };
 }
 
-fn field(line: String, n: Int) -> String {
+pub fn cat_field(line: String, n: Int) -> String {
     let len: Int = chars_len(line);
     let mut k: Int = 0;
     let mut start: Int = 0;
@@ -95,9 +95,9 @@ pub fn pkg_relfile_safe(p: String) -> Bool {
 }
 
 fn check_line(line: String) -> String {
-    let nm: String = field(line, 0);
-    let ver: String = field(line, 1);
-    let sha: String = field(line, 4);
+    let nm: String = cat_field(line, 0);
+    let ver: String = cat_field(line, 1);
+    let sha: String = cat_field(line, 4);
     let mut pipes: Int = 0;
     let ln: Int = chars_len(line);
     let mut i: Int = 0;
@@ -120,7 +120,7 @@ fn find_line(cat: String, name: String) -> String {
         if i == n || char_at(cat, i) == "\n" {
             if i > start {
                 let line: String = str_slice(cat, start, i);
-                if field(line, 0) == name { return line; }
+                if cat_field(line, 0) == name { return line; }
             }
             start = i + 1;
         }
@@ -140,7 +140,7 @@ pub fn check_pkg(fs: &FsReadCap, cat: String, name: String, pay: String) -> Stri
     if !path_exists(fs, name + "/" + pay) { return "missing payload " + name; }
     let man: String = slurp(fs, name + "/manifest");
     if kv(man, "name") != name { return "manifest name " + name; }
-    let cat_chk: String = field(line, 4);
+    let cat_chk: String = cat_field(line, 4);
     let man_chk: String = get_manifest_checksum(man);
     if man_chk == "" || !checksums_match(cat_chk, man_chk) { return "sha drift " + name; }
     if kv(man, "payload") != pay { return "payload name " + name; }
