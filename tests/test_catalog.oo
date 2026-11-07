@@ -243,10 +243,10 @@ pub fn main(
     p = check_pkg_refusals(fs_r, p);
     p = check_roundtrip(fs_r, p);
     p = index_parity(fs_r, p);
-    if p == 87 {
-        println("catalog tests: 87/87 passed");
+    if p == 89 {
+        println("catalog tests: 89/89 passed");
         return Ok(0);
     }
-    println("catalog tests: FAILED (" + to_string(p) + "/87)");
+    println("catalog tests: FAILED (" + to_string(p) + "/89)");
     return Ok(1);
 }

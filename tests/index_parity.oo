@@ -61,6 +61,43 @@ fn ip_withdrawn(nm: String) -> Bool {
         nm == "ooping" || nm == "ootraceroute" || nm == "oowhois";
 }
 
+fn ip_name_lt(a: String, b: String) -> Bool {
+    let n: Int = bytes_len(a);
+    let m: Int = bytes_len(b);
+    let lim: Int = if n < m { n } else { m };
+    let mut i: Int = 0;
+    while i < lim {
+        let ca: Int = byte_at(a, i);
+        let cb: Int = byte_at(b, i);
+        if ca != cb { return ca < cb; }
+        i = i + 1;
+    }
+    return n < m;
+}
+
+fn ip_line_ok(ln: String) -> Bool {
+    let mut pipes: Int = 0;
+    let mut rest: String = ln;
+    while bytes_len(rest) > 0 {
+        let pp: Int = str_index_of(rest, "|");
+        if pp < 0 { break; }
+        pipes = pipes + 1;
+        rest = byte_slice(rest, pp + 1, bytes_len(rest));
+    }
+    if pipes != 4 { return false; }
+    let nm: String = cat_field(ln, 0);
+    let nn: Int = bytes_len(nm);
+    if nn == 0 { return false; }
+    let mut i: Int = 0;
+    while i < nn {
+        let c: Int = byte_at(nm, i);
+        let ok: Bool = (c >= 97 && c <= 122) || (c >= 48 && c <= 57) || c == 45;
+        if !ok { return false; }
+        i = i + 1;
+    }
+    return true;
+}
+
 pub fn index_parity(fs: &FsReadCap, p: Int) -> Int {
     let mut np: Int = p;
     let sig_ok: Bool = bytes_len(slurp(fs, "index.sig")) > 0 &&
@@ -96,5 +133,24 @@ pub fn index_parity(fs: &FsReadCap, p: Int) -> Int {
     }
     let html_ok: Bool = missing == 0 && links == list_len(names) && list_len(names) > 0;
     if ip_expect(html_ok, "87 index.html manifest links cover every signed index entry") { np = np + 1; }
+    let idx: String = slurp(fs, "index");
+    let rows: List[String] = str_split(idx, "\n");
+    let mut sorted_ok: Bool = true;
+    let mut fields_ok: Bool = true;
+    let mut prev: String = "";
+    let mut first: Bool = true;
+    let mut r: Int = 0;
+    while r < list_len(rows) {
+        let rw: String = list_get(rows, r);
+        r = r + 1;
+        if bytes_len(rw) == 0 { continue; }
+        if !ip_line_ok(rw) { fields_ok = false; }
+        let nm: String = cat_field(rw, 0);
+        if !first && !ip_name_lt(prev, nm) { sorted_ok = false; }
+        prev = nm;
+        first = false;
+    }
+    if ip_expect(sorted_ok && !first, "88 index entries stay in strict sorted order") { np = np + 1; }
+    if ip_expect(fields_ok, "89 every index line carries five fields and a canonical name") { np = np + 1; }
     return np;
 }
