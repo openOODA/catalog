@@ -2,7 +2,6 @@ name=ooroute
 version=0.2.4
 caps=Net,Tls,Mcp
 deps=
-license=Apache-2.0
 payload=ooroute.oo
 commit=
 sha256=6be88d55f05d8b08c7383a7846f14b551506bb7c86d9c54d1fe4ff8d5896ccc1

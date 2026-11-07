@@ -2,7 +2,6 @@ name=oorealpath
 version=0.2.4
 caps=FsRead,FsWrite,Mcp
 deps=
-license=Apache-2.0
 payload=oorealpath.oo
 commit=
 sha256=b55360dd2948e5f1a010df697f6172827578d8fa91b21ef9377d03c2bfa40fd5

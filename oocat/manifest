@@ -2,7 +2,6 @@ name=oocat
 version=0.2.5
 caps=FsRead,FsWrite,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oocat.oo
 commit=
 sha256=a51625edcf6566ce4bc06fea6f61e97e73a9434ae5bde876a200496d9390403b

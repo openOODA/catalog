@@ -2,7 +2,6 @@ name=oohpack
 version=0.2.4
 caps=Net,Tls,Mcp
 deps=
-license=Apache-2.0
 payload=oohpack.oo
 commit=
 sha256=0fcd64564ba9e5a02063bc560cbdb625bd6ab9b317f59f1d76675c7907f07ea4

@@ -2,7 +2,6 @@ name=oosplit
 version=0.1.0
 caps=FsRead,Term,Mcp
 deps=
-license=Apache-2.0
 payload=oosplit.oo
 commit=
 sha256=e1f5f0f37992df79bc5280a985e62cdfa2d72c8f031cd5ac31581eb7246981cf

@@ -2,7 +2,6 @@ name=ooshred
 version=0.2.4
 caps=FsRead,FsWrite,Mcp
 deps=
-license=Apache-2.0
 payload=ooshred.oo
 commit=
 sha256=ed9057ffcee6a41d2305c3f8e4118fbfe717a1b31590e838ef96d230f0f1c95a

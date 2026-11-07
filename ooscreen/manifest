@@ -2,7 +2,6 @@ name=ooscreen
 version=0.2.4
 caps=Term,Env,Proc,Mcp
 deps=
-license=Apache-2.0
 payload=ooscreen.oo
 commit=
 sha256=64223b96b55317f9c92bbb71ae279d8706b999ac725afcbc3fc67850ac75f8fb

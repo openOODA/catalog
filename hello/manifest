@@ -2,7 +2,6 @@ name=hello
 version=0.1.0
 caps=FsRead
 deps=
-license=MIT
 payload=hello.oo
 commit=
 sha256=6498c89ac067d10897e8eb3dfe2800ace2efa3c3228df2c2a78e9e84bc4019df

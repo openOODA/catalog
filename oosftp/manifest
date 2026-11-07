@@ -2,7 +2,6 @@ name=oosftp
 version=0.2.4
 caps=Net,Tls,Mcp
 deps=
-license=Apache-2.0
 payload=oosftp.oo
 commit=
 sha256=a68cb78a6dd24f6be6f3918d52ef84e9c6f935f3cf38e31a5415ceaa124112a8

@@ -2,7 +2,6 @@ name=oojournal
 version=0.2.4
 caps=Proc,SysInfo,Mcp
 deps=
-license=Apache-2.0
 payload=oojournal.oo
 commit=
 sha256=7fa8f71ee4028688ee18fc603cebea48ae3c1404196c6f362a87b8485e7a1b12

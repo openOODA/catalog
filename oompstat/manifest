@@ -2,7 +2,6 @@ name=oompstat
 version=0.2.4
 caps=Proc,SysInfo,Mcp
 deps=
-license=Apache-2.0
 payload=oompstat.oo
 commit=
 sha256=8e8876d1007d6ca8adc336ec208cb28d8ab6bff4022ff35f6e0e5de9fe2071f9

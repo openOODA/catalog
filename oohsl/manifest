@@ -2,7 +2,6 @@ name=oohsl
 version=0.2.4
 caps=Term,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oohsl.oo
 commit=
 sha256=1a6166e643c19ff54422bda2656eefb2095b266ed995f092912180ddaf16c6ce

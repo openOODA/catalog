@@ -2,7 +2,6 @@ name=ooprotobuf
 version=0.2.4
 caps=FsRead,Stream,Mcp
 deps=
-license=Apache-2.0
 payload=ooprotobuf.oo
 commit=
 sha256=acf1ead856cd61871571974afeba7f7e5d1277db342d4615205ef9cfda51e1e9

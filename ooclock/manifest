@@ -2,7 +2,6 @@ name=ooclock
 version=0.2.3
 caps=FsRead,Mcp
 deps=
-license=Apache-2.0
 payload=ooclock.oo
 commit=
 sha256=4ce20fd77279838f2c3c527319dc1401ce76535ebcb561363b59aa8d694dd5e8

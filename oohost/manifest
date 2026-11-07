@@ -2,7 +2,6 @@ name=oohost
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oohost.oo
 commit=
 sha256=5cedfb130b6bbb024b975e255e63163e95567c8daea998abe00928f0ac3d096f

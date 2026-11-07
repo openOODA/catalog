@@ -2,7 +2,6 @@ name=ooapparmor
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=ooapparmor.oo
 commit=
 sha256=1877a07a3b6eed6bc2a18ddfe2a13f94cfbd65ac2df9187f89baab316bad3405

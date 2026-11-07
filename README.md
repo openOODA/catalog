@@ -19,7 +19,3 @@
 ## This Repository (`catalog`)
 
 Cryptographically signed public package catalog index for `openOODA`. Every package manifest declares its explicit capability requirements ahead of installation.
-
-## License
-
-Apache-2.0. See [LICENSE](LICENSE) for full text.

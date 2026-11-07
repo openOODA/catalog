@@ -2,7 +2,6 @@ name=ooreboot
 version=0.2.4
 caps=Proc,SysInfo,Mcp
 deps=
-license=Apache-2.0
 payload=ooreboot.oo
 commit=
 sha256=f59861b1413f53019390f647e0958861f56563fc55722627b4ab8e681925bd71

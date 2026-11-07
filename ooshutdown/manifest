@@ -2,7 +2,6 @@ name=ooshutdown
 version=0.2.4
 caps=Proc,SysInfo,Mcp,FsReadCap
 deps=
-license=Apache-2.0
 payload=ooshutdown.oo
 commit=
 sha256=aca31d1c0df2f63e0f9d8e71c08d6140ce0c7e40fdb4a2aad520b89d5edc7bc8

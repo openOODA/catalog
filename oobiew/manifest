@@ -2,7 +2,6 @@ name=oobiew
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oobiew.oo
 commit=
 sha256=dcd9d7247114d744fc5a3fd5ea9cd60cc6fafd4ed1a1d37b70901ad936cd1e92

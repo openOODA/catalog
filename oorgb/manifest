@@ -2,7 +2,6 @@ name=oorgb
 version=0.2.4
 caps=Term,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oorgb.oo
 commit=
 sha256=6fb3c59299e9ab58881a8b180bfe720c18392f0c7dad44e71782555c3343f06f

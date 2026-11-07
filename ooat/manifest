@@ -2,7 +2,6 @@ name=ooat
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=ooat.oo
 commit=
 sha256=f858a824e4fde4cd28ac24d92b4b70dc250ef63a4150fe47f4882d431b4befc1

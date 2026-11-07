@@ -2,7 +2,6 @@ name=oochmod
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oochmod.oo
 commit=
 sha256=8f6fca340623366b412ce962ab6390260dcc250d4a9f0bf521d76a2051205f14

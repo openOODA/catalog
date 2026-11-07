@@ -2,7 +2,6 @@ name=oossh
 version=0.2.4
 caps=Process
 deps=
-license=Apache-2.0
 payload=oossh.oo
 commit=
 sha256=61f967b337229465f4cee973bc78994a4c6dab01dd8b33919ec384432b22958b

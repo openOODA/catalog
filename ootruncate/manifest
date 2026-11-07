@@ -2,7 +2,6 @@ name=ootruncate
 version=0.2.4
 caps=FsRead,FsWrite,Mcp
 deps=
-license=Apache-2.0
 payload=ootruncate.oo
 commit=
 sha256=0958081f00023b8622b18d00693cc903679df1545f10260a2e2f1b89196aeeda

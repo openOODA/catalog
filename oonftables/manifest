@@ -2,7 +2,6 @@ name=oonftables
 version=0.2.4
 caps=Net,Tls,FsReadCap,ProcessCap,Mcp
 deps=
-license=Apache-2.0
 payload=oonftables.oo
 commit=
 sha256=66695189c0ec7cbb087bb92c2bed03fe327fa8e1f2d054a29f1d338afc1e4bde

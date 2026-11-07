@@ -2,7 +2,6 @@ name=oocgroup
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oocgroup.oo
 commit=
 sha256=b871fd14c74f86589856ba813dd2b53863605a035b5cee0ad3090cfeacb08f36

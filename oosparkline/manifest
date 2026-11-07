@@ -2,7 +2,6 @@ name=oosparkline
 version=0.1.0
 caps=Term,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oosparkline.oo
 commit=
 sha256=9e4ade11cec961733bac40bddf22157af65885b0c2c7698d641630446a20af98

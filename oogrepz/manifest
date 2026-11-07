@@ -2,7 +2,6 @@ name=oogrepz
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oogrepz.oo
 commit=
 sha256=2331ea59664a77e6bbdf27f170bd73efe67ce41a2cb260804ce496b57f0b0116

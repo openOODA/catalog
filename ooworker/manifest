@@ -2,7 +2,6 @@ name=ooworker
 version=0.2.4
 caps=Term,Env,Proc,Mcp,FsRead
 deps=
-license=Apache-2.0
 payload=ooworker.oo
 commit=
 sha256=b87427919005f708e06b1bf5f16652af30f649d6b3d94d2cd7b879e6ff945169

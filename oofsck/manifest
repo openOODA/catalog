@@ -2,7 +2,6 @@ name=oofsck
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oofsck.oo
 commit=
 sha256=e8b7551aa5bcd66b7819ae80c5b430dfd59cd403f9268ff4c2e064c278031a7a

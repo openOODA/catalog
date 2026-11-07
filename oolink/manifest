@@ -2,7 +2,6 @@ name=oolink
 version=0.2.4
 caps=FsRead,FsWrite,Mcp
 deps=
-license=Apache-2.0
 payload=oolink.oo
 commit=
 sha256=a995d9c9d1bfecab8c39bc4d9ece2adb5ffe6d0857d1ae6b02ca86ffaccf9962

@@ -2,7 +2,6 @@ name=oonslookup
 version=0.2.4
 caps=Net,Tls,NetCap,ProcessCap,Mcp,FsRead
 deps=
-license=Apache-2.0
 payload=oonslookup.oo
 commit=
 sha256=c3630ad651e2c1caab81fe8e6d5bfef857fbab4407d06762ad6f91f5d0ad727d

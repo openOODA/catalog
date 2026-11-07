@@ -2,7 +2,6 @@ name=oosh
 version=1.0.2
 caps=Bind,FsRead,Process,Sys,Env,Time,FsWrite,Alloc,Thread,Ffi
 deps=
-license=Apache-2.0
 payload=oosh.oo
 commit=
 sha256=6ad331a5478ee34e1f0a4da94de51a8bd7f76890b71457ad0f45d1a6bdbf5442

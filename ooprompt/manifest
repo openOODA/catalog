@@ -2,7 +2,6 @@ name=ooprompt
 version=0.2.4
 caps=Term,Env,Proc,Mcp,FsRead
 deps=
-license=Apache-2.0
 payload=ooprompt.oo
 commit=
 sha256=d3ba48cf30b89e1a5cc73c900b1d8672794020a9883a16c4667abb426d8ff352

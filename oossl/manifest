@@ -2,7 +2,6 @@ name=oossl
 version=0.2.4
 caps=Net,Tls,FsReadCap,ProcessCap,Mcp
 deps=
-license=Apache-2.0
 payload=oossl.oo
 commit=
 sha256=ad482b9c9e6e08d04f863802c8e23210f680dbae861f0b815ee976a5880e6cee

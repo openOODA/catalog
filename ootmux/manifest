@@ -2,7 +2,6 @@ name=ootmux
 version=0.2.4
 caps=Term,Env,Proc,Mcp,FsReadCap
 deps=
-license=Apache-2.0
 payload=ootmux.oo
 commit=
 sha256=e24a1676ea3fe082732b194bfac32fbc3d8dcc6651b578652d48933a44b9a5e8

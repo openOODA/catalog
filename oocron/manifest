@@ -2,7 +2,6 @@ name=oocron
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oocron.oo
 commit=
 sha256=9c82dd749929684772a7342edf380d6e45fdc2ca453b03f45a4c110a2073be1e

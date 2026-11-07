@@ -2,7 +2,6 @@ name=oostrings
 version=0.1.0
 caps=FsRead,Term,Mcp
 deps=
-license=Apache-2.0
 payload=oostrings.oo
 commit=
 sha256=42e1b4fc547ed77053358c5f88c846d0e0419c89c2b823149f5619f4f6f6ecce

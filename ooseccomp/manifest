@@ -2,7 +2,6 @@ name=ooseccomp
 version=0.2.4
 caps=Sec,Agent,Mcp
 deps=
-license=Apache-2.0
 payload=ooseccomp.oo
 commit=
 sha256=1c6f34995a6498d272a5a91045fbfc51c1976a1d664d9f8135722352c30a575a

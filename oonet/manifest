@@ -2,7 +2,6 @@ name=oonet
 version=0.1.0
 caps=FsRead,Net,Proc,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oonet.oo
 commit=
 sha256=d86656d5dd46860f7a0bf2793221a0335e109814d8bdca2d2ebdaab22c2b614e

@@ -2,7 +2,6 @@ name=oobinary
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oobinary.oo
 commit=
 sha256=36457643d4347583e9ea40af72a31e5b82962de5e910d667e64a13239dee3475

@@ -2,7 +2,6 @@ name=oobound
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oobound.oo
 commit=
 sha256=995c131ea2b648ec166aa3fb2f10945c1bf77aca41ff7ae8b7912792cfaf6380

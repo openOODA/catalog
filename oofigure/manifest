@@ -2,7 +2,6 @@ name=oofigure
 version=0.2.3
 caps=FsRead,Process,Env,Mcp
 deps=
-license=Apache-2.0
 payload=oofigure.oo
 commit=
 sha256=004df6c20323e9bc5c19f115edd706c1807ae151e6d12ca5c0f9c34fd6197a1f

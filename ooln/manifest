@@ -2,7 +2,6 @@ name=ooln
 version=0.2.4
 caps=FsRead,FsWrite,Process
 deps=
-license=Apache-2.0
 payload=ooln.oo
 commit=
 sha256=6b6e535caa78ab552a8cd5ff634ec516c03c4909cc33cfe36452198b02a81a45

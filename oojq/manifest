@@ -2,7 +2,6 @@ name=oojq
 version=0.2.3
 caps=FsRead,Mcp
 deps=
-license=Apache-2.0
 payload=oojq.oo
 commit=
 sha256=4d563cc165a8f905f44f3779b324f1a6ff08eb3c6f1bb4b6f328e0114302f0d1

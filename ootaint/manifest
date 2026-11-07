@@ -2,7 +2,6 @@ name=ootaint
 version=0.2.4
 caps=Sec,Agent,Mcp,FsReadCap
 deps=
-license=Apache-2.0
 payload=ootaint.oo
 commit=
 sha256=055a8c26fb4379edb8757ad11eeef2ea17261e40a7065f4ae399b75f475afd1e

@@ -2,7 +2,6 @@ name=ooless
 version=0.2.4
 caps=FsRead,Process
 deps=
-license=Apache-2.0
 payload=ooless.oo
 commit=
 sha256=b703f77fb42ea7cd017b8f52aa0742988b3fa4c9331e3c438477208a84c8f482

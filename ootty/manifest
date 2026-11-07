@@ -2,7 +2,6 @@ name=ootty
 version=0.2.4
 caps=Term,Env,Proc,Mcp
 deps=
-license=Apache-2.0
 payload=ootty.oo
 commit=
 sha256=30aa204419282ade4e35b8e528ef265b656b602ce7aa5372a1f33c33eaef713a

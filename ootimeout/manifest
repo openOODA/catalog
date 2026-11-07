@@ -2,7 +2,6 @@ name=ootimeout
 version=0.2.4
 caps=Term,Env,Proc,Mcp,FsReadCap
 deps=
-license=Apache-2.0
 payload=ootimeout.oo
 commit=
 sha256=c9acc4fa4cebbd83e28a6374e90296b8e26fe238732163bf0a292a09eac63daa

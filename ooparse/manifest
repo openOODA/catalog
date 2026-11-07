@@ -2,7 +2,6 @@ name=ooparse
 version=0.2.4
 caps=FsRead,Stream,Mcp
 deps=
-license=Apache-2.0
 payload=ooparse.oo
 commit=
 sha256=1d61a7efe555f806f04336f1e81b2612bfe17233462826e4464d6f4ae92a347c

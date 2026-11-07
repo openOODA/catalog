@@ -2,7 +2,6 @@ name=oosort
 version=0.2.7
 caps=FsRead,FsWrite,Process
 deps=
-license=Apache-2.0
 payload=oosort.oo
 commit=
 sha256=4ba2311007b5052c037e6cd6ec02e686f4cdd3fcad860686c2dbd151241d4ffa

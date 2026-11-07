@@ -2,7 +2,6 @@ name=oowatch
 version=0.2.3
 caps=FsRead,Mcp
 deps=
-license=Apache-2.0
 payload=oowatch.oo
 commit=
 sha256=c81112d5d3916ff648b8039963eb06026b8d3e414c90b4ca7afb35a859c7fd50
