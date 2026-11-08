@@ -2,7 +2,7 @@
 //
 // Logline: Prove every catalog manifest capability token resolves to the security.md capability vocabulary or a ratified package grant.
 //
-// Setup: Read-only FsReadCap over catalog manifests and ../openOODA/security.md. Pure string assertions; no subprocess, no network.
+// Setup: Read-only FsReadCap over catalog manifests and ../openOODA/cards/security.md. Pure string assertions; no subprocess, no network.
 //
 // Beats:
 //   1. Extract the canonical *Cap names from security.md Quick Card.
@@ -33,7 +33,7 @@ fn cs_in(list: List[String], nm: String) -> Bool {
 }
 
 fn cs_spec_caps(fs: &FsReadCap) -> List[String] {
-    let spec: String = slurp(fs, "../openOODA/security.md");
+    let spec: String = slurp(fs, "../openOODA/cards/security.md");
     let parts: List[String] = str_split(spec, "`");
     let mut out: List[String] = list_new();
     let mut i: Int = 0;
