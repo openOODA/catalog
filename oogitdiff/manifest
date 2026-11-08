@@ -1,8 +1,0 @@
-name=oogitdiff
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oogitdiff.oo
-commit=
-sha256=6a6bd3d0d2f2dc8be2405adf9cb874794ed0f5774f5204fa7046659cd9870bb6
-sig=

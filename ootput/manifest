@@ -1,8 +1,0 @@
-name=ootput
-version=0.2.4
-caps=Term,Env,Proc,Mcp
-deps=
-payload=ootput.oo
-commit=
-sha256=6f3434f39535b1089ffe60a3956daccf778105c10cbea886e1dc7b2ef076aa30
-sig=

@@ -1,8 +1,0 @@
-name=ooaudit
-version=0.2.3
-caps=FsRead,FsWrite,Process,Env,Mcp
-deps=
-payload=ooaudit.oo
-commit=
-sha256=d75760144067d34ac4443e4751066c581a5cadc898428cddf4034b273de1758d
-sig=

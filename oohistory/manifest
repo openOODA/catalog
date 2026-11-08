@@ -1,8 +1,0 @@
-name=oohistory
-version=0.2.3
-caps=FsRead,FsWrite,Process,Env,Mcp
-deps=
-payload=oohistory.oo
-commit=
-sha256=0864c1c8e377bc558e0e28530e75d20432149b0f6d2f027494a505d7d1bae4c6
-sig=

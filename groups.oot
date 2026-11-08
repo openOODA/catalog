@@ -1,0 +1,22 @@
+# groups.oot — Fedora-style @group profiles for the openOODA binary hub.
+#
+# File: catalog/groups.oot
+#
+# One group per line: `@name = pkg pkg pkg ...`. `@all` expands to every
+# package in every other group. `@games` is a curated subset of @apps.
+# install.sh and oopm expand these names against the release pool at
+# https://github.com/openOODA/install/releases/latest/download/ — group
+# membership selects binaries, not catalog folders. Layer directories
+# (core/ kernel/ OS/ tools/ DE/ apps/ cloud/ agents/) hold the package
+# manifests; this file is the install-time selection contract.
+
+@core = ooda oodac oodar oolsp oomcp oopm oostd
+@kernel = ooboot oodrv-io oodrv-storage oodrv-virt oohal ookernel
+@os = ooauthd oocontainer oohealthd ooinit oollama oomodemd oonetd oosysbus oovfs
+@tools = ooarchive ooawk oocat oocodec oocron oocurl oodefense oodiff ooengine oofind oofirewall oofs oofzf oogrep oohash oohw oojq ooless ools oomount oonet oopath ooperm oopower ooproc ooprovenance ooredact oorgb oosandbox oosed oosh oosign oosort oossh ootext ootheme ootty ooui oovault
+@de = ooagent-hud oobazaar oocomp oofiles oopanel ooportal oosettings ooterm
+@apps = ooarcade oobrowser oocamera oocanvas oochat oocommand oodaw ooemu ooflash ookvm oomedia oooffice oopass oostrike oostudio oovoxel
+@games = ooemu ooarcade oocommand oostrike oovoxel
+@cloud = oobilling oodb oodeploy oogateway ooidentity oomesh oostore ootelemetry
+@agents = oobench oocode ooconsensus oofalsify oogovern oohat ooloop oomemory ooquota ooswarm
+@all = @core @kernel @os @tools @de @apps @cloud @agents

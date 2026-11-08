@@ -1,8 +1,0 @@
-name=ookeygen
-version=0.2.4
-caps=Sec,Agent,Mcp
-deps=
-payload=ookeygen.oo
-commit=
-sha256=8cf3d6cee76e644e52f8743efed98bc84bd3f43f933f647b8cc3e24daa1580f3
-sig=

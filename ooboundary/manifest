@@ -1,8 +1,0 @@
-name=ooboundary
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=ooboundary.oo
-commit=
-sha256=487be36c9242bf9606a75e35b2261346811a5e11947f2b2bad8bbef8a77fddf1
-sig=

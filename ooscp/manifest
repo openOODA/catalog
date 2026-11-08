@@ -1,8 +1,0 @@
-name=ooscp
-version=0.2.4
-caps=Net,Tls,Mcp
-deps=
-payload=ooscp.oo
-commit=
-sha256=918ec778ca6cf1aae636ba480a0d4ea5cb7f4d5a477c9ed7d893dd3e47ac8a2d
-sig=

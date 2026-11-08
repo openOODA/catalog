@@ -102,7 +102,7 @@ fn run_proofs(fs: &FsReadCap) -> String {
     if e != "" { return e; }
     let c: String = check_pkg(fs, cat, "caps", "caps.oo");
     if c != "" { return c; }
-    let s: String = check_pkg(fs, cat, "sqlite", "sqlite.oo");
+    let s: String = check_pkg(fs, cat, "oocat", "oocat.oo");
     if s != "" { return s; }
     return "";
 }

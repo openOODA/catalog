@@ -46,7 +46,7 @@ fn dr_deps_ok(val: String, names: List[String]) -> Int {
 }
 
 fn dr_scan(fs: &FsReadCap, nm: String, names: List[String]) -> List[Int] {
-    let man: String = slurp(fs, nm + "/manifest");
+    let man: String = slurp(fs, pkg_dir(fs, nm) + "manifest");
     let mlines: List[String] = str_split(man, "\n");
     let mut name_ok: Int = 1;
     let mut deps_ok: Int = 1;

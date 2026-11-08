@@ -1,8 +1,0 @@
-name=ootouch
-version=0.2.4
-caps=FsRead,FsWrite,Mcp
-deps=
-payload=ootouch.oo
-commit=
-sha256=48e1ff941b995bf232b58e0b42f3b7ae02cd3d39ada8d399dd1bffe91084a42d
-sig=

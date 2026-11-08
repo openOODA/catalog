@@ -21,15 +21,20 @@ key opm pins for the stock origin.
 Example:
 
 ```
-hello|0.1.0|FsRead||0e31868267f9f1baa1028cdeddade94266420d50a29ade6bb583090618bd97e2
-echo|0.1.0|FsRead||8029d938971696a7e2903d368775356809ccf0fc121ac7f4dd24e46380d64fce
-caps|0.1.0|FsRead||a063a691590961f65a7b257a19e0433559e339e9dab11b5e783565029abb794c
-sqlite|0.1.0|||53a0406595a9ece3718f524fa02c0333bb34d53616d760c22958b5769cbbe616
+hello|0.1.0|FsRead||6498c89ac067d10897e8eb3dfe2800ace2efa3c3228df2c2a78e9e84bc4019df
+echo|0.1.0|FsRead||14d389c387ed6503fd1632236fefaf6608b218ce28c91faa4522ddf409e18446
+caps|0.1.0|FsRead||36800f950198935a26fc3808e8f7e52df7fee026f8014d772272f922bfdb0daa
+oocat|0.2.5|FsRead,FsWrite,Process,Env,Mcp||06a9c8228154a22f750a67cde856df2f3f49167745f85027670b158bbef9edd5
 ```
 
-Each child folder is one package. It holds `manifest` plus the
-payload named in `payload=`. Academy headers are required on the
-payload. Rebuild the index from the opm repo:
+Each package folder is one package. Canonical packages live under
+the eight layer directories (`core/`, `kernel/`, `OS/`, `tools/`,
+`DE/`, `apps/`, `cloud/`, `agents/`); the root fixtures (`caps`,
+`echo`, `hello`) and the seven withdrawn persona folders stay at
+the top level. `groups.oot` holds the `@group` install profiles.
+A package folder holds `manifest` plus the payload named in
+`payload=`. Academy headers are required on the payload. Rebuild
+the index from the opm repo:
 
 ```
 opm bot .

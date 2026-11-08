@@ -1,8 +1,0 @@
-name=ooss
-version=0.1.0
-caps=Net,Tls,Mcp
-deps=
-payload=ooss.oo
-commit=
-sha256=f5b46e7ea3126eccf4a98386b57146f157e2874fef3dce95e20f6c160dc69647
-sig=

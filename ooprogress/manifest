@@ -1,8 +1,0 @@
-name=ooprogress
-version=0.2.4
-caps=Term,Env,Mcp,FsRead,FsWrite,Process
-deps=
-payload=ooprogress.oo
-commit=
-sha256=b6eaf32fcc59212304c4d61432f8d1a114a376640037be1fc0b73fb24eb135d2
-sig=

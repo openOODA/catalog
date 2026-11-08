@@ -1,8 +1,0 @@
-name=ooshopt
-version=0.2.4
-caps=Term,Env,Proc,Mcp
-deps=
-payload=ooshopt.oo
-commit=
-sha256=483a902ca0695cc1da5ce6930ecee8b57a48ec81ba36f9ab8d7cc486e0b0c94a
-sig=

@@ -1,8 +1,0 @@
-name=ooschemadiff
-version=0.2.4
-caps=FsRead,Mcp
-deps=
-payload=ooschemadiff.oo
-commit=
-sha256=6f8a318b0b4eb5150e81ff595430d1d584176888f80f12d678695c56a2f6420a
-sig=

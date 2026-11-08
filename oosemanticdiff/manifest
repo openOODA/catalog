@@ -1,8 +1,0 @@
-name=oosemanticdiff
-version=0.2.4
-caps=FsRead,Mcp
-deps=
-payload=oosemanticdiff.oo
-commit=
-sha256=3d18d20d81f3c6c06263bff47630697f06b9a2c7b6376a760e3be4eb82d15745
-sig=

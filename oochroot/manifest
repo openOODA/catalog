@@ -1,8 +1,0 @@
-name=oochroot
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oochroot.oo
-commit=
-sha256=96f719044dea11e1574c2daba9cba64c304b59e1b1458174c4b0141fe486ed84
-sig=

@@ -1,8 +1,0 @@
-name=ootoken
-version=0.2.4
-caps=Sec,Agent,Mcp,FsReadCap
-deps=
-payload=ootoken.oo
-commit=
-sha256=a8b5df3d0a81a89be8c5720b3230bc956aa81553a39b52857e53b7a399111c5c
-sig=

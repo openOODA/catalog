@@ -1,8 +1,0 @@
-name=oormdir
-version=0.2.4
-caps=FsRead,FsWrite,Mcp
-deps=
-payload=oormdir.oo
-commit=
-sha256=5b493a5d4d7199cd708fcb3fa56af2d0cbfe179c0caf6402acde26a5d7b7fd09
-sig=

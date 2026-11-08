@@ -1,8 +1,0 @@
-name=oolspci
-version=0.2.4
-caps=Proc,SysInfo,Mcp
-deps=
-payload=oolspci.oo
-commit=
-sha256=6bf2f94c687d2eaa9d10a1a03e6241b320ec884385ac7a7ee450de00470010ea
-sig=

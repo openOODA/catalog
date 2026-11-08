@@ -1,8 +1,0 @@
-name=oobackup
-version=0.2.4
-caps=FsRead,FsWrite,Process,Env,Mcp
-deps=
-payload=oobackup.oo
-commit=
-sha256=76a96b4760997ccc4acd3b035beb80891f2ec0040aacbca6bab955e5976868cf
-sig=

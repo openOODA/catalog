@@ -1,8 +1,0 @@
-name=ootime
-version=0.2.4
-caps=Term,Env,Proc,Mcp,FsReadCap
-deps=
-payload=ootime.oo
-commit=
-sha256=446f8c55bdafe471cf8fd4ea2ea5bc7c5049ec8f063e85a398ac4a5855bdf563
-sig=

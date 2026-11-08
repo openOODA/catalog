@@ -1,8 +1,0 @@
-name=oowatch
-version=0.2.3
-caps=FsRead,Mcp
-deps=
-payload=oowatch.oo
-commit=
-sha256=e166465a7988ea63031ec2f34cacc59fd70995465f61c2aaed8496d75dec7b11
-sig=

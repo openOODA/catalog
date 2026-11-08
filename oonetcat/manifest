@@ -1,8 +1,0 @@
-name=oonetcat
-version=0.2.4
-caps=Net,Tls,Mcp,FsRead
-deps=
-payload=oonetcat.oo
-commit=
-sha256=f13ed50894a0788dbed66cb9b4d346387e2d9667f4373387d70c91395766bec7
-sig=

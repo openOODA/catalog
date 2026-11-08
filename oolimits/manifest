@@ -1,8 +1,0 @@
-name=oolimits
-version=0.2.4
-caps=Proc,SysInfo,Mcp
-deps=
-payload=oolimits.oo
-commit=
-sha256=5a8d0c240996e1131d4c97cfe1dfe259e69a177d8bd8d5aa3eee36e5c1740879
-sig=

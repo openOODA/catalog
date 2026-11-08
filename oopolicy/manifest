@@ -1,8 +1,0 @@
-name=oopolicy
-version=0.2.4
-caps=Sec,Agent,Mcp,FsRead
-deps=
-payload=oopolicy.oo
-commit=
-sha256=d376932763574a6423c5904a092cff3f01c1f17199029cbe1bd797850b74b7b6
-sig=

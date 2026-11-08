@@ -1,8 +1,0 @@
-name=ootable
-version=0.2.4
-caps=Term,Env,Mcp,FsReadCap
-deps=
-payload=ootable.oo
-commit=
-sha256=c8c0a24d190a4c6c7d5da345da5bbf276cc66f2093734848fafced67e9316e01
-sig=

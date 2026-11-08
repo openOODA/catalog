@@ -1,8 +1,0 @@
-name=oostrdiff
-version=0.1.0
-caps=FsRead,Mcp
-deps=
-payload=oostrdiff.oo
-commit=
-sha256=ea019006309789baacc1216351b2f03fcb786fd9900d01f8c3960feb713380e1
-sig=

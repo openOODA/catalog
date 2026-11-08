@@ -1,8 +1,0 @@
-name=oochgrp
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oochgrp.oo
-commit=
-sha256=6e3e6094223a271f392f2e2d85df430881837fcd0a8f5d5dff0a595293ff3bc8
-sig=

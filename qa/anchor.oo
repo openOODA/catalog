@@ -6,7 +6,7 @@
 //
 // Beats:
 //   1. suite.oo — typechecks every driver twice and drives the catalog proof.
-//   2. catalog_proof.oo — hello, echo, caps, and sqlite lines, sha matches manifest.
+//   2. catalog_proof.oo — hello, echo, caps, and oocat (tools layer) lines, sha matches manifest.
 //   3. sign_index.oo — re-sign index.sig after `opm bot .` rewrites index.
 //
 // Only suite.oo is re-exported here: every driver defines `main`, and the

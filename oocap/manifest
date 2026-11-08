@@ -1,8 +1,0 @@
-name=oocap
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oocap.oo
-commit=
-sha256=5a5a19ec70baf692d928f6d7110d13cd0f548f5efa8b809aad085d6d8bf9d263
-sig=

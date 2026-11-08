@@ -191,7 +191,7 @@ fn check_roundtrip(fs: &FsReadCap, p: Int) -> Int {
                 !pkg_version_safe(cat_field(line, 1)) ||
                 !is_valid_checksum(cat_field(line, 4));
             if bad_val { val_ok = false; }
-            let man: String = slurp(fs, nm + "/manifest");
+            let man: String = slurp(fs, pkg_dir(fs, nm) + "manifest");
             let bad_res: Bool = kv(man, "name") != nm || kv(man, "payload") == "" ||
                 get_manifest_checksum(man) == "";
             if bad_res { res_ok = false; }

@@ -1,8 +1,0 @@
-name=oosensors
-version=0.2.4
-caps=Proc,SysInfo,Mcp
-deps=
-payload=oosensors.oo
-commit=
-sha256=c0585f9d2a7341314e3fee7dc9a1474ecdd33bcf5fdc01bdc7f31374194566c9
-sig=

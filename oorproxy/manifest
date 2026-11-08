@@ -1,8 +1,0 @@
-name=oorproxy
-version=0.2.4
-caps=Net,Tls,Mcp
-deps=
-payload=oorproxy.oo
-commit=
-sha256=0ecf19787f60b03a4058cef827241314648f6860905ca9144b392afc8c589b4c
-sig=

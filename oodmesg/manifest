@@ -1,8 +1,0 @@
-name=oodmesg
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oodmesg.oo
-commit=
-sha256=d6f8c9f20bb294c71da9a5c36210a5727bde987aef8e0d73b13cc376f89c85ee
-sig=

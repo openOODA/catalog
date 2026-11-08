@@ -1,8 +1,0 @@
-name=ooip
-version=0.2.4
-caps=Net,Tls,Mcp
-deps=
-payload=ooip.oo
-commit=
-sha256=7dd604fbb8368750aaf53e9af0d9d09ad457e5b036d24a5f37a1e1176ac4121e
-sig=

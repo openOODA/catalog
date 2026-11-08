@@ -1,8 +1,0 @@
-name=oolshw
-version=0.2.4
-caps=Proc,SysInfo,Mcp
-deps=
-payload=oolshw.oo
-commit=
-sha256=41868bd0b6e3b0c4209c53be8ca17206ad1d4403075f5cbe35f46e4406642ead
-sig=

@@ -1,8 +1,0 @@
-name=oorenice
-version=0.2.4
-caps=Proc,SysInfo,Mcp
-deps=
-payload=oorenice.oo
-commit=
-sha256=7df2e859d6bedd8b07695113b9df861a0cc286d211283d394163a17434df7889
-sig=

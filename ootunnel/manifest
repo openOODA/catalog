@@ -1,8 +1,0 @@
-name=ootunnel
-version=0.2.4
-caps=Net,Tls,Mcp
-deps=
-payload=ootunnel.oo
-commit=
-sha256=264a11f3697b8f495851586f5577ca3a5d982e5b292326da197dba498c683292
-sig=

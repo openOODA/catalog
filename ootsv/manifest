@@ -1,8 +1,0 @@
-name=ootsv
-version=0.2.4
-caps=FsRead,Stream,Mcp
-deps=
-payload=ootsv.oo
-commit=
-sha256=9dea18f0fb9b1e6de6c1f1a7ef1d764249e343f3518762e07fb9f6f1260e63d9
-sig=

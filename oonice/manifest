@@ -1,8 +1,0 @@
-name=oonice
-version=0.2.4
-caps=Proc,SysInfo,ProcessCap,Mcp,FsRead
-deps=
-payload=oonice.oo
-commit=
-sha256=e74af46b514a653a89236ec0a9efbdd50065f57ce655613baf7e1d9d317ba104
-sig=

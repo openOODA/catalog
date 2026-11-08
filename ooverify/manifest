@@ -1,8 +1,0 @@
-name=ooverify
-version=0.2.4
-caps=Sec,Agent,Mcp,FsRead
-deps=
-payload=ooverify.oo
-commit=
-sha256=4f82e8fdda424ea233794d4d343f0aa6f9d5a1ed00804be5a59bbfc767a2bed1
-sig=

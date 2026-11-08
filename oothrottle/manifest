@@ -1,8 +1,0 @@
-name=oothrottle
-version=0.2.4
-caps=Proc,SysInfo,Mcp,FsReadCap
-deps=
-payload=oothrottle.oo
-commit=
-sha256=ef9a66b2cea65aceb2bc6ca46ce5d31e00b5c12a8e73a06e9c6b72fe2f31c205
-sig=

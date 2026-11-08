@@ -1,8 +1,0 @@
-name=ooattest
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=ooattest.oo
-commit=
-sha256=d6183e0820ed6a9892eff2698e7eb8fb1c2f070999acd42131d02a33c9ad7efc
-sig=

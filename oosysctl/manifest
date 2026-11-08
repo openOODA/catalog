@@ -1,8 +1,0 @@
-name=oosysctl
-version=0.2.4
-caps=Proc,SysInfo,Mcp
-deps=
-payload=oosysctl.oo
-commit=
-sha256=7f9ef872190c232b4d8b14b959e2d5d1e4d4106e09011974d006b62d7d008f8e
-sig=

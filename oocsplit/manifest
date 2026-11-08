@@ -1,8 +1,0 @@
-name=oocsplit
-version=0.2.3
-caps=FsRead,FsWrite,Process,Env,Mcp
-deps=
-payload=oocsplit.oo
-commit=
-sha256=66323ea90ca9af30f48fdd321b8f285ce2f681e5a58f3623bd3967c113df3002
-sig=

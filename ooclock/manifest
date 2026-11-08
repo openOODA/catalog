@@ -1,8 +1,0 @@
-name=ooclock
-version=0.2.3
-caps=FsRead,Mcp
-deps=
-payload=ooclock.oo
-commit=
-sha256=cc5c5310478a32ea0e1c1a393d47c909b096c3987daa33023d44729afb114548
-sig=

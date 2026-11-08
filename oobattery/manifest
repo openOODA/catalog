@@ -1,8 +1,0 @@
-name=oobattery
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oobattery.oo
-commit=
-sha256=e72b501302b290a0b55a07565f2a4e111dc4cb487330e3730ed2d8ba6d98c159
-sig=

@@ -1,8 +1,0 @@
-name=ooschema
-version=0.2.4
-caps=FsRead,Stream,Mcp
-deps=
-payload=ooschema.oo
-commit=
-sha256=b35d2163cc0c1abb17519d4005764c183f2571f498f1a0cc2fa249494e6e9545
-sig=

@@ -1,8 +1,0 @@
-name=ooguard
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=ooguard.oo
-commit=
-sha256=8c1d2259d07d0ba81c00f10ecf7e8a61a4129c444fcd27b3c9fd9db0c7fc3aab
-sig=

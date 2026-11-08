@@ -1,8 +1,0 @@
-name=ooumount
-version=0.2.4
-caps=FsRead,FsWrite,Mcp
-deps=
-payload=ooumount.oo
-commit=
-sha256=2b91d489bda687f8cecbabdca1ad12b29482d322168e5376ade89079f64044fd
-sig=

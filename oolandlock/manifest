@@ -1,8 +1,0 @@
-name=oolandlock
-version=0.2.4
-caps=Sec,Agent,Mcp
-deps=
-payload=oolandlock.oo
-commit=
-sha256=98f09edef0a8d371d26cac9a7fcd4e775e9b9ce46c4a3ee9e024890bee2793e4
-sig=

@@ -1,8 +1,0 @@
-name=ooswatch
-version=0.1.0
-caps=Term,Env,Mcp
-deps=
-payload=ooswatch.oo
-commit=
-sha256=a85c5eeeef3c7d95ecfc746cfbd2a6063a98b71abc9e45eb634905143c6d91fd
-sig=

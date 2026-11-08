@@ -1,8 +1,0 @@
-name=oolsusb
-version=0.2.4
-caps=Proc,SysInfo,Mcp
-deps=
-payload=oolsusb.oo
-commit=
-sha256=b52cb42ec4a01de91c10baa11620dc8028c40dc2f315aa3180b3d729cba4287c
-sig=

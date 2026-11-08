@@ -140,6 +140,21 @@ pub fn test_caps_schema(fs: &FsReadCap, p: Int) -> Int {
             if list_get(res, 0) != 1 { all_fld = false; }
             if list_get(res, 1) == 1 { all_tok = false; }
             if list_get(res, 2) == 1 { all_fld = false; }
+        } else if fs_is_dir(fs, d) {
+            let subs: List[String] = fs_read_dir(fs, d);
+            let mut si: Int = 0;
+            while si < list_len(subs) {
+                let sd: String = d + "/" + list_get(subs, si);
+                si = si + 1;
+                if fs_is_dir(fs, sd) && path_exists(fs, sd + "/manifest") {
+                    nman = nman + 1;
+                    let man2: String = slurp(fs, sd + "/manifest");
+                    let res2: List[Int] = cs_manifest_scan(man2, spec);
+                    if list_get(res2, 0) != 1 { all_fld = false; }
+                    if list_get(res2, 1) == 1 { all_tok = false; }
+                    if list_get(res2, 2) == 1 { all_fld = false; }
+                }
+            }
         }
     }
     all_fld = all_fld && nman > 0;

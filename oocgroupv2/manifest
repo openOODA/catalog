@@ -1,8 +1,0 @@
-name=oocgroupv2
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oocgroupv2.oo
-commit=
-sha256=83df47af8f70d950857a003733fbffb812887938bdd4b0c39ab6c27841a236be
-sig=

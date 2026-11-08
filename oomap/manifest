@@ -1,8 +1,0 @@
-name=oomap
-version=0.2.4
-caps=FsRead,Stream,FsReadCap,Mcp
-deps=
-payload=oomap.oo
-commit=
-sha256=53357462c345bfd38a2a984b9a08f39c982e170117c92d27a92647991a562a44
-sig=

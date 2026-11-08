@@ -1,8 +1,0 @@
-name=oosqlite
-version=0.1.0
-caps=FsRead,Stream,Mcp
-deps=
-payload=oosqlite.oo
-commit=
-sha256=29ee7082f6ac7e596687587fa3af3242b40061a54c0e28b8f807b708b28f36e1
-sig=

@@ -1,8 +1,0 @@
-name=ooglyph
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=ooglyph.oo
-commit=
-sha256=8165d97966d2ea9f92189b9536a0fa8da97bea86fea71ce74b7b438a191422dd
-sig=

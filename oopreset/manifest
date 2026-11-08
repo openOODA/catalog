@@ -1,8 +1,0 @@
-name=oopreset
-version=0.2.4
-caps=Term,Env,Mcp,FsRead
-deps=
-payload=oopreset.oo
-commit=
-sha256=438d937d20bb6fef14d591d0b64f6d2c5985030fe8553749968d641a6815ef7d
-sig=

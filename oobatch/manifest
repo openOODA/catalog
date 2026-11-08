@@ -1,8 +1,0 @@
-name=oobatch
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oobatch.oo
-commit=
-sha256=f67bdaa28852b047358f49fe552fb9ffe8a33f1410f5538cf506c7dd55a3ec37
-sig=

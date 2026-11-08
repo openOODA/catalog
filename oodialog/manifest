@@ -1,8 +1,0 @@
-name=oodialog
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oodialog.oo
-commit=
-sha256=ff743c6e5a51b02f867372849919afb76016fb9769e2f07b6baf084ebe6ac98f
-sig=

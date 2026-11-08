@@ -1,8 +1,0 @@
-name=oonegatrust
-version=0.2.4
-caps=Sec,Agent,Mcp,FsRead
-deps=
-payload=oonegatrust.oo
-commit=
-sha256=c3bf77d679d89f2b3a8118aaecaad0b960b5a025c5539389ab4984716d5dd787
-sig=

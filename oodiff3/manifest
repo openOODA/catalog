@@ -1,8 +1,0 @@
-name=oodiff3
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oodiff3.oo
-commit=
-sha256=ed36f71746a7806d4cd6334996a4c1c006d54a41d9a737ed74899311df19acc9
-sig=

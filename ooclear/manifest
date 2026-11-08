@@ -1,8 +1,0 @@
-name=ooclear
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=ooclear.oo
-commit=
-sha256=4fd71431e1e9d3f2c60a4857b1403b83bb037c059dfd129b9a62637292d8c654
-sig=

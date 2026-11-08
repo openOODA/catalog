@@ -1,8 +1,0 @@
-name=oopr
-version=0.2.4
-caps=FsRead,Term,Mcp
-deps=
-payload=oopr.oo
-commit=
-sha256=8eff7d221185306f4f1f5a3376c13259184a0374dee630038fdec49ff24370c1
-sig=

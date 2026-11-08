@@ -1,8 +1,0 @@
-name=oostty
-version=0.1.0
-caps=Term,Env,Proc,Mcp
-deps=
-payload=oostty.oo
-commit=
-sha256=a0ea81f86529b9c561f5ef8914bc6231c92a11273fa6e29ade6278e86a401bb7
-sig=
