@@ -1,24 +1,17 @@
 // # openOODA public catalog
 //
-// Logline: The list of packages opm search and opm add can install.
+// Logline: The list of 93 canonical packages oopm search and oopm install can install.
 //
-// Setup: This repo is a vendor tree. catalog is name|version|caps|deps|sha. Packages live in the eight layer folders (core kernel OS tools DE apps cloud agents) plus the root fixtures; each package folder is manifest + payload. groups.oot holds the @group install profiles. Host: https://catalog.openooda.org Not a registry service. No accounts. No daemon. Do not import package payloads from this file.
+// Setup: This repo is a vendor tree. catalog is name|version|caps|deps|sha. Packages live in layers/L0-core through layers/L7-agents; each package folder is manifest + anchor.oo + payload. groups.oot holds the @group install profiles. Host: https://catalog.openooda.org
 //
 // Beats:
-//   1. catalog — the search index. index is a copy. index.minisig signs it.
-//   2. hello — print hello.
-//   3. echo — print echo.
-//   3b. caps — print the 20 language capability tokens.
-//   3c. oocat — canonical tools-layer package (layer dirs hold the 46
-//      canonical manifests; the seven withdrawn persona dirs stay
-//      unindexed at the root).
-//   4. .github/workflows/ci.yml is the build, test, verify, release
-//      entry point (gh-owned; no scripts/ runners).
-//   5. qa/ — catalog_proof.oo, check_pkg.oo, sign_index.oo, suite.oo.
+//   1. catalog — the search index. index is a copy. index.sig / index.minisig sign it.
+//   2. layers/L0-core..L7-agents — the 8 layer directories holding all 93 canonical package manifests.
+//   3. groups.oot — Fedora-style @group profiles (@core, @kernel, @os, @tools, @de, @apps, @games, @cloud, @agents, @all).
+//   4. qa/ — catalog_proof.oo, check_pkg.oo, sign_index.oo, suite.oo.
+//   5. tests/ — test_catalog.oo (97 assertions).
 //   6. docs/ — file format, host, adding a package.
-//   7. Rebuild the index with: opm bot .
-// import "hello/anchor.oo";
-// import "echo/anchor.oo";
-// import "caps/anchor.oo";
-// import "qa/anchor.oo";
-// import "docs/anchor.oo";
+
+pub fn catalog_anchor_version() -> String {
+    return "0.2.5";
+}

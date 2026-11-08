@@ -21,20 +21,20 @@ key opm pins for the stock origin.
 Example:
 
 ```
-hello|0.1.0|FsRead||6498c89ac067d10897e8eb3dfe2800ace2efa3c3228df2c2a78e9e84bc4019df
-echo|0.1.0|FsRead||14d389c387ed6503fd1632236fefaf6608b218ce28c91faa4522ddf409e18446
-caps|0.1.0|FsRead||36800f950198935a26fc3808e8f7e52df7fee026f8014d772272f922bfdb0daa
-oocat|0.2.5|FsRead,FsWrite,Process,Env,Mcp||06a9c8228154a22f750a67cde856df2f3f49167745f85027670b158bbef9edd5
+ooarcade|0.1.0|FsRead,FsWrite,Process,Env||d0ab7e8ec024c973e9e4c83090a255ef044bf7c65f5db94c0056817f26856734
+ooarchive|0.2.5|FsRead,FsWrite,Process,Env||be1b301993572ef76f3fd84fb542dc16d3b66f9cb162ff951df4f9c2420d9726
+oocat|0.2.5|FsRead,FsWrite,Process,Env||67ff26ca615be76bf53d564ca4a7e3a21dc76443d3ef9749b2cf553e7b6b7638
+ooda|0.1.0|FsRead,FsWrite,Net,Process,Env||cb2ef046a49dc1722d971ce55b91a9eb5724962319cb47e628ec9f550469b757
 ```
 
-Each package folder is one package. Canonical packages live under
-the eight layer directories (`core/`, `kernel/`, `OS/`, `tools/`,
-`DE/`, `apps/`, `cloud/`, `agents/`); the root fixtures (`caps`,
-`echo`, `hello`) and the seven withdrawn persona folders stay at
-the top level. `groups.oot` holds the `@group` install profiles.
-A package folder holds `manifest` plus the payload named in
-`payload=`. Academy headers are required on the payload. Rebuild
-the index from the opm repo:
+Each package folder is one package. All 93 canonical packages live
+under `layers/L0-core/` through `layers/L7-agents/` (exact `8` (`2^3`)
+layer folders sorted `L0` -> `L7`): `layers/L0-core/`, `layers/L1-kernel/`,
+`layers/L2-OS/`, `layers/L3-tools/`, `layers/L4-DE/`, `layers/L5-apps/`,
+`layers/L6-cloud/`, and `layers/L7-agents/`. `groups.oot` holds the
+Fedora-style `@group` install profiles (`@core`, `@kernel`, `@os`,
+`@tools`, `@de`, `@apps`, `@games`, `@cloud`, `@agents`, `@all`).
+A package folder holds `manifest`, `anchor.oo`, and `<name>.oo`.
 
 ```
 opm bot .

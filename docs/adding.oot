@@ -4,8 +4,8 @@ File: catalog/docs/adding.oot
 
 A catalog package is a folder, not a GitHub search result.
 
-1. Create `<name>/manifest` with `name`, `version`, `caps`,
-   `deps`, `license`, `payload`, and `sha256` of the payload.
+1. Create `layers/L<N>-<layer>/<name>/manifest` with `name`, `version`,
+   `caps`, `deps`, `payload`, and `sha256` of the payload.
 2. Put the payload next to it. Default name is `<name>.oo`.
    The payload needs Academy headers (`// # `, `// Logline:`).
 3. Caps must be the real set. opm refuses extra caps on add.
