@@ -1,4 +1,4 @@
-// # oostructureddiff Main Entry Point
+// # oostrdiff Main Entry Point
 //
 // Logline: AST and JSON structural tree differ highlighting node mutations and key shifts.
 //
@@ -6,12 +6,12 @@
 //
 // Beats:
 //   1. Parse command-line options and dispatch --help, --version, or --mcp.
-//   2. Execute capability-bounded oostructureddiff operations.
+//   2. Execute capability-bounded oostrdiff operations.
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "oostructureddiff 0.1.0 (openOODA bounded diff & comparison)\n"
-        + "usage: oostructureddiff [options] [ARGUMENTS]...\n\n"
+    return "oostrdiff 0.1.0 (openOODA bounded diff & comparison)\n"
+        + "usage: oostrdiff [options] [ARGUMENTS]...\n\n"
         + "AST and JSON structural tree differ highlighting node mutations and key shifts.\n\n"
         + "Options:\n"
         + "  -h, --help           display this help and exit\n"
@@ -23,7 +23,7 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "oostructureddiff 0.1.0 (openOODA bounded diff & comparison)\n";
+    return "oostrdiff 0.1.0 (openOODA bounded diff & comparison)\n";
 }
 
 fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
@@ -41,12 +41,12 @@ fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
             return 0;
         }
         if arg == "--mcp" {
-            print("{\"jsonrpc\":\"2.0\",\"result\":{\"status\":\"ready\",\"tool\":\"oostructureddiff\"}}\n");
+            print("{\"jsonrpc\":\"2.0\",\"result\":{\"status\":\"ready\",\"tool\":\"oostrdiff\"}}\n");
             return 0;
         }
         i = i + 1;
     }
 
-    print("oostructureddiff: bounded capability-bounded utility ready\n");
+    print("oostrdiff: bounded capability-bounded utility ready\n");
     return 0;
 }

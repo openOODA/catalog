@@ -1,8 +1,0 @@
-name=oostructureddiff
-version=0.1.0
-caps=FsRead,Mcp
-deps=
-payload=oostructureddiff.oo
-commit=
-sha256=670ab2e2da4916cf7f8b901b8b8285552ae5dba0eeb841b45de57ddbadf733cc
-sig=

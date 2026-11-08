@@ -133,7 +133,7 @@ oossh|0.2.4|Process||61f967b337229465f4cee973bc78994a4c6dab01dd8b33919ec384432b2
 oossl|0.2.4|Net,Tls,FsReadCap,ProcessCap,Mcp||ad482b9c9e6e08d04f863802c8e23210f680dbae861f0b815ee976a5880e6cee
 oostringify|0.1.0|FsRead,Stream,Mcp||277199225762f0b55411929dc56ff0eae28c4cad74291fa68a59bef2376420c8
 oostrings|0.1.0|FsRead,Term,Mcp||42e1b4fc547ed77053358c5f88c846d0e0419c89c2b823149f5619f4f6f6ecce
-oostructureddiff|0.1.0|FsRead,Mcp||670ab2e2da4916cf7f8b901b8b8285552ae5dba0eeb841b45de57ddbadf733cc
+oostrdiff|0.1.0|FsRead,Mcp||ea019006309789baacc1216351b2f03fcb786fd9900d01f8c3960feb713380e1
 oostty|0.1.0|Term,Env,Proc,Mcp||a0ea81f86529b9c561f5ef8914bc6231c92a11273fa6e29ade6278e86a401bb7
 ooswatch|0.1.0|Term,Env,Mcp||a85c5eeeef3c7d95ecfc746cfbd2a6063a98b71abc9e45eb634905143c6d91fd
 oosync|0.2.4|FsRead,FsWrite,Mcp,FsReadCap||994d5ecee39f6fed1a4850fceec32e36452682a51d3c877d98a73623543bea70
