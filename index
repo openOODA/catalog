@@ -116,7 +116,7 @@ ooscp|0.2.4|Net,Tls,Mcp||918ec778ca6cf1aae636ba480a0d4ea5cb7f4d5a477c9ed7d893dd3
 ooscreen|0.2.4|Term,Env,Proc,Mcp||64223b96b55317f9c92bbb71ae279d8706b999ac725afcbc3fc67850ac75f8fb
 ooseccomp|0.2.4|Sec,Agent,Mcp||1c6f34995a6498d272a5a91045fbfc51c1976a1d664d9f8135722352c30a575a
 oosed|0.2.3|FsRead,Mcp||a31aca7853524838893b7ff85424568bc1128db0a3bd43055c09434908ceadd7
-oosemantcdiff|0.2.4|FsRead,Mcp||ec8e14b5919a7215d7583e1f978bc0d796f7b67726e96cd843527a937c3c710c
+oosemanticdiff|0.2.4|FsRead,Mcp||ec8e14b5919a7215d7583e1f978bc0d796f7b67726e96cd843527a937c3c710c
 oosensors|0.2.4|Proc,SysInfo,Mcp||c0585f9d2a7341314e3fee7dc9a1474ecdd33bcf5fdc01bdc7f31374194566c9
 oosftp|0.2.4|Net,Tls,Mcp||a68cb78a6dd24f6be6f3918d52ef84e9c6f935f3cf38e31a5415ceaa124112a8
 oosh|1.0.2|Bind,FsRead,Process,Sys,Env,Time,FsWrite,Alloc,Thread,Ffi||6ad331a5478ee34e1f0a4da94de51a8bd7f76890b71457ad0f45d1a6bdbf5442
