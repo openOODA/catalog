@@ -1,0 +1,8 @@
+name=ooui
+version=0.1.0
+caps=FsRead,Term,Env,Mcp
+deps=
+payload=ooui.oo
+commit=
+sha256=1336939084d316bb99df23d37f0925e85fecab3e1e62cc606cc51abb737d2783
+sig=

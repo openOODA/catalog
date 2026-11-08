@@ -1,0 +1,8 @@
+name=ooarcade
+version=0.1.0
+caps=FsRead,FsWrite,Process,Env,Mcp
+deps=
+payload=ooarcade.oo
+commit=
+sha256=33aa5be59a4a543bb6a01ff91d554ba6aff84801d6bafb6d26bd96b75cee28d5
+sig=
