@@ -35,6 +35,7 @@ ooproc|0.1.0|Proc,SysInfo,Mcp||2d6c3ed298b67a76bbce1faae361e844addd66ba5cf3ecc3d
 ooprovenance|0.2.4|Sec,Agent,Mcp,FsRead||0b573bebbd0205a5450e851f4ea4c5c9d2863795f94d4afb9a53b475c6bfa7cf
 ooredact|0.2.4|Sec,Agent,Mcp||cf6de779c31e784b21489f34e676bdd4aecba3597810fcf14d6b4b660f280110
 oorgb|0.2.4|Term,Env,Mcp||6fb3c59299e9ab58881a8b180bfe720c18392f0c7dad44e71782555c3343f06f
+oosandbox|0.2.5|Sec,Agent,Mcp||4bd10fd534268f2961448d5e3cae125de559b8c7413298d4ca8ae8ad7fadf1a6
 oosed|0.2.3|FsRead,Mcp||a31aca7853524838893b7ff85424568bc1128db0a3bd43055c09434908ceadd7
 oosh|1.0.2|Bind,FsRead,Process,Sys,Env,Time,FsWrite,Alloc,Thread,Ffi||bf28086a6925fe400036f628beda0dd2be9758def58ff3020c38955fd502f131
 oosign|0.1.0|Sec,Agent,Mcp||f2a77cc2171ad110b24a7868ae215bd9c800b6a02cf1d5e811463e7ed25fd7b8

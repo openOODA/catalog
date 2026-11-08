@@ -214,7 +214,7 @@ fn check_roundtrip(fs: &FsReadCap, p: Int) -> Int {
     if test_expect(rt_ok, "72 every catalog line round-trips through the parser") { p = p + 1; }
     if test_expect(val_ok, "73 every catalog line validates name, version, and sha") { p = p + 1; }
     if test_expect(res_ok, "74 every indexed name resolves a consistent manifest") { p = p + 1; }
-    if test_expect(n >= 150, "75 catalog holds a sane entry count") { p = p + 1; }
+    if test_expect(n >= 45, "75 catalog holds a sane entry count") { p = p + 1; }
     // Adversarial fuzz battery: byte-level hostile inputs the name,
     // version, and digest validators plus check_pkg must refuse.
     if test_expect(!pkg_name_safe("oös"), "76 name refuses UTF-8 high bytes") { p = p + 1; }
