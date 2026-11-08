@@ -8,7 +8,6 @@
 //   1. Extract the canonical *Cap names from security.md Quick Card.
 //   2. Require every manifest caps= token to resolve and every caps field to appear exactly once with no empty or duplicate tokens.
 
-import "oostd/core/primitives/str.oo";
 import "oostd/fs/os/fs.oo";
 import "qa/check_pkg.oo";
 import "tests/dep_resolution.oo";

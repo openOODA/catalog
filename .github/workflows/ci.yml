@@ -20,35 +20,29 @@ jobs:
           test -f registry.pub
           test -f index.minisig
           test -f index.sig
-          test -f hello/manifest
-          test -f hello/hello.oo
-          test -f echo/manifest
-          test -f echo/echo.oo
-          test -f caps/manifest
-          test -f caps/caps.oo
-          test -f sqlite/manifest
-          test -f sqlite/sqlite.oo
           grep -qx 'catalog.openooda.org' CNAME
-          grep -q '^hello|' catalog
-          grep -q '^echo|' catalog
-          grep -q '^caps|' catalog
-          grep -q '^sqlite|' catalog
           cmp -s catalog index
-          hello_sha=$(awk -F= '/^sha256=/{print $2; exit}' hello/manifest)
-          echo_sha=$(awk -F= '/^sha256=/{print $2; exit}' echo/manifest)
-          caps_sha=$(awk -F= '/^sha256=/{print $2; exit}' caps/manifest)
-          sqlite_sha=$(awk -F= '/^sha256=/{print $2; exit}' sqlite/manifest)
-          grep -q "^hello|.*|${hello_sha}$" catalog
-          grep -q "^echo|.*|${echo_sha}$" catalog
-          grep -q "^caps|.*|${caps_sha}$" catalog
-          grep -q "^sqlite|.*|${sqlite_sha}$" catalog
-          for p in hello echo caps sqlite; do
-            ! grep -q "import \"$p.oo\"" "$p/anchor.oo" || { echo "ERR payload import in $p/anchor.oo"; exit 1; }
-          done
-          for d in . hello echo caps sqlite qa docs; do
+          # The catalog index is the single source of truth for the package
+          # set: every indexed row must resolve to a shipped package whose
+          # payload digest matches the row. Deriving the set from the index
+          # keeps the gate honest when packages come and go.
+          rows=0
+          while IFS='|' read -r name ver caps deps sha; do
+            [ -n "$name" ] || continue
+            rows=$((rows + 1))
+            test -f "$name/manifest" || { echo "ERR missing $name/manifest"; exit 1; }
+            test -f "$name/anchor.oo" || { echo "ERR missing $name/anchor.oo"; exit 1; }
+            test -f "$name/$name.oo" || { echo "ERR missing $name/$name.oo"; exit 1; }
+            pkg_sha=$(awk -F= '/^sha256=/{print $2; exit}' "$name/manifest")
+            test "$pkg_sha" = "$sha" || { echo "ERR $name digest drift: manifest=$pkg_sha index=$sha"; exit 1; }
+            ! grep -q "import \"$name.oo\"" "$name/anchor.oo" || { echo "ERR payload import in $name/anchor.oo"; exit 1; }
+          done < catalog
+          test "$rows" -gt 0 || { echo "ERR empty catalog index"; exit 1; }
+          echo "[catalog-tree OK] $rows indexed packages resolve with matching digests"
+          for d in . qa docs examples; do
             test -f "$d/anchor.oo" || { echo "ERR missing $d/anchor.oo"; exit 1; }
           done
-          for f in $(find . hello echo caps sqlite qa docs -name '*.oo' -o -name '*.oot'); do
+          for f in $(find . -name '*.oo' -o -name '*.oot' | grep -v '^\./\.git/'); do
             n=$(wc -l < "$f"); test "$n" -le 256 || { echo "ERR over 256 lines: $f n=$n"; exit 1; }
           done
       - name: verify minisig (fail closed)

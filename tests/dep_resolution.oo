@@ -9,8 +9,6 @@
 //   2. Require every deps= field to appear exactly once and reference only indexed package names.
 //   3. Require index names to stay disjoint from the seven withdrawn persona double-ship names.
 
-import "oostd/core/primitives/str.oo";
-import "oostd/fs/os/fs.oo";
 import "qa/check_pkg.oo";
 
 fn dr_expect(cond: Bool, label: String) -> Bool {

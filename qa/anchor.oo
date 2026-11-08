@@ -5,10 +5,12 @@
 // Setup: Each proof is a hostile test for the published index. If a driver fails, the catalog fails to release. Do not import package payloads.
 //
 // Beats:
-//   1. catalog_proof.oo — hello, echo, caps, and sqlite lines, sha matches manifest.
-//   2. sign_index.oo — re-sign index.sig after `opm bot .` rewrites index.
-//   3. suite.oo typechecks every driver twice. CI typechecks catalog_proof.oo.
+//   1. suite.oo — typechecks every driver twice and drives the catalog proof.
+//   2. catalog_proof.oo — hello, echo, caps, and sqlite lines, sha matches manifest.
+//   3. sign_index.oo — re-sign index.sig after `opm bot .` rewrites index.
+//
+// Only suite.oo is re-exported here: every driver defines `main`, and the
+// drivers have different entry signatures, so re-exporting more than one
+// collides on the `main` prototype. The other two run as their own pages.
 
-import "catalog_proof.oo";
-import "sign_index.oo";
 import "suite.oo";
