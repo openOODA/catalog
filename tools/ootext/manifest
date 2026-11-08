@@ -1,8 +1,0 @@
-name=ootext
-version=0.1.0
-caps=FsRead,FsWrite,Process,Env,Mcp
-deps=
-payload=ootext.oo
-commit=
-sha256=1a8d09a41aacd8a548e009f671fa5eaa8dbda4649412a51bec4320c10b4cdcb4
-sig=

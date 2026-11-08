@@ -1,0 +1,8 @@
+name=oodb
+version=0.3.7
+caps=FsRead,FsWrite,Process
+deps=
+payload=oodb.oo
+commit=
+sha256=f1d61e8864c8364c9da9ec0ae065f33a7cfc7260d7044a7f6429a79720b4fbf2
+sig=

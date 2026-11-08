@@ -1,0 +1,8 @@
+name=oosed
+version=0.2.4
+caps=FsRead,Process,FsWrite,Env
+deps=
+payload=oosed.oo
+commit=
+sha256=022884b8f53488346d4f0b58d75be548cc034ddafe9d49a1e1c2c41c6720f127
+sig=

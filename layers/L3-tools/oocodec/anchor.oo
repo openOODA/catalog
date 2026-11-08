@@ -1,0 +1,15 @@
+// # oocodec package
+//
+// Logline: Canonical catalog package anchor for oocodec (layers/L3-tools).
+//
+// Setup: Folder shape is manifest plus payload (oocodec.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oocodec.oo.
+//   2. oocodec.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oocodec.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oocodec_pkg() -> String {
+    return "oocodec";
+}

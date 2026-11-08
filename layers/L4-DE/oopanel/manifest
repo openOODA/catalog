@@ -1,0 +1,8 @@
+name=oopanel
+version=0.4.0
+caps=Env,FsRead,FsWrite,Process
+deps=
+payload=oopanel.oo
+commit=
+sha256=f68e533d9e3f5128be797f902360cc7630f3a4c65de5e1307b7366253885c7a4
+sig=

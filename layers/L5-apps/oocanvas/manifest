@@ -1,0 +1,8 @@
+name=oocanvas
+version=0.3.8
+caps=FsWrite,FsRead,Env,Process
+deps=
+payload=oocanvas.oo
+commit=
+sha256=759ae9a31808e95811ee2beaae1028460a4ca963fe7e21ca8b9342d88c8816ec
+sig=

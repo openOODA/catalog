@@ -1,0 +1,8 @@
+name=oodaw
+version=0.3.8
+caps=FsWrite,FsRead,Env,Process
+deps=
+payload=oodaw.oo
+commit=
+sha256=eaa5987f421b57f210e964265b9fa9630dbd295f59c6168cb6fc21b2a9e7d6b9
+sig=

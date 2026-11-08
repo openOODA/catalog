@@ -1,0 +1,15 @@
+// # ooinit package
+//
+// Logline: Canonical catalog package anchor for ooinit (layers/L2-OS).
+//
+// Setup: Folder shape is manifest plus payload (ooinit.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooinit.oo.
+//   2. ooinit.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with ooinit.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_ooinit_pkg() -> String {
+    return "ooinit";
+}

@@ -1,0 +1,15 @@
+// # oodrv-virt package
+//
+// Logline: Canonical catalog package anchor for oodrv-virt (layers/L1-kernel).
+//
+// Setup: Folder shape is manifest plus payload (oodrv-virt.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oodrv-virt.oo.
+//   2. oodrv-virt.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oodrv-virt.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oodrv_virt_pkg() -> String {
+    return "oodrv-virt";
+}

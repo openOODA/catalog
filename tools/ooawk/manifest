@@ -1,8 +1,0 @@
-name=ooawk
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=ooawk.oo
-commit=
-sha256=fa97b32d60e3534c2173763c0d3618f0f4fe6ac9b3c34c9df245950ad2409268
-sig=

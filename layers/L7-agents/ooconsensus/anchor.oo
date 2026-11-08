@@ -1,0 +1,15 @@
+// # ooconsensus package
+//
+// Logline: Canonical catalog package anchor for ooconsensus (layers/L7-agents).
+//
+// Setup: Folder shape is manifest plus payload (ooconsensus.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooconsensus.oo.
+//   2. ooconsensus.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with ooconsensus.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_ooconsensus_pkg() -> String {
+    return "ooconsensus";
+}

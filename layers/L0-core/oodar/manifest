@@ -1,0 +1,8 @@
+name=oodar
+version=0.2.5
+caps=FsRead,Env,Process
+deps=
+payload=oodar.oo
+commit=
+sha256=57c8fc74df6c788fb259655542163137ce3712f30661b83900faec807f3dc3ae
+sig=

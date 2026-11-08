@@ -1,0 +1,15 @@
+// # oostrike package
+//
+// Logline: Canonical catalog package anchor for oostrike (layers/L5-apps).
+//
+// Setup: Folder shape is manifest plus payload (oostrike.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oostrike.oo.
+//   2. oostrike.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oostrike.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oostrike_pkg() -> String {
+    return "oostrike";
+}

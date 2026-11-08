@@ -1,8 +1,0 @@
-name=ooengine
-version=0.1.0
-caps=Gpu,Frame,Window,Env,Mcp
-deps=
-payload=ooengine.oo
-commit=
-sha256=677d5388876d81df3c829359932aa6ecc3debc0b34856fcdaeaf7d6dc1a813b5
-sig=

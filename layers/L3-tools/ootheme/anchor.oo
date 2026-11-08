@@ -1,0 +1,15 @@
+// # ootheme package
+//
+// Logline: Canonical catalog package anchor for ootheme (layers/L3-tools).
+//
+// Setup: Folder shape is manifest plus payload (ootheme.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ootheme.oo.
+//   2. ootheme.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with ootheme.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_ootheme_pkg() -> String {
+    return "ootheme";
+}

@@ -1,0 +1,15 @@
+// # oosh package
+//
+// Logline: Canonical catalog package anchor for oosh (layers/L3-tools).
+//
+// Setup: Folder shape is manifest plus payload (oosh.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oosh.oo.
+//   2. oosh.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oosh.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oosh_pkg() -> String {
+    return "oosh";
+}

@@ -1,0 +1,8 @@
+name=oosh
+version=1.0.3
+caps=FsRead,Ffi,FsWrite,Process,Env,Bind,Time
+deps=
+payload=oosh.oo
+commit=
+sha256=64e6a4a6747f38347bcaec6f4e535d631efecbbd2d9226db8d9f3009ce7f071b
+sig=

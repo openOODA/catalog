@@ -1,0 +1,8 @@
+name=ooportal
+version=0.4.0
+caps=Env,FsRead,FsWrite,Process
+deps=
+payload=ooportal.oo
+commit=
+sha256=3a5db1becc0275530f88225646a1d6d95db528e5705897b79f087bc85fdb5b68
+sig=

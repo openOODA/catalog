@@ -1,8 +1,0 @@
-name=oodefense
-version=0.1.0
-caps=Net,Sec,Agent,Mcp,FsRead
-deps=
-payload=oodefense.oo
-commit=
-sha256=ef9ff0d25d849eb99ff0b73902cd17923ae9ca80e40dab90c22a53e690b36992
-sig=

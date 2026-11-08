@@ -1,0 +1,15 @@
+// # oodar package
+//
+// Logline: Canonical catalog package anchor for oodar (layers/L0-core).
+//
+// Setup: Folder shape is manifest plus payload (oodar.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oodar.oo.
+//   2. oodar.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oodar.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oodar_pkg() -> String {
+    return "oodar";
+}

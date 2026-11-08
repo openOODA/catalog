@@ -112,20 +112,17 @@ fn check_line(line: String) -> String {
     return "";
 }
 
-// Resolve a package name to its on-disk directory. Root fixtures
-// (caps, echo, hello) and the withdrawn persona set live at the top
-// level; canonical packages live under the eight layer directories.
+// Resolve a package name to its on-disk directory under layers/L0-core..L7-agents.
 // Returns "" when no manifest-bearing directory matches the name.
 pub fn pkg_dir(fs: &FsReadCap, name: String) -> String {
-    if path_exists(fs, name + "/manifest") { return name + "/"; }
-    if path_exists(fs, "core/" + name + "/manifest") { return "core/" + name + "/"; }
-    if path_exists(fs, "kernel/" + name + "/manifest") { return "kernel/" + name + "/"; }
-    if path_exists(fs, "OS/" + name + "/manifest") { return "OS/" + name + "/"; }
-    if path_exists(fs, "tools/" + name + "/manifest") { return "tools/" + name + "/"; }
-    if path_exists(fs, "DE/" + name + "/manifest") { return "DE/" + name + "/"; }
-    if path_exists(fs, "apps/" + name + "/manifest") { return "apps/" + name + "/"; }
-    if path_exists(fs, "cloud/" + name + "/manifest") { return "cloud/" + name + "/"; }
-    if path_exists(fs, "agents/" + name + "/manifest") { return "agents/" + name + "/"; }
+    if path_exists(fs, "layers/L0-core/" + name + "/manifest") { return "layers/L0-core/" + name + "/"; }
+    if path_exists(fs, "layers/L1-kernel/" + name + "/manifest") { return "layers/L1-kernel/" + name + "/"; }
+    if path_exists(fs, "layers/L2-OS/" + name + "/manifest") { return "layers/L2-OS/" + name + "/"; }
+    if path_exists(fs, "layers/L3-tools/" + name + "/manifest") { return "layers/L3-tools/" + name + "/"; }
+    if path_exists(fs, "layers/L4-DE/" + name + "/manifest") { return "layers/L4-DE/" + name + "/"; }
+    if path_exists(fs, "layers/L5-apps/" + name + "/manifest") { return "layers/L5-apps/" + name + "/"; }
+    if path_exists(fs, "layers/L6-cloud/" + name + "/manifest") { return "layers/L6-cloud/" + name + "/"; }
+    if path_exists(fs, "layers/L7-agents/" + name + "/manifest") { return "layers/L7-agents/" + name + "/"; }
     return "";
 }
 

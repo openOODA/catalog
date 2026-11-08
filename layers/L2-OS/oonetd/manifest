@@ -1,0 +1,8 @@
+name=oonetd
+version=0.4.0
+caps=Bind,Tcp,FsRead,FsWrite,Process
+deps=
+payload=oonetd.oo
+commit=
+sha256=57e0616ec47394f825ec10e19729a409b3f06a42d23682d8aa28954b627ef5ca
+sig=

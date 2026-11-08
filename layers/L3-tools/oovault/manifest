@@ -1,0 +1,8 @@
+name=oovault
+version=0.2.6
+caps=Process,FsRead,FsWrite,Env,Time
+deps=
+payload=oovault.oo
+commit=
+sha256=f759c14d7d56a5b4479ebb38769b445081dc9d581aa19fbefb9313cd21933264
+sig=

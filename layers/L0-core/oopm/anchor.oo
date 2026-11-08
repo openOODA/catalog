@@ -1,0 +1,15 @@
+// # oopm package
+//
+// Logline: Canonical catalog package anchor for oopm (layers/L0-core).
+//
+// Setup: Folder shape is manifest plus payload (oopm.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oopm.oo.
+//   2. oopm.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oopm.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oopm_pkg() -> String {
+    return "oopm";
+}

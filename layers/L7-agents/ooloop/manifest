@@ -1,0 +1,8 @@
+name=ooloop
+version=0.4.1
+caps=FsRead,Process,Env,FsWrite
+deps=
+payload=ooloop.oo
+commit=
+sha256=a9b4c176a453a095abf9979e4a62367dbd79b111cae8ce9997108fbd89ec211e
+sig=

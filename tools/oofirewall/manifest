@@ -1,8 +1,0 @@
-name=oofirewall
-version=0.2.3
-caps=FsRead,Net,Process,Env,Mcp
-deps=
-payload=oofirewall.oo
-commit=
-sha256=fba2421eebfd9f579a4c0d407a37d87220edc7765f40851c83d7a69efaede2ae
-sig=

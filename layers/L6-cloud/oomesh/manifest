@@ -1,0 +1,8 @@
+name=oomesh
+version=0.3.8
+caps=FsRead,FsWrite,Process
+deps=
+payload=oomesh.oo
+commit=
+sha256=b5af98b17883e765c0d6cca81d17a3cdbf51dbfb1ce434e5cf5789313ed4cdf7
+sig=

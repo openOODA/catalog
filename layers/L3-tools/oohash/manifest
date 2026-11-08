@@ -1,0 +1,8 @@
+name=oohash
+version=0.2.15
+caps=FsRead,Process,FsWrite,Env
+deps=
+payload=oohash.oo
+commit=
+sha256=d8d8f99005c83ae03c75e04aad26cbb9a663f2210fdf7c0090e63848cd34f339
+sig=

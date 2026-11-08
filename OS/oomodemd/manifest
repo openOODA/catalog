@@ -1,8 +1,0 @@
-name=oomodemd
-version=0.1.0
-caps=Process,FsRead,FsWrite,Net,Mcp
-deps=
-payload=oomodemd.oo
-commit=
-sha256=02b72b5512858a8e87b2fd3b599845f71d1d1610165aa679f879867c04c9481c
-sig=

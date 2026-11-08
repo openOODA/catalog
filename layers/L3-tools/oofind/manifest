@@ -1,0 +1,8 @@
+name=oofind
+version=0.2.3
+caps=FsRead,Process,FsWrite,Env
+deps=
+payload=oofind.oo
+commit=
+sha256=c55829a697e1ef10609061978e41c5820ee5410b85a5048ecd2262a3266b45ae
+sig=

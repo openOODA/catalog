@@ -1,8 +1,0 @@
-name=ooping
-version=0.2.4
-caps=Net,Tls,Mcp,FsRead
-deps=
-payload=ooping.oo
-commit=
-sha256=0091b10d9e858e3b20e474679111ffe791c1c7f8441446bb42f5423408c4f862
-sig=

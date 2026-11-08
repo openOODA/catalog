@@ -1,0 +1,8 @@
+name=oogateway
+version=0.3.7
+caps=FsRead,FsWrite,Process
+deps=
+payload=oogateway.oo
+commit=
+sha256=c76255de834107c6313ceae20c4debe288854439e9329a3e1e3b190af853448d
+sig=

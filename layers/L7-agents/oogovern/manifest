@@ -1,0 +1,8 @@
+name=oogovern
+version=0.4.1
+caps=FsRead,Process,Env,FsWrite
+deps=
+payload=oogovern.oo
+commit=
+sha256=1f76889de29abc3c5c03ae6f688ebce5c0f1f20c9da27b72b3fb622158eb98e9
+sig=

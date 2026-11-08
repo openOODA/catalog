@@ -1,0 +1,8 @@
+name=oohw
+version=0.2.5
+caps=Process,FsRead,FsWrite,Env
+deps=
+payload=oohw.oo
+commit=
+sha256=7f50ed70c467f05ef5a33db6b53eb30702b25a2efbabf8d09e2a158873a4bae2
+sig=

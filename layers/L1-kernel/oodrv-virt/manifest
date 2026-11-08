@@ -1,0 +1,8 @@
+name=oodrv-virt
+version=0.6.1
+caps=Mmio,Dma,FsRead,FsWrite
+deps=
+payload=oodrv-virt.oo
+commit=
+sha256=cc27f723cbf24f02a88fa81f34a2fa48f5368c3854795139f759496137dbf806
+sig=

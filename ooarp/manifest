@@ -1,8 +1,0 @@
-name=ooarp
-version=0.2.3
-caps=FsRead,Net,Process,Env,Mcp
-deps=
-payload=ooarp.oo
-commit=
-sha256=a42e50d1acffdc588e961355b13625ac45019656f11f0230cf54c9beec49b98e
-sig=

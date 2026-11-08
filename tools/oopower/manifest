@@ -1,8 +1,0 @@
-name=oopower
-version=0.2.4
-caps=Proc,SysInfo,Mcp,FsRead
-deps=
-payload=oopower.oo
-commit=
-sha256=921bc9afc79d5e3fcb6341beaabba3023321a4ba4a80ae7ca55b5434b060dfe1
-sig=

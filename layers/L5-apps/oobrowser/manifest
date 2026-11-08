@@ -1,0 +1,8 @@
+name=oobrowser
+version=0.3.8
+caps=FsWrite,FsRead,Tcp,Env,Process
+deps=
+payload=oobrowser.oo
+commit=
+sha256=f40d455115e6ef6110d1a89b022d342b303e6ebd1d75108780f0532903985cc8
+sig=

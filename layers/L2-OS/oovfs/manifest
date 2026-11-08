@@ -1,0 +1,8 @@
+name=oovfs
+version=0.4.0
+caps=FsRead,FsWrite,Process
+deps=
+payload=oovfs.oo
+commit=
+sha256=854d3712c9b98b62c062abfc8aafb15b3aea3754b3b6367a472cb3797f8a4a9b
+sig=

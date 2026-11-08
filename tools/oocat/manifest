@@ -1,8 +1,0 @@
-name=oocat
-version=0.2.5
-caps=FsRead,FsWrite,Process,Env,Mcp
-deps=
-payload=oocat.oo
-commit=
-sha256=06a9c8228154a22f750a67cde856df2f3f49167745f85027670b158bbef9edd5
-sig=

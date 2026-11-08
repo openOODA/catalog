@@ -1,0 +1,15 @@
+// # oovfs package
+//
+// Logline: Canonical catalog package anchor for oovfs (layers/L2-OS).
+//
+// Setup: Folder shape is manifest plus payload (oovfs.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oovfs.oo.
+//   2. oovfs.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oovfs.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oovfs_pkg() -> String {
+    return "oovfs";
+}

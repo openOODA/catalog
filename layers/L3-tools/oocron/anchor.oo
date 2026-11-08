@@ -1,0 +1,15 @@
+// # oocron package
+//
+// Logline: Canonical catalog package anchor for oocron (layers/L3-tools).
+//
+// Setup: Folder shape is manifest plus payload (oocron.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oocron.oo.
+//   2. oocron.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oocron.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oocron_pkg() -> String {
+    return "oocron";
+}

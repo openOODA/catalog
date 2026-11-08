@@ -1,0 +1,15 @@
+// # ooagent-hud package
+//
+// Logline: Canonical catalog package anchor for ooagent-hud (layers/L4-DE).
+//
+// Setup: Folder shape is manifest plus payload (ooagent-hud.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooagent-hud.oo.
+//   2. ooagent-hud.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with ooagent-hud.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_ooagent_hud_pkg() -> String {
+    return "ooagent-hud";
+}

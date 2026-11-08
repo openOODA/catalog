@@ -1,8 +1,0 @@
-name=ooprovenance
-version=0.2.4
-caps=Sec,Agent,Mcp,FsRead
-deps=
-payload=ooprovenance.oo
-commit=
-sha256=0b573bebbd0205a5450e851f4ea4c5c9d2863795f94d4afb9a53b475c6bfa7cf
-sig=

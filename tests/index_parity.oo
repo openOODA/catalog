@@ -105,13 +105,8 @@ pub fn index_parity(fs: &FsReadCap, p: Int) -> Int {
         bytes_len(slurp(fs, "registry.pub")) > 0;
     if ip_expect(sig_ok, "84 signed-index artifacts ship complete and non-empty") { np = np + 1; }
     let orphans: List[String] = ip_orphans(fs, ip_names(fs));
-    let mut all_w: Bool = list_len(orphans) == 7;
-    let mut i: Int = 0;
-    while i < list_len(orphans) {
-        if !ip_withdrawn(list_get(orphans, i)) { all_w = false; }
-        i = i + 1;
-    }
-    if ip_expect(all_w, "85 unindexed manifest dirs equal the seven withdrawn persona packages") { np = np + 1; }
+    let all_w: Bool = list_len(orphans) == 0;
+    if ip_expect(all_w, "85 zero unindexed orphan manifest dirs exist at catalog root") { np = np + 1; }
     let cat_eq: Bool = slurp(fs, "catalog") == slurp(fs, "index");
     if ip_expect(cat_eq, "86 catalog blob stays byte-identical to the signed index") { np = np + 1; }
     let html: String = slurp(fs, "index.html");

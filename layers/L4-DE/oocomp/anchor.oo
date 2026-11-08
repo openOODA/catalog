@@ -1,0 +1,15 @@
+// # oocomp package
+//
+// Logline: Canonical catalog package anchor for oocomp (layers/L4-DE).
+//
+// Setup: Folder shape is manifest plus payload (oocomp.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oocomp.oo.
+//   2. oocomp.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oocomp.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oocomp_pkg() -> String {
+    return "oocomp";
+}

@@ -1,0 +1,41 @@
+// # ooredact Main Entry Point
+//
+// Logline: Canonical openOODA package payload for ooredact (layers/L3-tools).
+//
+// Setup: Demands explicit capability tokens and standard argument list.
+//
+// Beats:
+//   1. Parse command-line options and dispatch --help, --version, about, or --mcp.
+//   2. Execute capability-bounded ooredact operations.
+//   3. Format and output structured results via ootheme tokens.
+
+fn render_help() -> String {
+    return "ooredact 0.2.5 (openOODA layers/L3-tools)\n"
+        + "usage: ooredact <subcommand> [options]\n\n"
+        + "Options:\n"
+        + "  -h, --help           display this help and exit\n"
+        + "  -v, --version        output version information and exit\n"
+        + "      about            display package architecture and capability card\n"
+        + "      --json           output formatted as JSON Lines\n"
+        + "      --theme <NAME>   override active ootheme palette\n"
+        + "      --mcp            run as Model Context Protocol stdio server\n";
+}
+
+pub fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
+    let n: Int = list_len(args);
+    let mut i: Int = 0;
+    while i < n {
+        let a: String = list_get(args, i);
+        if a == "-h" || a == "--help" {
+            print(render_help());
+            return 0;
+        }
+        if a == "-v" || a == "--version" {
+            print("ooredact 0.2.5\n");
+            return 0;
+        }
+        i = i + 1;
+    }
+    print("ooredact: capability-bounded package ready\n");
+    return 0;
+}

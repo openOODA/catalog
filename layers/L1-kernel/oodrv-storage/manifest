@@ -1,0 +1,8 @@
+name=oodrv-storage
+version=0.6.1
+caps=Mmio,Block,Dma,FsRead,FsWrite
+deps=
+payload=oodrv-storage.oo
+commit=
+sha256=4fe21dde70586cc3e950b508fc5289242290778c199261bad2c912d05a223325
+sig=

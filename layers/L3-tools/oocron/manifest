@@ -1,0 +1,8 @@
+name=oocron
+version=0.2.4
+caps=FsRead,Process,FsWrite,Env,Time
+deps=
+payload=oocron.oo
+commit=
+sha256=7bb7b863fc13d7de2142086abf6abac6ff5ff7768262677118fef6a9f1d87d40
+sig=

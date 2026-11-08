@@ -1,8 +1,0 @@
-name=ootraceroute
-version=0.2.4
-caps=Net,Tls,Mcp
-deps=
-payload=ootraceroute.oo
-commit=
-sha256=0680efec5a36976f9bbea66c3a5ce9ea71e9cd49e29e50d3ffcb873cce0eddd3
-sig=

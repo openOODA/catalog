@@ -1,0 +1,8 @@
+name=oollama
+version=0.4.0
+caps=Env,FsRead,FsWrite,Tcp,Bind,Process
+deps=
+payload=oollama.oo
+commit=
+sha256=c35d4b0ea44093bb7a0666ffa0050ac76bc854ecab1849a4d2d70b490818f927
+sig=

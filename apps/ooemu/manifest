@@ -1,8 +1,0 @@
-name=ooemu
-version=0.1.0
-caps=FsRead,FsWrite,Process,Env,Mcp
-deps=
-payload=ooemu.oo
-commit=
-sha256=7414090c9bd899e473de6fe4c5bef8f286017144fa794ba6d5e6c2b4791cce31
-sig=

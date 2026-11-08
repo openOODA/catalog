@@ -1,0 +1,8 @@
+name=ootty
+version=0.2.5
+caps=Process,FsRead,FsWrite,Env,Time
+deps=
+payload=ootty.oo
+commit=
+sha256=1da523dac58a90a0f57e4079ea19d3f976b23d2996ac1d3e03d226a88a9819f3
+sig=

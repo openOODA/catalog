@@ -1,0 +1,8 @@
+name=oomodemd
+version=0.1.0
+caps=FsRead,FsWrite
+deps=
+payload=oomodemd.oo
+commit=
+sha256=835486b38f2063d54ca257802fcad43f7e55d87f515a723fcba3b29ee64b9126
+sig=

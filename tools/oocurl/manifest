@@ -1,8 +1,0 @@
-name=oocurl
-version=0.2.5
-caps=FsRead,Mcp
-deps=
-payload=oocurl.oo
-commit=
-sha256=f2a6c20af066d9b395bf07a35a9c8c842bdf0b1b6695edb4ca5f218ec85a9171
-sig=

@@ -1,0 +1,8 @@
+name=ookvm
+version=0.3.8
+caps=FsWrite,FsRead,Process,Env
+deps=
+payload=ookvm.oo
+commit=
+sha256=9098dfbb92c45abf3972ebc7dc9965af22475221254fb02ebd596226206a0ca4
+sig=

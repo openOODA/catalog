@@ -1,0 +1,8 @@
+name=ooswarm
+version=0.5.0
+caps=FsRead,Process,Env,FsWrite,Ffi,Bind
+deps=
+payload=ooswarm.oo
+commit=
+sha256=c3fe2b919c4ee4ecd38dacd99b72bf3ca46f3cf49a16ebe4570c28bc4c4ad89c
+sig=

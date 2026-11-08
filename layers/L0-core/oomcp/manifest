@@ -1,0 +1,8 @@
+name=oomcp
+version=0.3.1
+caps=FsRead,FsWrite,Process,Env
+deps=
+payload=oomcp.oo
+commit=
+sha256=ad98498adfa7a21abbdb7fff3c85a788591d6cecb68ceb34ac7478ae10149f3c
+sig=

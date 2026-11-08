@@ -1,8 +1,0 @@
-name=oodig
-version=0.2.3
-caps=Net,Tls,Mcp,FsRead,Process,Env
-deps=
-payload=oodig.oo
-commit=
-sha256=f9049edea3d67e1c199266a7c87cc21dddadb0c592f44b441b0373679f150df6
-sig=

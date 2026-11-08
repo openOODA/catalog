@@ -1,0 +1,8 @@
+name=oofalsify
+version=0.4.1
+caps=FsRead,Process,Env,FsWrite
+deps=
+payload=oofalsify.oo
+commit=
+sha256=4921730b8d1389f553eb77104e08507ff88e138a6aa22c40268f9be0801d321d
+sig=

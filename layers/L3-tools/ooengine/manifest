@@ -1,0 +1,8 @@
+name=ooengine
+version=0.2.5
+caps=FsRead,FsWrite,Process,Env
+deps=
+payload=ooengine.oo
+commit=
+sha256=5b1dd7998d2243b1d193a7620142513492494965f918b822185cae93304c1456
+sig=

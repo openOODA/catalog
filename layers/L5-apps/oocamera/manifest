@@ -1,0 +1,8 @@
+name=oocamera
+version=0.3.8
+caps=FsWrite,FsRead,Env,Process
+deps=
+payload=oocamera.oo
+commit=
+sha256=e2d2cfc1dcab862c635ec1489ff5f4f453228c98b9711bf2ac14fa1ab86da9e5
+sig=

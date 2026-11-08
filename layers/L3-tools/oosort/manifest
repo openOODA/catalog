@@ -1,0 +1,8 @@
+name=oosort
+version=0.2.7
+caps=FsRead,FsWrite,Process,Env,Time
+deps=
+payload=oosort.oo
+commit=
+sha256=7f47773d673bcee0cd75ab82b1b01970691ace33f0dc4c51daecf85aee4f0f14
+sig=

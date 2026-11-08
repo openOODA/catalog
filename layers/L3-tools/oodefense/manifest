@@ -1,0 +1,8 @@
+name=oodefense
+version=0.1.0
+caps=FsRead,Env,FsWrite,Alloc,Process
+deps=
+payload=oodefense.oo
+commit=
+sha256=61189a6976f27c473d6d6edbc48650cc08581b2357bd33a7e4c5d06ea79058e6
+sig=

@@ -1,0 +1,8 @@
+name=oopower
+version=0.2.5
+caps=Process,FsRead,FsWrite,Env
+deps=
+payload=oopower.oo
+commit=
+sha256=f5becf9ce72217a72a4c6e1aaf8db15a577bab7a36361144716d0531954a8561
+sig=

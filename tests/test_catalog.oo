@@ -16,7 +16,7 @@
 //   9. Assert signed-index artifacts ship and unindexed dirs equal the withdrawn persona set.
 
 import "oostd/sec/pqc.oo";
-import "hello/anchor.oo";
+import "layers/L0-core/ooda/anchor.oo";
 import "qa/check_pkg.oo";
 import "qa/digest.oo";
 import "tests/index_parity.oo";
@@ -121,13 +121,13 @@ fn check_pkg_refusals(fs: &FsReadCap, p: Int) -> Int {
     // check_pkg integration: hostile catalog lines and traversal refuse.
     let cat: String = slurp(fs, "catalog");
     let z: String = zeros64();
-    let r0: String = check_pkg(fs, cat, "hello", "hello.oo");
-    if test_expect(r0 == "", "58 check_pkg accepts the real hello entry") { p = p + 1; }
-    let r1: String = check_pkg(fs, cat, "../hello", "hello.oo");
+    let r0: String = check_pkg(fs, cat, "ooda", "ooda.oo");
+    if test_expect(r0 == "", "58 check_pkg accepts the real ooda entry") { p = p + 1; }
+    let r1: String = check_pkg(fs, cat, "../ooda", "ooda.oo");
     if test_expect_has(r1, "refused name", "59 refuses traversal package name") { p = p + 1; }
-    let r2: String = check_pkg(fs, cat, "hello", "../../etc/passwd");
+    let r2: String = check_pkg(fs, cat, "ooda", "../../etc/passwd");
     if test_expect_has(r2, "refused payload", "60 refuses traversal payload") { p = p + 1; }
-    let r3: String = check_pkg(fs, cat, "hello", "sub/dir.oo");
+    let r3: String = check_pkg(fs, cat, "ooda", "sub/dir.oo");
     if test_expect_has(r3, "refused payload", "61 refuses nested payload path") { p = p + 1; }
     let syn_badver: String = "ghost|1.2|FsRead||" + z + "\n";
     let r4: String = check_pkg(fs, syn_badver, "ghost", "ghost.oo");
@@ -153,8 +153,8 @@ fn check_pkg_refusals(fs: &FsReadCap, p: Int) -> Int {
     let syn_lz: String = "ghost|01.2.3|FsRead||" + z + "\n";
     let r11: String = check_pkg(fs, syn_lz, "ghost", "ghost.oo");
     if test_expect_has(r11, "bad version", "69 refuses leading-zero version") { p = p + 1; }
-    let syn_okver: String = "hello|9.9.9|FsRead||" + z + "\n";
-    let r12: String = check_pkg(fs, syn_okver, "hello", "hello.oo");
+    let syn_okver: String = "ooda|9.9.9|FsRead||" + z + "\n";
+    let r12: String = check_pkg(fs, syn_okver, "ooda", "ooda.oo");
     let bv: Bool = str_index_of(r12, "bad version") < 0;
     let bn: Bool = str_index_of(r12, "bad name") < 0;
     let bf: Bool = str_index_of(r12, "bad fields") < 0;
@@ -234,7 +234,7 @@ pub fn main(
     args: List[String]
 ) -> Result[Int, String] {
     let mut p: Int = 0;
-    if test_expect(cat_hello_pkg() == "hello", "01 hello anchor reports its package") { p = p + 1; }
+    if test_expect(cat_ooda_pkg() == "ooda", "01 ooda anchor reports its package") { p = p + 1; }
     let s1: Int = oo_pqc_sha3_round(41, 7);
     if test_expect(s1 == oo_pqc_sha3_round(41, 7), "02 seal round is deterministic") { p = p + 1; }
     if test_expect(s1 > 0, "03 seal stays in the positive field") { p = p + 1; }

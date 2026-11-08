@@ -1,8 +1,0 @@
-name=oowhois
-version=0.2.4
-caps=Net,Tls,Mcp,FsRead
-deps=
-payload=oowhois.oo
-commit=
-sha256=8ad175d3478d13db485271b849acb508843dceb295c0c0d929fe2bbee3d166a1
-sig=

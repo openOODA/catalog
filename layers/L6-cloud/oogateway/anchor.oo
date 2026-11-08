@@ -1,0 +1,15 @@
+// # oogateway package
+//
+// Logline: Canonical catalog package anchor for oogateway (layers/L6-cloud).
+//
+// Setup: Folder shape is manifest plus payload (oogateway.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oogateway.oo.
+//   2. oogateway.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oogateway.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oogateway_pkg() -> String {
+    return "oogateway";
+}

@@ -1,0 +1,8 @@
+name=oocode
+version=0.4.1
+caps=FsRead,FsWrite,Env,Process
+deps=
+payload=oocode.oo
+commit=
+sha256=3528ce9222377b39dfc19c4b1ae868c32e7a0ab264ef09e1677dc95395705c93
+sig=

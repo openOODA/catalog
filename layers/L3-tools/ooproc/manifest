@@ -1,0 +1,8 @@
+name=ooproc
+version=0.1.0
+caps=Process,FsRead,Env,Time,FsWrite
+deps=
+payload=ooproc.oo
+commit=
+sha256=9483c797880d1e539a976ed9889df2cc76015eb2c0b5b9c2383766b13f5003dd
+sig=

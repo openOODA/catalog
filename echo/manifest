@@ -1,8 +1,0 @@
-name=echo
-version=0.1.0
-caps=FsRead
-deps=
-payload=echo.oo
-commit=
-sha256=14d389c387ed6503fd1632236fefaf6608b218ce28c91faa4522ddf409e18446
-sig=

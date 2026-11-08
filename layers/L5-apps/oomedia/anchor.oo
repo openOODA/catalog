@@ -1,0 +1,15 @@
+// # oomedia package
+//
+// Logline: Canonical catalog package anchor for oomedia (layers/L5-apps).
+//
+// Setup: Folder shape is manifest plus payload (oomedia.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oomedia.oo.
+//   2. oomedia.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oomedia.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oomedia_pkg() -> String {
+    return "oomedia";
+}

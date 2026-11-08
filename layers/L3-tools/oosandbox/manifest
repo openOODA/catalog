@@ -1,0 +1,8 @@
+name=oosandbox
+version=0.2.5
+caps=Process,FsRead,FsWrite,Env,Time,Mcp
+deps=
+payload=oosandbox.oo
+commit=
+sha256=11d98c72b42deb4ebe7382b53c2ae30af7af2d126c180aebfa5b14be3671c611
+sig=

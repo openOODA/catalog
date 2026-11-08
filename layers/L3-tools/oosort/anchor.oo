@@ -1,0 +1,15 @@
+// # oosort package
+//
+// Logline: Canonical catalog package anchor for oosort (layers/L3-tools).
+//
+// Setup: Folder shape is manifest plus payload (oosort.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oosort.oo.
+//   2. oosort.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oosort.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oosort_pkg() -> String {
+    return "oosort";
+}

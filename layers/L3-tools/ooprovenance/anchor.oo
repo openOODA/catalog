@@ -1,0 +1,15 @@
+// # ooprovenance package
+//
+// Logline: Canonical catalog package anchor for ooprovenance (layers/L3-tools).
+//
+// Setup: Folder shape is manifest plus payload (ooprovenance.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooprovenance.oo.
+//   2. ooprovenance.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with ooprovenance.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_ooprovenance_pkg() -> String {
+    return "ooprovenance";
+}

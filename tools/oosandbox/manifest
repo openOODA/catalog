@@ -1,8 +1,0 @@
-name=oosandbox
-version=0.2.5
-caps=Sec,Agent,Mcp
-deps=
-payload=oosandbox.oo
-commit=
-sha256=4bd10fd534268f2961448d5e3cae125de559b8c7413298d4ca8ae8ad7fadf1a6
-sig=

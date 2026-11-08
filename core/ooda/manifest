@@ -1,8 +1,0 @@
-name=ooda
-version=0.1.0
-caps=FsRead,FsWrite,Net,Process,Env,Mcp
-deps=
-payload=ooda.oo
-commit=
-sha256=a16e5ed1f896503455dea301f0e0966a28f634c71837cc78f449305b89a48ae6
-sig=

@@ -1,8 +1,0 @@
-name=oosed
-version=0.2.3
-caps=FsRead,Mcp
-deps=
-payload=oosed.oo
-commit=
-sha256=a31aca7853524838893b7ff85424568bc1128db0a3bd43055c09434908ceadd7
-sig=

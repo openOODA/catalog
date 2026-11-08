@@ -1,8 +1,0 @@
-name=oofind
-version=0.2.3
-caps=FsRead,Mcp
-deps=
-payload=oofind.oo
-commit=
-sha256=ba4275b5fa77203f0297e8397917d7ed428d3c5d4b143f6fcd85775f064e3b69
-sig=

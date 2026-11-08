@@ -1,0 +1,8 @@
+name=oocat
+version=0.2.5
+caps=FsRead,Env,Process,FsWrite,Time
+deps=
+payload=oocat.oo
+commit=
+sha256=806c205c3d6b9a17ad6388390f1777c10d2864258b78afcb2c976d91dde0ff6e
+sig=

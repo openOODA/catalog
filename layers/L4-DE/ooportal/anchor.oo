@@ -1,0 +1,15 @@
+// # ooportal package
+//
+// Logline: Canonical catalog package anchor for ooportal (layers/L4-DE).
+//
+// Setup: Folder shape is manifest plus payload (ooportal.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of ooportal.oo.
+//   2. ooportal.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with ooportal.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_ooportal_pkg() -> String {
+    return "ooportal";
+}

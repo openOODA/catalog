@@ -1,0 +1,8 @@
+name=oorgb
+version=0.2.5
+caps=Process,FsRead,FsWrite,Env,Hid,Usb
+deps=
+payload=oorgb.oo
+commit=
+sha256=065584878e995f8d55ece5fc4aa72d7bba11f98eeec8ac77fbb60752d69aa298
+sig=

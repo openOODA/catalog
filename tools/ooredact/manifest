@@ -1,8 +1,0 @@
-name=ooredact
-version=0.2.4
-caps=Sec,Agent,Mcp
-deps=
-payload=ooredact.oo
-commit=
-sha256=cf6de779c31e784b21489f34e676bdd4aecba3597810fcf14d6b4b660f280110
-sig=

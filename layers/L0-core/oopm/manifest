@@ -1,0 +1,8 @@
+name=oopm
+version=2.11.33
+caps=FsRead,Env,FsWrite,Process,Net
+deps=
+payload=oopm.oo
+commit=
+sha256=7b08d61c832336668a01b712663d488a7f3a5fe9a78cb664f4f63d0c685ffbd7
+sig=

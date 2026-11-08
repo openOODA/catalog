@@ -1,8 +1,0 @@
-name=oofzf
-version=0.2.3
-caps=FsRead,Mcp
-deps=
-payload=oofzf.oo
-commit=
-sha256=5cb5d0acea32a1788830193aa8f5b9a3b1d0047094be34d1a61a1a8596fe8d6d
-sig=

@@ -1,0 +1,15 @@
+// # oostore package
+//
+// Logline: Canonical catalog package anchor for oostore (layers/L6-cloud).
+//
+// Setup: Folder shape is manifest plus payload (oostore.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oostore.oo.
+//   2. oostore.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oostore.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oostore_pkg() -> String {
+    return "oostore";
+}

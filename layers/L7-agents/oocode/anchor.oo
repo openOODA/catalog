@@ -1,0 +1,15 @@
+// # oocode package
+//
+// Logline: Canonical catalog package anchor for oocode (layers/L7-agents).
+//
+// Setup: Folder shape is manifest plus payload (oocode.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oocode.oo.
+//   2. oocode.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oocode.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oocode_pkg() -> String {
+    return "oocode";
+}

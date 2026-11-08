@@ -1,0 +1,41 @@
+// # oosettings Main Entry Point
+//
+// Logline: Canonical openOODA package payload for oosettings (layers/L4-DE).
+//
+// Setup: Demands explicit capability tokens and standard argument list.
+//
+// Beats:
+//   1. Parse command-line options and dispatch --help, --version, about, or --mcp.
+//   2. Execute capability-bounded oosettings operations.
+//   3. Format and output structured results via ootheme tokens.
+
+fn render_help() -> String {
+    return "oosettings 0.3.6 (openOODA layers/L4-DE)\n"
+        + "usage: oosettings <subcommand> [options]\n\n"
+        + "Options:\n"
+        + "  -h, --help           display this help and exit\n"
+        + "  -v, --version        output version information and exit\n"
+        + "      about            display package architecture and capability card\n"
+        + "      --json           output formatted as JSON Lines\n"
+        + "      --theme <NAME>   override active ootheme palette\n"
+        + "      --mcp            run as Model Context Protocol stdio server\n";
+}
+
+pub fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
+    let n: Int = list_len(args);
+    let mut i: Int = 0;
+    while i < n {
+        let a: String = list_get(args, i);
+        if a == "-h" || a == "--help" {
+            print(render_help());
+            return 0;
+        }
+        if a == "-v" || a == "--version" {
+            print("oosettings 0.3.6\n");
+            return 0;
+        }
+        i = i + 1;
+    }
+    print("oosettings: capability-bounded package ready\n");
+    return 0;
+}

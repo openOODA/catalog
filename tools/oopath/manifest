@@ -1,8 +1,0 @@
-name=oopath
-version=0.2.4
-caps=FsRead,FsWrite,Mcp
-deps=
-payload=oopath.oo
-commit=
-sha256=d6a8f04ffe9379b4e728a77d35e6ce858eb819ead64ba1609239197f561b196f
-sig=

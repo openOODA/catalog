@@ -1,0 +1,15 @@
+// # oorgb package
+//
+// Logline: Canonical catalog package anchor for oorgb (layers/L3-tools).
+//
+// Setup: Folder shape is manifest plus payload (oorgb.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oorgb.oo.
+//   2. oorgb.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oorgb.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oorgb_pkg() -> String {
+    return "oorgb";
+}

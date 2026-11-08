@@ -96,11 +96,11 @@ fn run_proofs(fs: &FsReadCap) -> String {
     if sig == "" { return "index.sig missing"; }
     let expect: String = crypto_hmac_sha256_internal("ooda-local-pm", cat);
     if sig != expect { return "index.sig mismatch"; }
-    let h: String = check_pkg(fs, cat, "hello", "hello.oo");
+    let h: String = check_pkg(fs, cat, "ooda", "ooda.oo");
     if h != "" { return h; }
-    let e: String = check_pkg(fs, cat, "echo", "echo.oo");
+    let e: String = check_pkg(fs, cat, "oopm", "oopm.oo");
     if e != "" { return e; }
-    let c: String = check_pkg(fs, cat, "caps", "caps.oo");
+    let c: String = check_pkg(fs, cat, "oodefense", "oodefense.oo");
     if c != "" { return c; }
     let s: String = check_pkg(fs, cat, "oocat", "oocat.oo");
     if s != "" { return s; }

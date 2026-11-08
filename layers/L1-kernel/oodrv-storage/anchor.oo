@@ -1,0 +1,15 @@
+// # oodrv-storage package
+//
+// Logline: Canonical catalog package anchor for oodrv-storage (layers/L1-kernel).
+//
+// Setup: Folder shape is manifest plus payload (oodrv-storage.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oodrv-storage.oo.
+//   2. oodrv-storage.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oodrv-storage.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oodrv_storage_pkg() -> String {
+    return "oodrv-storage";
+}

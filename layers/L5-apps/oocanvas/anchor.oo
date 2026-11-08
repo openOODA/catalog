@@ -1,0 +1,15 @@
+// # oocanvas package
+//
+// Logline: Canonical catalog package anchor for oocanvas (layers/L5-apps).
+//
+// Setup: Folder shape is manifest plus payload (oocanvas.oo).
+//
+// Beats:
+//   1. manifest — name, version, caps, sha256 of oocanvas.oo.
+//   2. oocanvas.oo — capability-explicit package payload.
+//   3. Keep manifest sha256 in lockstep with oocanvas.oo.
+//   4. Verified by qa/catalog_proof.oo and qa/suite.oo.
+
+pub fn cat_oocanvas_pkg() -> String {
+    return "oocanvas";
+}

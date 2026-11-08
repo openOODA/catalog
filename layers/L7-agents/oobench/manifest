@@ -1,0 +1,8 @@
+name=oobench
+version=0.5.0
+caps=FsRead,FsWrite,Env
+deps=
+payload=oobench.oo
+commit=
+sha256=7b7192b277da7af97039e5e66f78bf6c3c48349cc71b5e0d88461d9af30126c9
+sig=

@@ -125,22 +125,15 @@ fn cs_manifest_scan(man: String, spec: List[String]) -> List[Int] {
 pub fn test_caps_schema(fs: &FsReadCap, p: Int) -> Int {
     let mut np: Int = p;
     let spec: List[String] = cs_spec_caps(fs);
-    let dirs: List[String] = fs_read_dir(fs, ".");
+    let ldirs: List[String] = fs_read_dir(fs, "layers");
     let mut all_tok: Bool = list_len(spec) == 32;
     let mut all_fld: Bool = true;
     let mut nman: Int = 0;
     let mut i: Int = 0;
-    while i < list_len(dirs) {
-        let d: String = list_get(dirs, i);
+    while i < list_len(ldirs) {
+        let d: String = "layers/" + list_get(ldirs, i);
         i = i + 1;
-        if fs_is_dir(fs, d) && path_exists(fs, d + "/manifest") {
-            nman = nman + 1;
-            let man: String = slurp(fs, d + "/manifest");
-            let res: List[Int] = cs_manifest_scan(man, spec);
-            if list_get(res, 0) != 1 { all_fld = false; }
-            if list_get(res, 1) == 1 { all_tok = false; }
-            if list_get(res, 2) == 1 { all_fld = false; }
-        } else if fs_is_dir(fs, d) {
+        if fs_is_dir(fs, d) {
             let subs: List[String] = fs_read_dir(fs, d);
             let mut si: Int = 0;
             while si < list_len(subs) {
@@ -157,7 +150,7 @@ pub fn test_caps_schema(fs: &FsReadCap, p: Int) -> Int {
             }
         }
     }
-    all_fld = all_fld && nman > 0;
+    all_fld = all_fld && nman == 103;
     if cs_expect(all_tok, "93 every manifest caps token resolves to security.md or a ratified grant") { np = np + 1; }
     if cs_expect(all_fld, "94 every manifest carries exactly one well-formed caps field") { np = np + 1; }
     np = dep_resolution(fs, np);

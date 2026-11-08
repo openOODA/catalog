@@ -1,0 +1,8 @@
+name=ooredact
+version=0.2.5
+caps=Process,FsRead,FsWrite,Env,Time
+deps=
+payload=ooredact.oo
+commit=
+sha256=d963b81205ee186d6f92ce7dc106128b52b27acc23b14a246ca58fbece64989f
+sig=

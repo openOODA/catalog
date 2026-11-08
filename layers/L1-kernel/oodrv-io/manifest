@@ -1,0 +1,8 @@
+name=oodrv-io
+version=0.6.1
+caps=Mmio,Dma,FsRead,FsWrite,Frame,Pci,Irq,Usb
+deps=
+payload=oodrv-io.oo
+commit=
+sha256=3833e9c41d0ea5333a6c753ed12606a2e16cd42b1ad0a473af7de6c323ade557
+sig=
