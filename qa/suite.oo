@@ -11,9 +11,9 @@
 //   4. Fail closed when fewer than 4 drivers are double-checked.
 
 import "script_path.oo";
-import "std/fs/file/glob.oo";
+import "oostd/fs/file/glob.oo";
 
-import "std/sec/pqc.oo";
+import "oostd/sec/pqc.oo";
 
 // The seal of one catalog QA digest, bound to the verifier nonce so two
 // runs agree bit for bit.

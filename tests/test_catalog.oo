@@ -15,7 +15,7 @@
 //   8. Fuzz byte-level hostile inputs and prove index name uniqueness.
 //   9. Assert signed-index artifacts ship and unindexed dirs equal the withdrawn persona set.
 
-import "std/sec/pqc.oo";
+import "oostd/sec/pqc.oo";
 import "hello/anchor.oo";
 import "qa/check_pkg.oo";
 import "qa/digest.oo";

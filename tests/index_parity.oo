@@ -9,8 +9,8 @@
 //   2. Collect manifest-bearing dirs absent from the index and pin them to the seven withdrawn persona double-ships.
 //   3. Report the pass count back to the caller for the suite total.
 
-import "std/core/primitives/str.oo";
-import "std/fs/os/fs.oo";
+import "oostd/core/primitives/str.oo";
+import "oostd/fs/os/fs.oo";
 import "qa/check_pkg.oo";
 
 fn ip_expect(cond: Bool, label: String) -> Bool {

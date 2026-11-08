@@ -9,7 +9,7 @@
 //   2. Run command periodically and capture terminal stream outputs.
 //   3. Highlight divergent line changes and redraw terminal viewports.
 
-import "std/fs/time/chrono.oo";
+import "oostd/fs/time/chrono.oo";
 import "runner/command_runner.oo";
 import "render/render_theme.oo";
 import "render/render_diff.oo";

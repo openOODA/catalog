@@ -9,7 +9,7 @@
 //   2. Compute circadian time components and dynamic mascot moods.
 //   3. Render styled digital matrix clock, Pomodoro bars, or stopwatch readouts.
 
-import "std/fs/time/chrono.oo";
+import "oostd/fs/time/chrono.oo";
 import "clock/anchor.oo";
 import "mode/anchor.oo";
 import "render/anchor.oo";

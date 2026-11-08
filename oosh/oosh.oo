@@ -10,7 +10,7 @@
 //   3. Source ~/.ooshrc configuration into session environment and alias table.
 //   4. Initialize prompt and dispatch to the OODA REPL engine with FfiCap.
 
-import "std/fs/process/env.oo";
+import "oostd/fs/process/env.oo";
 import "alias.oo";
 import "prompt.oo";
 import "version.oo";

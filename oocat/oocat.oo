@@ -13,7 +13,7 @@ import "lex/anchor.oo";
 import "render/anchor.oo";
 import "view/anchor.oo";
 import "ipc/anchor.oo";
-import "std/fs/process/env.oo";
+import "oostd/fs/process/env.oo";
 
 fn print_help() {
     println("oocat 0.2.0 (openOODA bounded cat)");

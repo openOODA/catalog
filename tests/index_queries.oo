@@ -9,8 +9,8 @@
 //   2. Require version fields in X.Y.Z grammar and sha256 fields as 64 lowercase hex.
 //   3. Require repeated index reads to return byte-identical content.
 
-import "std/core/primitives/str.oo";
-import "std/fs/os/fs.oo";
+import "oostd/core/primitives/str.oo";
+import "oostd/fs/os/fs.oo";
 import "qa/check_pkg.oo";
 
 fn iq_expect(cond: Bool, label: String) -> Bool {

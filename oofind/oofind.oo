@@ -9,7 +9,7 @@
 //   2. Traverse requested roots, apply criteria filters, and render matches.
 //   3. Set POSIX exit code via ProcessCap.
 
-import "std/fs/os/fs.oo";
+import "oostd/fs/os/fs.oo";
 import "walk/anchor.oo";
 import "match/anchor.oo";
 import "render/anchor.oo";

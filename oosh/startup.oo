@@ -9,7 +9,7 @@
 //   2. Fill HOSTNAME, USER, HOME, PATH, and SHELL from the explicit environment.
 //   3. Record daemon, script, and one-shot flags on a LaunchPlan.
 
-import "std/fs/process/env.oo";
+import "oostd/fs/process/env.oo";
 import "alias.oo";
 import "prompt.oo";
 import "version.oo";

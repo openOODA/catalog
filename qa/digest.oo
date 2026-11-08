@@ -9,7 +9,7 @@
 //   2. Validate checksum shape for sha256, blake3, sha3, and sha512 encodings.
 //   3. Compute payload digests and compare catalog, manifest, and payload checksums.
 
-import "std/sec/hash/blake3.oo";
+import "oostd/sec/hash/blake3.oo";
 import "qa/str_ascii.oo";
 
 pub fn kv(text: String, key: String) -> String {
