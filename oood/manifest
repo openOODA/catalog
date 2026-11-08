@@ -1,8 +1,0 @@
-name=oood
-version=0.2.4
-caps=FsRead,Term,FsReadCap,ProcessCap,Mcp
-deps=
-payload=oood.oo
-commit=
-sha256=669aede9047d756737f2cffc07aa4b20e7d6e1e9f7feef9e809aa539e5c8f203
-sig=

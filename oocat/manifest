@@ -4,5 +4,5 @@ caps=FsRead,FsWrite,Process,Env,Mcp
 deps=
 payload=oocat.oo
 commit=
-sha256=a51625edcf6566ce4bc06fea6f61e97e73a9434ae5bde876a200496d9390403b
+sha256=06a9c8228154a22f750a67cde856df2f3f49167745f85027670b158bbef9edd5
 sig=

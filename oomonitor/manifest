@@ -1,8 +1,0 @@
-name=oomonitor
-version=0.2.4
-caps=Sec,Agent,Mcp
-deps=
-payload=oomonitor.oo
-commit=
-sha256=4209337f3325399103cc56f8b91eb3e78a8c74446a02153778e7e492ab0dbe98
-sig=

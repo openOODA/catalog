@@ -1,8 +1,0 @@
-name=oohwinfo
-version=0.2.4
-caps=Proc,SysInfo,Mcp
-deps=
-payload=oohwinfo.oo
-commit=
-sha256=f18a7eef5aaf7809d5e7aa09b9d0a9aeffbc937663722c5b021bfaf8557baeb6
-sig=

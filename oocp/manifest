@@ -1,8 +1,0 @@
-name=oocp
-version=0.2.3
-caps=FsRead,FsWrite,Process,Env,Mcp
-deps=
-payload=oocp.oo
-commit=
-sha256=da0838554d39092c223562d6c5c269531f3ac02bd83776a71d4cb3abbcbcee4f
-sig=

@@ -1,8 +1,0 @@
-name=ooiptables
-version=0.2.4
-caps=Net,Tls,Mcp
-deps=
-payload=ooiptables.oo
-commit=
-sha256=b8c61f83364673c539e29e5ed5de2c110101242174b32371af0f138062325a72
-sig=

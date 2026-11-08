@@ -1,0 +1,8 @@
+name=oobinview
+version=0.1.0
+caps=FsRead,Process,Env,Mcp
+deps=
+payload=oobinview.oo
+commit=
+sha256=2b184995732b20738a4a83860a80609a544d4aec35559a3c86ef8d93d75ad9cd
+sig=

@@ -1,0 +1,8 @@
+name=oocodec
+version=0.1.0
+caps=FsRead,Stream,Mcp
+deps=
+payload=oocodec.oo
+commit=
+sha256=c12d69f9e34b8410a4b5036af81b9829fe01d51e7134285fb4bc5a90b13b78a7
+sig=

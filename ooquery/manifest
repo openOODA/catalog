@@ -1,8 +1,0 @@
-name=ooquery
-version=0.1.0
-caps=FsRead,Stream,Mcp
-deps=
-payload=ooquery.oo
-commit=
-sha256=73836cf5fbeda779a448a77cd349275dee9e1d0a3658d7c2d9379d41efc80b4a
-sig=

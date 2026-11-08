@@ -1,0 +1,8 @@
+name=oohexdump
+version=0.1.0
+caps=FsRead,Term,FsReadCap,ProcessCap,Mcp
+deps=
+payload=oohexdump.oo
+commit=
+sha256=7bf2636c2ec37987e836be70eb97be8a4b7c31fa09e2b2c63ccaaafaf3751387
+sig=

@@ -1,8 +1,0 @@
-name=oochmod
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oochmod.oo
-commit=
-sha256=8f6fca340623366b412ce962ab6390260dcc250d4a9f0bf521d76a2051205f14
-sig=

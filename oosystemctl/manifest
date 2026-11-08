@@ -1,8 +1,0 @@
-name=oosystemctl
-version=0.2.4
-caps=Proc,SysInfo,Mcp,FsReadCap
-deps=
-payload=oosystemctl.oo
-commit=
-sha256=8c6d4c035bcb1f9a6939734e8c01eb4ec4abd433f8f5f8b4fa0814e5e93cc1be
-sig=

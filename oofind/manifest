@@ -4,5 +4,5 @@ caps=FsRead,Mcp
 deps=
 payload=oofind.oo
 commit=
-sha256=04dfffb36b3aa3e545f8be82df74722f6ed1a17ea5c200cb564c7553499bc82d
+sha256=ba4275b5fa77203f0297e8397917d7ed428d3c5d4b143f6fcd85775f064e3b69
 sig=

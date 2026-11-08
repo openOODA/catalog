@@ -1,0 +1,8 @@
+name=ooproc
+version=0.1.0
+caps=Proc,SysInfo,Mcp
+deps=
+payload=ooproc.oo
+commit=
+sha256=2d6c3ed298b67a76bbce1faae361e844addd66ba5cf3ecc3d4b3de1c05846c04
+sig=

@@ -1,0 +1,8 @@
+name=ootheme
+version=0.1.0
+caps=Term,Env,Mcp
+deps=
+payload=ootheme.oo
+commit=
+sha256=b53fdd3f46162a888e1f06ed93d77279112f3b76635c76274daee6445ee211fb
+sig=

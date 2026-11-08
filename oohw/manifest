@@ -1,0 +1,8 @@
+name=oohw
+version=0.2.4
+caps=Proc,SysInfo,Mcp
+deps=
+payload=oohw.oo
+commit=
+sha256=e60f30d40d60a66ee5654b59e780f66e6eee28ff324bd3a7d5e324662a1cc4c8
+sig=

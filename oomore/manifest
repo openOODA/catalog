@@ -1,8 +1,0 @@
-name=oomore
-version=0.2.4
-caps=FsRead,Term,Mcp
-deps=
-payload=oomore.oo
-commit=
-sha256=6573245563c30a03625a7b24554af50ac5353af5b409cd65fa83c9dde9cdf1e5
-sig=

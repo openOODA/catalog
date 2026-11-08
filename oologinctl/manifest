@@ -1,8 +1,0 @@
-name=oologinctl
-version=0.2.4
-caps=Proc,SysInfo,Mcp
-deps=
-payload=oologinctl.oo
-commit=
-sha256=28f2cc1756217910ef46a7a8b6955fe51bb3e5e21010cc427d3d07453391e8e9
-sig=

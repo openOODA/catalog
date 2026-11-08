@@ -1,8 +1,0 @@
-name=oomenubar
-version=0.2.4
-caps=Term,Env,Mcp
-deps=
-payload=oomenubar.oo
-commit=
-sha256=1d7a8ac90b509a229484c8359a434bbefe246ae33ba3a17ae8bd0333c7a77770
-sig=

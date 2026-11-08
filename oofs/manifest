@@ -1,0 +1,8 @@
+name=oofs
+version=0.2.3
+caps=FsRead,FsWrite,Process,Env,Mcp
+deps=
+payload=oofs.oo
+commit=
+sha256=288b26b7a6db8cef6386815a166d4c81f5601ed8dc96bb313b0873596872edd9
+sig=

@@ -4,5 +4,5 @@ caps=FsRead,Mcp
 deps=
 payload=ooclock.oo
 commit=
-sha256=4ce20fd77279838f2c3c527319dc1401ce76535ebcb561363b59aa8d694dd5e8
+sha256=cc5c5310478a32ea0e1c1a393d47c909b096c3987daa33023d44729afb114548
 sig=
