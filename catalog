@@ -29,7 +29,7 @@ oocodec|0.1.0|FsRead,Stream,Mcp||c12d69f9e34b8410a4b5036af81b9829fe01d51e7134285
 oocron|0.2.3|FsRead,Process,Env,Mcp||9c82dd749929684772a7342edf380d6e45fdc2ca453b03f45a4c110a2073be1e
 oocsplit|0.2.3|FsRead,FsWrite,Process,Env,Mcp||66323ea90ca9af30f48fdd321b8f285ce2f681e5a58f3623bd3967c113df3002
 oocurl|0.2.5|FsRead,Mcp||f2a6c20af066d9b395bf07a35a9c8c842bdf0b1b6695edb4ca5f218ec85a9171
-ooda|0.1.0|FsRead,FsWrite,Net,Process,Env,Mcp||fbc5626cade6212674c7bd403c08491d5bfe6ec5d9a5f89674bfc77c8978d1d2
+ooda|0.1.0|FsRead,FsWrite,Net,Process,Env,Mcp||a16e5ed1f896503455dea301f0e0966a28f634c71837cc78f449305b89a48ae6
 oodefense|0.1.0|Net,Sec,Agent,Mcp,FsRead||ef9ff0d25d849eb99ff0b73902cd17923ae9ca80e40dab90c22a53e690b36992
 oodialog|0.2.3|FsRead,Process,Env,Mcp||ff743c6e5a51b02f867372849919afb76016fb9769e2f07b6baf084ebe6ac98f
 oodiff|0.3.6|FsRead,Mcp||40529712b74423c3cd03dc39e17334cac9bbf1ae5612db9f33641d307f0537ee

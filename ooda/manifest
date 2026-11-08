@@ -4,5 +4,5 @@ caps=FsRead,FsWrite,Net,Process,Env,Mcp
 deps=
 payload=ooda.oo
 commit=
-sha256=fbc5626cade6212674c7bd403c08491d5bfe6ec5d9a5f89674bfc77c8978d1d2
+sha256=a16e5ed1f896503455dea301f0e0966a28f634c71837cc78f449305b89a48ae6
 sig=

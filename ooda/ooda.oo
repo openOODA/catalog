@@ -12,7 +12,7 @@
 fn render_help() -> String {
     return "ooda 0.1.0 (openOODA canonical L0 flagship CLI)\n"
         + "usage: ooda [options] [VERB] [ARGUMENTS]...\n\n"
-        + "Canonical openOODA developer driver; absorbs oocli.\n\n"
+        + "Canonical openOODA developer driver.\n\n"
         + "Verbs:\n"
         + "  build, run, test, fmt, install, qa, fix   developer lifecycle\n"
         + "  about                                     identity and provenance\n\n"
@@ -32,8 +32,7 @@ fn render_version() -> String {
 fn render_about() -> String {
     return "ooda 0.1.0\n"
         + "canonical: openOODA-core/ooda (L0 flagship CLI)\n"
-        + "absorbs:   oocli (retired CLI repository)\n"
-        + "routes:    oocli verbs, oopm, oolsp, oomcp, ootui\n"
+        + "routes:    oopm, oolsp, oomcp ecosystem verbs\n"
         + "domain:    bounded developer tools\n";
 }
 
