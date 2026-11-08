@@ -1,8 +1,0 @@
-name=oodirname
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oodirname.oo
-commit=
-sha256=c0dd8791782ab4ad3046d5f0a9128a1e965d755473723da08e780a745d4e49b1
-sig=

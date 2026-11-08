@@ -1,11 +1,11 @@
 // # Caps Schema - Manifest Capability Vocabulary Probe
 //
-// Logline: Prove every catalog manifest capability token resolves to the spec.oot capability vocabulary or a ratified package grant.
+// Logline: Prove every catalog manifest capability token resolves to the security.md capability vocabulary or a ratified package grant.
 //
-// Setup: Read-only FsReadCap over catalog manifests and ../openOODA/spec.oot. Pure string assertions; no subprocess, no network.
+// Setup: Read-only FsReadCap over catalog manifests and ../openOODA/security.md. Pure string assertions; no subprocess, no network.
 //
 // Beats:
-//   1. Extract the canonical *Cap names from spec.oot section 5.1.
+//   1. Extract the canonical *Cap names from security.md Quick Card.
 //   2. Require every manifest caps= token to resolve and every caps field to appear exactly once with no empty or duplicate tokens.
 
 import "oostd/core/primitives/str.oo";
@@ -34,20 +34,32 @@ fn cs_in(list: List[String], nm: String) -> Bool {
 }
 
 fn cs_spec_caps(fs: &FsReadCap) -> List[String] {
-    let spec: String = slurp(fs, "../openOODA/spec.oot");
-    let lines: List[String] = str_split(spec, "\n");
+    let spec: String = slurp(fs, "../openOODA/security.md");
+    let parts: List[String] = str_split(spec, "`");
     let mut out: List[String] = list_new();
     let mut i: Int = 0;
-    while i < list_len(lines) {
-        let ln: String = list_get(lines, i);
+    while i < list_len(parts) {
+        let tok: String = list_get(parts, i);
         i = i + 1;
-        let cp: Int = str_index_of(ln, "Cap:");
-        if cp >= 0 {
-            let mut st: Int = cp;
-            while st > 0 && cs_alpha(byte_at(ln, st - 1)) { st = st - 1; }
-            let nm: String = byte_slice(ln, st, cp + 3);
-            if !cs_in(out, nm) { out = list_push(out, nm); }
+        let cp: Int = str_index_of(tok, ":");
+        if cp <= 0 || cp + 4 > bytes_len(tok) { continue; }
+        let pre: String = byte_slice(tok, 0, cp);
+        let nm: String = byte_slice(tok, cp + 1, bytes_len(tok));
+        let ln: Int = bytes_len(nm);
+        let mut digits: Bool = bytes_len(pre) > 0;
+        let mut j: Int = 0;
+        while j < bytes_len(pre) {
+            let b: Int = byte_at(pre, j);
+            if b < 48 || b > 57 { digits = false; }
+            j = j + 1;
         }
+        let mut ok: Bool = digits && ln > 3 && byte_slice(nm, ln - 3, ln) == "Cap";
+        j = 0;
+        while j < ln - 3 {
+            if !cs_alpha(byte_at(nm, j)) { ok = false; }
+            j = j + 1;
+        }
+        if ok && !cs_in(out, nm) { out = list_push(out, nm); }
     }
     return out;
 }
@@ -132,7 +144,7 @@ pub fn test_caps_schema(fs: &FsReadCap, p: Int) -> Int {
         }
     }
     all_fld = all_fld && nman > 0;
-    if cs_expect(all_tok, "93 every manifest caps token resolves to spec.oot or a ratified grant") { np = np + 1; }
+    if cs_expect(all_tok, "93 every manifest caps token resolves to security.md or a ratified grant") { np = np + 1; }
     if cs_expect(all_fld, "94 every manifest carries exactly one well-formed caps field") { np = np + 1; }
     np = dep_resolution(fs, np);
     return np;

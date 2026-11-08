@@ -8,7 +8,6 @@ ooattest|0.2.3|FsRead,Process,Env,Mcp||d6183e0820ed6a9892eff2698e7eb8fb1c2f07099
 ooaudit|0.2.3|FsRead,FsWrite,Process,Env,Mcp||d75760144067d34ac4443e4751066c581a5cadc898428cddf4034b273de1758d
 ooawk|0.2.3|FsRead,Process,Env,Mcp||fa97b32d60e3534c2173763c0d3618f0f4fe6ac9b3c34c9df245950ad2409268
 oobackup|0.2.4|FsRead,FsWrite,Process,Env,Mcp||76a96b4760997ccc4acd3b035beb80891f2ec0040aacbca6bab955e5976868cf
-oobasename|0.2.3|FsRead,Process,Env,Mcp||1caf99e843c73cb43e0b44b532d68a70e0e447cc1941e2ee375ecde823fdeab2
 oobatch|0.2.3|FsRead,Process,Env,Mcp||f67bdaa28852b047358f49fe552fb9ffe8a33f1410f5538cf506c7dd55a3ec37
 oobattery|0.2.3|FsRead,Process,Env,Mcp||e72b501302b290a0b55a07565f2a4e111dc4cb487330e3730ed2d8ba6d98c159
 oobinary|0.2.3|FsRead,Process,Env,Mcp||36457643d4347583e9ea40af72a31e5b82962de5e910d667e64a13239dee3475
@@ -34,7 +33,6 @@ oodefense|0.1.0|Net,Sec,Agent,Mcp,FsRead||ef9ff0d25d849eb99ff0b73902cd17923ae9ca
 oodialog|0.2.3|FsRead,Process,Env,Mcp||ff743c6e5a51b02f867372849919afb76016fb9769e2f07b6baf084ebe6ac98f
 oodiff|0.3.6|FsRead,Mcp||40529712b74423c3cd03dc39e17334cac9bbf1ae5612db9f33641d307f0537ee
 oodiff3|0.2.3|FsRead,Process,Env,Mcp||ed36f71746a7806d4cd6334996a4c1c006d54a41d9a737ed74899311df19acc9
-oodirname|0.2.3|FsRead,Process,Env,Mcp||c0dd8791782ab4ad3046d5f0a9128a1e965d755473723da08e780a745d4e49b1
 oodmesg|0.2.3|FsRead,Process,Env,Mcp||d6f8c9f20bb294c71da9a5c36210a5727bde987aef8e0d73b13cc376f89c85ee
 ooenv|0.2.3|FsRead,Process,Env,Mcp||895bdbc875b8b114fac83e96d5915940ad729a652f088075d8d5d7237ef61d50
 oofigure|0.2.3|FsRead,Process,Env,Mcp||004df6c20323e9bc5c19f115edd706c1807ae151e6d12ca5c0f9c34fd6197a1f
@@ -90,8 +88,6 @@ ooprogress|0.2.4|Term,Env,Mcp,FsRead,FsWrite,Process||b6eaf32fcc59212304c4d61432
 ooprompt|0.2.4|Term,Env,Proc,Mcp,FsRead||d3ba48cf30b89e1a5cc73c900b1d8672794020a9883a16c4667abb426d8ff352
 ooprotobuf|0.2.4|FsRead,Stream,Mcp||acf1ead856cd61871571974afeba7f7e5d1277db342d4615205ef9cfda51e1e9
 ooprovenance|0.2.4|Sec,Agent,Mcp,FsRead||0b573bebbd0205a5450e851f4ea4c5c9d2863795f94d4afb9a53b475c6bfa7cf
-ooreadlink|0.2.4|FsRead,FsWrite,Mcp||97545b735f3e3617e7327415251dde5aa879e1f96035065b7e872215222af84a
-oorealpath|0.2.4|FsRead,FsWrite,Mcp||b55360dd2948e5f1a010df697f6172827578d8fa91b21ef9377d03c2bfa40fd5
 ooreboot|0.2.4|Proc,SysInfo,Mcp||f59861b1413f53019390f647e0958861f56563fc55722627b4ab8e681925bd71
 ooredact|0.2.4|Sec,Agent,Mcp||cf6de779c31e784b21489f34e676bdd4aecba3597810fcf14d6b4b660f280110
 ooreduce|0.2.4|FsRead,Stream,Mcp||0214700352085b712828a89136600c9688e3e2648b262c884287efb5eb297da7

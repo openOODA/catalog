@@ -1,8 +1,0 @@
-name=oobasename
-version=0.2.3
-caps=FsRead,Process,Env,Mcp
-deps=
-payload=oobasename.oo
-commit=
-sha256=1caf99e843c73cb43e0b44b532d68a70e0e447cc1941e2ee375ecde823fdeab2
-sig=
