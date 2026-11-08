@@ -1,8 +1,0 @@
-name=oosemantcdiff
-version=0.2.4
-caps=FsRead,Mcp
-deps=
-payload=oosemantcdiff.oo
-commit=
-sha256=ec8e14b5919a7215d7583e1f978bc0d796f7b67726e96cd843527a937c3c710c
-sig=

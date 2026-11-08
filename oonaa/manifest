@@ -1,8 +1,0 @@
-name=oonaa
-version=0.2.4
-caps=Sec,Agent,Mcp
-deps=
-payload=oonaa.oo
-commit=
-sha256=63ed8a4edddbc33d27a0c6771e35fabdcdd13660a0f0b8c0895ec3c56517b233
-sig=

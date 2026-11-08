@@ -27,7 +27,7 @@ ooclear|0.2.3|FsRead,Process,Env,Mcp||4fd71431e1e9d3f2c60a4857b1403b83bb037c059d
 ooclock|0.2.3|FsRead,Mcp||4ce20fd77279838f2c3c527319dc1401ce76535ebcb561363b59aa8d694dd5e8
 oocp|0.2.3|FsRead,FsWrite,Process,Env,Mcp||da0838554d39092c223562d6c5c269531f3ac02bd83776a71d4cb3abbcbcee4f
 oocron|0.2.3|FsRead,Process,Env,Mcp||9c82dd749929684772a7342edf380d6e45fdc2ca453b03f45a4c110a2073be1e
-oocsplt|0.2.3|FsRead,FsWrite,Process,Env,Mcp||f1ceb80b76a0698a655872ca4fd4383f6fa2173c418a8fa1d3bd8c59e89e6d72
+oocsplit|0.2.3|FsRead,FsWrite,Process,Env,Mcp||66323ea90ca9af30f48fdd321b8f285ce2f681e5a58f3623bd3967c113df3002
 oocurl|0.2.5|FsRead,Mcp||f2a6c20af066d9b395bf07a35a9c8c842bdf0b1b6695edb4ca5f218ec85a9171
 oodevd|0.4.0|Process,FsRead,FsWrite||ee74e431bb0c46ea209147a48cf5ee30f11fc58a7fefe487013e81b5e8e23634
 oodialog|0.2.3|FsRead,Process,Env,Mcp||ff743c6e5a51b02f867372849919afb76016fb9769e2f07b6baf084ebe6ac98f
@@ -78,7 +78,6 @@ oomount|0.2.4|FsRead,FsWrite,Mcp||4a553a0c3e67f72d17a924a1b73c6a52fd2200e909c90d
 oompstat|0.2.4|Proc,SysInfo,Mcp||8e8876d1007d6ca8adc336ec208cb28d8ab6bff4022ff35f6e0e5de9fe2071f9
 oomtr|0.2.4|Net,Tls,Mcp||f868b281681b3d4cd30666c7ad814a922c8384d628254983199c20dc6d6d5698
 oomv|0.2.5|FsRead,FsWrite,Mcp||b4416236c8bb83a4a802f0a728e5dd96461655613a0f0c7ecc1fb605dd9b88a0
-oonaa|0.2.4|Sec,Agent,Mcp||63ed8a4edddbc33d27a0c6771e35fabdcdd13660a0f0b8c0895ec3c56517b233
 oonegatrust|0.2.4|Sec,Agent,Mcp,FsRead||c3bf77d679d89f2b3a8118aaecaad0b960b5a025c5539389ab4984716d5dd787
 oonet|0.1.0|FsRead,Net,Proc,Env,Mcp||d86656d5dd46860f7a0bf2793221a0335e109814d8bdca2d2ebdaab22c2b614e
 oonetcat|0.2.4|Net,Tls,Mcp,FsRead||f13ed50894a0788dbed66cb9b4d346387e2d9667f4373387d70c91395766bec7
@@ -116,7 +115,7 @@ ooscp|0.2.4|Net,Tls,Mcp||918ec778ca6cf1aae636ba480a0d4ea5cb7f4d5a477c9ed7d893dd3
 ooscreen|0.2.4|Term,Env,Proc,Mcp||64223b96b55317f9c92bbb71ae279d8706b999ac725afcbc3fc67850ac75f8fb
 ooseccomp|0.2.4|Sec,Agent,Mcp||1c6f34995a6498d272a5a91045fbfc51c1976a1d664d9f8135722352c30a575a
 oosed|0.2.3|FsRead,Mcp||a31aca7853524838893b7ff85424568bc1128db0a3bd43055c09434908ceadd7
-oosemantcdiff|0.2.4|FsRead,Mcp||ec8e14b5919a7215d7583e1f978bc0d796f7b67726e96cd843527a937c3c710c
+oosemanticdiff|0.2.4|FsRead,Mcp||3d18d20d81f3c6c06263bff47630697f06b9a2c7b6376a760e3be4eb82d15745
 oosensors|0.2.4|Proc,SysInfo,Mcp||c0585f9d2a7341314e3fee7dc9a1474ecdd33bcf5fdc01bdc7f31374194566c9
 oosftp|0.2.4|Net,Tls,Mcp||a68cb78a6dd24f6be6f3918d52ef84e9c6f935f3cf38e31a5415ceaa124112a8
 oosh|1.0.2|Bind,FsRead,Process,Sys,Env,Time,FsWrite,Alloc,Thread,Ffi||6ad331a5478ee34e1f0a4da94de51a8bd7f76890b71457ad0f45d1a6bdbf5442

@@ -1,4 +1,4 @@
-// # oosemantcdiff Main Entry Point
+// # oosemanticdiff Main Entry Point
 //
 // Logline: AI agent semantic delta analyzer detecting behavioral change intent in diffs.
 //
@@ -6,12 +6,12 @@
 //
 // Beats:
 //   1. Parse command-line options and dispatch --help, --version, or --mcp.
-//   2. Execute capability-bounded oosemantcdiff operations.
+//   2. Execute capability-bounded oosemanticdiff operations.
 //   3. Format and output structured results to standard output.
 
 fn render_help() -> String {
-    return "oosemantcdiff 0.1.0 (openOODA bounded diff & comparison)\n"
-        + "usage: oosemantcdiff [options] [ARGUMENTS]...\n\n"
+    return "oosemanticdiff 0.1.0 (openOODA bounded diff & comparison)\n"
+        + "usage: oosemanticdiff [options] [ARGUMENTS]...\n\n"
         + "AI agent semantic delta analyzer detecting behavioral change intent in diffs.\n\n"
         + "Options:\n"
         + "  -h, --help           display this help and exit\n"
@@ -23,7 +23,7 @@ fn render_help() -> String {
 }
 
 fn render_version() -> String {
-    return "oosemantcdiff 0.1.0 (openOODA bounded diff & comparison)\n";
+    return "oosemanticdiff 0.1.0 (openOODA bounded diff & comparison)\n";
 }
 
 fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
@@ -41,12 +41,12 @@ fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
             return 0;
         }
         if arg == "--mcp" {
-            print("{\"jsonrpc\":\"2.0\",\"result\":{\"status\":\"ready\",\"tool\":\"oosemantcdiff\"}}\n");
+            print("{\"jsonrpc\":\"2.0\",\"result\":{\"status\":\"ready\",\"tool\":\"oosemanticdiff\"}}\n");
             return 0;
         }
         i = i + 1;
     }
 
-    print("oosemantcdiff: bounded capability-bounded utility ready\n");
+    print("oosemanticdiff: bounded capability-bounded utility ready\n");
     return 0;
 }

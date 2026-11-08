@@ -1,8 +1,0 @@
-name=oocsplt
-version=0.2.3
-caps=FsRead,FsWrite,Process,Env,Mcp
-deps=
-payload=oocsplt.oo
-commit=
-sha256=f1ceb80b76a0698a655872ca4fd4383f6fa2173c418a8fa1d3bd8c59e89e6d72
-sig=
