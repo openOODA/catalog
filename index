@@ -28,7 +28,9 @@ oodb|0.3.7|FsRead,FsWrite,Process||f1d61e8864c8364c9da9ec0ae065f33a7cfc7260d7044
 oodefense|0.1.0|FsRead,Env,FsWrite,Alloc,Process||61189a6976f27c473d6d6edbc48650cc08581b2357bd33a7e4c5d06ea79058e6
 oodeploy|0.3.8|FsRead,FsWrite,Process||ce66074ce541bf15ae60a39e3fcbda378a183730de539c2ff2735a8cebe101a5
 oodiff|0.3.6|FsRead,Time,Env,Process,FsWrite||7ec28c73f8c5dadeb1d5292e37b7bfbe41243507160fd99902a72e2b0bfdc3ef
+oodrv-accel|0.6.1|Mmio,Dma,Gpu,FsRead,FsWrite||ebe67815c3902f943e1b3d87d9974226a6a4b7789e77062de1ebfe3cb07c633d
 oodrv-io|0.6.1|Mmio,Dma,FsRead,FsWrite,Frame,Pci,Irq,Usb||3833e9c41d0ea5333a6c753ed12606a2e16cd42b1ad0a473af7de6c323ade557
+oodrv-net|0.6.1|Mmio,Dma,Net,FsRead,FsWrite,Irq,Pci||ff5c94d5a91f55f2c0bf2512317d1d816a7b5cc2d18162e0dff0fabc51ae8812
 oodrv-storage|0.6.1|Mmio,Block,Dma,FsRead,FsWrite||4fe21dde70586cc3e950b508fc5289242290778c199261bad2c912d05a223325
 oodrv-virt|0.6.1|Mmio,Dma,FsRead,FsWrite||cc27f723cbf24f02a88fa81f34a2fa48f5368c3854795139f759496137dbf806
 ooemu|0.2.5|Process,Env,FsRead,FsWrite||57286594212082868b02f091a79e7874566fd897bdb6db07fd2d75ed4a6d57bb

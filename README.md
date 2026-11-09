@@ -15,7 +15,7 @@ catalog/
 ├── SHA256SUMS      # Master checksums mirrored from the install@hub release
 └── layers/
     ├── L0-core/    # 8 core toolchain packages (ooda, oodac, oodar, oostd, oopm, oolsp, oomcp, oohat)
-    ├── L1-kernel/  # 6 microkernel, bootloader, HAL & driver packages
+    ├── L1-kernel/  # 8 microkernel, bootloader, HAL & Ring-3 driver packages
     ├── L2-OS/      # 9 zero-root system daemon packages
     ├── L3-tools/   # 39 capability-sandboxed Unix, security & UI utilities
     ├── L4-DE/      # 8 Wayland desktop environment packages
