@@ -27,8 +27,9 @@ catalog/
 `oostd` (L0) ships the expanded scientific & mathematical discovery library:
 `oostd/core/math/{exact,geometry,blas,fft,algebra,graph_topology}/...`,
 `oostd/core/proofs/...`, `oostd/core/science/{phys,chem,bio,comm,econ}/...`,
-`oostd/core/app/ai/algo/...`, `oostd/core/collection/...`, and
-`oostd/sec/{hash,capability,pqc,symmetric}/...`.
+frontier AI-for-science `oostd/core/app/ai/...`, 2D/3D engine physics
+`oostd/core/app/ui/game_engine/...` (`collision_{aabb,circle,gjk,sat}` + `ecs_*`),
+`oostd/core/collection/...`, and `oostd/sec/{hash,capability,pqc,symmetric}/...`.
 
 ## Installing Packages & Groups with `oopm`
 
