@@ -15,10 +15,10 @@
 @kernel = ooboot oodrv-accel oodrv-io oodrv-net oodrv-storage oodrv-virt oohal ookernel
 @os = ooauthd oocontainer oohealthd ooinit oollama oomodemd oonetd oosysbus oovfs
 @tools = ooarchive ooawk oocat oocodec oocron oocurl oodefense oodiff ooengine oofind oofirewall oofs oofzf oogrep oohash oohw oojq ooless ools oomount oonet oopath ooperm oopower ooproc ooprovenance ooredact oorgb oosandbox oosed oosh oosign oosort oossh ootext ootheme ootty ooui oovault
-@de = ooagent-hud oobazaar oocomp oofiles oopanel ooportal oosettings ooterm
+@de = oobazaar oocomp oofiles oopanel ooportal oosaver oosettings ooterm
 @apps = ooarcade oobrowser oocamera oocanvas oochat oocommand oodaw ooemu ooflash ookvm oomedia oooffice oopass oostrike oostudio oovoxel
 @games = ooemu ooarcade oocommand oostrike oovoxel
 @cloud = oobilling oodb oodeploy oogateway ooidentity oomesh oostore ootelemetry
-@agents = oobench oocode ooconsensus oofalsify oogovern ooloop oomemory ooquota ooswarm
+@agents = oobench oocode ooconsensus oodream oofalsify oogovern ooloop oomemory ooswarm
 @workstation = @core @tools @de @apps
 @all = @core @kernel @os @tools @de @apps @cloud @agents

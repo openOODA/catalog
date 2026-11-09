@@ -1,8 +1,0 @@
-name=ooagent-hud
-version=0.3.6
-caps=FsRead,Env,FsWrite
-deps=
-payload=ooagent-hud.oo
-commit=
-sha256=659966c67ba5c253efd7a566a45e6d776ec468ac62921c6edb5ae351dec3ad73
-sig=

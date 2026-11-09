@@ -1,4 +1,3 @@
-ooagent-hud|0.3.6|FsRead,Env,FsWrite||659966c67ba5c253efd7a566a45e6d776ec468ac62921c6edb5ae351dec3ad73
 ooarcade|0.1.0|Env,Process,FsRead,FsWrite||2693fa398e0d07bc93dee96cd9e9f56f533004aceeb375fff7ec846be4e84ade
 ooarchive|0.2.5|FsRead,FsWrite,Process,Env||1aed2a08ccad1e0cd6147ab23221bab96ce2f09a0430ba02cd870005f159139e
 ooauthd|0.4.0|FsWrite,FsRead,Process||737417f8bf803260eb2377541beb5c400a353cf01993b0dcb7ed2c13d62d2e61
@@ -28,6 +27,7 @@ oodb|0.3.7|FsRead,FsWrite,Process||f1d61e8864c8364c9da9ec0ae065f33a7cfc7260d7044
 oodefense|0.1.0|FsRead,Env,FsWrite,Alloc,Process||61189a6976f27c473d6d6edbc48650cc08581b2357bd33a7e4c5d06ea79058e6
 oodeploy|0.3.8|FsRead,FsWrite,Process||ce66074ce541bf15ae60a39e3fcbda378a183730de539c2ff2735a8cebe101a5
 oodiff|0.3.6|FsRead,Time,Env,Process,FsWrite||7ec28c73f8c5dadeb1d5292e37b7bfbe41243507160fd99902a72e2b0bfdc3ef
+oodream|0.4.1|FsRead,Process,Env,FsWrite,Tcp||9cd736f499b37399393c14067cf2740512345b44e3f0ea2eca28310d9c454f9e
 oodrv-accel|0.6.1|Mmio,Dma,Gpu,FsRead,FsWrite||ebe67815c3902f943e1b3d87d9974226a6a4b7789e77062de1ebfe3cb07c633d
 oodrv-io|0.6.1|Mmio,Dma,FsRead,FsWrite,Frame,Pci,Irq,Usb||3833e9c41d0ea5333a6c753ed12606a2e16cd42b1ad0a473af7de6c323ade557
 oodrv-net|0.6.1|Mmio,Dma,Net,FsRead,FsWrite,Irq,Pci||ff5c94d5a91f55f2c0bf2512317d1d816a7b5cc2d18162e0dff0fabc51ae8812
@@ -78,10 +78,10 @@ ooportal|0.4.0|Env,FsRead,FsWrite,Process||3a5db1becc0275530f88225646a1d6d95db52
 oopower|0.2.5|Process,FsRead,FsWrite,Env||f5becf9ce72217a72a4c6e1aaf8db15a577bab7a36361144716d0531954a8561
 ooproc|0.1.0|Process,FsRead,Env,Time,FsWrite||9483c797880d1e539a976ed9889df2cc76015eb2c0b5b9c2383766b13f5003dd
 ooprovenance|0.2.5|Process,FsRead,FsWrite,Env,Time||d376088f99790e4ca419d46c799fc13a9ac9167d10e039cf24e89d693f717431
-ooquota|0.4.1|FsRead,Process,Env,FsWrite||ff4918cba56e8ad547ec8f835f3c9915b6c1e0c4df451a7b0c4d0d22c27b1a2d
 ooredact|0.2.5|Process,FsRead,FsWrite,Env,Time||d963b81205ee186d6f92ce7dc106128b52b27acc23b14a246ca58fbece64989f
 oorgb|0.2.5|Process,FsRead,FsWrite,Env,Hid,Usb||065584878e995f8d55ece5fc4aa72d7bba11f98eeec8ac77fbb60752d69aa298
 oosandbox|0.2.5|Process,FsRead,FsWrite,Env,Time,Mcp||11d98c72b42deb4ebe7382b53c2ae30af7af2d126c180aebfa5b14be3671c611
+oosaver|5.0.0|FsRead,FsWrite,Env,Process,Time,Rand,Window,Frame,Ffi||32c82a073c33168c3d385a76ec1616431ac09c517b3e955a6ca632b124b20c8e
 oosed|0.2.4|FsRead,Process,FsWrite,Env||022884b8f53488346d4f0b58d75be548cc034ddafe9d49a1e1c2c41c6720f127
 oosettings|0.3.6|FsRead,Env,FsWrite||1ff84a9f3c7f219bab603aee170e4bf1c878ddd47a8f178364055acc74975f2c
 oosh|1.0.3|FsRead,Ffi,FsWrite,Process,Env,Bind,Time||64e6a4a6747f38347bcaec6f4e535d631efecbbd2d9226db8d9f3009ce7f071b

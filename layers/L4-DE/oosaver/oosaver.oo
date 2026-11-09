@@ -1,17 +1,17 @@
-// # ooquota Main Entry Point
+// # oosaver Main Entry Point
 //
-// Logline: Canonical openOODA package payload for ooquota (layers/L7-agents).
+// Logline: Canonical openOODA package payload for oosaver (layers/L4-DE).
 //
 // Setup: Demands explicit capability tokens and standard argument list.
 //
 // Beats:
 //   1. Parse command-line options and dispatch --help, --version, about, or --mcp.
-//   2. Execute capability-bounded ooquota operations.
-//   3. Format and output structured results via ootheme tokens.
+//   2. Execute capability-bounded oosaver operations (51 Omarchy/ttfx scenes, Wayland overlay, lock, idle daemon).
+//   3. Format and output structured results via ootheme and oorgb tokens.
 
 fn render_help() -> String {
-    return "ooquota 0.4.1 (openOODA layers/L7-agents)\n"
-        + "usage: ooquota <subcommand> [options]\n\n"
+    return "oosaver 5.0.0 (openOODA layers/L4-DE)\n"
+        + "usage: oosaver <subcommand> [options]\n\n"
         + "Options:\n"
         + "  -h, --help           display this help and exit\n"
         + "  -v, --version        output version information and exit\n"
@@ -31,11 +31,11 @@ pub fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
             return 0;
         }
         if a == "-v" || a == "--version" {
-            print("ooquota 0.4.1\n");
+            print("oosaver 5.0.0\n");
             return 0;
         }
         i = i + 1;
     }
-    print("ooquota: capability-bounded package ready\n");
+    print("oosaver: capability-bounded package ready\n");
     return 0;
 }

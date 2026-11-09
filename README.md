@@ -21,7 +21,7 @@ catalog/
     ├── L4-DE/      # 8 Wayland desktop environment packages
     ├── L5-apps/    # 16 native desktop, creative & gaming applications
     ├── L6-cloud/   # 8 mesh, storage, deploy, DB & gateway services
-    └── L7-agents/  # 9 autonomous OODA loop & verification packages
+    └── L7-agents/  # 8 autonomous OODA loop, dream & verification packages
 ```
 
 `oostd` (L0) ships the expanded scientific & mathematical discovery library:

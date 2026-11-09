@@ -1,8 +1,0 @@
-name=ooquota
-version=0.4.1
-caps=FsRead,Process,Env,FsWrite
-deps=
-payload=ooquota.oo
-commit=
-sha256=ff4918cba56e8ad547ec8f835f3c9915b6c1e0c4df451a7b0c4d0d22c27b1a2d
-sig=
