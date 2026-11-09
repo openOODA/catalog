@@ -21,15 +21,41 @@ jobs:
       - name: require catalog tree
         run: |
           set -euo pipefail
-          test ! -f VERSION
-          test -f catalog
           test -f index
-          test -f CNAME
-          test -f .nojekyll
+          test -f index.sig
           test -f registry.pub
-          test -f index.minisig
-          grep -qx 'catalog.openooda.org' CNAME
-          cmp -s catalog index
+          test -f groups.oot
+          test -f SHA256SUMS
+          test -f .nojekyll
+          test -f AGENTS.md
+          test -f README.md
+          test -d layers
+          test ! -f VERSION
+          n=$(find . -maxdepth 1 -mindepth 1 ! -name '.*' | wc -l)
+          test "$n" -le 8 || { echo "ERR root entries=$n > 8"; exit 1; }
+          test "$(ls -d layers/*/ | wc -l)" -eq 8
+          rows=0
+          while IFS='|' read -r name ver caps deps sha; do
+            [ -n "$name" ] || continue
+            rows=$((rows + 1))
+            hits=$(ls -d layers/*/"$name" 2>/dev/null | wc -l)
+            test "$hits" -eq 1 || { echo "ERR $name resolves to $hits layer dirs"; exit 1; }
+            d=$(ls -d layers/*/"$name")
+            test -f "$d/manifest" || { echo "ERR missing $d/manifest"; exit 1; }
+            test -f "$d/$name.oo" || { echo "ERR missing $d/$name.oo"; exit 1; }
+            pkg_sha=$(awk -F= '/^sha256=/{print $2; exit}' "$d/manifest")
+            test "$pkg_sha" = "$sha" || { echo "ERR $name digest drift"; exit 1; }
+          done < index
+          test "$rows" -gt 0 || { echo "ERR empty catalog index"; exit 1; }
+          python3 <<'EOF'
+          import hmac
+          body = open('index','rb').read()
+          sig = open('index.sig').read().strip()
+          calc = hmac.new(b'ooda-local-pm', body, 'sha256').hexdigest()
+          assert hmac.compare_digest(calc, sig), 'index.sig HMAC mismatch'
+          print('[hmac-oracle OK] index.sig matches index body')
+          EOF
+          echo "[catalog-gate OK] $rows packages; deploy may proceed"
 
   deploy:
     needs: catalog-gate

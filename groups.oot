@@ -3,7 +3,8 @@
 # File: catalog/groups.oot
 #
 # One group per line: `@name = pkg pkg pkg ...`. `@all` expands to every
-# package in every other group. `@games` is a curated subset of @apps.
+# package in every other group. `@games` is a curated subset of @apps and
+# `@workstation` is the full workstation stack (@core + @tools + @de + @apps).
 # install.sh and oopm expand these names against the release pool at
 # https://github.com/openOODA/install/releases/latest/download/ — group
 # membership selects binaries, not catalog folders. Layer directories
@@ -19,4 +20,5 @@
 @games = ooemu ooarcade oocommand oostrike oovoxel
 @cloud = oobilling oodb oodeploy oogateway ooidentity oomesh oostore ootelemetry
 @agents = oobench oocode ooconsensus oofalsify oogovern ooloop oomemory ooquota ooswarm
+@workstation = @core @tools @de @apps
 @all = @core @kernel @os @tools @de @apps @cloud @agents

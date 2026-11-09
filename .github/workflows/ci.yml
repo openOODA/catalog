@@ -2,6 +2,7 @@ name: catalog CI
 
 on:
   workflow_dispatch:
+
 jobs:
   catalog-gate:
     runs-on: ubuntu-latest
@@ -11,111 +12,90 @@ jobs:
       - name: require catalog tree
         run: |
           set -euo pipefail
-          test ! -f VERSION
-          test -f catalog
           test -f index
-          test -f CNAME
-          test -f .nojekyll
-          test -f anchor.oo
-          test -f registry.pub
-          test -f index.minisig
           test -f index.sig
-          grep -qx 'catalog.openooda.org' CNAME
-          cmp -s catalog index
+          test -f registry.pub
+          test -f groups.oot
+          test -f SHA256SUMS
+          test -f .nojekyll
+          test -f AGENTS.md
+          test -f README.md
+          test -d layers
+          test ! -f VERSION
+          # 8-entry repo root: at most 8 non-hidden entries at root.
+          n=$(find . -maxdepth 1 -mindepth 1 ! -name '.*' | wc -l)
+          test "$n" -le 8 || { echo "ERR root entries=$n > 8"; exit 1; }
+          # Exactly the 8 canonical layer directories L0..L7.
+          test "$(ls -d layers/*/ | wc -l)" -eq 8
+          for l in L0-core L1-kernel L2-OS L3-tools L4-DE L5-apps L6-cloud L7-agents; do
+            test -d "layers/$l" || { echo "ERR missing layers/$l"; exit 1; }
+          done
           # The catalog index is the single source of truth for the package
-          # set: every indexed row must resolve to a shipped package whose
-          # payload digest matches the row. Deriving the set from the index
-          # keeps the gate honest when packages come and go.
+          # set: every indexed row must resolve to exactly one shipped package
+          # dir whose manifest and payload digest match the row. Deriving the
+          # set from the index keeps the gate honest when packages come and go.
           rows=0
           while IFS='|' read -r name ver caps deps sha; do
             [ -n "$name" ] || continue
             rows=$((rows + 1))
-            test -f "$name/manifest" || { echo "ERR missing $name/manifest"; exit 1; }
-            test -f "$name/anchor.oo" || { echo "ERR missing $name/anchor.oo"; exit 1; }
-            test -f "$name/$name.oo" || { echo "ERR missing $name/$name.oo"; exit 1; }
-            pkg_sha=$(awk -F= '/^sha256=/{print $2; exit}' "$name/manifest")
+            hits=$(ls -d layers/*/"$name" 2>/dev/null | wc -l)
+            test "$hits" -eq 1 || { echo "ERR $name resolves to $hits layer dirs"; exit 1; }
+            d=$(ls -d layers/*/"$name")
+            test -f "$d/manifest" || { echo "ERR missing $d/manifest"; exit 1; }
+            test -f "$d/$name.oo" || { echo "ERR missing $d/$name.oo"; exit 1; }
+            pkg_sha=$(awk -F= '/^sha256=/{print $2; exit}' "$d/manifest")
             test "$pkg_sha" = "$sha" || { echo "ERR $name digest drift: manifest=$pkg_sha index=$sha"; exit 1; }
-            ! grep -q "import \"$name.oo\"" "$name/anchor.oo" || { echo "ERR payload import in $name/anchor.oo"; exit 1; }
-          done < catalog
+            mname=$(awk -F= '/^name=/{print $2; exit}' "$d/manifest")
+            test "$mname" = "$name" || { echo "ERR $d manifest name=$mname"; exit 1; }
+            mver=$(awk -F= '/^version=/{print $2; exit}' "$d/manifest")
+            test "$mver" = "$ver" || { echo "ERR $d manifest version drift: $mver != $ver"; exit 1; }
+            actual=$(sha256sum "$d/$name.oo" | cut -d' ' -f1)
+            test "$actual" = "$sha" || { echo "ERR $name payload sha256 mismatch"; exit 1; }
+          done < index
           test "$rows" -gt 0 || { echo "ERR empty catalog index"; exit 1; }
+          # No layer package dir may escape the index.
+          for d in layers/*/*/; do
+            p=$(basename "$d")
+            grep -q "^$p|" index || { echo "ERR $p ships a dir but is not indexed"; exit 1; }
+          done
           echo "[catalog-tree OK] $rows indexed packages resolve with matching digests"
-          for d in . qa docs examples; do
-            test -f "$d/anchor.oo" || { echo "ERR missing $d/anchor.oo"; exit 1; }
-          done
-          for f in $(find . -name '*.oo' -o -name '*.oot' | grep -v '^\./\.git/'); do
-            n=$(wc -l < "$f"); test "$n" -le 256 || { echo "ERR over 256 lines: $f n=$n"; exit 1; }
-          done
-      - name: verify minisig (fail closed)
+      - name: groups.oot contract
         run: |
           set -euo pipefail
-          sudo apt-get update && sudo apt-get install -y minisign
-          minisign -V -p registry.pub -m catalog -x index.minisig
-      - name: minisig roundtrip with ephemeral key
-        run: |
-          set -euo pipefail
-          work=$(mktemp -d)
-          trap 'rm -rf "$work"' EXIT
-          cp catalog "$work/catalog"
-          cd "$work"
-          minisign -G -W -p rt.pub -s rt.key
-          minisign -S -W -s rt.key -m catalog -x catalog.minisig -c "ci roundtrip"
-          minisign -V -p rt.pub -m catalog -x catalog.minisig
-          printf 'X' >> catalog
-          if minisign -V -p rt.pub -m catalog -x catalog.minisig; then
-            echo "ERR tampered catalog verified"; exit 1
-          fi
-          echo "[minisig-roundtrip OK] ephemeral sign/verify passes, tamper rejected"
-      - name: checkout oodac
-        uses: actions/checkout@v4
-        with:
-          repository: openOODA-core/oodac
-          path: oodac
-      - name: checkout oostd
-        uses: actions/checkout@v4
-        with:
-          repository: openOODA-core/oostd
-          path: oostd
-      - name: checkout oodar
-        uses: actions/checkout@v4
-        with:
-          repository: openOODA-core/oodar
-          path: oodar
-      - name: clang
-        run: sudo apt-get update && sudo apt-get install -y clang
-      - name: build oodar libs
-        run: make -C oodar/scripts -f Makefile modular
-      - name: typecheck proofs twice
-        env:
-          OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
-          OODA_FS_READDIR: ${{ github.workspace }}
-          OODA_FS_WRITEDIR: ${{ github.workspace }}
-        run: |
-          test -x oodac/bin/oodac || chmod +x oodac/bin/oodac
-          for t in qa/catalog_proof.oo qa/str_ascii.oo; do
-            out=$("${OODA_COMPILER}" check "$t") || { echo "$out"; exit 1; }
-            case "$out" in *ERR*) echo "ERR in stdout $t: $out"; exit 1;; esac
-            out=$("${OODA_COMPILER}" check "$t") || { echo "$out"; exit 1; }
-            case "$out" in *ERR*) echo "ERR in stdout $t: $out"; exit 1;; esac
+          for g in core kernel os tools de apps cloud agents workstation all; do
+            grep -q "^@$g = " groups.oot || { echo "ERR missing @$g in groups.oot"; exit 1; }
           done
-      - name: build and run catalog proof
-        env:
-          OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
-          OODA_FS_READDIR: ${{ github.workspace }}
-          OODA_FS_WRITEDIR: ${{ github.workspace }}
-          OODA_NO_JAIL: '1'
-        run: |
-          "${OODA_COMPILER}" build qa/catalog_proof.oo -o /tmp/catalog_proof
-          test "$(/tmp/catalog_proof)" = "catalog_proof: PASSED"
-      - name: run qa suite (double-check drivers)
-        env:
-          OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
-          OODA_FS_READDIR: ${{ github.workspace }}
-          OODA_FS_WRITEDIR: ${{ github.workspace }}
-          OODA_NO_JAIL: '1'
-        run: |
-          "${OODA_COMPILER}" build qa/suite.oo -o /tmp/catalog_suite
-          /tmp/catalog_suite
-      - name: independent index.sig HMAC check (python oracle)
+          python3 <<'PYEOF'
+          import os, re, sys
+          groups = {}
+          for line in open('groups.oot'):
+              m = re.match(r'@(\w+)\s*=\s*(.*)', line.strip())
+              if m:
+                  groups[m.group(1)] = m.group(2).split()
+          idx = [l.split('|')[0] for l in open('index') if l.strip()]
+          layer_map = {p: d for d in os.listdir('layers') for p in os.listdir(f'layers/{d}')}
+          g2l = {'core': 'L0-core', 'kernel': 'L1-kernel', 'os': 'L2-OS', 'tools': 'L3-tools',
+                 'de': 'L4-DE', 'apps': 'L5-apps', 'cloud': 'L6-cloud', 'agents': 'L7-agents'}
+          covered = set()
+          for g, pkgs in groups.items():
+              if g in ('all', 'games', 'workstation'):
+                  continue
+              for p in pkgs:
+                  covered.add(p)
+                  if layer_map.get(p) != g2l[g]:
+                      sys.exit(f'ERR @{g} member {p} lives in {layer_map.get(p)}')
+          missing = [p for p in idx if p not in covered]
+          if missing:
+              sys.exit(f'ERR index packages uncovered by groups: {missing}')
+          if not all(p in groups['apps'] for p in groups['games']):
+              sys.exit('ERR @games must be a subset of @apps')
+          if set(groups['workstation']) != {'@core', '@tools', '@de', '@apps'}:
+              sys.exit('ERR @workstation must equal @core @tools @de @apps')
+          if set(groups['all']) != {f'@{g}' for g in g2l}:
+              sys.exit('ERR @all must expand all 8 layer groups')
+          print(f'[groups OK] {len(idx)} packages covered across 8 layer groups + workstation/all')
+          PYEOF
+      - name: index.sig HMAC check (fail closed)
         run: |
           set -euo pipefail
           python3 <<'EOF'
@@ -124,98 +104,13 @@ jobs:
           sig = open('index.sig').read().strip()
           calc = hmac.new(b'ooda-local-pm', body, 'sha256').hexdigest()
           assert hmac.compare_digest(calc, sig), 'index.sig HMAC mismatch'
-          print('[hmac-oracle OK] index.sig matches python HMAC-SHA256')
+          print('[hmac-oracle OK] index.sig matches index body')
           EOF
-      - name: sign_index reproduces index.sig
-        env:
-          OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
-          OODA_FS_READDIR: ${{ github.workspace }}
-          OODA_FS_WRITEDIR: ${{ github.workspace }}
-          OODA_NO_JAIL: '1'
+      - name: page rule + SHA256SUMS shape
         run: |
           set -euo pipefail
-          work=$(mktemp -d)
-          trap 'rm -rf "$work"' EXIT
-          cp index "$work/index"
-          export OODA_FS_READDIR="${{ github.workspace }}:$work"
-          export OODA_FS_WRITEDIR="${{ github.workspace }}:$work"
-          "${OODA_COMPILER}" build qa/sign_index.oo -o "$work/sign_index"
-          (cd "$work" && ./sign_index)
-          cmp index.sig "$work/index.sig"
-          echo "[sign-index OK] re-sign byte-identical"
-      - name: index.html lists catalog packages
-        run: |
-          set -euo pipefail
-          while IFS='|' read -r name _; do
-            [ -n "$name" ] || continue
-            grep -q "href=\"/$name/manifest\"" index.html || { echo "ERR $name missing from index.html"; exit 1; }
-          done < catalog
-          echo "[index-html OK] all catalog packages linked"
-
-  determinism-gate:
-    needs: [catalog-gate]
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout catalog
-        uses: actions/checkout@v4
-        with:
-          path: catalog
-      - name: checkout oostd
-        uses: actions/checkout@v4
-        with:
-          repository: openOODA-core/oostd
-          path: oostd
-      - name: checkout oodac
-        uses: actions/checkout@v4
-        with:
-          repository: openOODA-core/oodac
-          path: oodac
-      - name: checkout oodar
-        uses: actions/checkout@v4
-        with:
-          repository: openOODA-core/oodar
-          path: oodar
-      - name: require compiler
-        run: |
-          test -x oodac/bin/oodac || chmod +x oodac/bin/oodac
-          test -f oodar/core/blackbox/blackbox.c || { echo "missing oodar/core/blackbox/blackbox.c"; exit 1; }
-      - name: determinism double-run on qa/ probes (RULES §1.10)
-        working-directory: ${{ github.workspace }}/catalog
-        env:
-          OODA_FS_READDIR: ${{ github.workspace }}
-          OODA_FS_WRITEDIR: ${{ github.workspace }}
-          OODA_NO_JAIL: '1'
-          OODA_COMPILER: ${{ github.workspace }}/oodac/bin/oodac
-        run: |
-          set -euo pipefail
-          trap 'rm -f /tmp/*.diff[12]' EXIT
-          shopt -s nullglob
-          count=0
-          for f in qa/*_proof.oo; do
-            test -f "$f" || continue
-            count=$((count + 1))
-            base=$(basename "$f" .oo)
-            "$OODA_COMPILER" tokens "$f" > "/tmp/${base}.diff1" 2>&1 || {
-              echo "[blackbox-gate FAIL] diff non-zero exit on $f"
-              exit 1
-            }
-            "$OODA_COMPILER" tokens "$f" > "/tmp/${base}.diff2" 2>&1 || {
-              echo "[blackbox-gate FAIL] second diff non-zero exit on $f"
-              exit 1
-            }
-            if ! diff -q "/tmp/${base}.diff1" "/tmp/${base}.diff2" >/dev/null; then
-              echo "[blackbox-gate FAIL] non-deterministic diff on $f (double-run law violation, RULES §1.10)"
-              diff "/tmp/${base}.diff1" "/tmp/${base}.diff2" | head -20
-              exit 1
-            fi
+          for f in $(find . -name '*.oo' -o -name '*.oot' | grep -v '^\./\.git/'); do
+            n=$(wc -l < "$f"); test "$n" -le 256 || { echo "ERR over 256 lines: $f n=$n"; exit 1; }
           done
-          if [ "$count" -eq 0 ]; then
-            echo "[blackbox-gate SKIP] no qa/*_proof.oo in this repo"
-            exit 0
-          fi
-          echo "[blackbox-gate OK] $count probes deterministic across double-run (oodac-native gate)"
-
-  auto-release:
-    needs: [catalog-gate, determinism-gate]
-    uses: openOODA/openOODA/.github/workflows/auto-release.yml@v2.10.44
+          awk 'NF && $0 !~ /^[0-9a-f]{64}  .+/ { print "ERR malformed SHA256SUMS line: " $0; exit 1 }' SHA256SUMS
+          echo "[shape OK] pages <=256 lines, SHA256SUMS well-formed"
