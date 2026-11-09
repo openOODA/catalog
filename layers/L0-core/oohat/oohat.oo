@@ -1,6 +1,6 @@
 // # oohat Main Entry Point
 //
-// Logline: Canonical openOODA package payload for oohat (layers/L7-agents).
+// Logline: Canonical openOODA package payload for oohat (layers/L0-core).
 //
 // Setup: Demands explicit capability tokens and standard argument list.
 //
@@ -10,7 +10,7 @@
 //   3. Format and output structured results via ootheme tokens.
 
 fn render_help() -> String {
-    return "oohat 0.1.2 (openOODA layers/L7-agents)\n"
+    return "oohat 0.1.2 (openOODA layers/L0-core)\n"
         + "usage: oohat <subcommand> [options]\n\n"
         + "Options:\n"
         + "  -h, --help           display this help and exit\n"
