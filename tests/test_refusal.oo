@@ -1,0 +1,49 @@
+// # Catalog Manifest Refusal Suite - Negative-Trust Assertions
+//
+// Logline: Negative-trust assertions that forged fields, missing payloads, wrong digests, and path
+//          traversal are refused by the manifest conformance checker.
+// Setup: Imports the manifest conformance checker; FsReadCap bounds every read inside the jail.
+// Beats:
+//   1. A manifest whose name does not match its directory is refused.
+//   2. Missing payload files and sha256 mismatches are refused.
+//   3. Traversal-shaped payload names and parent-directory reads are refused.
+
+import "core/cat_manifest.oo";
+
+fn t_expect(cond: Bool, label: String, p: Int) -> Int {
+    if cond {
+        println("ok " + label);
+        return p + 1;
+    }
+    println("FAIL " + label);
+    return p;
+}
+
+fn t_refuse(fs: &FsReadCap) -> Int {
+    let mut p: Int = 0;
+    let dir: String = "layers/L0-core/ooda";
+    let bad_name: String = "name=other\npayload=ooda.oo\nsha256=ab\n";
+    p = t_expect(!cat_manifest_ok(fs, dir, bad_name), "forged name refused", p);
+    let no_pay: String = "name=ooda\npayload=nope.oo\nsha256=" +
+        "0000000000000000000000000000000000000000000000000000000000000000\n";
+    p = t_expect(!cat_manifest_ok(fs, dir, no_pay), "missing payload refused", p);
+    let bad_sha: String = "name=ooda\npayload=ooda.oo\nsha256=" +
+        "0000000000000000000000000000000000000000000000000000000000000000\n";
+    p = t_expect(!cat_manifest_ok(fs, dir, bad_sha), "sha256 mismatch refused", p);
+    p = t_expect(!cat_manifest_ok(fs, dir, "name=ooda\n"), "truncated manifest refused", p);
+    let zeros: String = "0000000000000000000000000000000000000000000000000000000000000000";
+    p = t_expect(!cat_body_sha(fs, dir, ".." + "/x", zeros), "traversal payload refused", p);
+    let r: Result[String, String] = oo_read_file(fs, ".." + "/.." + "/etc/" + "passwd");
+    p = t_expect(r.is_err(), "traversal read refused", p);
+    return p;
+}
+
+pub fn main(fs: &FsReadCap, _args: List[String]) -> Result[Int, String] {
+    let p: Int = t_refuse(fs);
+    if p == 6 {
+        println("PASS: refusal suite (6/6 assertions)");
+        return Ok(0);
+    }
+    println("FAIL: refusal suite (" + p.to_string() + "/6 assertions)");
+    return Ok(2);
+}

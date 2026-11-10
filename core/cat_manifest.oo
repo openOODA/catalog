@@ -1,0 +1,92 @@
+// # Catalog Manifest Conformance Checker
+//
+// Logline: Verify every package manifest under layers/ names its directory, points at an existing
+//          payload file, and carries that payload's byte-exact sha256.
+// Setup: Explicit FsReadCap; bounded two-level directory walk; canonical oostd sha256 for payload
+//        hashes so the audit reuses the standard library instead of re-implementing digest code.
+// Beats:
+//   1. cat_field parses one key=value line out of manifest text.
+//   2. cat_manifest_ok enforces name/payload/sha256 conformance for one package directory.
+//   3. cat_pkgs + cat_scan walk layers/<layer>/<pkg> and count conforming manifests.
+
+import "oostd/sec/hash/sha256.oo";
+
+pub fn cat_field(src: String, key: String) -> String {
+    let ls: List[String] = str_split(src, "\n");
+    let mut i: Int = 0;
+    while i < list_len(ls) {
+        let ln: String = list_get(ls, i);
+        if str_starts_with(ln, key + "=") {
+            return str_slice(ln, chars_len(key) + 1, chars_len(ln));
+        }
+        i = i + 1;
+    }
+    return "";
+}
+
+pub fn cat_tail(path: String) -> String {
+    let parts: List[String] = str_split(path, "/");
+    return list_get(parts, list_len(parts) - 1);
+}
+
+pub fn cat_body_sha(fs: &FsReadCap, dir: String, pay: String, sha: String) -> Bool {
+    if str_contains(pay, "..") || chars_len(sha) != 64 { return false; }
+    let r: Result[String, String] = oo_read_file(fs, dir + "/" + pay);
+    if r.is_err() { return false; }
+    let body: String = match r { Ok(s) => s, Err(_) => "" };
+    return sha256_hex(body) == sha;
+}
+
+pub fn cat_manifest_ok(fs: &FsReadCap, dir: String, man: String) -> Bool {
+    let name: String = cat_field(man, "name");
+    let pay: String = cat_field(man, "payload");
+    let sha: String = cat_field(man, "sha256");
+    if name == "" || pay == "" || sha == "" { return false; }
+    if cat_tail(dir) != name { return false; }
+    return cat_body_sha(fs, dir, pay, sha);
+}
+
+fn cat_layer_pkgs(fs: &FsReadCap, ldir: String, acc: List[String]) -> List[String] {
+    let mut out: List[String] = acc;
+    let pkgs: List[String] = oo_fs_read_dir(fs, ldir);
+    let mut i: Int = 0;
+    while i < list_len(pkgs) {
+        let name: String = list_get(pkgs, i);
+        i = i + 1;
+        if name != "." && name != ".." && !str_starts_with(name, ".") {
+            let p: String = ldir + "/" + name;
+            if oo_fs_is_dir(fs, p) { out = list_push(out, p); }
+        }
+    }
+    return out;
+}
+
+pub fn cat_pkgs(fs: &FsReadCap, root: String) -> List[String] {
+    let mut out: List[String] = list_new();
+    let layers: List[String] = oo_fs_read_dir(fs, root);
+    let mut i: Int = 0;
+    while i < list_len(layers) {
+        let name: String = list_get(layers, i);
+        i = i + 1;
+        if name != "." && name != ".." && !str_starts_with(name, ".") {
+            let ldir: String = root + "/" + name;
+            if oo_fs_is_dir(fs, ldir) { out = cat_layer_pkgs(fs, ldir, out); }
+        }
+    }
+    return out;
+}
+
+pub fn cat_scan(fs: &FsReadCap, root: String) -> Int {
+    let pkgs: List[String] = cat_pkgs(fs, root);
+    let mut ok: Int = 0;
+    let mut i: Int = 0;
+    while i < list_len(pkgs) {
+        let dir: String = list_get(pkgs, i);
+        let r: Result[String, String] = oo_read_file(fs, dir + "/manifest");
+        if r.is_err() { return 0 - 1; }
+        let man: String = match r { Ok(s) => s, Err(_) => "" };
+        if cat_manifest_ok(fs, dir, man) { ok = ok + 1; }
+        i = i + 1;
+    }
+    return ok;
+}

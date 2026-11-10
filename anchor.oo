@@ -1,0 +1,10 @@
+// # Catalog Root Anchor - Manifest Conformance Surface
+//
+// Logline: Re-exports the catalog package-manifest conformance checker as the repository's anchor page.
+// Setup: layers/<layer>/<pkg>/manifest entries carry name/payload/sha256 fields audited by tests/.
+// Beats:
+//   1. core/cat_manifest.oo owns the bounded two-level walk and field-level manifest checks.
+//   2. tests/test_functional.oo proves the whole registry conforms byte-exact.
+//   3. tests/test_refusal.oo proves forged, missing, and tampered manifests fail closed.
+
+import "core/cat_manifest.oo";

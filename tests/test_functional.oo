@@ -1,0 +1,44 @@
+// # Catalog Manifest Functional Suite - Positive-Trust Assertions
+//
+// Logline: Positive assertions that every catalog package manifest names its directory, points at a
+//          real payload, and carries that payload's byte-exact sha256.
+// Setup: Imports the manifest conformance checker; FsReadCap bounds the layers/ walk inside the jail.
+// Beats:
+//   1. cat_field extracts key=value fields from manifest text.
+//   2. cat_tail returns the last path component for name==dir matching.
+//   3. cat_scan walks layers/ and counts conforming package manifests.
+
+import "core/cat_manifest.oo";
+
+fn t_expect(cond: Bool, label: String, p: Int) -> Int {
+    if cond {
+        println("ok " + label);
+        return p + 1;
+    }
+    println("FAIL " + label);
+    return p;
+}
+
+fn t_manifest(fs: &FsReadCap) -> Int {
+    let mut p: Int = 0;
+    let man: String = "name=ooda\npayload=ooda.oo\nsha256=ab\n";
+    p = t_expect(cat_field(man, "name") == "ooda" && cat_field(man, "payload") == "ooda.oo",
+        "field parse", p);
+    p = t_expect(cat_field(man, "missing") == "", "missing field empty", p);
+    p = t_expect(cat_tail("layers/L0-core/ooda") == "ooda" && cat_tail("x") == "x",
+        "tail basename", p);
+    let pkgs: List[String] = cat_pkgs(fs, "layers");
+    p = t_expect(list_len(pkgs) == 104, "104 package dirs", p);
+    p = t_expect(cat_scan(fs, "layers") == 104, "all manifests conform byte-exact", p);
+    return p;
+}
+
+pub fn main(fs: &FsReadCap, _args: List[String]) -> Result[Int, String] {
+    let p: Int = t_manifest(fs);
+    if p == 5 {
+        println("PASS: functional suite (5/5 assertions)");
+        return Ok(0);
+    }
+    println("FAIL: functional suite (" + p.to_string() + "/5 assertions)");
+    return Ok(2);
+}
