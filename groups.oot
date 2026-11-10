@@ -14,7 +14,7 @@
 @core = ooda oodac oodar oohat oolsp oomcp oopm oostd
 @kernel = ooboot oodrv-accel oodrv-io oodrv-net oodrv-storage oodrv-virt oohal ookernel
 @os = ooauthd oocontainer oohealthd ooinit oollama oomodemd oonetd oosysbus oovfs
-@tools = ooarchive ooawk oocat oocodec oocron oocurl oodefense oodiff ooengine oofind oofirewall oofs oofzf oogrep oohash oohw oojq ooless ools oomount oonet oopath ooperm oopower ooproc ooprovenance ooredact oorgb oosandbox oosed oosh oosign oosort oossh ootext ootheme ootty ooui oovault
+@tools = ooarchive ooawk oocat oocodec oocron oocurl oodefense oodiff ooengine oofind oofirewall oofs oofzf oogrep oohash oohw oojq ooless ools oomount oonet oopath ooperm oopower ooproc ooprovenance ooredact oorgb oosandbox oosed oosh oosign oosort ooh ootext ootheme ootty ooui oovault
 @de = oobazaar oocomp oofiles oopanel ooportal oosaver oosettings ooterm
 @apps = ooarcade oobrowser oocamera oocanvas oochat oocommand oodaw ooemu ooflash ookvm oomedia oooffice oopass oostrike oostudio oovoxel
 @games = ooemu ooarcade oocommand oostrike oovoxel

@@ -1,8 +1,8 @@
-name=oossh
+name=ooh
 version=0.2.5
 caps=Process,FsRead,FsWrite,Env
 deps=
-payload=oossh.oo
+payload=ooh.oo
 commit=
 sha256=97c7ecdb7565eb8525e793ee1f4adbe9edad6bdbf4d8ba5f1356ea447cc83bf4
 sig=
