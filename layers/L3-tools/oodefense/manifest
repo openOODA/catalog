@@ -4,5 +4,5 @@ caps=FsRead,Env,FsWrite,Alloc,Process
 deps=
 payload=oodefense.oo
 commit=
-sha256=61189a6976f27c473d6d6edbc48650cc08581b2357bd33a7e4c5d06ea79058e6
+sha256=d5555b89b258ed6ad530ac145023682df33fdf8e87f3d05a6bd55bbf2d78cf82
 sig=

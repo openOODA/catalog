@@ -4,5 +4,5 @@ caps=FsRead,Process,Env,FsWrite
 deps=
 payload=oogovern.oo
 commit=
-sha256=1f76889de29abc3c5c03ae6f688ebce5c0f1f20c9da27b72b3fb622158eb98e9
+sha256=df476e3915231482e6d1b1004d1afa4585b0768207cad0c2d86469b470cf9a0a
 sig=

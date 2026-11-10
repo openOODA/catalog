@@ -4,5 +4,5 @@ caps=FsWrite,FsRead,Tcp,Env,Process
 deps=
 payload=oobrowser.oo
 commit=
-sha256=f40d455115e6ef6110d1a89b022d342b303e6ebd1d75108780f0532903985cc8
+sha256=8b0183d0afc04b3a9dc08bba4b46ab06d03d27283a4a368499418d58fde3c34d
 sig=

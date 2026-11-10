@@ -1,0 +1,178 @@
+// # catalog — Signed Package Index Verifier & Sync CLI
+//
+// Logline: Zero-ambient-authority CLI: verify recomputes every manifest, descriptor, index digest,
+//          group token, sums asset, and the index.sig oracle; sync re-derives the canonical tree.
+// Setup: FsReadCap bounds the walk; FsWriteCap is exercised only by sync; ootheme drives the cards.
+// Beats:
+//   1. verify — index row -> dir -> manifest -> payload -> digest plus the reverse dir->index
+//      bijection, group-token coverage, SHA256SUMS parity, and index.sig HMAC; exit 1 on any gap.
+//   2. sync — regenerates each payload descriptor + manifest via cat_descriptor and rewrites
+//      index + index.sig so the signed surfaces can never drift from the emitted bytes.
+//   3. about/theme — canonical capability card rendered through oostd ootheme.
+
+import "oostd/sec/hash/sha256.oo";
+import "oostd/sec/mac/hmac.oo";
+import "oostd/core/app/ui/ootheme.oo";
+import "core/cat_manifest.oo";
+import "core/cat_index.oo";
+
+fn cat_help() -> String {
+    return "catalog 1.0.0 - openOODA signed package index & group profile verifier\n" +
+        "usage: catalog <verify|sync|about|theme> [root]\n\n" +
+        "  verify [root]   check index->dirs->manifests->payloads->digests, groups, sums, sig\n" +
+        "  sync   [root]   regenerate descriptors, manifests, index, index.sig from index rows\n" +
+        "  theme <name>    render the about card in an ootheme palette\n" +
+        "  about           print the canonical capability card\n" +
+        "  -h, --help      display this help and exit\n";
+}
+
+fn cat_about() -> String {
+    return "catalog 1.0.0 (openOODA catalog)\n" +
+        "Binary       : catalog\n" +
+        "Organization : openOODA (https://github.com/openOODA/catalog)\n" +
+        "Summary      : Signed package index & group profile verifier/sync\n" +
+        "Subcommands  : verify, sync, theme, about\n" +
+        "Capabilities : FsRead,FsWrite";
+}
+
+fn cat_theme(args: List[String]) -> Int {
+    let mut tn: String = "";
+    let mut i: Int = 0;
+    while i < list_len(args) {
+        let a: String = list_get(args, i);
+        if str_starts_with(a, "--tui=") { tn = str_slice(a, 6, chars_len(a)); }
+        if a == "theme" && i + 1 < list_len(args) { tn = list_get(args, i + 1); }
+        i = i + 1;
+    }
+    if chars_len(tn) == 0 { tn = "ooda-dark"; }
+    if !ootheme_known(tn) {
+        println("ERR unknown theme " + tn);
+        return 2;
+    }
+    let p: OoThemePalette = ootheme_resolve(tn);
+    println(ootheme_tui_frame(p, "catalog", "1.0.0", "catalog", "signed index verifier"));
+    return 0;
+}
+
+fn cat_manifest_text(name: String, ver: String, caps: String, deps: String, sha: String) -> String {
+    return "name=" + name + "\nversion=" + ver + "\ncaps=" + caps + "\ndeps=" + deps +
+        "\npayload=" + name + ".oo\ncommit=\nsha256=" + sha + "\nsig=\n";
+}
+
+fn cat_verify(fs: &FsReadCap, root: String) -> Int {
+    let ix: Result[String, String] = oo_read_file(fs, root + "/index");
+    if ix.is_err() {
+        println("FAIL index unreadable");
+        return 2;
+    }
+    let idx: String = match ix { Ok(s) => s, Err(_) => "" };
+    let rows: List[String] = cat_index_rows(idx);
+    let n: Int = list_len(rows);
+    let n_ok: Int = cat_index_scan(fs, root + "/layers", idx);
+    let miss: Int = cat_dirs_indexed(fs, root + "/layers", idx);
+    println("index rows=" + n.to_string() + " conforming=" + n_ok.to_string() +
+        " unindexed_dirs=" + miss.to_string());
+    let gr: Result[String, String] = oo_read_file(fs, root + "/groups.oot");
+    let gs: String = match gr { Ok(s) => s, Err(_) => "" };
+    let gok: Int = cat_groups_scan(fs, root + "/layers", gs);
+    println("group coverage=" + gok.to_string() + "/" + n.to_string());
+    let sr: Result[String, String] = oo_read_file(fs, root + "/SHA256SUMS");
+    let ss: String = match sr { Ok(s) => s, Err(_) => "" };
+    let sv: Int = cat_sums_scan(idx, ss);
+    println("sums violations=" + sv.to_string());
+    let sigr: Result[String, String] = oo_read_file(fs, root + "/index.sig");
+    let sigs: String = match sigr { Ok(s) => s, Err(_) => "" };
+    let sig_ok: Bool = cat_sig_ok(idx, sigs);
+    if sig_ok {
+        println("index.sig ok=1");
+    } else {
+        println("index.sig ok=0");
+    }
+    if n_ok == n && miss == 0 && gok == n && sv == 0 && sig_ok {
+        println("PASS: catalog verify (" + n.to_string() + " packages)");
+        return 0;
+    }
+    println("FAIL: catalog verify");
+    return 1;
+}
+
+fn cat_sync_pkg(fs: &FsReadCap, fw: &FsWriteCap, lroot: String, f: List[String]) -> String {
+    let name: String = list_get(f, 0);
+    let ver: String = list_get(f, 1);
+    let caps: String = list_get(f, 2);
+    let deps: String = list_get(f, 3);
+    let dirs: List[String] = cat_pkgs(fs, lroot);
+    let mut dir: String = "";
+    let mut i: Int = 0;
+    while i < list_len(dirs) {
+        let d: String = list_get(dirs, i);
+        if cat_tail(d) == name { dir = d; }
+        i = i + 1;
+    }
+    if chars_len(dir) == 0 { return ""; }
+    let parts: List[String] = str_split(dir, "/");
+    let layer: String = list_get(parts, list_len(parts) - 2);
+    let pay: String = cat_descriptor(name, layer, ver, caps, deps);
+    let sha: String = sha256_hex(pay);
+    let w1: Result[Void, String] = oo_write_file(fw, dir + "/" + name + ".oo", pay);
+    if w1.is_err() { return ""; }
+    let w2: Result[Void, String] = oo_write_file(fw, dir + "/manifest",
+        cat_manifest_text(name, ver, caps, deps, sha));
+    if w2.is_err() { return ""; }
+    return name + "|" + ver + "|" + caps + "|" + deps + "|" + sha;
+}
+
+fn cat_sync(fs: &FsReadCap, fw: &FsWriteCap, root: String) -> Int {
+    let ix: Result[String, String] = oo_read_file(fs, root + "/index");
+    if ix.is_err() { return 2; }
+    let idx: String = match ix { Ok(s) => s, Err(_) => "" };
+    let rows: List[String] = cat_index_rows(idx);
+    let mut body: String = "";
+    let mut n: Int = 0;
+    let mut i: Int = 0;
+    while i < list_len(rows) {
+        let f: List[String] = cat_idx_fields(list_get(rows, i));
+        if list_len(f) != 5 {
+            println("FAIL malformed index row " + i.to_string());
+            return 1;
+        }
+        let nr: String = cat_sync_pkg(fs, fw, root + "/layers", f);
+        if chars_len(nr) == 0 {
+            println("FAIL sync " + list_get(f, 0));
+            return 1;
+        }
+        body = body + nr + "\n";
+        n = n + 1;
+        i = i + 1;
+    }
+    let w3: Result[Void, String] = oo_write_file(fw, root + "/index", body);
+    if w3.is_err() { return 1; }
+    let w4: Result[Void, String] = oo_write_file(fw, root + "/index.sig",
+        hmac_sha256("ooda-local-pm", body) + "\n");
+    if w4.is_err() { return 1; }
+    println("synced " + n.to_string() + " package entries");
+    return cat_verify(fs, root);
+}
+
+pub fn main(fs_r: &FsReadCap, fs_w: &FsWriteCap, args: List[String]) -> Int {
+    if list_len(args) == 0 {
+        print(cat_help());
+        return 0;
+    }
+    let verb: String = list_get(args, 0);
+    let mut root: String = ".";
+    if list_len(args) > 1 { root = list_get(args, 1); }
+    if verb == "verify" { return cat_verify(fs_r, root); }
+    if verb == "sync" { return cat_sync(fs_r, fs_w, root); }
+    if verb == "about" {
+        println(cat_about());
+        return 0;
+    }
+    if verb == "theme" || str_starts_with(verb, "--tui") { return cat_theme(args); }
+    if verb == "-h" || verb == "--help" {
+        print(cat_help());
+        return 0;
+    }
+    println("ERR unknown argument: " + verb);
+    return 2;
+}

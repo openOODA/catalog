@@ -4,5 +4,5 @@ caps=FsRead,FsWrite
 deps=
 payload=oomodemd.oo
 commit=
-sha256=835486b38f2063d54ca257802fcad43f7e55d87f515a723fcba3b29ee64b9126
+sha256=66042442b283e51130c9449f881c2a25396fe4390a15ec0efe59a6cb9097a958
 sig=

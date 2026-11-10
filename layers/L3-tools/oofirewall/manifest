@@ -4,5 +4,5 @@ caps=FsRead,Process,FsWrite,Env,Time,Mcp
 deps=
 payload=oofirewall.oo
 commit=
-sha256=fe5429883f842f13e666b5fd730e2a785f528a6aec97b4b717022fd70709444f
+sha256=ab8de7cc29a26e4d31970e697a987ebde1e0a3a29371386a4dee40fe5325bda0
 sig=

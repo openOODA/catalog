@@ -4,5 +4,5 @@ caps=FsWrite,FsRead,Env,Process
 deps=
 payload=oocanvas.oo
 commit=
-sha256=759ae9a31808e95811ee2beaae1028460a4ca963fe7e21ca8b9342d88c8816ec
+sha256=f150c26611d8d4a874d4bdf3d632df48c8bb133cdca33cb392728ac8f2d194b4
 sig=

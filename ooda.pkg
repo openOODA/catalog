@@ -1,0 +1,13 @@
+name=catalog
+version=1.0.0
+layer=L0-core
+category=Registry
+tags=index,manifest,groups,signing,verify,packages,layers,registry
+status=shipped
+description=Canonical signed package index and @group profiles for the openOODA L0-L7 repository set; every layer entry is a signed descriptor audited byte-exact by core/cat_manifest.oo + core/cat_index.oo and the catalog verify/sync verbs
+caps=FsRead,FsWrite
+deps=oostd
+entry=cli/main.oo
+payload=cli/main.oo
+personas=catalog
+dispatch=explicit-verb

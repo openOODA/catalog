@@ -4,5 +4,5 @@ caps=FsRead,FsWrite,Frame,Dma,Mmio,Arena,Irq
 deps=
 payload=ookernel.oo
 commit=
-sha256=4b3b6e32ec0c124910ce39191ab5f38e9ec0c5ed6de4aafadf2ad5e49ab1a7e9
+sha256=fd4be1244b07eff1ee14158c61e9e6e77179303c37c17bfe27c242fce9257029
 sig=

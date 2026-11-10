@@ -4,5 +4,5 @@ caps=FsWrite,FsRead,Env,Process
 deps=
 payload=oocamera.oo
 commit=
-sha256=e2d2cfc1dcab862c635ec1489ff5f4f453228c98b9711bf2ac14fa1ab86da9e5
+sha256=909c91a16c28769a046ada02a46491001a2132a5310a1c485b974ee72e6cbd99
 sig=

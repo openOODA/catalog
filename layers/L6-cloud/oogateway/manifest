@@ -4,5 +4,5 @@ caps=FsRead,FsWrite,Process
 deps=
 payload=oogateway.oo
 commit=
-sha256=c76255de834107c6313ceae20c4debe288854439e9329a3e1e3b190af853448d
+sha256=55a6f210311cd25c12f11e2ba352a29fc17b175acc91a705a1f4c6902f6492f8
 sig=

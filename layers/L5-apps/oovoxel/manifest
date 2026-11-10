@@ -4,5 +4,5 @@ caps=Process,Env,FsWrite,FsRead
 deps=
 payload=oovoxel.oo
 commit=
-sha256=99a60cfd9c596a45c8e95eb26f911eb80df50c4ef8b8e7114a29fe97aed61fa4
+sha256=5f5d844c3164d56549ec3bd81de4cb82734d1e7baea0669fbb6918f0978c9b04
 sig=

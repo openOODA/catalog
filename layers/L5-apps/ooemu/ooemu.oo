@@ -1,41 +1,35 @@
-// # ooemu Main Entry Point
+// # ooemu Catalog Descriptor (L5-apps)
 //
-// Logline: Canonical openOODA package payload for ooemu (layers/L5-apps).
-//
-// Setup: Demands explicit capability tokens and standard argument list.
-//
+// Logline: Canonical signed registry descriptor for ooemu in L5-apps.
+// Setup: Emitted and re-derived by core/cat_index.oo; pure constant surface, zero caps.
 // Beats:
-//   1. Parse command-line options and dispatch --help, --version, about, or --mcp.
-//   2. Execute capability-bounded ooemu operations.
-//   3. Format and output structured results via ootheme tokens.
+//   1. cat_name/cat_layer/cat_version return the registered identity triple.
+//   2. cat_caps/cat_deps return the granted capability and dependency sets.
+//   3. cat_record joins the fields for cross-checks against the index row.
 
-fn render_help() -> String {
-    return "ooemu 0.2.5 (openOODA layers/L5-apps)\n"
-        + "usage: ooemu <subcommand> [options]\n\n"
-        + "Options:\n"
-        + "  -h, --help           display this help and exit\n"
-        + "  -v, --version        output version information and exit\n"
-        + "      about            display package architecture and capability card\n"
-        + "      --json           output formatted as JSON Lines\n"
-        + "      --theme <NAME>   override active ootheme palette\n"
-        + "      --mcp            run as Model Context Protocol stdio server\n";
+pub fn cat_name() -> String {
+    return "ooemu";
 }
 
-pub fn main(fs_r: &FsReadCap, args: List[String]) -> Int {
-    let n: Int = list_len(args);
-    let mut i: Int = 0;
-    while i < n {
-        let a: String = list_get(args, i);
-        if a == "-h" || a == "--help" {
-            print(render_help());
-            return 0;
-        }
-        if a == "-v" || a == "--version" {
-            print("ooemu 0.2.5\n");
-            return 0;
-        }
-        i = i + 1;
-    }
-    print("ooemu: capability-bounded package ready\n");
-    return 0;
+pub fn cat_layer() -> String {
+    return "L5-apps";
+}
+
+pub fn cat_version() -> String {
+    return "0.2.5";
+}
+
+pub fn cat_caps() -> String {
+    return "Process,Env,FsRead,FsWrite";
+}
+
+pub fn cat_deps() -> String {
+    return "";
+}
+
+pub fn cat_record() -> String {
+    let mut r: String = cat_name() + "|" + cat_layer();
+    r = r + "|" + cat_version() + "|" + cat_caps();
+    r = r + "|" + cat_deps();
+    return r;
 }

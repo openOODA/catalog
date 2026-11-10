@@ -31,8 +31,9 @@ jobs:
           test -f README.md
           test -d layers
           test ! -f VERSION
-          n=$(find . -maxdepth 1 -mindepth 1 ! -name '.*' | wc -l)
-          test "$n" -le 8 || { echo "ERR root entries=$n > 8"; exit 1; }
+          actual=$(find . -maxdepth 1 -mindepth 1 ! -name '.*' -printf '%f\n' | sort | tr '\n' ' ' | sed 's/ $//')
+          want="AGENTS.md Makefile README.md SHA256SUMS anchor.oo cli core groups.oot index index.sig layers ooda.pkg registry.pub tests"
+          test "$actual" = "$(printf '%s\n' $want | sort | tr '\n' ' ' | sed 's/ $//')" || { echo "ERR root entries drift"; echo "have: $actual"; exit 1; }
           test "$(ls -d layers/*/ | wc -l)" -eq 8
           rows=0
           while IFS='|' read -r name ver caps deps sha; do

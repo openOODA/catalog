@@ -1,14 +1,18 @@
 // # Catalog Manifest Functional Suite - Positive-Trust Assertions
 //
 // Logline: Positive assertions that every catalog package manifest names its directory, points at a
-//          real payload, and carries that payload's byte-exact sha256.
-// Setup: Imports the manifest conformance checker; FsReadCap bounds the layers/ walk inside the jail.
+//          real payload, and carries that payload's byte-exact sha256 — and that the signed index,
+//          group profiles, release sums, and index.sig oracle all agree with the layers/ tree.
+// Setup: Imports the manifest + index conformance checkers; FsReadCap bounds the walk inside the jail.
 // Beats:
 //   1. cat_field extracts key=value fields from manifest text.
 //   2. cat_tail returns the last path component for name==dir matching.
 //   3. cat_scan walks layers/ and counts conforming package manifests.
+//   4. cat_index_scan/cat_dirs_indexed prove both directions of the index bijection.
+//   5. cat_groups_scan + cat_sums_scan + cat_sig_ok prove group, sums, and oracle-tag conformance.
 
 import "core/cat_manifest.oo";
+import "core/cat_index.oo";
 
 fn t_expect(cond: Bool, label: String, p: Int) -> Int {
     if cond {
@@ -28,17 +32,31 @@ fn t_manifest(fs: &FsReadCap) -> Int {
     p = t_expect(cat_tail("layers/L0-core/ooda") == "ooda" && cat_tail("x") == "x",
         "tail basename", p);
     let pkgs: List[String] = cat_pkgs(fs, "layers");
-    p = t_expect(list_len(pkgs) == 104, "104 package dirs", p);
-    p = t_expect(cat_scan(fs, "layers") == 104, "all manifests conform byte-exact", p);
+    p = t_expect(list_len(pkgs) == 105, "105 package dirs", p);
+    p = t_expect(cat_scan(fs, "layers") == 105, "all manifests conform byte-exact", p);
+    let ix: Result[String, String] = oo_read_file(fs, "index");
+    let idx: String = match ix { Ok(s) => s, Err(_) => "" };
+    p = t_expect(list_len(cat_index_rows(idx)) == 105, "105 index rows", p);
+    p = t_expect(cat_index_scan(fs, "layers", idx) == 105, "index rows conform", p);
+    p = t_expect(cat_dirs_indexed(fs, "layers", idx) == 0, "no unindexed dirs", p);
+    let gr: Result[String, String] = oo_read_file(fs, "groups.oot");
+    let gs: String = match gr { Ok(s) => s, Err(_) => "" };
+    p = t_expect(cat_groups_scan(fs, "layers", gs) == 105, "group coverage", p);
+    let sr: Result[String, String] = oo_read_file(fs, "SHA256SUMS");
+    let ss: String = match sr { Ok(s) => s, Err(_) => "" };
+    p = t_expect(cat_sums_scan(idx, ss) == 0, "sums parity", p);
+    let sigr: Result[String, String] = oo_read_file(fs, "index.sig");
+    let sg: String = match sigr { Ok(s) => s, Err(_) => "" };
+    p = t_expect(cat_sig_ok(idx, sg), "index.sig oracle", p);
     return p;
 }
 
 pub fn main(fs: &FsReadCap, _args: List[String]) -> Result[Int, String] {
     let p: Int = t_manifest(fs);
-    if p == 5 {
-        println("PASS: functional suite (5/5 assertions)");
+    if p == 11 {
+        println("PASS: functional suite (11/11 assertions)");
         return Ok(0);
     }
-    println("FAIL: functional suite (" + p.to_string() + "/5 assertions)");
+    println("FAIL: functional suite (" + p.to_string() + "/11 assertions)");
     return Ok(2);
 }

@@ -4,5 +4,5 @@ caps=Env,Process,FsRead,FsWrite
 deps=
 payload=ooarcade.oo
 commit=
-sha256=2693fa398e0d07bc93dee96cd9e9f56f533004aceeb375fff7ec846be4e84ade
+sha256=92195391939a2593ff4f74f297c58bb804b52d0f4f0977e42c846eecc4beb157
 sig=

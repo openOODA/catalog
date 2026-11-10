@@ -4,5 +4,5 @@ caps=Mmio,Dma,FsRead,FsWrite
 deps=
 payload=oodrv-virt.oo
 commit=
-sha256=cc27f723cbf24f02a88fa81f34a2fa48f5368c3854795139f759496137dbf806
+sha256=9122071651f1ce4e2a97653a84b7fc36c070416fa6a8e6b39c8ca57c5d43a315
 sig=

@@ -4,5 +4,5 @@ caps=Bind,Tcp,FsRead,FsWrite,Process
 deps=
 payload=oonetd.oo
 commit=
-sha256=57e0616ec47394f825ec10e19729a409b3f06a42d23682d8aa28954b627ef5ca
+sha256=33feea62508aacea042be91557edc660fec8b694237ec0bfd117aefc3f82da8b
 sig=

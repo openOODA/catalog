@@ -1,0 +1,35 @@
+// # ootheme Catalog Descriptor (L3-tools)
+//
+// Logline: Canonical signed registry descriptor for ootheme in L3-tools.
+// Setup: Emitted and re-derived by core/cat_index.oo; pure constant surface, zero caps.
+// Beats:
+//   1. cat_name/cat_layer/cat_version return the registered identity triple.
+//   2. cat_caps/cat_deps return the granted capability and dependency sets.
+//   3. cat_record joins the fields for cross-checks against the index row.
+
+pub fn cat_name() -> String {
+    return "ootheme";
+}
+
+pub fn cat_layer() -> String {
+    return "L3-tools";
+}
+
+pub fn cat_version() -> String {
+    return "0.2.4";
+}
+
+pub fn cat_caps() -> String {
+    return "FsRead,FsWrite,Env,Process,Time";
+}
+
+pub fn cat_deps() -> String {
+    return "";
+}
+
+pub fn cat_record() -> String {
+    let mut r: String = cat_name() + "|" + cat_layer();
+    r = r + "|" + cat_version() + "|" + cat_caps();
+    r = r + "|" + cat_deps();
+    return r;
+}

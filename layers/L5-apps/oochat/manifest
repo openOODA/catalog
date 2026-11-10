@@ -4,5 +4,5 @@ caps=FsWrite,FsRead,Env,Process
 deps=
 payload=oochat.oo
 commit=
-sha256=52cb7297cd08590a3c194f2cc40718fb9b8e9993670f7bdc705d002603c842c9
+sha256=93c850a2318e9f07718ca00e931be1675a783c3fb9da7a32e18e59f538ee2238
 sig=

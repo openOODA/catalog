@@ -4,5 +4,5 @@ caps=FsWrite,FsRead,Process,Env
 deps=
 payload=ookvm.oo
 commit=
-sha256=9098dfbb92c45abf3972ebc7dc9965af22475221254fb02ebd596226206a0ca4
+sha256=53e6ba56413d7a74d89e8b871b8edd97529a49cddb466fe2ce5fdc3e4ecb2f9d
 sig=

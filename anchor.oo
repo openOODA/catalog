@@ -1,10 +1,13 @@
-// # Catalog Root Anchor - Manifest Conformance Surface
+// # Catalog Root Anchor - Signed Index Conformance Surface
 //
-// Logline: Re-exports the catalog package-manifest conformance checker as the repository's anchor page.
-// Setup: layers/<layer>/<pkg>/manifest entries carry name/payload/sha256 fields audited by tests/.
+// Logline: Re-exports the catalog manifest + index conformance checkers as the repository's anchor page.
+// Setup: layers/<layer>/<pkg>/manifest + <pkg>.oo descriptor entries carry name/payload/sha256 fields
+//        audited byte-exact by core/ and tests/; cli/main.oo is the catalog verifier binary.
 // Beats:
 //   1. core/cat_manifest.oo owns the bounded two-level walk and field-level manifest checks.
-//   2. tests/test_functional.oo proves the whole registry conforms byte-exact.
-//   3. tests/test_refusal.oo proves forged, missing, and tampered manifests fail closed.
+//   2. core/cat_index.oo owns the canonical descriptor emitter and index/groups/sums/sig gates.
+//   3. tests/test_functional.oo proves the whole registry conforms byte-exact.
+//   4. tests/test_refusal.oo proves forged, missing, and tampered entries fail closed.
 
 import "core/cat_manifest.oo";
+import "core/cat_index.oo";

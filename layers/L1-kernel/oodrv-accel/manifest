@@ -4,5 +4,5 @@ caps=Mmio,Dma,Gpu,FsRead,FsWrite
 deps=
 payload=oodrv-accel.oo
 commit=
-sha256=ebe67815c3902f943e1b3d87d9974226a6a4b7789e77062de1ebfe3cb07c633d
+sha256=f622d2b26bdf89f4ca3bb8b2545adb3364540baa5b748d9734c5bfa91901a7fc
 sig=

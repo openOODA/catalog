@@ -4,5 +4,5 @@ caps=Mmio,Dma,Net,FsRead,FsWrite,Irq,Pci
 deps=
 payload=oodrv-net.oo
 commit=
-sha256=ff5c94d5a91f55f2c0bf2512317d1d816a7b5cc2d18162e0dff0fabc51ae8812
+sha256=cc5728a98fc00178dad066c3dd0716da7d5bb97f700d6d758fafdb7aa86368ba
 sig=

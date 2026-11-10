@@ -3,6 +3,11 @@
 .secrets/
 .minisign/
 .ooda-cache/
+bin/
+dist/
+*.o
+*.ll
+*.exe
 
 # Local audit history (not shipped)
 .agents/

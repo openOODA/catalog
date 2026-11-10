@@ -4,5 +4,5 @@ caps=FsRead,FsWrite,Env,Process,Net
 deps=
 payload=oohat.oo
 commit=
-sha256=92526ea9ac293a28058f6ec4a56e5af884a4e5e1489f6111fb8443451f92189b
+sha256=d022cd368404effa56dbc60da8058ecd13cc939115922bc61ad21d3a65e9a040
 sig=

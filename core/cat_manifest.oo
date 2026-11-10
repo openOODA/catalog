@@ -76,6 +76,18 @@ pub fn cat_pkgs(fs: &FsReadCap, root: String) -> List[String] {
     return out;
 }
 
+pub fn cat_index_rows(src: String) -> List[String] {
+    let mut out: List[String] = list_new();
+    let ls: List[String] = str_split(src, "\n");
+    let mut i: Int = 0;
+    while i < list_len(ls) {
+        let ln: String = str_trim(list_get(ls, i));
+        if chars_len(ln) > 0 { out = list_push(out, ln); }
+        i = i + 1;
+    }
+    return out;
+}
+
 pub fn cat_scan(fs: &FsReadCap, root: String) -> Int {
     let pkgs: List[String] = cat_pkgs(fs, root);
     let mut ok: Int = 0;

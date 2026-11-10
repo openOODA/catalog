@@ -4,5 +4,5 @@ caps=Env,FsRead,FsWrite,Process
 deps=
 payload=oopanel.oo
 commit=
-sha256=f68e533d9e3f5128be797f902360cc7630f3a4c65de5e1307b7366253885c7a4
+sha256=f86fe14390be5217593b71de248625a8806c74dd260387e48f884811c672dbb9
 sig=

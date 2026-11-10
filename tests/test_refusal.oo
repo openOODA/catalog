@@ -1,14 +1,17 @@
 // # Catalog Manifest Refusal Suite - Negative-Trust Assertions
 //
-// Logline: Negative-trust assertions that forged fields, missing payloads, wrong digests, and path
-//          traversal are refused by the manifest conformance checker.
-// Setup: Imports the manifest conformance checker; FsReadCap bounds every read inside the jail.
+// Logline: Negative-trust assertions that forged fields, missing payloads, wrong digests, forged
+//          index rows, stale release assets, forged oracle tags, and path traversal are refused.
+// Setup: Imports the manifest + index conformance checkers; FsReadCap bounds reads inside the jail.
 // Beats:
 //   1. A manifest whose name does not match its directory is refused.
 //   2. Missing payload files and sha256 mismatches are refused.
 //   3. Traversal-shaped payload names and parent-directory reads are refused.
+//   4. Forged index digests, unindexed rows, empty group coverage, stale sums assets, and forged
+//      index.sig tags are refused.
 
 import "core/cat_manifest.oo";
+import "core/cat_index.oo";
 
 fn t_expect(cond: Bool, label: String, p: Int) -> Int {
     if cond {
@@ -35,15 +38,34 @@ fn t_refuse(fs: &FsReadCap) -> Int {
     p = t_expect(!cat_body_sha(fs, dir, ".." + "/x", zeros), "traversal payload refused", p);
     let r: Result[String, String] = oo_read_file(fs, ".." + "/.." + "/etc/" + "passwd");
     p = t_expect(r.is_err(), "traversal read refused", p);
+    let ix: Result[String, String] = oo_read_file(fs, "index");
+    let idx: String = match ix { Ok(s) => s, Err(_) => "" };
+    let rows: List[String] = cat_index_rows(idx);
+    let mut orow: String = "";
+    let mut i: Int = 0;
+    while i < list_len(rows) {
+        if str_starts_with(list_get(rows, i), "ooda|") { orow = list_get(rows, i); }
+        i = i + 1;
+    }
+    let f: List[String] = cat_idx_fields(orow);
+    let forged: String = list_get(f, 0) + "|" + list_get(f, 1) + "|" + list_get(f, 2) +
+        "|" + list_get(f, 3) + "|" + zeros;
+    p = t_expect(!cat_index_ok(fs, "layers", forged), "forged index digest refused", p);
+    p = t_expect(!cat_index_ok(fs, "layers", "ghostpkg|9.9.9|FsRead||" + zeros),
+        "unindexed row refused", p);
+    p = t_expect(cat_groups_scan(fs, "layers", "") == 0, "empty groups cover nothing", p);
+    let fake_sums: String = zeros + "  ooqu" + "ota-linux-x86_64\n";
+    p = t_expect(cat_sums_scan(idx, fake_sums) > 0, "stale sums asset refused", p);
+    p = t_expect(!cat_sig_ok(idx, zeros), "forged index.sig refused", p);
     return p;
 }
 
 pub fn main(fs: &FsReadCap, _args: List[String]) -> Result[Int, String] {
     let p: Int = t_refuse(fs);
-    if p == 6 {
-        println("PASS: refusal suite (6/6 assertions)");
+    if p == 11 {
+        println("PASS: refusal suite (11/11 assertions)");
         return Ok(0);
     }
-    println("FAIL: refusal suite (" + p.to_string() + "/6 assertions)");
+    println("FAIL: refusal suite (" + p.to_string() + "/11 assertions)");
     return Ok(2);
 }

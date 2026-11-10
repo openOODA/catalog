@@ -1,0 +1,208 @@
+// # Catalog Index Conformance Checker
+//
+// Logline: Verify every index row resolves to one layers dir whose manifest + canonical descriptor +
+//          digest match; then prove the index<->dirs bijection, group coverage, sums parity, index.sig.
+// Setup: Explicit FsReadCap; cat_descriptor is the single authority for canonical payload bytes.
+// Beats:
+//   1. cat_idx_fields parses one name|version|caps|deps|sha256 row.
+//   2. cat_descriptor emits the canonical signed descriptor payload for a package entry.
+//   3. cat_index_ok enforces row -> dir -> manifest -> payload -> digest conformance.
+//   4. cat_index_scan + cat_dirs_indexed prove both directions of the index bijection.
+//   5. cat_groups_scan proves every package token sits in its layer group line; cat_sums_scan proves
+//      every package names exactly one SHA256SUMS asset and no retired or foreign asset survives.
+//   6. cat_sig_ok re-derives the HMAC-SHA256 index.sig oracle tag over the index body.
+
+import "oostd/sec/hash/sha256.oo";
+import "oostd/sec/mac/hmac.oo";
+import "core/cat_manifest.oo";
+
+pub fn cat_idx_fields(row: String) -> List[String] {
+    return str_split(row, "|");
+}
+
+pub fn cat_descriptor(name: String, layer: String, ver: String, caps: String, deps: String) -> String {
+    let mut out: String = "// # " + name + " Catalog Descriptor (" + layer + ")\n//\n" +
+        "// Logline: Canonical signed registry descriptor for " + name + " in " + layer + ".\n" +
+        "// Setup: Emitted and re-derived by core/cat_index.oo; pure constant surface, zero caps.\n" +
+        "// Beats:\n" +
+        "//   1. cat_name/cat_layer/cat_version return the registered identity triple.\n" +
+        "//   2. cat_caps/cat_deps return the granted capability and dependency sets.\n" +
+        "//   3. cat_record joins the fields for cross-checks against the index row.\n\n";
+    let keys: List[String] = list_push(list_push(list_push(list_push(list_push(list_new(),
+        "cat_name"), "cat_layer"), "cat_version"), "cat_caps"), "cat_deps");
+    let vals: List[String] = list_push(list_push(list_push(list_push(list_push(list_new(),
+        name), layer), ver), caps), deps);
+    let mut i: Int = 0;
+    while i < list_len(keys) {
+        out = out + "pub fn " + list_get(keys, i) + "() -> String {\n";
+        let v: String = list_get(vals, i);
+        if chars_len(v) <= 90 {
+            out = out + "    return \"" + v + "\";\n";
+        } else {
+            out = out + "    let mut s: String = \"" + str_slice(v, 0, 90) + "\";\n";
+            let mut off: Int = 90;
+            while off < chars_len(v) {
+                let mut hi: Int = off + 90;
+                if hi > chars_len(v) { hi = chars_len(v); }
+                out = out + "    s = s + \"" + str_slice(v, off, hi) + "\";\n";
+                off = hi;
+            }
+            out = out + "    return s;\n";
+        }
+        out = out + "}\n\n";
+        i = i + 1;
+    }
+    return out + "pub fn cat_record() -> String {\n    let mut r: String = cat_name() + \"|\" + cat_layer();\n" +
+        "    r = r + \"|\" + cat_version() + \"|\" + cat_caps();\n    r = r + \"|\" + cat_deps();\n" +
+        "    return r;\n}\n";
+}
+
+pub fn cat_index_ok(fs: &FsReadCap, lroot: String, row: String) -> Bool {
+    let f: List[String] = cat_idx_fields(row);
+    if list_len(f) != 5 { return false; }
+    let name: String = list_get(f, 0);
+    let caps: String = list_get(f, 2);
+    let deps: String = list_get(f, 3);
+    let sha: String = list_get(f, 4);
+    let pkgs: List[String] = cat_pkgs(fs, lroot);
+    let mut dir: String = "";
+    let mut hits: Int = 0;
+    let mut i: Int = 0;
+    while i < list_len(pkgs) {
+        let d: String = list_get(pkgs, i);
+        if cat_tail(d) == name {
+            dir = d;
+            hits = hits + 1;
+        }
+        i = i + 1;
+    }
+    if hits != 1 { return false; }
+    let mr: Result[String, String] = oo_read_file(fs, dir + "/manifest");
+    if mr.is_err() { return false; }
+    let man: String = match mr { Ok(s) => s, Err(_) => "" };
+    if cat_field(man, "version") != list_get(f, 1) { return false; }
+    if cat_field(man, "caps") != caps || cat_field(man, "deps") != deps { return false; }
+    if cat_field(man, "sha256") != sha || !cat_manifest_ok(fs, dir, man) { return false; }
+    let pr: Result[String, String] = oo_read_file(fs, dir + "/" + name + ".oo");
+    if pr.is_err() { return false; }
+    let pay: String = match pr { Ok(s) => s, Err(_) => "" };
+    let parts: List[String] = str_split(dir, "/");
+    let layer: String = list_get(parts, list_len(parts) - 2);
+    return pay == cat_descriptor(name, layer, list_get(f, 1), caps, deps) && sha256_hex(pay) == sha;
+}
+
+pub fn cat_index_scan(fs: &FsReadCap, lroot: String, idx_src: String) -> Int {
+    let rows: List[String] = cat_index_rows(idx_src);
+    let mut ok: Int = 0;
+    let mut i: Int = 0;
+    while i < list_len(rows) {
+        if cat_index_ok(fs, lroot, list_get(rows, i)) { ok = ok + 1; }
+        i = i + 1;
+    }
+    return ok;
+}
+
+pub fn cat_dirs_indexed(fs: &FsReadCap, lroot: String, idx_src: String) -> Int {
+    let rows: List[String] = cat_index_rows(idx_src);
+    let pkgs: List[String] = cat_pkgs(fs, lroot);
+    let mut misses: Int = 0;
+    let mut i: Int = 0;
+    while i < list_len(pkgs) {
+        let name: String = cat_tail(list_get(pkgs, i));
+        let mut hit: Bool = false;
+        let mut j: Int = 0;
+        while j < list_len(rows) {
+            if str_starts_with(list_get(rows, j), name + "|") { hit = true; }
+            j = j + 1;
+        }
+        if !hit { misses = misses + 1; }
+        i = i + 1;
+    }
+    return misses;
+}
+
+pub fn cat_groups_scan(fs: &FsReadCap, lroot: String, gsrc: String) -> Int {
+    let pkgs: List[String] = cat_pkgs(fs, lroot);
+    let glines: List[String] = str_split(gsrc, "\n");
+    let mut ok: Int = 0;
+    let mut i: Int = 0;
+    while i < list_len(pkgs) {
+        let d: String = list_get(pkgs, i);
+        let parts: List[String] = str_split(d, "/");
+        let layer: String = list_get(parts, list_len(parts) - 2);
+        let name: String = cat_tail(d);
+        let mut grp: String = "";
+        if layer == "L0-core" { grp = "core"; }
+        if layer == "L1-kernel" { grp = "kernel"; }
+        if layer == "L2-OS" { grp = "os"; }
+        if layer == "L3-tools" { grp = "tools"; }
+        if layer == "L4-DE" { grp = "de"; }
+        if layer == "L5-apps" { grp = "apps"; }
+        if layer == "L6-cloud" { grp = "cloud"; }
+        if layer == "L7-agents" { grp = "agents"; }
+        let mut j: Int = 0;
+        while j < list_len(glines) {
+            let ln: String = str_trim(list_get(glines, j));
+            if str_starts_with(ln, "@" + grp + " =") {
+                let cut: Int = str_index_of(ln, "=");
+                let mems: String = " " + str_trim(str_slice(ln, cut + 1, chars_len(ln))) + " ";
+                if str_contains(mems, " " + name + " ") { ok = ok + 1; }
+            }
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+    return ok;
+}
+
+pub fn cat_sums_scan(idx_src: String, sums_src: String) -> Int {
+    let slines: List[String] = str_split(sums_src, "\n");
+    let hexset: String = "0123456789abcdef";
+    let hay: String = "\n" + idx_src;
+    let mut v: Int = 0;
+    let mut j: Int = 0;
+    while j < list_len(slines) {
+        let ln: String = str_trim(list_get(slines, j));
+        if chars_len(ln) > 0 {
+            let okshape: Bool = chars_len(ln) >= 68 &&
+                char_at(ln, 64) == " " && char_at(ln, 65) == " ";
+            let mut okhex: Bool = okshape;
+            let mut h: Int = 0;
+            while h < 64 {
+                if !str_contains(hexset, char_at(ln, h)) { okhex = false; }
+                h = h + 1;
+            }
+            if !okhex { v = v + 1; }
+            if okshape {
+                let asset: String = str_slice(ln, 66, chars_len(ln));
+                let mut stem: String = "";
+                if str_ends_with(asset, "-linux-x86_64.tar.gz") {
+                    stem = str_slice(asset, 0, chars_len(asset) - 20);
+                }
+                if str_ends_with(asset, "-linux-x86_64") {
+                    stem = str_slice(asset, 0, chars_len(asset) - 13);
+                }
+                if asset == "liboodar.a" { stem = "oodar"; }
+                let aux: Bool = asset == "ooda-os-x86_64.iso" ||
+                    asset == "ooda-buildbox-x86_64.tar.gz";
+                let mut hit: Bool = aux;
+                if !aux && chars_len(stem) > 0 &&
+                    str_contains(hay, "\n" + stem + "|") { hit = true; }
+                if !hit { v = v + 1; }
+                let first: Int = str_index_of(sums_src, "  " + asset);
+                let mut second: Int = 0 - 1;
+                if first >= 0 {
+                    second = str_index_of(str_slice(sums_src, first + 1,
+                        chars_len(sums_src)), "  " + asset);
+                }
+                if second >= 0 { v = v + 1; }
+            }
+        }
+        j = j + 1;
+    }
+    return v;
+}
+
+pub fn cat_sig_ok(idx_src: String, sig_src: String) -> Bool {
+    return hmac_sha256("ooda-local-pm", idx_src) == str_trim(sig_src);
+}

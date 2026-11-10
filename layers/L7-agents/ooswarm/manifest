@@ -4,5 +4,5 @@ caps=FsRead,Process,Env,FsWrite,Ffi,Bind
 deps=
 payload=ooswarm.oo
 commit=
-sha256=c3fe2b919c4ee4ecd38dacd99b72bf3ca46f3cf49a16ebe4570c28bc4c4ad89c
+sha256=7d9e947a35fa8f28c40108d14b7463f4b9acd324480b9e6be80e4e0ca616ef05
 sig=

@@ -4,5 +4,5 @@ caps=FsRead,Env,FsWrite
 deps=
 payload=ooterm.oo
 commit=
-sha256=77d052795094866ec5c4519022c1e0415a148db422d98c46fed075509066a119
+sha256=864d03baeeb8a789785fe9b39f0a9cedb7af7074edada0a2c76a1fd1dbe74066
 sig=

@@ -4,5 +4,5 @@ caps=Process,FsRead,FsWrite,Env
 deps=
 payload=ooless.oo
 commit=
-sha256=e89b978cd20615067f4ca499a7a7d9174818e416ab524d5599e47d0042a58da4
+sha256=fc6834a04e00cf03c4656deb97a9f63d029c3f09922b93fd74bc3d4372524cd1
 sig=

@@ -4,5 +4,5 @@ caps=Process,FsRead,FsWrite,Env,Time
 deps=
 payload=ooredact.oo
 commit=
-sha256=d963b81205ee186d6f92ce7dc106128b52b27acc23b14a246ca58fbece64989f
+sha256=8bd76a55c677a981749431e4311c68a28926e3ee0f74c0e845c066394926d7a8
 sig=

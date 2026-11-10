@@ -4,5 +4,5 @@ caps=FsRead,FsWrite,Process,Tcp,Env
 deps=
 payload=ooflash.oo
 commit=
-sha256=5476948186dfea85e0e290874e5d48eecfce4ab1f2d3ff7f4e4459389242e360
+sha256=a9bc78b71b72b524f321336402a7a10d727666f6004a1648c90a7380f264e855
 sig=

@@ -4,5 +4,5 @@ caps=FsRead,FsWrite,Process,Env
 deps=
 payload=ooarchive.oo
 commit=
-sha256=1aed2a08ccad1e0cd6147ab23221bab96ce2f09a0430ba02cd870005f159139e
+sha256=a45fa50e4e8f724a95beed6e49ba7f7821e800a94f9c522dc2342fdcfc947c51
 sig=

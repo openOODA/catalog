@@ -4,5 +4,5 @@ caps=CompilerRead,FsRead,Process,Env,FsWrite,Time,Rand
 deps=
 payload=oolsp.oo
 commit=
-sha256=193c1744a4b37e8327cd62cbf9bb650149e7de2cf9844dba2b8756b5e44a2f01
+sha256=07f268e5732a0262f29d48d9a3c61f5682bc9245ded137d09f0ae4d14985d43d
 sig=

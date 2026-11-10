@@ -1,0 +1,8 @@
+name=ootheme
+version=0.2.4
+caps=FsRead,FsWrite,Env,Process,Time
+deps=
+payload=ootheme.oo
+commit=
+sha256=e5eb103b197c9b774c107e3d2610af023226e22e381f161ec7672a30c1ae955d
+sig=

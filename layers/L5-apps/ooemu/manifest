@@ -4,5 +4,5 @@ caps=Process,Env,FsRead,FsWrite
 deps=
 payload=ooemu.oo
 commit=
-sha256=57286594212082868b02f091a79e7874566fd897bdb6db07fd2d75ed4a6d57bb
+sha256=ec1671e81ac646180b88d7b62fb2e733e7ea201007adc0abeb43722c607cf7e1
 sig=

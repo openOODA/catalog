@@ -4,5 +4,5 @@ caps=FsRead,Env,FsWrite
 deps=
 payload=oobazaar.oo
 commit=
-sha256=27c477d1fc4d0366fc84f93434ec9f3c4c4026393013cf6b7c5c782e38b537ba
+sha256=ba54378c66c02027afbd3a87fb777a3c635541b9a10d6f78a7cb248d873f6f0b
 sig=

@@ -4,5 +4,5 @@ caps=Thread,FsRead,FsWrite,Process,Time,Fs,Sys,Env,Alloc,Net,Ffi,Gpu,Tcp,Udp,Bin
 deps=
 payload=oostd.oo
 commit=
-sha256=cc1fa431fcbfc82f2b256e1a91901ca684ad65a3464ecb1a8e8af8ce4fc75e75
+sha256=3cf8628136ff2e3696cf3699452ec26b6ea07d4e35d96edb629299c8d7faf260
 sig=

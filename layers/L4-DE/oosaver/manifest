@@ -4,5 +4,5 @@ caps=FsRead,FsWrite,Env,Process,Time,Rand,Window,Frame,Ffi
 deps=
 payload=oosaver.oo
 commit=
-sha256=32c82a073c33168c3d385a76ec1616431ac09c517b3e955a6ca632b124b20c8e
+sha256=3d9e42b88c96af5002bee5aaf441f61216f0a5ef5e367a7061ab9f70f56fa320
 sig=

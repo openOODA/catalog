@@ -22,9 +22,13 @@ jobs:
           test -f README.md
           test -d layers
           test ! -f VERSION
-          # 8-entry repo root: at most 8 non-hidden entries at root.
-          n=$(find . -maxdepth 1 -mindepth 1 ! -name '.*' | wc -l)
-          test "$n" -le 8 || { echo "ERR root entries=$n > 8"; exit 1; }
+          # Canonical 14-entry catalog root: the 8 source-of-truth entries
+          # (AGENTS.md README.md Makefile ooda.pkg anchor.oo cli/ core/ tests/)
+          # plus the 6 signed registry surfaces (index index.sig registry.pub
+          # groups.oot SHA256SUMS layers/). Allowlisted, not just counted.
+          actual=$(find . -maxdepth 1 -mindepth 1 ! -name '.*' -printf '%f\n' | sort | tr '\n' ' ' | sed 's/ $//')
+          want="AGENTS.md Makefile README.md SHA256SUMS anchor.oo cli core groups.oot index index.sig layers ooda.pkg registry.pub tests"
+          test "$actual" = "$(printf '%s\n' $want | sort | tr '\n' ' ' | sed 's/ $//')" || { echo "ERR root entries drift"; echo "have: $actual"; exit 1; }
           # Exactly the 8 canonical layer directories L0..L7.
           test "$(ls -d layers/*/ | wc -l)" -eq 8
           for l in L0-core L1-kernel L2-OS L3-tools L4-DE L5-apps L6-cloud L7-agents; do
