@@ -184,7 +184,9 @@ pub fn cat_sums_scan(idx_src: String, sums_src: String) -> Int {
                 }
                 if asset == "liboodar.a" { stem = "oodar"; }
                 let aux: Bool = asset == "ooda-os-x86_64.iso" ||
-                    asset == "ooda-buildbox-x86_64.tar.gz";
+                    asset == "ooda-buildbox-x86_64.tar.gz" ||
+                    asset == "openooda-codex-linux-x86_64.tar.gz" ||
+                    asset == "openooda-linux-x86_64";
                 let mut hit: Bool = aux;
                 if !aux && chars_len(stem) > 0 &&
                     str_contains(hay, "\n" + stem + "|") { hit = true; }

@@ -1,8 +1,8 @@
 name=oomcp
-version=0.3.1
-caps=FsRead,FsWrite,Process,Env
+version=0.4.0
+caps=FsRead,FsWrite,Process,Env,Tcp
 deps=
 payload=oomcp.oo
 commit=
-sha256=eaafea1db719b713020f81a7e9c225c1547779138efb1b5627d1127c87bd6d03
+sha256=3c7261827282c778ba55e2ecbf16ab62b8c5a72a8301be0e26e987fefb683ece
 sig=
