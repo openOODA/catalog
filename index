@@ -19,7 +19,7 @@ ooconsensus|0.4.1|FsRead,FsWrite,Env||e6c21688c92d50a9e2b6ab8a3a00fcfca57f9e7fb2
 oocontainer|0.4.1|FsRead,FsWrite,Process||70198dcedf0abb0460f52e8d21d05e103be1e12adc0899345b39e9f3c6fe0d37
 oocron|0.2.4|FsRead,Process,FsWrite,Env,Time||df160a2185c4e9982a62ff56ea4487904edbfb24f543688b844596df550837f9
 oocurl|0.2.5|Tcp,Process,FsRead,Env,FsWrite||35daa9ff29c1189ca314ecf4cb4d426d5bbbb9e54dcc833cc8e53876b90c3fec
-ooda|2.11.25|FsRead,Env,Process,FsWrite,Time,Alloc,Sys,Net||d55d8b235b7cb0c0f7214ec1f12f581c17c852b5aaff67aad64896b949923997
+ooda|2.11.26|FsRead,Env,Process,FsWrite,Time,Alloc,Sys,Net||726fcb9b92b16819a9754743211d5f97fea7002a0cfdfff3ff173493b84ed4dd
 oodac|0.2.5|FsRead,Fs,Net,Sys,Env,Time,Rand,Alloc,Gpu,Thread,FsWrite,Tcp,Process,Ffi,CompilerRead,Sign,Audio,Camera,Usb,Hid,Window,Frame,Arena,Udp,Bind||2327a277c7c68c9c9359aefe69678aacf6ee542ea6b1c1a823d8136f12db83f8
 oodar|4.6.1|FsRead,Env,Process||cdc2d1b7f31a932ac98524037f43e4ba3ed00c8a563536e3a491a368970de4ee
 oodaw|0.3.8|FsWrite,FsRead,Env,Process||d2464f2c3de956d0710029afab48f0ed40a15099eb4ad91287a83394e6d85406
