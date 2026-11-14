@@ -190,6 +190,16 @@ pub fn cat_sums_scan(idx_src: String, sums_src: String) -> Int {
                 let mut hit: Bool = aux;
                 if !aux && chars_len(stem) > 0 &&
                     str_contains(hay, "\n" + stem + "|") { hit = true; }
+                // Sibling persona assets (<pkg>-build|infer|sched, staged
+                // beside the main asset: multi-binary tools exec them) trace
+                // to the parent package row. Explicit suffix allowlist so no
+                // other dashed stem can piggyback on a package prefix.
+                if !hit && !aux && chars_len(stem) > 6 {
+                    let cut6: Bool = str_ends_with(stem, "-build") ||
+                        str_ends_with(stem, "-infer") || str_ends_with(stem, "-sched");
+                    let p6: String = str_slice(stem, 0, chars_len(stem) - 6);
+                    hit = cut6 && str_contains(hay, "\n" + p6 + "|");
+                }
                 if !hit { v = v + 1; }
                 let first: Int = str_index_of(sums_src, "  " + asset);
                 let mut second: Int = 0 - 1;
