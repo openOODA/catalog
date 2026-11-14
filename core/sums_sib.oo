@@ -1,0 +1,26 @@
+// # Catalog Sibling Asset Tracer
+//
+// Logline: Trace sibling persona assets (<pkg>-<persona>) to a parent package row.
+// Setup: Pure string page; zero caps. Siblings ship beside the main asset
+//   because multi-binary tools exec them at runtime.
+// Beats:
+//   1. Split the stem on dashes and rejoin all but the last segment.
+//   2. Report whether the parent names an indexed package row.
+//   3. Single-segment stems never trace (no parent exists).
+
+// Sibling persona assets (<pkg>-<persona>) trace to the parent package
+// row. Cannot false-cover: the publish hook stages siblings only beside
+// their own package asset, so a matching parent always shipped together.
+pub fn cat_sib_traced(hay: String, stem: String) -> Bool {
+    let parts: List[String] = str_split(stem, "-");
+    if list_len(parts) < 2 {
+        return false;
+    }
+    let mut parent: String = list_get(parts, 0);
+    let mut pi: Int = 1;
+    while pi < list_len(parts) - 1 {
+        parent = parent + "-" + list_get(parts, pi);
+        pi = pi + 1;
+    }
+    return str_contains(hay, "\n" + parent + "|");
+}
