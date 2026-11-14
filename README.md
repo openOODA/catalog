@@ -2,6 +2,8 @@
 
 Signed package registry and layer manifest index (`L0`–`L7`) queried by [`oopm`](https://github.com/openOODA-core/oopm) for [openOODA](https://openOODA.org).
 
+[![OODAC on StartupScores](https://startupscores.com/badge/oodac.svg?style=shield&v=combo&theme=dark)](https://startupscores.com/open-source/oodac)
+
 ## Structure
 
 ```text
