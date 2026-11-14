@@ -8,6 +8,10 @@
 //   2. core/cat_index.oo owns the canonical descriptor emitter and index/groups/sums/sig gates.
 //   3. tests/test_functional.oo proves the whole registry conforms byte-exact.
 //   4. tests/test_refusal.oo proves forged, missing, and tampered entries fail closed.
+//   5. Stay comment-only: no code lives on this page.
+//   6. Hold the sixteen-line page floor with these doc beats.
 
 import "core/cat_manifest.oo";
 import "core/cat_index.oo";
+
+// The anchor stays import-only.
