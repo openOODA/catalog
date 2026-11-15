@@ -19,9 +19,9 @@ ooconsensus|0.4.1|FsRead,FsWrite,Env||e6c21688c92d50a9e2b6ab8a3a00fcfca57f9e7fb2
 oocontainer|0.4.1|FsRead,FsWrite,Process||70198dcedf0abb0460f52e8d21d05e103be1e12adc0899345b39e9f3c6fe0d37
 oocron|0.2.4|FsRead,Process,FsWrite,Env,Time||df160a2185c4e9982a62ff56ea4487904edbfb24f543688b844596df550837f9
 oocurl|0.2.5|Tcp,Process,FsRead,Env,FsWrite||35daa9ff29c1189ca314ecf4cb4d426d5bbbb9e54dcc833cc8e53876b90c3fec
-ooda|2.11.26|FsRead,Env,Process,FsWrite,Time,Alloc,Sys,Net||726fcb9b92b16819a9754743211d5f97fea7002a0cfdfff3ff173493b84ed4dd
-oodac|0.2.5|FsRead,Fs,Net,Sys,Env,Time,Rand,Alloc,Gpu,Thread,FsWrite,Tcp,Process,Ffi,CompilerRead,Sign,Audio,Camera,Usb,Hid,Window,Frame,Arena,Udp,Bind||2327a277c7c68c9c9359aefe69678aacf6ee542ea6b1c1a823d8136f12db83f8
-oodar|4.6.1|FsRead,Env,Process||cdc2d1b7f31a932ac98524037f43e4ba3ed00c8a563536e3a491a368970de4ee
+ooda|2.12.0|FsRead,Env,Process,FsWrite,Time,Alloc,Sys,Net||25d17d0a939025990b2ebede4d9437aae08296c596a300a2d370e5347faff15c
+oodac|0.4.0|FsRead,Fs,Net,Sys,Env,Time,Rand,Alloc,Gpu,Thread,FsWrite,Tcp,Process,Ffi,CompilerRead,Sign,Audio,Camera,Usb,Hid,Window,Frame,Arena,Udp,Bind||0286a7a26a17b8b35e4d8ced870a67b3e2327401d03406d37f51d69cbb84512c
+oodar|4.7.0|FsRead,Env,Process||403f05e01c7f1692eb8ef0e48ad8a80f2b7a3f1a256a544c177a1ecf588078fa
 oodaw|0.3.8|FsWrite,FsRead,Env,Process||d2464f2c3de956d0710029afab48f0ed40a15099eb4ad91287a83394e6d85406
 oodb|0.3.7|FsRead,FsWrite,Process||49a955ec74d735dab1a3da015959f9c7fad5f836070b20208c28967770fbe0d2
 oodefense|0.1.0|FsRead,Env,FsWrite,Alloc,Process||d5555b89b258ed6ad530ac145023682df33fdf8e87f3d05a6bd55bbf2d78cf82
@@ -59,8 +59,8 @@ ooless|0.2.5|Process,FsRead,FsWrite,Env||fc6834a04e00cf03c4656deb97a9f63d029c3f0
 oollama|0.4.0|Env,FsRead,FsWrite,Tcp,Bind,Process||e5e554e8c9a70459458e4de8a4e5f50fd075c8e2a69c6b9eca912b30567296ba
 ooloop|0.4.1|FsRead,Process,Env,FsWrite||00389af48b2608db297648d951385a56ae6e18fa3293eb8c0a7ed362a49743de
 ools|0.2.5|FsRead,Process,FsWrite,Env||60639922ce05d955f0f58324bc2b46940e0a079626addec0c168d6a294c9a615
-oolsp|0.2.5|CompilerRead,FsRead,Process,Env,FsWrite,Time,Rand||07f268e5732a0262f29d48d9a3c61f5682bc9245ded137d09f0ae4d14985d43d
-oomcp|0.4.0|FsRead,FsWrite,Process,Env,Tcp||3c7261827282c778ba55e2ecbf16ab62b8c5a72a8301be0e26e987fefb683ece
+oolsp|0.3.0|CompilerRead,FsRead,Process,Env,FsWrite,Time,Rand||f87d438640db3be5b107a5422bbd45184f761a773e037243221128cbb020d076
+oomcp|0.5.0|FsRead,FsWrite,Process,Env,Tcp||f6f6020bcb46189346344c3ddfd9d575fa752c63def24e2da4bf09961c3f7a0a
 oomedia|0.4.0|FsWrite,FsRead,Env,Process||05a233a22534a53514fe191ea701f194b3ee9f7c67b4a6255d68a7c9a9fa9c45
 oomemory|0.4.1|FsRead,FsWrite,Env||002cb70bf0236884b6a5dfa6e1ecbc71d91d13f2d5b0e486c508d4f945430d80
 oomesh|0.3.8|FsRead,FsWrite,Process||5be21838b4c365f45984777928f18f9b42baaa165468db36b22ee31ab07820d6
@@ -73,7 +73,7 @@ oopanel|0.4.0|Env,FsRead,FsWrite,Process||f86fe14390be5217593b71de248625a8806c74
 oopass|0.3.8|FsWrite,FsRead,Env,Process||b069f545c2f8c902df9da2d38fd7debd43aba50a81ca15b8f147af64a78bd4de
 oopath|0.2.5|Process,FsRead,FsWrite,Env,Time||442217800302cd27e62e0d975ba05c64b9d13cd514a89d940a997e4526c62a99
 ooperm|0.2.4|Process,FsRead,FsWrite,Env,Time||e2ff2a701685f3d906eee8249b06fd879d0c4f5c6d158c1dffe244238a71bf8d
-oopm|2.12.0|FsRead,Env,FsWrite,Process,Net||a747afe61cc9ccccf32475207c344535adf7adf8adbf5089427b80271b48c18b
+oopm|2.13.0|FsRead,Env,FsWrite,Process,Net||532c206a7c43da246f816fe9844c9c523c0865cf0ff79c8800502c0f6b17eb57
 ooportal|0.4.0|Env,FsRead,FsWrite,Process||9d838abe2d441dea3c06edddc960a3f5ac20ce5e6a50bfce828ac2d6e9d5bce1
 oopower|0.2.5|Process,FsRead,FsWrite,Env||8a0c9d558e7067adc8301952c49ee47b7464fd8985213ef9c4ea39460eeb0b41
 ooproc|0.1.0|Process,FsRead,Env,Time,FsWrite||67bb1eca0006f86342176bd4ec3e745130feed0c8319f7095e24cb2cf90392ae
@@ -88,7 +88,7 @@ oosh|1.0.3|FsRead,Ffi,FsWrite,Process,Env,Bind,Time||225bd6a9013fd344672f32f24c0
 oosign|0.2.5|Process,FsRead,FsWrite,Env,Time||a4dce926e53f848515f5b063507e3a1355c824de8fc3ce92369a23fbae09289f
 oosort|0.2.7|FsRead,FsWrite,Process,Env,Time||aa27b0904798e17aa9800b5da0abe02a5d4b57e0f8de93a5abdf30b4d401ba7a
 ooh|0.2.5|Process,FsRead,FsWrite,Env||900d487d378ed468bcfb87c4493665f7f5012736beae3206c03322daa528a8e8
-oostd|0.2.5|Thread,FsRead,FsWrite,Process,Time,Fs,Sys,Env,Alloc,Net,Ffi,Gpu,Tcp,Udp,Bind,Rand,Sign||3cf8628136ff2e3696cf3699452ec26b6ea07d4e35d96edb629299c8d7faf260
+oostd|1.1.0|Thread,FsRead,FsWrite,Process,Time,Fs,Sys,Env,Alloc,Net,Ffi,Gpu,Tcp,Udp,Bind,Rand,Sign||35c93e2e4e664fd87c0f655229718ada6cd557699020055049d068440460620b
 oostore|0.3.7|FsRead,FsWrite,Process||49ea59036fa1a034b156f1114339aab5bfd17be53bbfe95a7f1dd189334f3f69
 oostrike|0.1.0|Env,FsRead,FsWrite||479c4d588905bdf4bd7f11d3003c6662c86127a305fc61c8378b16730afbeec7
 oostudio|0.3.8|FsWrite,FsRead,Env,Process||6e7a5a6ac84369f4a51b433397c36830b259a2676b004c001686922f67bc52cc

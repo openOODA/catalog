@@ -1,7 +1,12 @@
 {
   "openOODA-DE/oosaver": "8d699d52bdf15db7a79f3a033e62d35f31dfff8b",
-  "openOODA-core/oodac": "2f717f80d18a650c1af62e0e34718d03a7167166",
-  "openOODA-core/oodar": "632a0a46405aed91413042e5b9986792b85778de",
+  "openOODA-core/ooda": "8911fe98cb191d1932e5427c3cbdd206b6d3d69a",
+  "openOODA-core/oodac": "c7fb94fb80c7d38b48d8d9ce742517691c04a028",
+  "openOODA-core/oodar": "8790c7bc9ad6f8e4624decabebf1bdf91acb0632",
+  "openOODA-core/oolsp": "518d076e805c51b70f80115b364117d648ad8a3a",
+  "openOODA-core/oomcp": "152ef2d547ef0d5bfde3e132d0a907a60e9649db",
+  "openOODA-core/oopm": "afb4c04683fd31ff6f99d51efa859e800a7c110b",
+  "openOODA-core/oostd": "f8ce77231fc0bb8177def7371489af6859b116a5",
   "openOODA-tools/oogrep": "eaa16b2c5811108b3f4331d342e038186d808736",
   "openOODA-tools/ooh": "c76d59c81ebe6c76d70c9fcd24814fbccce38ca7"
 }

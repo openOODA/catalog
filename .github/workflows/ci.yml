@@ -1,6 +1,10 @@
 name: catalog CI
 
 on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
   workflow_dispatch:
 
 jobs:
@@ -17,17 +21,18 @@ jobs:
           test -f registry.pub
           test -f groups.oot
           test -f SHA256SUMS
+          test -f COMMIT_LEDGER
           test -f .nojekyll
           test -f AGENTS.md
           test -f README.md
           test -d layers
           test ! -f VERSION
-          # Canonical 14-entry catalog root: the 8 source-of-truth entries
+          # Canonical 15-entry catalog root: the 8 source-of-truth entries
           # (AGENTS.md README.md Makefile ooda.pkg anchor.oo cli/ core/ tests/)
-          # plus the 6 signed registry surfaces (index index.sig registry.pub
-          # groups.oot SHA256SUMS layers/). Allowlisted, not just counted.
+          # plus the 7 signed registry surfaces (COMMIT_LEDGER index index.sig
+          # registry.pub groups.oot SHA256SUMS layers/). Allowlisted, not just counted.
           actual=$(find . -maxdepth 1 -mindepth 1 ! -name '.*' -printf '%f\n' | sort | tr '\n' ' ' | sed 's/ $//')
-          want="AGENTS.md Makefile README.md SHA256SUMS anchor.oo cli core groups.oot index index.sig layers ooda.pkg registry.pub tests"
+          want="AGENTS.md COMMIT_LEDGER Makefile README.md SHA256SUMS anchor.oo cli core groups.oot index index.sig layers ooda.pkg registry.pub tests"
           test "$actual" = "$(printf '%s\n' $want | sort | tr '\n' ' ' | sed 's/ $//')" || { echo "ERR root entries drift"; echo "have: $actual"; exit 1; }
           # Exactly the 8 canonical layer directories L0..L7.
           test "$(ls -d layers/*/ | wc -l)" -eq 8

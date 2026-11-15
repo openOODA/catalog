@@ -5,7 +5,7 @@ Canonical signed registry of the openOODA `L0`–`L7` package set, consumed by
 onto the `openOODA/install@hub` release. `catalog` is an index/profile/manifest
 repository — it signs *package descriptors*, never package implementations.
 Real package source lives in the per-org sibling repos
-(`/Projects/openOODA-*/<pkg>`); this tree holds only the registry surface that
+(`$OODA_POLYROOT/openOODA-*/<pkg>`); this tree holds only the registry surface that
 binds them.
 
 ## Exact Boundary
@@ -24,7 +24,7 @@ binds them.
 - `anchor.oo`, `AGENTS.md`, `README.md`, `Makefile`, `ooda.pkg` — repo surface.
 
 Out of scope: package implementations, upstream `dist/` binaries, release
-staging (`/Projects/openOODA/install/publish-hub.sh` owns that), telemetry,
+staging (`$OODA_POLYROOT/openOODA/install/publish-hub.sh` owns that), telemetry,
 secrets, and any network/process authority.
 
 ## Invariants (Zero Trust — fail closed, byte-exact)
@@ -71,5 +71,5 @@ make build && make test            # bin/catalog + functional/refusal suites + v
 make verify                        # full page/file/academy/shape/link/oodac + catalog gates
 make sync                          # regenerate descriptors/manifests/index/index.sig
 ./bin/catalog verify .             # PASS: catalog verify (105 packages)
-/Projects/openOODA-core/oohat/bin/oohat cycle /Projects/openOODA/catalog   # quorum_mask=255 required
+~/.openooda/bin/oohat cycle .   # quorum_mask=255 required
 ```
