@@ -1,8 +1,8 @@
 name=ooda
-version=2.13.1
-caps=FsRead,Env,Process,FsWrite,Time,Alloc,Sys,Net
-deps=
+version=2.13.2
+caps=FsRead,FsWrite,Net,Process,Env,Time,Alloc
+deps=oostd
 payload=ooda.oo
 commit=
-sha256=2f870f19695f6231a2441e260a2ed87555be7cd16f6ecf62db27691e06cd9490
+sha256=225db8776d858e95fd2d61e3550f93a09d08fdb2b0602d6c831fd40980480f46
 sig=

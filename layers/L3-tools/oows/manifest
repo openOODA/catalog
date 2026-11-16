@@ -1,0 +1,8 @@
+name=oows
+version=0.1.0
+caps=FsRead,Net,Tcp,Env,Time
+deps=
+payload=oows.oo
+commit=
+sha256=b9926d7eab1ef508218954fac22fa623481bb13c24fb30d558055c12331802b3
+sig=

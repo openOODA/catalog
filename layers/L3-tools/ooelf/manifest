@@ -1,0 +1,8 @@
+name=ooelf
+version=0.1.0
+caps=FsRead,Env
+deps=
+payload=ooelf.oo
+commit=
+sha256=e59e0f11fa1c56fc858605985dc5b39ccfa0220df995717eceb5db0ec1b9f6fb
+sig=

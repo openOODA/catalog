@@ -1,8 +1,8 @@
 name=ooperm
-version=0.2.4
-caps=Process,FsRead,FsWrite,Env,Time
+version=0.2.5
+caps=FsRead,FsWrite,Process,Env,Time
 deps=
 payload=ooperm.oo
 commit=
-sha256=e2ff2a701685f3d906eee8249b06fd879d0c4f5c6d158c1dffe244238a71bf8d
+sha256=3751b3acd82a757d3a7dd4194fbe1a314adad1960d6d69edda77c36fdcbf16b4
 sig=

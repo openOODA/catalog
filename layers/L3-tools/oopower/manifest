@@ -1,8 +1,8 @@
 name=oopower
-version=0.2.5
-caps=Process,FsRead,FsWrite,Env
+version=0.2.6
+caps=FsRead,Env,Process
 deps=
 payload=oopower.oo
 commit=
-sha256=8a0c9d558e7067adc8301952c49ee47b7464fd8985213ef9c4ea39460eeb0b41
+sha256=221524e8eb9191b606e6fc769c56bd877d1f343ed146a198e038fe7e8949292b
 sig=

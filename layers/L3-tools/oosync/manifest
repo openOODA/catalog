@@ -1,0 +1,8 @@
+name=oosync
+version=0.1.0
+caps=FsRead,FsWrite,Env,Time
+deps=
+payload=oosync.oo
+commit=
+sha256=dd64a1100a5e8041e3c17702b38dd7602f003e560f3c9b5cad97421e78bbbbe4
+sig=

@@ -1,8 +1,8 @@
 name=oosed
-version=0.2.4
-caps=FsRead,Process,FsWrite,Env
+version=0.2.5
+caps=FsRead,FsWrite,Process,Env
 deps=
 payload=oosed.oo
 commit=
-sha256=a2e09dbb071497fe09090baa57934b2e6c47298b10afb13009a041ce137aa879
+sha256=39789969c7b5fde06c613dd64c467a4121921e6a3111f551624ad38980aac513
 sig=

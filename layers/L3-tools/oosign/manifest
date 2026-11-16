@@ -1,8 +1,8 @@
 name=oosign
-version=0.2.5
-caps=Process,FsRead,FsWrite,Env,Time
+version=0.2.6
+caps=FsRead,FsWrite,Process,Env,Time
 deps=
 payload=oosign.oo
 commit=
-sha256=a4dce926e53f848515f5b063507e3a1355c824de8fc3ce92369a23fbae09289f
+sha256=4330e69f7a9f713883d11da7c95e3cb2e5c28fc6b1241ad7c2afa93c8e963f81
 sig=

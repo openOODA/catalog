@@ -1,0 +1,8 @@
+name=ootee
+version=0.1.0
+caps=FsRead,FsWrite,Env
+deps=
+payload=ootee.oo
+commit=
+sha256=f3355b098af3d04d24403447db427fa6e69ad635702d058e1c2720b057a30220
+sig=

@@ -1,8 +1,8 @@
 name=ooawk
-version=0.2.4
-caps=Process,FsRead,FsWrite,Env
+version=0.2.5
+caps=FsRead,FsWrite,Process,Env
 deps=
 payload=ooawk.oo
 commit=
-sha256=e53b85e91cde4a8cc4390a49c92caefc6000838e7ffca1e292bd2a0c33e001f2
+sha256=03fc16def91ccb02f687b379e0359d9dc0cdf5d0e1d66dafe7315be4ed9db782
 sig=

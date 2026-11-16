@@ -1,8 +1,8 @@
 name=oogrep
-version=0.3.6
-caps=Process,FsRead,Env,FsWrite,Time
+version=0.3.7
+caps=FsRead,FsWrite,Sys,Process,Env,Time
 deps=
 payload=oogrep.oo
 commit=
-sha256=b01d8d871ca3be752e855569fa6e68a405dad987ab30d1ba9a7ce03c25adc114
+sha256=726d6985075dad2fef6ab712b3c368f7f6c8d92fa68a064c896f94073410bfa0
 sig=

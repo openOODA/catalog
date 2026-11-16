@@ -1,0 +1,8 @@
+name=oosemver
+version=0.1.0
+caps=FsRead,FsWrite,Env
+deps=
+payload=oosemver.oo
+commit=
+sha256=38db04a43376ba09652ff25dbbd195d34f0604ea6f0ba383afe3e9b5686a160b
+sig=

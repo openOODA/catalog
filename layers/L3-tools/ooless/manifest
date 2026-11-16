@@ -1,8 +1,8 @@
 name=ooless
-version=0.2.5
-caps=Process,FsRead,FsWrite,Env
+version=0.2.6
+caps=FsRead,Process,Env
 deps=
 payload=ooless.oo
 commit=
-sha256=fc6834a04e00cf03c4656deb97a9f63d029c3f09922b93fd74bc3d4372524cd1
+sha256=f4eb4fefba03523f6b90d7ad9fa51e4e15fab4ae875b9f93896626b3bf117478
 sig=

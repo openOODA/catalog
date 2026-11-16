@@ -1,0 +1,8 @@
+name=oogit
+version=0.1.0
+caps=FsRead,FsWrite,Net,Tcp,Process,Env,Time
+deps=
+payload=oogit.oo
+commit=
+sha256=faa6a584e7e31c4c61d3130172029fc13eee93e7fc63bde0d0002f06bff5fdb4
+sig=

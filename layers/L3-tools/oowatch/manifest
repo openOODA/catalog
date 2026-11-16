@@ -1,0 +1,8 @@
+name=oowatch
+version=0.1.0
+caps=FsRead,Process,Env,Time
+deps=
+payload=oowatch.oo
+commit=
+sha256=505b0659dc2cebecee8d3f5c770b2bf99a3349e602a5d26ed99bf86d9ff53727
+sig=

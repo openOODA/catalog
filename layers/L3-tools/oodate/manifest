@@ -1,0 +1,8 @@
+name=oodate
+version=0.1.0
+caps=Env,Time
+deps=
+payload=oodate.oo
+commit=
+sha256=00cdd9b504e7ff2d7978c066d821c7ef0dab70a6ab3deb58cf00fa724cd16163
+sig=

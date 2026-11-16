@@ -1,8 +1,8 @@
 name=oocron
-version=0.2.4
-caps=FsRead,Process,FsWrite,Env,Time
+version=0.2.5
+caps=FsRead,Process,Env,Time
 deps=
 payload=oocron.oo
 commit=
-sha256=df160a2185c4e9982a62ff56ea4487904edbfb24f543688b844596df550837f9
+sha256=7bf7c42cdbacb560a8bbad5618cc127115560ca273d9471c7b549f9019ea7adc
 sig=

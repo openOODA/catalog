@@ -1,0 +1,8 @@
+name=oodisk
+version=0.1.0
+caps=FsRead,Env
+deps=
+payload=oodisk.oo
+commit=
+sha256=9c943a51da11be19e434a66746ea52a97489eac0c84cb24d917376cd44e509ed
+sig=

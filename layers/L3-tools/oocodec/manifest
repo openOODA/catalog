@@ -1,8 +1,8 @@
 name=oocodec
-version=0.2.6
-caps=FsRead,Process,FsWrite,Env,Time
+version=0.2.7
+caps=FsRead,FsWrite,Process,Env,Time
 deps=
 payload=oocodec.oo
 commit=
-sha256=72a534715b883ab697cb6edce8589b317f6f2ba6b825dd66ca0de5a1d20c4a27
+sha256=aafa3ff04335817b385914adfa7579dc114828228799d3e0152d79454217f8e3
 sig=

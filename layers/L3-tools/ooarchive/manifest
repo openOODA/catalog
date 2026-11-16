@@ -1,8 +1,8 @@
 name=ooarchive
-version=0.2.5
+version=0.2.6
 caps=FsRead,FsWrite,Process,Env
 deps=
 payload=ooarchive.oo
 commit=
-sha256=a45fa50e4e8f724a95beed6e49ba7f7821e800a94f9c522dc2342fdcfc947c51
+sha256=81dd9bb4fa273cd7d2ceb7fadc27e12538bfa53a212334974831f5cf6db2b102
 sig=

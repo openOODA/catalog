@@ -1,8 +1,8 @@
 name=oofs
-version=0.2.4
-caps=FsWrite,FsRead,Process,Env,Time
+version=0.2.5
+caps=FsRead,FsWrite,Process,Env,Time
 deps=
 payload=oofs.oo
 commit=
-sha256=27fabf5ebab742d7ec783d542c5df47f633b8f8d6d1301141dc19520b33c7424
+sha256=5b3a4a2bb8710fa20d8479f6b92db4bb48ab386c801953c27878108f6c0385c8
 sig=

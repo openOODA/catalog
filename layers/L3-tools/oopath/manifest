@@ -1,8 +1,8 @@
 name=oopath
-version=0.2.5
-caps=Process,FsRead,FsWrite,Env,Time
+version=0.2.6
+caps=FsRead,FsWrite,Process,Env,Time
 deps=
 payload=oopath.oo
 commit=
-sha256=442217800302cd27e62e0d975ba05c64b9d13cd514a89d940a997e4526c62a99
+sha256=fb58d819f4a868264e292545a08915b8074e28cca3bcaa0e57442a4edacea5d9
 sig=

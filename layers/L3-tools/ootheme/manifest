@@ -1,8 +1,8 @@
 name=ootheme
-version=0.2.4
-caps=FsRead,FsWrite,Env,Process,Time
+version=0.2.5
+caps=FsRead,FsWrite,Process,Env
 deps=
 payload=ootheme.oo
 commit=
-sha256=e5eb103b197c9b774c107e3d2610af023226e22e381f161ec7672a30c1ae955d
+sha256=b1e829f6cacd79ffefca027960b5bd3655b71a163e5b79714ab8fd9ccf77f97f
 sig=

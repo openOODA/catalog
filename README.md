@@ -28,9 +28,9 @@ catalog/
     ├── L0-core/    # 8 core toolchain packages (ooda, oodac, oodar, oostd, oopm, oolsp, oomcp, oohat)
     ├── L1-kernel/  # 8 microkernel, bootloader, HAL & Ring-3 driver packages
     ├── L2-OS/      # 9 zero-root system daemon packages
-    ├── L3-tools/   # 39 capability-sandboxed Unix, security & UI utilities (incl. ootheme)
-    ├── L4-DE/      # 8 Wayland desktop environment packages
-    ├── L5-apps/    # 16 native desktop, creative & gaming applications
+    ├── L3-tools/   # 64 capability-sandboxed Unix, security & CLI utilities (8x8 grid, incl. ootheme)
+    ├── L4-DE/      # 9 Wayland desktop environment packages (incl. ooui)
+    ├── L5-apps/    # 17 native desktop, creative & gaming applications (incl. ooengine)
     ├── L6-cloud/   # 8 mesh, storage, deploy, DB & gateway services
     └── L7-agents/  # 9 autonomous OODA loop, dream & verification packages
 ```

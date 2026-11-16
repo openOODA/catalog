@@ -1,0 +1,8 @@
+name=ooman
+version=0.1.0
+caps=FsRead,Env
+deps=
+payload=ooman.oo
+commit=
+sha256=7f5d88d5343e7596aa0b813e2e413c9e0b478b1f060351ec054e4684b3d422c9
+sig=

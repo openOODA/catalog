@@ -70,6 +70,6 @@ files/dir + fns/file + params/fn, `16` min lines/file (import shims exempt),
 make build && make test            # bin/catalog + functional/refusal suites + verify
 make verify                        # full page/file/academy/shape/link/oodac + catalog gates
 make sync                          # regenerate descriptors/manifests/index/index.sig
-./bin/catalog verify .             # PASS: catalog verify (105 packages)
+./bin/catalog verify .             # PASS: catalog verify (132 packages)
 ~/.openooda/bin/oohat cycle .   # quorum_mask=255 required
 ```

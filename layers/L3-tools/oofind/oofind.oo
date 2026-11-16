@@ -16,11 +16,11 @@ pub fn cat_layer() -> String {
 }
 
 pub fn cat_version() -> String {
-    return "0.2.3";
+    return "0.2.4";
 }
 
 pub fn cat_caps() -> String {
-    return "FsRead,Process,FsWrite,Env";
+    return "FsRead,Process,Env";
 }
 
 pub fn cat_deps() -> String {

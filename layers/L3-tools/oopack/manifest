@@ -1,0 +1,8 @@
+name=oopack
+version=0.1.0
+caps=FsRead,FsWrite,Env
+deps=
+payload=oopack.oo
+commit=
+sha256=62fd02e02ee8b6dacd7f10bfbb9f26efc6088a81b5166ca66bfaaa0d40fd5b39
+sig=

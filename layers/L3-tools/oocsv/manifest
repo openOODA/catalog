@@ -1,0 +1,8 @@
+name=oocsv
+version=0.1.0
+caps=FsRead,FsWrite,Env
+deps=
+payload=oocsv.oo
+commit=
+sha256=abe3e53d8ed17981aa321a9da4b095d2147bd9383d99b3fdb5ad5e0d62f861c0
+sig=

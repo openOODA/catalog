@@ -1,8 +1,0 @@
-name=ooui
-version=0.2.5
-caps=FsRead,FsWrite,Env,Process,Time
-deps=
-payload=ooui.oo
-commit=
-sha256=7e6a726518d51e68aea8bd2a9fe03a8ead31cd75e9e5224e59ef15142ebd5ad6
-sig=

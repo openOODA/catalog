@@ -1,8 +1,8 @@
 name=ooprovenance
-version=0.2.5
-caps=Process,FsRead,FsWrite,Env,Time
+version=0.2.6
+caps=FsRead,FsWrite,Process,Env,Time
 deps=
 payload=ooprovenance.oo
 commit=
-sha256=480b31e708de7d33b4e2ec8385c5daee688b3bb569b90b55cd55224a1ff4f0b8
+sha256=a62752018e2491be905dc3690a6b01dda7b69ed21454b2b17aada3cdaaadfed3
 sig=

@@ -1,8 +1,8 @@
 name=oofzf
-version=0.2.4
-caps=FsRead,Env,Process,FsWrite
+version=0.2.5
+caps=FsRead,Process,Env
 deps=
 payload=oofzf.oo
 commit=
-sha256=c006703407010e97dd3ab57b5f1288bd24cca9be5436212cb81696564c0d2431
+sha256=a4fa4bd6ece7b4182d39247a56bba6b1437fbda6e0af8d11859e2d89ee569439
 sig=
