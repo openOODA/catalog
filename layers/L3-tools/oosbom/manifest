@@ -1,8 +1,0 @@
-name=oosbom
-version=0.1.0
-caps=FsRead,FsWrite,Env,Time
-deps=
-payload=oosbom.oo
-commit=
-sha256=53d3550a2418fe2855136ef4fa2e935e0e9da617a7338b94769c84ad19917d1a
-sig=

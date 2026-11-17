@@ -1,0 +1,8 @@
+name=ooda-compositor
+version=0.5.0
+caps=Process,FsRead,Env
+deps=ooda-standard
+payload=ooda-compositor.oo
+commit=
+sha256=725218dde4a2f0dcaa3f6532a7d2d8a5518e6f718c368b8cc4ca39862740910d
+sig=

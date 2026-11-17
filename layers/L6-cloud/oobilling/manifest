@@ -1,8 +1,0 @@
-name=oobilling
-version=0.3.8
-caps=FsRead,FsWrite,Net,Process
-deps=
-payload=oobilling.oo
-commit=
-sha256=2e7613de6b0630c6d551df65477f7ce0483bac6ecfa5ea90a2ede9e6d6174bff
-sig=

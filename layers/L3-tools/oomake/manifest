@@ -1,8 +1,0 @@
-name=oomake
-version=0.1.0
-caps=FsRead,FsWrite,Process,Env,Time
-deps=
-payload=oomake.oo
-commit=
-sha256=f6e7cd432e620d28473214f8d48029e02d354b3d3d0dcecf082228b53885abfc
-sig=

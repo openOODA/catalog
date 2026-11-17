@@ -1,8 +1,0 @@
-name=oohat
-version=0.1.2
-caps=FsRead,FsWrite,Env,Process,Net
-deps=
-payload=oohat.oo
-commit=
-sha256=d022cd368404effa56dbc60da8058ecd13cc939115922bc61ad21d3a65e9a040
-sig=

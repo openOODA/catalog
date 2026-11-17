@@ -1,8 +1,0 @@
-name=ools
-version=0.2.6
-caps=FsRead,Process,Env
-deps=
-payload=ools.oo
-commit=
-sha256=e92804a0e6fbd52fdf111159ceb400cc4a8016aa3fb50cec0c02e0e160d8e311
-sig=

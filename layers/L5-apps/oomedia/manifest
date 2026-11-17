@@ -1,8 +1,0 @@
-name=oomedia
-version=0.4.0
-caps=FsWrite,FsRead,Env,Process
-deps=
-payload=oomedia.oo
-commit=
-sha256=05a233a22534a53514fe191ea701f194b3ee9f7c67b4a6255d68a7c9a9fa9c45
-sig=

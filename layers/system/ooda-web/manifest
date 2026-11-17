@@ -1,0 +1,8 @@
+name=ooda-web
+version=0.4.0
+caps=Net,Tcp,Bind,FsRead,FsWrite,Process,Time,Env
+deps=
+payload=ooda-web.oo
+commit=
+sha256=3c854bb34a5712401db15f28357bfa308372820a10a0376916dc70e3009b51a8
+sig=

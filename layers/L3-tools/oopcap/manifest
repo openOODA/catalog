@@ -1,8 +1,0 @@
-name=oopcap
-version=0.1.0
-caps=FsRead,Env
-deps=
-payload=oopcap.oo
-commit=
-sha256=a6441a62a18f9fdc9ef89919f02104b872d4404e535ec316513d6600011aaf60
-sig=

@@ -1,6 +1,6 @@
 # `@openOODA/catalog`
 
-Signed package registry and layer manifest index (`L0`–`L7`) queried by [`oopm`](https://github.com/openOODA-core/oopm) for [openOODA](https://openOODA.org).
+Signed package registry and layer manifest index (`70` packages across `openOODA-core`, `openOODA-system`, and `openOODA-apps`) queried by [`ooda-package`](https://github.com/openOODA-core/ooda-package) for [openOODA](https://openooda.org).
 
 ## Structure
 
@@ -9,64 +9,58 @@ catalog/
 ├── AGENTS.md
 ├── README.md
 ├── Makefile        # build / verify / test / sync / sums gates
-├── ooda.pkg        # catalog package manifest (name=catalog, entry=cli/main.oo)
+├── ooda.pkg        # catalog package manifest (name=catalog, version=2.0.0)
 ├── anchor.oo       # root anchor re-exporting core/ conformance pages
+├── COMMIT_LEDGER   # canonical commit SHA ledger across all 70 product repos
 ├── cli/
 │   └── main.oo     # catalog binary: verify, sync, theme, about
 ├── core/
 │   ├── cat_manifest.oo  # manifest field + payload-digest conformance
-│   └── cat_index.oo     # descriptor emitter + index/groups/sums/sig gates
+│   ├── cat_index.oo     # descriptor emitter + index/groups/sums/sig gates
+│   └── sums_sib.oo      # sibling persona asset tracer
 ├── tests/
-│   ├── test_functional.oo  # 12 positive assertions over the signed tree
+│   ├── test_functional.oo  # 11 positive assertions over the signed tree
 │   └── test_refusal.oo     # 11 forged/missing/tamper refusal probes
-├── groups.oot      # Fedora-style @group profiles (@core..@agents, @workstation, @all)
+├── groups.oot      # @group profiles (@core, @system, @apps, @games, @desktop, @workstation, @all)
 ├── index           # Package index rows (name|version|caps|deps|sha256)
 ├── index.sig       # HMAC-SHA256 signature over index
 ├── registry.pub    # Registry verification public key
 ├── SHA256SUMS      # Master checksums mirrored from the install@hub release
 └── layers/
-    ├── L0-core/    # 8 core toolchain packages (ooda, oodac, oodar, oostd, oopm, oolsp, oomcp, oohat)
-    ├── L1-kernel/  # 8 microkernel, bootloader, HAL & Ring-3 driver packages
-    ├── L2-OS/      # 9 zero-root system daemon packages
-    ├── L3-tools/   # 64 capability-sandboxed Unix, security & CLI utilities (8x8 grid, incl. ootheme)
-    ├── L4-DE/      # 9 Wayland desktop environment packages (incl. ooui)
-    ├── L5-apps/    # 17 native desktop, creative & gaming applications (incl. ooengine)
-    ├── L6-cloud/   # 8 mesh, storage, deploy, DB & gateway services
-    └── L7-agents/  # 9 autonomous OODA loop, dream & verification packages
+    ├── core/       # 15 @openOODA-core packages (incl. ooda, ooda-compiler, ooda-runtime, ooda-standard, ooda-package, ooda-language, ooda-bridge, ooda-verify)
+    ├── system/     # 37 @openOODA-system OS, kernel, driver, desktop, cloud & AI inference packages
+    └── apps/       # 18 @openOODA-apps native desktop, studio & gaming applications
 ```
 
-Each `layers/<layer>/<pkg>/` directory holds a `manifest` (name, version,
-caps, deps, payload, sha256) and a `<pkg>.oo` **signed descriptor** — a
-canonical constant-surface page emitted byte-for-byte by
-`core/cat_index.oo`'s `cat_descriptor`. The `index` row's `sha256` binds the
-manifest, the descriptor bytes, and the signed entry together; nothing in the
-tree is trusted without recomputation (`./bin/catalog verify .`).
+Each `layers/{core,system,apps}/<pkg>/` directory holds a `manifest` and a
+`<pkg>.oo` **signed descriptor** — emitted byte-for-byte by `core/cat_index.oo`'s
+`cat_descriptor`. The `index` row's `sha256` binds the manifest, descriptor
+bytes, and signed entry together; nothing in the tree is trusted without
+recomputation (`./bin/catalog verify .`).
 
-`oostd` (L0) ships the expanded scientific & mathematical discovery library:
-`oostd/core/math/{exact,geometry,blas,fft,algebra,graph_topology}/...`,
-`oostd/core/proofs/...`, `oostd/core/science/{phys,chem,bio,comm,econ}/...`,
-frontier AI-for-science `oostd/core/app/ai/...`, 2D/3D engine physics
-`oostd/core/app/ui/game_engine/...` (`collision_{aabb,circle,gjk,sat}` + `ecs_*`),
-`oostd/core/collection/...`, and `oostd/sec/{hash,capability,pqc,symmetric}/...`.
+`ooda-standard` (`core`) ships the capability-gated standard library (exact math,
+geometry, BLAS/FFT, algebra, graph topology, proof helpers, physics/chem/bio, AI
+primers, 2D/3D engine physics, collections, PQC/AEAD crypto, and `ootheme`).
 
 ## Building & Verifying
 
 ```sh
-make build        # compile cli/main.oo -> bin/catalog (oodac)
+make build        # compile cli/main.oo -> bin/catalog (ooda-compiler)
 make test         # functional + refusal suites + catalog verify under PATH=/nonexistent
-make verify       # page/file/academy/density/vocab/shape/link/oodac gates + catalog verify
+make verify       # page/file/academy/density/vocab/shape/link/compiler gates + catalog verify
 ./bin/catalog verify .   # index<->dirs->manifest->descriptor->digest + groups + sums + sig
 ./bin/catalog sync .     # re-derive descriptors, manifests, index + index.sig deterministically
 ```
 
-## Installing Packages & Groups with `oopm`
+## Installing Packages & Groups with `ooda-package`
 
 ```sh
-oopm search <query>
-oopm install <package>
-oopm group list
-oopm install @core
-oopm install @tools
-oopm install @workstation
-oopm install @all
+ooda-package search <query>
+ooda-package install <package>
+ooda-package group list
+ooda-package install @core
+ooda-package install @system
+ooda-package install @apps
+ooda-package install @workstation
+ooda-package install @all
 ```

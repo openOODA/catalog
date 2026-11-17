@@ -1,8 +1,0 @@
-name=oosaver
-version=5.0.0
-caps=FsRead,FsWrite,Env,Process,Time,Rand,Window,Frame,Ffi
-deps=
-payload=oosaver.oo
-commit=
-sha256=3d9e42b88c96af5002bee5aaf441f61216f0a5ef5e367a7061ab9f70f56fa320
-sig=

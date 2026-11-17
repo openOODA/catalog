@@ -1,0 +1,8 @@
+name=ooda-voxel
+version=0.2.0
+caps=FsRead,FsWrite,Process,Env
+deps=ooda-standard
+payload=ooda-voxel.oo
+commit=
+sha256=7e2d8d74846d57c842778934970afb64f5e5e7300445e37c488c8fac4cc4360e
+sig=

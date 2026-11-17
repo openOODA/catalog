@@ -1,8 +1,0 @@
-name=ooxml
-version=0.1.0
-caps=FsRead,FsWrite,Env
-deps=
-payload=ooxml.oo
-commit=
-sha256=2e881caefded0389cb6808e5caddf23dfda341a21a7a4d23147824471ce7b0e8
-sig=

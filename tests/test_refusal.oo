@@ -24,7 +24,7 @@ fn t_expect(cond: Bool, label: String, p: Int) -> Int {
 
 fn t_refuse(fs: &FsReadCap) -> Int {
     let mut p: Int = 0;
-    let dir: String = "layers/L0-core/ooda";
+    let dir: String = "layers/core/ooda";
     let bad_name: String = "name=other\npayload=ooda.oo\nsha256=ab\n";
     p = t_expect(!cat_manifest_ok(fs, dir, bad_name), "forged name refused", p);
     let no_pay: String = "name=ooda\npayload=nope.oo\nsha256=" +

@@ -1,0 +1,8 @@
+name=ooda-compiler
+version=0.7.0
+caps=FsRead,FsWrite,Process,Env,Arena,CompilerRead
+deps=ooda-standard
+payload=ooda-compiler.oo
+commit=
+sha256=f6bbe91c0ebe53fc1ec9864fc35a1b17954c55efa6eadfc44e5e6440619ef65b
+sig=

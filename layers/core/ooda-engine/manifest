@@ -1,0 +1,8 @@
+name=ooda-engine
+version=0.3.0
+caps=FsRead,FsWrite,Process,Env
+deps=ooda-standard
+payload=ooda-engine.oo
+commit=
+sha256=01b6424485835c7a0eaf0bcf01160d0e1416d6b4011a7377e54354cac2bdd042
+sig=

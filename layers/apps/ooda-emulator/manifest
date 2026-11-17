@@ -1,0 +1,8 @@
+name=ooda-emulator
+version=0.2.0
+caps=FsRead,FsWrite,Process,Env
+deps=ooda-standard
+payload=ooda-emulator.oo
+commit=
+sha256=ce5634aa0133055852f4d516b44048da06d21002b9f1e84ffdd34b3c497b52a8
+sig=

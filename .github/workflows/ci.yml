@@ -34,9 +34,9 @@ jobs:
           actual=$(find . -maxdepth 1 -mindepth 1 ! -name '.*' -printf '%f\n' | sort | tr '\n' ' ' | sed 's/ $//')
           want="AGENTS.md COMMIT_LEDGER Makefile README.md SHA256SUMS anchor.oo cli core groups.oot index index.sig layers ooda.pkg registry.pub tests"
           test "$actual" = "$(printf '%s\n' $want | sort | tr '\n' ' ' | sed 's/ $//')" || { echo "ERR root entries drift"; echo "have: $actual"; exit 1; }
-          # Exactly the 8 canonical layer directories L0..L7.
-          test "$(ls -d layers/*/ | wc -l)" -eq 8
-          for l in L0-core L1-kernel L2-OS L3-tools L4-DE L5-apps L6-cloud L7-agents; do
+          # Exactly the 3 canonical org layer dirs: core, system, apps.
+          test "$(ls -d layers/*/ | wc -l)" -eq 3
+          for l in core system apps; do
             test -d "layers/$l" || { echo "ERR missing layers/$l"; exit 1; }
           done
           # The catalog index is the single source of truth for the package
@@ -71,7 +71,7 @@ jobs:
       - name: groups.oot contract
         run: |
           set -euo pipefail
-          for g in core kernel os tools de apps cloud agents workstation all; do
+          for g in core system apps games desktop workstation all; do
             grep -q "^@$g = " groups.oot || { echo "ERR missing @$g in groups.oot"; exit 1; }
           done
           python3 <<'PYEOF'
@@ -83,11 +83,10 @@ jobs:
                   groups[m.group(1)] = m.group(2).split()
           idx = [l.split('|')[0] for l in open('index') if l.strip()]
           layer_map = {p: d for d in os.listdir('layers') for p in os.listdir(f'layers/{d}')}
-          g2l = {'core': 'L0-core', 'kernel': 'L1-kernel', 'os': 'L2-OS', 'tools': 'L3-tools',
-                 'de': 'L4-DE', 'apps': 'L5-apps', 'cloud': 'L6-cloud', 'agents': 'L7-agents'}
+          g2l = {'core': 'core', 'system': 'system', 'apps': 'apps'}
           covered = set()
           for g, pkgs in groups.items():
-              if g in ('all', 'games', 'workstation'):
+              if g in ('all', 'games', 'desktop', 'workstation'):
                   continue
               for p in pkgs:
                   covered.add(p)
@@ -98,11 +97,13 @@ jobs:
               sys.exit(f'ERR index packages uncovered by groups: {missing}')
           if not all(p in groups['apps'] for p in groups['games']):
               sys.exit('ERR @games must be a subset of @apps')
-          if set(groups['workstation']) != {'@core', '@tools', '@de', '@apps'}:
-              sys.exit('ERR @workstation must equal @core @tools @de @apps')
-          if set(groups['all']) != {f'@{g}' for g in g2l}:
-              sys.exit('ERR @all must expand all 8 layer groups')
-          print(f'[groups OK] {len(idx)} packages covered across 8 layer groups + workstation/all')
+          if set(groups['desktop']) != {'@core', '@system', '@apps'}:
+              sys.exit('ERR @desktop must equal @core @system @apps')
+          if set(groups['workstation']) != {'@core', '@system', '@apps'}:
+              sys.exit('ERR @workstation must equal @core @system @apps')
+          if set(groups['all']) != {'@core', '@system', '@apps'}:
+              sys.exit('ERR @all must expand all 3 layer groups')
+          print(f'[groups OK] {len(idx)} packages covered across 3 layer groups + games/desktop/workstation/all')
           PYEOF
       - name: index.sig HMAC check (fail closed)
         run: |

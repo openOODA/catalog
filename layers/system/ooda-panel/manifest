@@ -1,0 +1,8 @@
+name=ooda-panel
+version=0.5.0
+caps=Process,FsRead,FsWrite,Env
+deps=ooda-standard
+payload=ooda-panel.oo
+commit=
+sha256=bd7e1f6bb337a9f6a7038cdbc30cbbf1b96c6f6f3eb0a4936c992497683d9af1
+sig=

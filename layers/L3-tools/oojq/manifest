@@ -1,8 +1,0 @@
-name=oojq
-version=0.2.4
-caps=FsRead,FsWrite,Process,Env,Time
-deps=
-payload=oojq.oo
-commit=
-sha256=5fbe98e5354f632fd208714973b89e0ff698aa25a857c98f96c3509f2ee1c1e9
-sig=

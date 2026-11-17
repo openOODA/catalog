@@ -1,4 +1,4 @@
-OODA_COMPILER ?= $(HOME)/.openooda/bin/oodac
+OODA_COMPILER ?= $(HOME)/.openooda/bin/ooda-compiler
 export OODA_COMPILER
 OODAC_BIN ?= $(OODA_COMPILER)
 export OODAC_BIN
@@ -9,14 +9,15 @@ BIN := bin/catalog
 TESTBIN := bin/test_functional
 TESTBIN2 := bin/test_refusal
 REPO_NAME := catalog
-VER := 1.2.0
+VER := 2.0.0
 SRC := $(shell find . -name '*.oo' -not -path './.git/*' -not -path './bin/*' -not -path './dist/*' -not -path './.ooda-cache/*' | sort)
 
 OODA_OODAR_ROOT ?= $(HOME)/.openooda/bin
 export OODA_OODAR_ROOT
-OODA_OOSTD_ROOT ?= $(HOME)/.openooda/oostd
-export OODA_OOSTD_ROOT
-ENV := OO_LIST_AMBIENT_QUOTA=$(OO_LIST_AMBIENT_QUOTA) OO_LINT_ROOTS=$(CURDIR) OODA_COMPILER=$(OODA_COMPILER) OODAC_BIN=$(OODAC_BIN) OODA_FS_READDIR=$(OODA_READDIR) OODA_FS_WRITEDIR=$(OODA_WRITEDIR) OODA_OODAR_ROOT=$(OODA_OODAR_ROOT) OODA_OOSTD_ROOT=$(OODA_OOSTD_ROOT) OODA_NO_JAIL=1
+OODA_STANDARD_ROOT ?= $(HOME)/.openooda/ooda-standard
+export OODA_STANDARD_ROOT
+unexport OODA_OOSTD_ROOT
+ENV := OO_LIST_AMBIENT_QUOTA=$(OO_LIST_AMBIENT_QUOTA) OO_LINT_ROOTS=$(CURDIR) OODA_COMPILER=$(OODA_COMPILER) OODAC_BIN=$(OODAC_BIN) OODA_FS_READDIR=$(OODA_READDIR) OODA_FS_WRITEDIR=$(OODA_WRITEDIR) OODA_OODAR_ROOT=$(OODA_OODAR_ROOT) OODA_STANDARD_ROOT=$(OODA_STANDARD_ROOT) OODA_NO_JAIL=1
 
 .PHONY: all build verify test det check sync sums line-cap file-law academy density vocab shape link-law lint-oo-size clean
 
@@ -155,7 +156,7 @@ check:
 	@for f in $$(find . -name "*.oo" -not -path "./.git/*" -not -path "./bin/*" -not -path "./dist/*" -not -path "./.ooda-cache/*"); do \
 		$(ENV) $(OODA_COMPILER) check "$$f" > /dev/null || exit 1; \
 	done; \
-	echo "PASS: oodac check holds on all .oo files"
+	echo "PASS: ooda-compiler check holds on all .oo files"
 
 verify: line-cap file-law academy density vocab shape link-law lint-oo-size check $(BIN)
 	@PATH=/nonexistent $(ENV) ./$(BIN) verify . | tee .ooda-cache/verify.out | grep -q "PASS: catalog verify" && echo "PASS: catalog verify ."
@@ -169,7 +170,7 @@ test: $(BIN)
 	@$(ENV) $(OODA_COMPILER) build tests/test_refusal.oo -o $(TESTBIN2) > /dev/null
 	@PATH=/nonexistent $(ENV) ./$(TESTBIN) | grep -q "PASS: functional" && echo "PASS: functional suite under PATH=/nonexistent"
 	@PATH=/nonexistent $(ENV) ./$(TESTBIN2) | grep -q "PASS: refusal" && echo "PASS: refusal suite under PATH=/nonexistent"
-	@PATH=/nonexistent $(ENV) ./$(BIN) verify . | grep -q "PASS: catalog verify (132 packages)" && echo "PASS: catalog verify ."
+	@PATH=/nonexistent $(ENV) ./$(BIN) verify . | grep -q "PASS: catalog verify (70 packages)" && echo "PASS: catalog verify ."
 	@rc=0; PATH=/nonexistent $(ENV) ./$(BIN) verify /nonexistent_refuse > /dev/null 2>&1 || rc=$$?; [ "$$rc" != "0" ] && echo "PASS: verify missing root refused"
 	@rc=0; PATH=/nonexistent $(ENV) ./$(BIN) bogusverb > /dev/null 2>&1 || rc=$$?; [ "$$rc" = "2" ] && echo "PASS: unknown verb refuses with exit 2"
 	@PATH=/nonexistent $(ENV) ./$(BIN) --help | grep -q "$(REPO_NAME) $(VER)" && echo "PASS: --help"

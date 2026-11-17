@@ -1,8 +1,0 @@
-name=ooh
-version=0.5.1
-caps=FsRead,FsWrite,Tcp,Bind,Process,Rand,Env
-deps=
-payload=ooh.oo
-commit=
-sha256=1e28247967f25d66b2b516f42e5dcf18328f586fafaaa870ab4a2fc55da61df0
-sig=

@@ -1,0 +1,8 @@
+name=ooda-audio
+version=0.4.0
+caps=FsRead,FsWrite,Process,Env,Frame
+deps=ooda-standard
+payload=ooda-audio.oo
+commit=
+sha256=e3765ebe921fccda8ae240d5dbf409c08720db15d72ce1d5569cb30997059951
+sig=

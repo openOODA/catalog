@@ -1,8 +1,0 @@
-name=oomcp
-version=0.5.0
-caps=FsRead,FsWrite,Process,Env,Tcp
-deps=
-payload=oomcp.oo
-commit=
-sha256=f6f6020bcb46189346344c3ddfd9d575fa752c63def24e2da4bf09961c3f7a0a
-sig=

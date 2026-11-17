@@ -1,0 +1,8 @@
+name=ooda-edit
+version=0.3.0
+caps=Process,FsRead,FsWrite,Env,Time
+deps=ooda-standard
+payload=ooda-edit.oo
+commit=
+sha256=b64c4bf5af86db7ecdea755a951ffbd0b3326952b0e8dbb57c92a2a260aeb4f9
+sig=

@@ -1,8 +1,0 @@
-name=ooprovenance
-version=0.2.6
-caps=FsRead,FsWrite,Process,Env,Time
-deps=
-payload=ooprovenance.oo
-commit=
-sha256=a62752018e2491be905dc3690a6b01dda7b69ed21454b2b17aada3cdaaadfed3
-sig=

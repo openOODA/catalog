@@ -1,0 +1,8 @@
+name=ooda-commander
+version=0.6.0
+caps=FsRead,FsWrite,Process,Env
+deps=ooda-standard
+payload=ooda-commander.oo
+commit=
+sha256=19b81c08e8153dd68517ed718ad13353776bb06fb7e4e9997e026bbfddd04ae2
+sig=

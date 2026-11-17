@@ -1,0 +1,8 @@
+name=ooda-chat
+version=0.4.0
+caps=FsRead,FsWrite,Process,Env,Frame
+deps=ooda-standard
+payload=ooda-chat.oo
+commit=
+sha256=c6248b581797fdb9524e2d9bd552c3daa64939f25a77e889ed7ef748e550d471
+sig=

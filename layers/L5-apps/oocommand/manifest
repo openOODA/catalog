@@ -1,8 +1,0 @@
-name=oocommand
-version=0.2.5
-caps=Env,FsRead,FsWrite,Process
-deps=
-payload=oocommand.oo
-commit=
-sha256=e07d70f537e17b5c83d6ea6afd616bf0efe064604591363b402c29dc96dcdb2e
-sig=

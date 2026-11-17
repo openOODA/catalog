@@ -1,8 +1,0 @@
-name=ooboot
-version=0.6.1
-caps=Frame,Dma,Tpm,FsRead,FsWrite
-deps=
-payload=ooboot.oo
-commit=
-sha256=ddebc1e6e778ba829552768c2e7b119ca32a4f5c1e7f1727b99d21a020e50821
-sig=

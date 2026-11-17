@@ -1,0 +1,8 @@
+name=ooda-format
+version=0.2.0
+caps=FsRead,FsWrite,Env
+deps=ooda-standard
+payload=ooda-format.oo
+commit=
+sha256=e14627bd0865b142d95b3d73686b054cd4f11790a4fa16eb522edb03e2f2a419
+sig=

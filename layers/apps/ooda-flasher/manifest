@@ -1,0 +1,8 @@
+name=ooda-flasher
+version=0.3.0
+caps=FsRead,FsWrite,Tcp,Process,Env,Frame
+deps=ooda-standard
+payload=ooda-flasher.oo
+commit=
+sha256=939fbdcbf98901f9898be7a29e81f0c6243e1075631416fd7deeb6d7740ebbc1
+sig=

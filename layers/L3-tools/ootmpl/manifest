@@ -1,8 +1,0 @@
-name=ootmpl
-version=0.1.0
-caps=FsRead,FsWrite,Env
-deps=
-payload=ootmpl.oo
-commit=
-sha256=2d5d657730ecc8e22462e1c789940e3114449cd337322a6df49d7b64c54cb0b6
-sig=

@@ -1,8 +1,0 @@
-name=ooxargs
-version=0.1.0
-caps=FsRead,Process,Env
-deps=
-payload=ooxargs.oo
-commit=
-sha256=22ee96c02ce527d2ac9c738a9591521ce244a1750772c67161a576daed1a4628
-sig=

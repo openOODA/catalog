@@ -1,0 +1,8 @@
+name=ooda-passwords
+version=0.4.0
+caps=FsRead,FsWrite,Process,Env,Frame
+deps=ooda-standard
+payload=ooda-passwords.oo
+commit=
+sha256=5575cc585248c89f669774af3d7d8728c1f33299f92ba0a33cece007564e8340
+sig=

@@ -1,0 +1,8 @@
+name=ooda-canvas
+version=0.4.0
+caps=FsRead,FsWrite,Process,Env,Frame
+deps=ooda-standard
+payload=ooda-canvas.oo
+commit=
+sha256=766eb223c49b720ec14471bca2e689c826afc62688c3142e81b8e5bdb7d3e587
+sig=

@@ -1,8 +1,0 @@
-name=oostrike
-version=0.1.0
-caps=Env,FsRead,FsWrite
-deps=
-payload=oostrike.oo
-commit=
-sha256=479c4d588905bdf4bd7f11d3003c6662c86127a305fc61c8378b16730afbeec7
-sig=

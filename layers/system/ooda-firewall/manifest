@@ -1,0 +1,8 @@
+name=ooda-firewall
+version=0.3.0
+caps=FsRead,FsWrite,Process,Env,Time,Net,Alloc
+deps=ooda-standard
+payload=ooda-firewall.oo
+commit=
+sha256=3f21853a1e09e7a94e96a873b2ee2bc27c5e0bee28c1f023ad7cd83bed9a0e30
+sig=

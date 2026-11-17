@@ -1,8 +1,0 @@
-name=oolog
-version=0.1.0
-caps=FsRead,Env,Time
-deps=
-payload=oolog.oo
-commit=
-sha256=021ede24671cc945d8aadd6efad7c95797f35176c5fd545902cb9bd6019eee1a
-sig=

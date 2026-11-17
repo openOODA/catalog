@@ -2,14 +2,13 @@
 //
 // Logline: Verify every package manifest under layers/ names its directory, points at an existing
 //          payload file, and carries that payload's byte-exact sha256.
-// Setup: Explicit FsReadCap; bounded two-level directory walk; canonical oostd sha256 for payload
-//        hashes so the audit reuses the standard library instead of re-implementing digest code.
+// Setup: Explicit FsReadCap; bounded two-level walk; ooda-standard sha256 for digests.
 // Beats:
 //   1. cat_field parses one key=value line out of manifest text.
 //   2. cat_manifest_ok enforces name/payload/sha256 conformance for one package directory.
 //   3. cat_pkgs + cat_scan walk layers/<layer>/<pkg> and count conforming manifests.
 
-import "oostd/sec/hash/sha256.oo";
+import "ooda-standard/sec/hash/sha256.oo";
 
 pub fn cat_field(src: String, key: String) -> String {
     let ls: List[String] = str_split(src, "\n");

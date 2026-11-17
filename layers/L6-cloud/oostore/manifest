@@ -1,8 +1,0 @@
-name=oostore
-version=0.3.7
-caps=FsRead,FsWrite,Process
-deps=
-payload=oostore.oo
-commit=
-sha256=49ea59036fa1a034b156f1114339aab5bfd17be53bbfe95a7f1dd189334f3f69
-sig=

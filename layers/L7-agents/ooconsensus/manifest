@@ -1,8 +1,0 @@
-name=ooconsensus
-version=0.4.1
-caps=FsRead,FsWrite,Env
-deps=
-payload=ooconsensus.oo
-commit=
-sha256=e6c21688c92d50a9e2b6ab8a3a00fcfca57f9e7fb2d72982d3c6e44cdb03a563
-sig=

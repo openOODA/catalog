@@ -1,8 +1,0 @@
-name=oogrep
-version=0.3.7
-caps=FsRead,FsWrite,Sys,Process,Env,Time
-deps=
-payload=oogrep.oo
-commit=
-sha256=726d6985075dad2fef6ab712b3c368f7f6c8d92fa68a064c896f94073410bfa0
-sig=

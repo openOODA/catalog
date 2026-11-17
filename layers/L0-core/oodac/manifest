@@ -1,8 +1,0 @@
-name=oodac
-version=0.5.0
-caps=FsRead,Fs,Net,Sys,Env,Time,Rand,Alloc,Gpu,Thread,FsWrite,Tcp,Process,Ffi,CompilerRead,Sign,Audio,Camera,Usb,Hid,Window,Frame,Arena,Udp,Bind
-deps=
-payload=oodac.oo
-commit=
-sha256=b41607a63c14c944a3f6b8bcbc93019f7a7faf05af508005f58ef836059b1d05
-sig=

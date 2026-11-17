@@ -1,8 +1,0 @@
-name=ooidentity
-version=0.3.7
-caps=FsRead,FsWrite,Process
-deps=
-payload=ooidentity.oo
-commit=
-sha256=cf80f34c784219ffdca368ae5290821803393f72fc4ac56bb343dc87c3cfd778
-sig=

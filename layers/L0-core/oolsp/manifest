@@ -1,8 +1,0 @@
-name=oolsp
-version=0.3.0
-caps=CompilerRead,FsRead,Process,Env,FsWrite,Time,Rand
-deps=
-payload=oolsp.oo
-commit=
-sha256=f87d438640db3be5b107a5422bbd45184f761a773e037243221128cbb020d076
-sig=

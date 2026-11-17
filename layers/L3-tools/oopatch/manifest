@@ -1,8 +1,0 @@
-name=oopatch
-version=0.1.0
-caps=FsRead,FsWrite,Env
-deps=
-payload=oopatch.oo
-commit=
-sha256=e0921837e7f39913f99d1b31eb7575c62676fb2e3bd1821aaa101ea217fd68f2
-sig=

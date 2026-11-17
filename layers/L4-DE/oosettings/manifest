@@ -1,8 +1,0 @@
-name=oosettings
-version=0.3.6
-caps=FsRead,Env,FsWrite
-deps=
-payload=oosettings.oo
-commit=
-sha256=4cf33f09c41962f97a28175e19e13e552b67dc900e42cc2c2e840435968094bf
-sig=

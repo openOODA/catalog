@@ -1,0 +1,8 @@
+name=ooda-hardware
+version=0.7.0
+caps=FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap
+deps=ooda-standard
+payload=ooda-hardware.oo
+commit=
+sha256=30bdf4595afeac444835e91e727e6bbf5581f81e81e97d5aadb20e84436aa8fd
+sig=

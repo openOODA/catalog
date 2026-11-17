@@ -1,0 +1,8 @@
+name=ooda-kernel
+version=0.7.0
+caps=FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap
+deps=ooda-standard
+payload=ooda-kernel.oo
+commit=
+sha256=5af8fd2093887a9314b5b7ae59140224130bfad4bfe7756828b4ef51133767be
+sig=

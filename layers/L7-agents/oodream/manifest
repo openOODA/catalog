@@ -1,8 +1,0 @@
-name=oodream
-version=0.4.1
-caps=FsRead,Process,Env,FsWrite,Tcp
-deps=
-payload=oodream.oo
-commit=
-sha256=c43be410da500bff924601a196d5967bc37397e5160733b5f71229e266ffe5cf
-sig=

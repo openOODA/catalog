@@ -1,0 +1,8 @@
+name=ooda-boot
+version=0.7.0
+caps=FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,TpmCap,BlockCap,SignCap
+deps=ooda-standard
+payload=ooda-boot.oo
+commit=
+sha256=c5953f492f8f8916389156a16110a419a8774013a616ec2646a3aa073ffc76ed
+sig=

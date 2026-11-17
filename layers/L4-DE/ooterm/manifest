@@ -1,8 +1,0 @@
-name=ooterm
-version=0.3.6
-caps=FsRead,Env,FsWrite
-deps=
-payload=ooterm.oo
-commit=
-sha256=864d03baeeb8a789785fe9b39f0a9cedb7af7074edada0a2c76a1fd1dbe74066
-sig=

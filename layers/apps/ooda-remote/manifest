@@ -1,0 +1,8 @@
+name=ooda-remote
+version=0.4.0
+caps=FsRead,FsWrite,Process,Env,Frame
+deps=ooda-standard
+payload=ooda-remote.oo
+commit=
+sha256=7ca9b56297fba636546c6352a7f8ea9ccd1043c4a6438c3eaad1d73ad0a897e4
+sig=

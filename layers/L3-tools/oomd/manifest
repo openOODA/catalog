@@ -1,8 +1,0 @@
-name=oomd
-version=0.1.0
-caps=FsRead,Env
-deps=
-payload=oomd.oo
-commit=
-sha256=c8c0ff1f34c7b336ec1cd78a64b2f9f989e7c0a6247e1e44c84f675fb8ee23d3
-sig=

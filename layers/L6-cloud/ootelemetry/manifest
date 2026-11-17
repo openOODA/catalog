@@ -1,8 +1,0 @@
-name=ootelemetry
-version=0.3.8
-caps=FsRead,FsWrite,Process
-deps=
-payload=ootelemetry.oo
-commit=
-sha256=3cc6c7363a7e9e2280ecd4a353a966fbd719efa5db8e445f0b5e21c8fa084de7
-sig=

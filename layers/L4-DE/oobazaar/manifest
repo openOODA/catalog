@@ -1,8 +1,0 @@
-name=oobazaar
-version=0.3.6
-caps=FsRead,Env,FsWrite
-deps=
-payload=oobazaar.oo
-commit=
-sha256=ba54378c66c02027afbd3a87fb777a3c635541b9a10d6f78a7cb248d873f6f0b
-sig=

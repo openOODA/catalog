@@ -1,8 +1,0 @@
-name=ooinit
-version=0.4.0
-caps=FsRead,FsWrite,Process
-deps=
-payload=ooinit.oo
-commit=
-sha256=8d13869ace8c72568572db54028370bac175e53a8e7f1c4c73a63f1e90d20387
-sig=

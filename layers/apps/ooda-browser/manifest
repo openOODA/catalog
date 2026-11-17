@@ -1,0 +1,8 @@
+name=ooda-browser
+version=0.4.0
+caps=FsRead,FsWrite,Tcp,Process,Env
+deps=ooda-standard
+payload=ooda-browser.oo
+commit=
+sha256=ac7e28c9a9c030d8dde05bec59398c2232744cfdfb1ec48d110056c6d63c6c2b
+sig=

@@ -1,0 +1,8 @@
+name=ooda-store
+version=0.4.0
+caps=FsRead,FsWrite,Env
+deps=ooda-standard
+payload=ooda-store.oo
+commit=
+sha256=9f3df48aa8f9a25e39a82f3e632defa90d9c2dd2aed6d9403ad1f033eb8f9b41
+sig=

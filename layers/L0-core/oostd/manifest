@@ -1,8 +1,0 @@
-name=oostd
-version=1.1.0
-caps=Thread,FsRead,FsWrite,Process,Time,Fs,Sys,Env,Alloc,Net,Ffi,Gpu,Tcp,Udp,Bind,Rand,Sign
-deps=
-payload=oostd.oo
-commit=
-sha256=35c93e2e4e664fd87c0f655229718ada6cd557699020055049d068440460620b
-sig=

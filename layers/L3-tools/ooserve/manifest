@@ -1,8 +1,0 @@
-name=ooserve
-version=0.1.0
-caps=FsRead,Net,Tcp,Bind,Env,Time
-deps=
-payload=ooserve.oo
-commit=
-sha256=6eef327c8a3b412ccac0e4143da03c6be7cbdcdc9b38ae60b7d716e441a6da6f
-sig=

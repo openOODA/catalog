@@ -1,8 +1,0 @@
-name=oomemory
-version=0.4.1
-caps=FsRead,FsWrite,Env
-deps=
-payload=oomemory.oo
-commit=
-sha256=002cb70bf0236884b6a5dfa6e1ecbc71d91d13f2d5b0e486c508d4f945430d80
-sig=

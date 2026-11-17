@@ -1,8 +1,0 @@
-name=oopass
-version=0.3.8
-caps=FsWrite,FsRead,Env,Process
-deps=
-payload=oopass.oo
-commit=
-sha256=b069f545c2f8c902df9da2d38fd7debd43aba50a81ca15b8f147af64a78bd4de
-sig=

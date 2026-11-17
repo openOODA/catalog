@@ -1,8 +1,0 @@
-name=oovoxel
-version=0.2.5
-caps=Process,Env,FsWrite,FsRead
-deps=
-payload=oovoxel.oo
-commit=
-sha256=5f5d844c3164d56549ec3bd81de4cb82734d1e7baea0669fbb6918f0978c9b04
-sig=

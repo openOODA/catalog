@@ -1,8 +1,0 @@
-name=oochat
-version=0.3.8
-caps=FsWrite,FsRead,Env,Process
-deps=
-payload=oochat.oo
-commit=
-sha256=93c850a2318e9f07718ca00e931be1675a783c3fb9da7a32e18e59f538ee2238
-sig=

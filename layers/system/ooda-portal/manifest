@@ -1,0 +1,8 @@
+name=ooda-portal
+version=0.5.0
+caps=Process,FsRead,FsWrite,Env
+deps=ooda-standard
+payload=ooda-portal.oo
+commit=
+sha256=f391de545d772a826fb6ce81bf294f86d828b27fbf7660a309bac3548d42c390
+sig=

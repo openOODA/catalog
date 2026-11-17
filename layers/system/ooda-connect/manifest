@@ -1,0 +1,8 @@
+name=ooda-connect
+version=0.7.0
+caps=FsRead,FsWrite,Tcp,Bind,Process,Rand,Env
+deps=ooda-standard
+payload=ooda-connect.oo
+commit=
+sha256=b0ea320d951b2aee4324b9c2ae9f86fd0ef686743942cca35a13db6d62e44503
+sig=

@@ -1,8 +1,0 @@
-name=oodrv-net
-version=0.6.1
-caps=Mmio,Dma,Net,FsRead,FsWrite,Irq,Pci
-deps=
-payload=oodrv-net.oo
-commit=
-sha256=cc5728a98fc00178dad066c3dd0716da7d5bb97f700d6d758fafdb7aa86368ba
-sig=

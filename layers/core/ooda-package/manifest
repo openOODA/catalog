@@ -1,0 +1,8 @@
+name=ooda-package
+version=2.14.0
+caps=FsRead,FsWrite,Net,Process,Env
+deps=ooda-standard
+payload=ooda-package.oo
+commit=
+sha256=82aa7a2cac02247bc8fc1202bc4ebc86e76ac16ec78bfa704bb3177173f7b8b6
+sig=

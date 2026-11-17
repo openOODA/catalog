@@ -1,0 +1,8 @@
+name=ooda-health
+version=0.4.0
+caps=Process,FsRead,FsWrite,Env
+deps=ooda-standard
+payload=ooda-health.oo
+commit=
+sha256=6b176ca9260e2a4c784f98c3aeda242f19c63a59ce460b7895bdaa16a32227a9
+sig=

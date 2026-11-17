@@ -1,8 +1,0 @@
-name=oocontainer
-version=0.4.1
-caps=FsRead,FsWrite,Process
-deps=
-payload=oocontainer.oo
-commit=
-sha256=70198dcedf0abb0460f52e8d21d05e103be1e12adc0899345b39e9f3c6fe0d37
-sig=

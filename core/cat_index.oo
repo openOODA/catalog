@@ -12,8 +12,8 @@
 //      every package names exactly one SHA256SUMS asset and no retired or foreign asset survives.
 //   6. cat_sig_ok re-derives the HMAC-SHA256 index.sig oracle tag over the index body.
 
-import "oostd/sec/hash/sha256.oo";
-import "oostd/sec/mac/hmac.oo";
+import "ooda-standard/sec/hash/sha256.oo";
+import "ooda-standard/sec/mac/hmac.oo";
 import "core/cat_manifest.oo";
 import "core/sums_sib.oo";
 
@@ -133,14 +133,9 @@ pub fn cat_groups_scan(fs: &FsReadCap, lroot: String, gsrc: String) -> Int {
         let layer: String = list_get(parts, list_len(parts) - 2);
         let name: String = cat_tail(d);
         let mut grp: String = "";
-        if layer == "L0-core" { grp = "core"; }
-        if layer == "L1-kernel" { grp = "kernel"; }
-        if layer == "L2-OS" { grp = "os"; }
-        if layer == "L3-tools" { grp = "tools"; }
-        if layer == "L4-DE" { grp = "de"; }
-        if layer == "L5-apps" { grp = "apps"; }
-        if layer == "L6-cloud" { grp = "cloud"; }
-        if layer == "L7-agents" { grp = "agents"; }
+        if layer == "core" { grp = "core"; }
+        if layer == "system" { grp = "system"; }
+        if layer == "apps" { grp = "apps"; }
         let mut j: Int = 0;
         while j < list_len(glines) {
             let ln: String = str_trim(list_get(glines, j));
@@ -183,7 +178,9 @@ pub fn cat_sums_scan(idx_src: String, sums_src: String) -> Int {
                 if str_ends_with(asset, "-linux-x86_64") {
                     stem = str_slice(asset, 0, chars_len(asset) - 13);
                 }
-                if asset == "liboodar.a" { stem = "oodar"; }
+                if str_starts_with(asset, "liboodar") && str_ends_with(asset, ".a") {
+                    stem = "ooda-runtime";
+                }
                 let aux: Bool = asset == "ooda-os-x86_64.iso" ||
                     asset == "ooda-buildbox-x86_64.tar.gz" ||
                     asset == "openooda-codex-linux-x86_64.tar.gz" ||

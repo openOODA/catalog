@@ -1,8 +1,0 @@
-name=ooedit
-version=0.1.0
-caps=FsRead,FsWrite,Env,Time
-deps=
-payload=ooedit.oo
-commit=
-sha256=99e8a7223b462d9fb3be02a7f1ef2642ba511fa2c5461953fe5578efa7b57d28
-sig=

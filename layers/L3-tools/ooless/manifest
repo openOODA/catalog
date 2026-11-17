@@ -1,8 +1,0 @@
-name=ooless
-version=0.2.6
-caps=FsRead,Process,Env
-deps=
-payload=ooless.oo
-commit=
-sha256=f4eb4fefba03523f6b90d7ad9fa51e4e15fab4ae875b9f93896626b3bf117478
-sig=

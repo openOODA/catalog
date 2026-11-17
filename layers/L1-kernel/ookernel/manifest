@@ -1,8 +1,0 @@
-name=ookernel
-version=0.6.1
-caps=FsRead,FsWrite,Frame,Dma,Mmio,Arena,Irq
-deps=
-payload=ookernel.oo
-commit=
-sha256=fd4be1244b07eff1ee14158c61e9e6e77179303c37c17bfe27c242fce9257029
-sig=

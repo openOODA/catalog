@@ -1,8 +1,0 @@
-name=oocomp
-version=0.4.0
-caps=Env,FsRead,Bind,FsWrite,Fs,Process
-deps=
-payload=oocomp.oo
-commit=
-sha256=414a37e300c45abcad823ab904b947283f9fc6dc480edc76f9772dfb36553e24
-sig=

@@ -1,8 +1,0 @@
-name=ooflash
-version=0.2.22
-caps=FsRead,FsWrite,Process,Tcp,Env
-deps=
-payload=ooflash.oo
-commit=
-sha256=a9bc78b71b72b524f321336402a7a10d727666f6004a1648c90a7380f264e855
-sig=

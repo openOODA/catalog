@@ -1,8 +1,0 @@
-name=oomount
-version=0.2.6
-caps=FsRead,FsWrite,Process,Env,Time
-deps=
-payload=oomount.oo
-commit=
-sha256=f6d31e6ce0eba952f8bd6334d795aa88f703776365322bbf56ab1f40a037001c
-sig=

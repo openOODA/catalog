@@ -1,8 +1,0 @@
-name=oosysbus
-version=0.3.5
-caps=Bind,Tcp,FsRead,FsWrite,Process
-deps=
-payload=oosysbus.oo
-commit=
-sha256=6c98351dd307e055cec48a84291315fc8f0d8478f16fd57d8df2a003d37b2504
-sig=

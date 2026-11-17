@@ -1,0 +1,8 @@
+name=ooda-sandbox
+version=0.3.0
+caps=FsRead,FsWrite,Process,Env,Time
+deps=ooda-standard
+payload=ooda-sandbox.oo
+commit=
+sha256=1942f24cb7e3fb412662b7dced17a694771ba160d30133cf73160f39b64a2feb
+sig=

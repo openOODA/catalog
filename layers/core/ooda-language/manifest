@@ -1,0 +1,8 @@
+name=ooda-language
+version=0.4.0
+caps=FsRead,FsWrite,Process,Env,CompilerRead
+deps=ooda-standard
+payload=ooda-language.oo
+commit=
+sha256=b30b19d345efaacf3b6022045fbef8e51bfcc7e624f6547af090aa70fb26f085
+sig=

@@ -1,0 +1,8 @@
+name=ooda-settings
+version=0.4.0
+caps=FsRead,FsWrite,Env
+deps=ooda-standard
+payload=ooda-settings.oo
+commit=
+sha256=be83334b9b1f3b10b44997f724c11bf71beb1ec34f579cf30e2b481f3114059a
+sig=

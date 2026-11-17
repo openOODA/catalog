@@ -1,0 +1,8 @@
+name=ooda-screensaver
+version=5.1.0
+caps=FsRead,FsWrite,Fs,Process,Bind,Time,Ffi,Arena,Alloc
+deps=ooda-standard
+payload=ooda-screensaver.oo
+commit=
+sha256=2c36afa92a76975ce01090d4acb74fb1d4553225871aa656954dfd03aac2872c
+sig=

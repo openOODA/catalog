@@ -1,0 +1,8 @@
+name=ooda-theme
+version=0.3.0
+caps=FsRead,FsWrite,Process,Env,Hid,Usb
+deps=ooda-standard
+payload=ooda-theme.oo
+commit=
+sha256=45e2e03adb2124d234b7b584c672efd2a554e9a0668736e809199b1ae8edbba8
+sig=

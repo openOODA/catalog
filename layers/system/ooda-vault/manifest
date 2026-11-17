@@ -1,0 +1,8 @@
+name=ooda-vault
+version=0.3.0
+caps=FsRead,FsWrite,Process,Env,Rand
+deps=ooda-standard
+payload=ooda-vault.oo
+commit=
+sha256=64219332c7ae7139f53a5408a8fdc432236eceb2d2d2f1097ae02d247d034999
+sig=

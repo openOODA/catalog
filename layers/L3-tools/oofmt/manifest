@@ -1,8 +1,0 @@
-name=oofmt
-version=0.1.0
-caps=FsRead,FsWrite,Env
-deps=
-payload=oofmt.oo
-commit=
-sha256=aee05ec47d706b2943025047a39703a769b99283df8ce2931377e25a6a7fb182
-sig=

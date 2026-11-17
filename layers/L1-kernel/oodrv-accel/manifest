@@ -1,8 +1,0 @@
-name=oodrv-accel
-version=0.6.1
-caps=Mmio,Dma,Gpu,FsRead,FsWrite
-deps=
-payload=oodrv-accel.oo
-commit=
-sha256=f622d2b26bdf89f4ca3bb8b2545adb3364540baa5b748d9734c5bfa91901a7fc
-sig=

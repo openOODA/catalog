@@ -1,8 +1,0 @@
-name=ooenv
-version=0.1.0
-caps=FsRead,Process,Env
-deps=
-payload=ooenv.oo
-commit=
-sha256=8ead51011c239c9e5bc3a51a35531a7042e058da509a8cdb2b20644051dbdb49
-sig=

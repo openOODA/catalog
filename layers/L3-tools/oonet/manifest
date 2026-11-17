@@ -1,8 +1,0 @@
-name=oonet
-version=0.2.6
-caps=FsRead,FsWrite,Net,Process,Env
-deps=
-payload=oonet.oo
-commit=
-sha256=a791a5e01021d001bfec63379ba0ee15442dbc66c8287715f6bf82d14e0b9a2e
-sig=

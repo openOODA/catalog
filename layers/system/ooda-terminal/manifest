@@ -1,0 +1,8 @@
+name=ooda-terminal
+version=0.4.0
+caps=Process,FsRead,Env
+deps=ooda-standard
+payload=ooda-terminal.oo
+commit=
+sha256=5745963e3bd33b0b7458b14a7dd73d1afcf6a0d961a777dac457984b18158e07
+sig=

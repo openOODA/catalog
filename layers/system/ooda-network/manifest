@@ -1,0 +1,8 @@
+name=ooda-network
+version=0.5.0
+caps=Process,Bind,Tcp,FsRead,FsWrite,Env
+deps=ooda-standard
+payload=ooda-network.oo
+commit=
+sha256=006913b5f38f3b691d78c2a0109ffd512de672be57c6bf5bdc7db5e331251a06
+sig=

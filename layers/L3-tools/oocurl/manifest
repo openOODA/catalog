@@ -1,8 +1,0 @@
-name=oocurl
-version=0.2.6
-caps=Net,Tcp,FsRead,FsWrite,Process,Env
-deps=
-payload=oocurl.oo
-commit=
-sha256=b998ef54de8a7075dd1e198507e1f2cb0fc2ee9aaa2cc223e9805405c41a852f
-sig=

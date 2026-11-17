@@ -1,8 +1,0 @@
-name=oocalc
-version=0.1.0
-caps=FsRead,Env
-deps=
-payload=oocalc.oo
-commit=
-sha256=792851675c968e668ef12892ce1c7fcc6d3524fe4f351c99a17b6c3c8648c0a1
-sig=

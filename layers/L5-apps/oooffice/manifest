@@ -1,8 +1,0 @@
-name=oooffice
-version=0.3.8
-caps=FsWrite,FsRead,Env,Process
-deps=
-payload=oooffice.oo
-commit=
-sha256=3e8eb088a0b04648df58380994b033c677307e6add4480194d77fd39a03feefc
-sig=

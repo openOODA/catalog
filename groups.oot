@@ -1,24 +1,21 @@
-# groups.oot — Fedora-style @group profiles for the openOODA binary hub.
+# groups.oot — @group profiles for the openOODA binary hub.
 #
 # File: catalog/groups.oot
 #
 # One group per line: `@name = pkg pkg pkg ...`. `@all` expands to every
-# package in every other group. `@games` is a curated subset of @apps and
-# `@workstation` is the full workstation stack (@core + @tools + @de + @apps).
-# install.sh and oopm expand these names against the release pool at
+# product package across the canonical 3 product organizations (@core, @system,
+# @apps). `@games` is the game subset of @apps and `@desktop` / `@workstation`
+# install the full OS + userland stack.
+# install.sh and ooda-package expand these names against the release pool at
 # https://github.com/openOODA/install/releases/latest/download/ — group
 # membership selects binaries, not catalog folders. Layer directories
-# (core/ kernel/ OS/ tools/ DE/ apps/ cloud/ agents/) hold the package
-# manifests; this file is the install-time selection contract.
+# (layers/core/, layers/system/, layers/apps/) hold the package manifests; this
+# file is the install-time selection contract.
 
-@core = ooda oodac oodar oohat oolsp oomcp oopm oostd
-@kernel = ooboot oodrv-accel oodrv-io oodrv-net oodrv-storage oodrv-virt oohal ookernel
-@os = ooauthd oocontainer oohealthd ooinit oollama oomodemd oonetd oosysbus oovfs
-@tools = ooarchive ooawk oocalc oocat oocodec oocron oocsv oocurl oodate oodefense oodiff oodisk ooedit ooelf ooenv oofind oofirewall oofmt oofs oofzf oogit oogql oogrep ooh oohash oohw oojq ooless oolog ools oomake ooman oomd oomount oonet oopack oopatch oopath oopcap ooperm oopower ooproc ooprovenance ooredact oorgb oosandbox oosbom oosed oosemver ooserve oosh oosign oosort oosync ootee ootext ootheme ootmpl ootty oovault oowatch oows ooxargs ooxml
-@de = oobazaar oocomp oofiles oopanel ooportal oosaver oosettings ooterm ooui
-@apps = ooarcade oobrowser oocamera oocanvas oochat oocommand oodaw ooemu ooengine ooflash ookvm oomedia oooffice oopass oostrike oostudio oovoxel
-@games = ooemu ooarcade oocommand oostrike oovoxel
-@cloud = oobilling oodb oodeploy oogateway ooidentity oomesh oostore ootelemetry
-@agents = oobench oocode ooconsensus oodream oofalsify oogovern ooloop oomemory ooswarm
-@workstation = @core @tools @de @apps
-@all = @core @kernel @os @tools @de @apps @cloud @agents
+@core = ooda ooda-binary ooda-bridge ooda-build ooda-compiler ooda-engine ooda-format ooda-interface ooda-language ooda-package ooda-provenance ooda-runtime ooda-sign ooda-standard ooda-verify
+@system = ooda-archive ooda-authority ooda-boot ooda-bus ooda-compositor ooda-connect ooda-container ooda-data ooda-database ooda-disk ooda-drivers ooda-edit ooda-files ooda-filesystem ooda-firewall ooda-hardware ooda-health ooda-inference ooda-kernel ooda-list ooda-machine ooda-modem ooda-network ooda-panel ooda-portal ooda-read ooda-sandbox ooda-screensaver ooda-settings ooda-shell ooda-start ooda-terminal ooda-text ooda-theme ooda-vault ooda-version ooda-web
+@apps = ooda-arcade ooda-audio ooda-browser ooda-calculator ooda-camera ooda-canvas ooda-chat ooda-commander ooda-emulator ooda-flasher ooda-office ooda-passwords ooda-player ooda-remote ooda-store ooda-strike ooda-studio ooda-voxel
+@games = ooda-arcade ooda-commander ooda-emulator ooda-strike ooda-voxel
+@desktop = @core @system @apps
+@workstation = @core @system @apps
+@all = @core @system @apps

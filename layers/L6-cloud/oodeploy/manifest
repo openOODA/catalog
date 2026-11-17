@@ -1,8 +1,0 @@
-name=oodeploy
-version=0.3.8
-caps=FsRead,FsWrite,Process
-deps=
-payload=oodeploy.oo
-commit=
-sha256=34f82d4b32c4fc18358335b1ef18aaad6e90432408673a811cb4c45ece2a12a5
-sig=

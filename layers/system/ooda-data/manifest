@@ -1,0 +1,8 @@
+name=ooda-data
+version=0.3.0
+caps=FsRead,FsWrite,Process,Env,Time
+deps=ooda-standard
+payload=ooda-data.oo
+commit=
+sha256=88d03dbe5a5a1112e4851e3d9e2eb37d900189c5c6e14d8c1afc7b9f5b5b5f37
+sig=

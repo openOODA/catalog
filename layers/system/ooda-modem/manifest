@@ -1,0 +1,8 @@
+name=ooda-modem
+version=0.2.0
+caps=FsRead,FsWrite
+deps=ooda-standard
+payload=ooda-modem.oo
+commit=
+sha256=d8624b5d42ce8625f0ffd1862df32f72073b1e7f219054ce22bf90af3e4d287a
+sig=

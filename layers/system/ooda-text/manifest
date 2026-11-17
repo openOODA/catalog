@@ -1,0 +1,8 @@
+name=ooda-text
+version=0.4.0
+caps=FsRead,FsWrite,Sys,Process,Env,Time
+deps=ooda-standard
+payload=ooda-text.oo
+commit=
+sha256=6c630defd8ef980688fdc0f47409a5996f1ddaa1972cd1de9330e28c4dbdbea7
+sig=

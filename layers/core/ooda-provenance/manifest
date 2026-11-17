@@ -1,0 +1,8 @@
+name=ooda-provenance
+version=0.3.0
+caps=FsRead,FsWrite,Process,Env,Time
+deps=ooda-standard
+payload=ooda-provenance.oo
+commit=
+sha256=0a44733dbd6a8aaaa214e4222f26b6efd8b4794a18fe55a79f0d69c812e412bd
+sig=

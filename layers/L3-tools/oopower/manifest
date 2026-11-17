@@ -1,8 +1,0 @@
-name=oopower
-version=0.2.6
-caps=FsRead,Env,Process
-deps=
-payload=oopower.oo
-commit=
-sha256=221524e8eb9191b606e6fc769c56bd877d1f343ed146a198e038fe7e8949292b
-sig=

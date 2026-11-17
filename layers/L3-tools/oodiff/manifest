@@ -1,8 +1,0 @@
-name=oodiff
-version=0.3.7
-caps=FsRead,FsWrite,Process,Env,Time
-deps=
-payload=oodiff.oo
-commit=
-sha256=a8cb9eb4563504c8c094f40970331ddd9c62022ced9130f15e7b1b0dc64bc950
-sig=

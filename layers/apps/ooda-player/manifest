@@ -1,0 +1,8 @@
+name=ooda-player
+version=0.5.0
+caps=FsRead,FsWrite,Process,Env,Frame
+deps=ooda-standard
+payload=ooda-player.oo
+commit=
+sha256=446290a54dd8e4b656d052406024b6be5783157352e83f8c855024a20909e88c
+sig=

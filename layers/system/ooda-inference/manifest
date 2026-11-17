@@ -1,0 +1,8 @@
+name=ooda-inference
+version=0.5.0
+caps=Process,Bind,Tcp,FsRead,FsWrite,Env
+deps=ooda-standard
+payload=ooda-inference.oo
+commit=
+sha256=24343f914a7747200e6eaebbccc82f1971a02104e3cfcb849532da60768af60e
+sig=

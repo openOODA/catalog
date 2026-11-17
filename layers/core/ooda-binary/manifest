@@ -1,0 +1,8 @@
+name=ooda-binary
+version=0.2.0
+caps=FsRead,Env
+deps=ooda-standard
+payload=ooda-binary.oo
+commit=
+sha256=bf0542ebb561168f47869693b2e8dceea6147fbce5ff158863398b219a900ae2
+sig=

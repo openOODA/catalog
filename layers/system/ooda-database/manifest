@@ -1,0 +1,8 @@
+name=ooda-database
+version=0.4.0
+caps=FsRead,FsWrite,Net
+deps=ooda-standard
+payload=ooda-database.oo
+commit=
+sha256=fd1f7d7c2b0e1fb2e07cc8914a78d2bcef68782bb44c77437e2da22dc90d2fde
+sig=
