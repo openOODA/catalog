@@ -1,29 +1,24 @@
 // # Catalog Sibling Asset Tracer
 //
-// Logline: Trace sibling persona assets (<pkg>-<persona>...) to a parent package row.
-// Setup: Pure string page; zero caps. Siblings ship beside the main asset
-//   because multi-binary tools exec them at runtime.
+// Logline: Trace allowed sibling persona assets (<pkg>-build|infer|sched) to a parent package row.
+// Setup: Pure string page; zero caps. Enforces the explicit build|infer|sched suffix allowlist
+//   so arbitrary multi-hyphen stems cannot piggyback on an indexed package prefix.
 // Beats:
-//   1. Split the stem on dashes and walk prefix lengths from n-1 down to 1.
-//   2. Report whether any prefix names an indexed package row.
-//   3. Single-segment stems never trace (no parent exists).
+//   1. Split the stem on dashes; require at least 3 segments (<ooda>-<word>-<persona>).
+//   2. Admit only the explicit persona suffixes build, infer, and sched.
+//   3. Reconstruct the parent stem and verify it names an indexed package row.
 
-// Multi-segment sibling persona assets (e.g. <pkg>-<a>-<b>) trace to the
-// longest matching parent package row in index.
 pub fn cat_sib_traced(hay: String, stem: String) -> Bool {
     let parts: List[String] = str_split(stem, "-");
-    let mut end: Int = list_len(parts) - 1;
-    while end >= 1 {
-        let mut parent: String = list_get(parts, 0);
-        let mut pi: Int = 1;
-        while pi < end {
-            parent = parent + "-" + list_get(parts, pi);
-            pi = pi + 1;
-        }
-        if str_contains(hay, "\n" + parent + "|") {
-            return true;
-        }
-        end = end - 1;
+    let n: Int = list_len(parts);
+    if n < 3 { return false; }
+    let tail: String = list_get(parts, n - 1);
+    if tail != "build" && tail != "infer" && tail != "sched" { return false; }
+    let mut parent: String = list_get(parts, 0);
+    let mut pi: Int = 1;
+    while pi < n - 1 {
+        parent = parent + "-" + list_get(parts, pi);
+        pi = pi + 1;
     }
-    return false;
+    return str_contains(hay, "\n" + parent + "|");
 }

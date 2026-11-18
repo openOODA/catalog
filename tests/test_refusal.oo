@@ -55,7 +55,10 @@ fn t_refuse(fs: &FsReadCap) -> Int {
         "unindexed row refused", p);
     p = t_expect(cat_groups_scan(fs, "layers", "") == 0, "empty groups cover nothing", p);
     let fake_sums: String = zeros + "  ooqu" + "ota-linux-x86_64\n";
-    p = t_expect(cat_sums_scan(idx, fake_sums) > 0, "stale sums asset refused", p);
+    let bad_sib: String = zeros + "  ooda-hardware-arm64-linux-x86_64\n";
+    let bad_piggy: String = zeros + "  ooda-bogus-linux-x86_64\n";
+    p = t_expect(cat_sums_scan(idx, fake_sums) > 0 && cat_sums_scan(idx, bad_sib) > 0 &&
+        cat_sums_scan(idx, bad_piggy) > 0, "stale and unauthorized sums assets refused", p);
     p = t_expect(!cat_sig_ok(idx, zeros), "forged index.sig refused", p);
     return p;
 }
