@@ -32,7 +32,7 @@ ooda-flasher|0.3.0|FsRead,FsWrite,Tcp,Process,Env,Frame|ooda-standard|939fbdcbf9
 ooda-format|0.2.0|FsRead,FsWrite,Env|ooda-standard|e14627bd0865b142d95b3d73686b054cd4f11790a4fa16eb522edb03e2f2a419
 ooda-hardware|0.7.0|FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap|ooda-standard|30bdf4595afeac444835e91e727e6bbf5581f81e81e97d5aadb20e84436aa8fd
 ooda-health|0.4.0|Process,FsRead,FsWrite,Env|ooda-standard|6b176ca9260e2a4c784f98c3aeda242f19c63a59ce460b7895bdaa16a32227a9
-ooda-inference|0.5.0|Process,Bind,Tcp,FsRead,FsWrite,Env|ooda-standard|24343f914a7747200e6eaebbccc82f1971a02104e3cfcb849532da60768af60e
+ooda-inference|0.6.0|Process,Bind,Tcp,Fs,FsRead,FsWrite,Env|ooda-standard|0779484f88f4d619ff2801189086b0474dca17b2a16c65c142d5ca816adaa628
 ooda-interface|0.3.0|FsRead,FsWrite,Process,Env,Time|ooda-standard|663ddfd4d7cc3482a310a107155ce8b8f428328ac5f9714fb3b0d6dff866e02a
 ooda-kernel|0.7.0|FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap|ooda-standard|5af8fd2093887a9314b5b7ae59140224130bfad4bfe7756828b4ef51133767be
 ooda-language|0.4.0|FsRead,FsWrite,Process,Env,CompilerRead|ooda-standard|b30b19d345efaacf3b6022045fbef8e51bfcc7e624f6547af090aa70fb26f085

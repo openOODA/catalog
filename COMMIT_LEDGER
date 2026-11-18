@@ -49,7 +49,7 @@
   "openOODA-system/ooda-firewall": "7f95c58aca3f9434326df773f19617174a2ce426",
   "openOODA-system/ooda-hardware": "5afffc9cff44566065257d2eb6b5a5dbe75c77c8",
   "openOODA-system/ooda-health": "fe4e4bd9dd2f42ef573bf46a09cd9e8d9bcdd59e",
-  "openOODA-system/ooda-inference": "7cccbc51649907af37daf695d3201d56c2d4116b",
+  "openOODA-system/ooda-inference": "948e69c86ed238ba4a7eaa6b496d320a229e878d",
   "openOODA-system/ooda-kernel": "da32432f0dd559d108bf96c22b7d0031d34d4bfa",
   "openOODA-system/ooda-list": "084c36ae2f9d669ad292fb61e4da8bd1288f5577",
   "openOODA-system/ooda-machine": "8337c0b6a19f2316eba46da4a4dce6283d3a8ff9",
