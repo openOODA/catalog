@@ -47,7 +47,7 @@ secrets, and any network/process authority.
    `core/`, `@system` <-> `system/`, `@apps` <-> `apps/`); `@games` is a
    subset of `@apps`; `@desktop`, `@workstation`, `@all` expand `@core @system @apps`.
 6. **Sums parity**: every `SHA256SUMS` line is `<64-hex>  <asset>` where the
-   asset stem (`<pkg>-linux-x86_64`, `liboodar*.a` -> `ooda-runtime`,
+   asset stem (`<pkg>-linux-x86_64`, `libooda-runtime*.a` -> `ooda-runtime`,
    `ooda-standard-linux-x86_64.tar.gz` -> `ooda-standard`, or aux assets
    `ooda-os-x86_64.iso`, `ooda-buildbox-x86_64.tar.gz`, `cap_table.oot`) maps
    to a real index package; no stale, foreign, malformed, or duplicate lines.
