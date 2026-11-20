@@ -49,7 +49,7 @@ ooda-portal|0.5.0|Process,FsRead,FsWrite,Env|ooda-standard|f391de545d772a826fb6c
 ooda-provenance|0.3.0|FsRead,FsWrite,Process,Env,Time|ooda-standard|0a44733dbd6a8aaaa214e4222f26b6efd8b4794a18fe55a79f0d69c812e412bd
 ooda-read|0.3.0|FsRead,FsWrite,Process,Env,Time|ooda-standard|9432dab0a9595e165e834e150cbbd82101dbae7ec49a056ff1e64161365d895e
 ooda-remote|0.4.0|FsRead,FsWrite,Process,Env,Frame|ooda-standard|7ca9b56297fba636546c6352a7f8ea9ccd1043c4a6438c3eaad1d73ad0a897e4
-ooda-runtime|5.3.0|FsRead,Env|ooda-standard|bf2fcef1e95ed0f5572a1f1816467351e3ff63e6ca23970acfb47f3e04fb02af
+ooda-runtime|5.7.0|FsRead,Env|ooda-standard|7d5615fe68d55864b9b0db25831f4108720ec65f55877724b2952ec79868c36f
 ooda-sandbox|0.3.0|FsRead,FsWrite,Process,Env,Time|ooda-standard|1942f24cb7e3fb412662b7dced17a694771ba160d30133cf73160f39b64a2feb
 ooda-screensaver|5.1.0|FsRead,FsWrite,Fs,Process,Bind,Time,Ffi,Arena,Alloc|ooda-standard|2c36afa92a76975ce01090d4acb74fb1d4553225871aa656954dfd03aac2872c
 ooda-settings|0.4.0|FsRead,FsWrite,Env|ooda-standard|be83334b9b1f3b10b44997f724c11bf71beb1ec34f579cf30e2b481f3114059a
