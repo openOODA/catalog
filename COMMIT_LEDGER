@@ -31,7 +31,7 @@
   "openOODA-core/ooda-runtime": "3486c8e936e6cc0559d4f3d30b07bc6b5359a7ad",
   "openOODA-core/ooda-sign": "be572486a7289a980ff312a80ebc82a743c6d52e",
   "openOODA-core/ooda-standard": "153da60a6b2c9e0c93bc42e8638ecba12b35c75b",
-  "openOODA-core/ooda-verify": "fcebff726be5fd7d197ec2cbd081f91dfab299e0",
+  "openOODA-core/ooda-verify": "c6ccb8b351fbbde10d3816ae2b8b18a500d22e8b",
   "openOODA-system/ooda-archive": "27d3d8c108e722b90cd15bd6eeb9f79b91b0f1f5",
   "openOODA-system/ooda-authority": "c283f586020673f3c350ae69ab2877cadcc5c725",
   "openOODA-system/ooda-boot": "47f2a428ea5ca770114cd0766ab8110085ba5dee",
