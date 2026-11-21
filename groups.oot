@@ -14,7 +14,7 @@
 
 @core = ooda ooda-binary ooda-bridge ooda-build ooda-compiler ooda-engine ooda-format ooda-interface ooda-language ooda-package ooda-provenance ooda-runtime ooda-sign ooda-standard ooda-verify
 @system = ooda-archive ooda-authority ooda-boot ooda-bus ooda-compositor ooda-connect ooda-container ooda-data ooda-database ooda-disk ooda-drivers ooda-files ooda-filesystem ooda-firewall ooda-hardware ooda-health ooda-inference ooda-kernel ooda-list ooda-machine ooda-modem ooda-network ooda-notepad ooda-panel ooda-portal ooda-read ooda-sandbox ooda-screensaver ooda-settings ooda-shell ooda-start ooda-terminal ooda-text ooda-theme ooda-vault ooda-version ooda-web
-@apps = ooda-arcade ooda-audio ooda-browser ooda-calculator ooda-camera ooda-chat ooda-commander ooda-emulator ooda-flasher ooda-office ooda-passwords ooda-photos ooda-player ooda-remote ooda-store ooda-strike ooda-studio ooda-voxel
+@apps = ooda-arcade ooda-browser ooda-calculator ooda-camera ooda-chat ooda-commander ooda-emulator ooda-flasher ooda-office ooda-passwords ooda-photos ooda-player ooda-remote ooda-software ooda-strike ooda-studio ooda-voxel
 @games = ooda-arcade ooda-commander ooda-emulator ooda-strike ooda-voxel
 @desktop = @core @system @apps
 @workstation = @core @system @apps

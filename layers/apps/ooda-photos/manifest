@@ -1,9 +1,9 @@
 name=ooda-photos
-version=0.6.3
+version=0.7.0
 caps=FsRead,FsWrite,Fs,Process,Env,Frame,Ffi
 deps=ooda-standard
 payload=ooda-photos.oo
 commit=
-sha256=04c3c0ac337d6b7d55f26a3cd03aa111e8b218cf2c6c697f2870d8171c9eae60
+sha256=d52d8cc289c01df7981f6be6aa763ddfcc97c2ab8886243a77665a18cd8824c8
 sig=
-description=openOODA Photos GUI and image engine with layer frame codec for openOODA-apps apps layer
+description=Native Wayland Photos gallery and image engine with layer frame codec and personal-cloud sync.
