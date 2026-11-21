@@ -17,7 +17,7 @@ import "core/cat_manifest.oo";
 import "core/cat_index.oo";
 
 fn cat_help() -> String {
-    return "catalog 2.3.0 - openOODA signed package index & group profile verifier\n" +
+    return "catalog 2.3.1 - openOODA signed package index & group profile verifier\n" +
         "usage: catalog <verify|sync|about|theme> [root]\n\n" +
         "  verify [root]   check index->dirs->manifests->payloads->digests, groups, sums, sig\n" +
         "  sync   [root]   regenerate descriptors, manifests, index, index.sig from index rows\n" +
@@ -27,7 +27,7 @@ fn cat_help() -> String {
 }
 
 fn cat_about() -> String {
-    return "catalog 2.3.0 (openOODA catalog)\n" +
+    return "catalog 2.3.1 (openOODA catalog)\n" +
         "Binary       : catalog\n" +
         "Organization : openOODA (https://github.com/openOODA/catalog)\n" +
         "Summary      : Signed package index & group profile verifier/sync\n" +
@@ -50,7 +50,7 @@ fn cat_theme(args: List[String]) -> Int {
         return 2;
     }
     let p: OoThemePalette = ootheme_resolve(tn);
-    println(ootheme_tui_frame(p, "catalog", "2.3.0", "catalog", "signed index verifier"));
+    println(ootheme_tui_frame(p, "catalog", "2.3.1", "catalog", "signed index verifier"));
     return 0;
 }
 
@@ -178,7 +178,7 @@ pub fn main(fs_r: &FsReadCap, fs_w: &FsWriteCap, args: List[String]) -> Int {
         return 0;
     }
     if verb == "-v" || verb == "--version" {
-        println("catalog 2.3.0");
+        println("catalog 2.3.1");
         return 0;
     }
     println("ERR unknown argument: " + verb);

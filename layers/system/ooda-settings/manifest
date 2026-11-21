@@ -1,9 +1,9 @@
 name=ooda-settings
-version=0.6.1
+version=0.6.2
 caps=FsRead,FsWrite,Fs,Process,Env,Ffi
 deps=ooda-standard
 payload=ooda-settings.oo
 commit=
-sha256=a3c75eeeb5f5e302699cd12322b505a24eef87067f1bae9707e15a937572050a
+sha256=2f7148ce430bb5e86fe1342e12b0fbf7e64b4a628a21de2149c8d320bee24154
 sig=
 description=Unified desktop and system settings control center for displays, input, privacy, and themes.
