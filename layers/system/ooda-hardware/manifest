@@ -1,9 +1,9 @@
 name=ooda-hardware
-version=0.8.0
+version=0.9.0
 caps=FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap
 deps=ooda-standard
 payload=ooda-hardware.oo
 commit=
-sha256=2cf6236f9be5fb3f626433988e6b115a43c77a7de44e8320ce626e60d5798813
+sha256=dd7ebb6519ea3d79ccc5ea921344f83059f1158c1cfb2671c1f3d44d8c1ef724
 sig=
 description=Hardware inventory, sensor telemetry, and RGB peripheral palette synchronization utility.
