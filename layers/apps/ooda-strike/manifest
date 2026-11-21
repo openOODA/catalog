@@ -1,9 +1,9 @@
 name=ooda-strike
-version=0.2.0
+version=0.2.1
 caps=FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-strike.oo
 commit=
-sha256=aaab1ff0a27d540f3c7419b8530ff18925785523149e80e94d64955ce66eee55
+sha256=07e6a5ec7927cee5b7590098845a3b5247f7221a1752f87e448ccaea302ff90e
 sig=
 description=Fast-paced 2D arena action game powered by ooda-engine and deterministic physics.

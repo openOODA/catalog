@@ -1,9 +1,9 @@
 name=ooda-authority
-version=0.6.0
+version=0.6.1
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-authority.oo
 commit=
-sha256=4f0083bb632504c4df373893b4c6adc3dba3ea0c1d13475479a6ccc69eed7140
+sha256=ecba8e435a18c19b7183036c7462a1e511e6a6008e8b069f29456680365e6c48
 sig=
 description=Capability policy authority, warrant issuer, and least-privilege delegation daemon.

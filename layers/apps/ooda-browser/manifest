@@ -1,9 +1,9 @@
 name=ooda-browser
-version=0.4.0
+version=0.4.1
 caps=FsRead,FsWrite,Tcp,Process,Env
 deps=ooda-standard
 payload=ooda-browser.oo
 commit=
-sha256=ac7e28c9a9c030d8dde05bec59398c2232744cfdfb1ec48d110056c6d63c6c2b
+sha256=e73898c86a170783a0afd920ee97139f593718c295687412094ba4719b2db4e2
 sig=
 description=Privacy-first web browser with strict capability isolation and zero telemetry.

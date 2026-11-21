@@ -1,9 +1,9 @@
 name=ooda-commander
-version=0.6.0
+version=0.6.1
 caps=FsRead,FsWrite,Process,Env
 deps=ooda-standard
 payload=ooda-commander.oo
 commit=
-sha256=19b81c08e8153dd68517ed718ad13353776bb06fb7e4e9997e026bbfddd04ae2
+sha256=30cdeb01b949e8b581aceae608c9a5a6e8e972e9be9a545fd79f0818b3af669a
 sig=
 description=Real-time tactical strategy game built on ooda-engine's deterministic grid-sim pipeline.

@@ -1,9 +1,9 @@
 name=ooda-text
-version=0.4.0
+version=0.4.1
 caps=FsRead,FsWrite,Sys,Process,Env,Time
 deps=ooda-standard
 payload=ooda-text.oo
 commit=
-sha256=6c630defd8ef980688fdc0f47409a5996f1ddaa1972cd1de9330e28c4dbdbea7
+sha256=57a3c166a73a2082ca1bfe0773b36a7bd594bb610cf1494acb2a4709b338ea1b
 sig=
 description=High-speed text search, regex filtering, and stream editing command-line toolkit.

@@ -1,9 +1,9 @@
 name=ooda-bridge
-version=0.7.0
+version=0.7.2
 caps=FsRead,FsWrite,Process,Env,Tcp
 deps=ooda-standard
 payload=ooda-bridge.oo
 commit=
-sha256=a1413cfd33b290ddffd2dffbb536b4e3e27d8705e701e1034a9e18b0ef5d05f1
+sha256=12ab5e26661d2560b77e8260330866c363345552d69cc30cca9e8176a1d1d9e0
 sig=
 description=Capability-gated Model Context Protocol (MCP) broker and AI tool bridge.

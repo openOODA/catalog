@@ -1,9 +1,9 @@
 name=ooda-database
-version=0.4.1
+version=0.4.2
 caps=FsRead,FsWrite,Net
 deps=ooda-standard
 payload=ooda-database.oo
 commit=
-sha256=a24215b1d2bb1a035d29684e57116a23f64229a1997c271fc6cba70568d769db
+sha256=edec3b517fa0cfa89996aa984d3c3126a315cd9a057bb01b62477bc7c17ec46b
 sig=
 description=Embedded transactional key-value and relational storage daemon with verified durability logs.

@@ -1,9 +1,9 @@
 name=ooda-notepad
-version=0.6.2
+version=0.6.3
 caps=Process,FsRead,FsWrite,Fs,Env,Time,Ffi
 deps=ooda-standard
 payload=ooda-notepad.oo
 commit=
-sha256=bd79e6211d033b88a3d69c9bfa3b0924e7d196189616ed41fc0aa92506c8d0fb
+sha256=f83f19084cf8b3f66dc308d88ff1d809744dad8754b3bcdc47ec791597e4c9bb
 sig=
 description=openOODA Notepad GUI, terminal text/code buffer editor, and interactive fuzzy finder

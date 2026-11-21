@@ -1,9 +1,9 @@
 name=ooda-office
-version=0.4.0
+version=0.4.1
 caps=FsRead,FsWrite,Process,Env,Frame
 deps=ooda-standard
 payload=ooda-office.oo
 commit=
-sha256=1782dd41828953b5c1de3fc392472ed78f2636efe2eeab978aeadab4623e80a2
+sha256=f06c13732d0f22cb19543c48443014c34d5a49c9f74bd2d7867a328b298e75e9
 sig=
 description=Lightweight document, spreadsheet, and presentation productivity suite.

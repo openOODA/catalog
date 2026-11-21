@@ -1,9 +1,9 @@
 name=ooda-language
-version=0.5.0
+version=0.5.1
 caps=FsRead,FsWrite,Process,Env,CompilerRead
 deps=ooda-standard
 payload=ooda-language.oo
 commit=
-sha256=558d3e07360e35e4509c0b98831b5051930cc109a91be6ecc8e9c0bdf990557f
+sha256=02be62e1ced5dc39a8d3974ae22d9df7146338b5b2150365f945886879d7228d
 sig=
 description=Language Server Protocol (LSP) diagnostics, completion, and symbol intelligence for .oo source.

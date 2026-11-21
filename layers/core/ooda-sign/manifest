@@ -1,9 +1,9 @@
 name=ooda-sign
-version=0.3.0
+version=0.3.2
 caps=FsRead,FsWrite,Process,Env,Time
 deps=ooda-standard
 payload=ooda-sign.oo
 commit=
-sha256=fabf00b1beae400a470c1315b7c6a5cf832ceb466d15a218eeb9b65c4daec9e4
+sha256=a441fb50d17fbc4c94cfe725a02d7ea3e249a0e70ab0927f3554054e5c86d160
 sig=
 description=Post-quantum ML-DSA/Ed25519 cryptographic signing, verification, and mTLS credential utility.

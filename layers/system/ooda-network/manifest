@@ -1,9 +1,9 @@
 name=ooda-network
-version=0.9.0
+version=0.9.1
 caps=Process,Bind,Tcp,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-network.oo
 commit=
-sha256=92c24ba746104fbc459cdaaccd93fb1846de7df1a829c41fb20e5959066f3ad4
+sha256=da28be34fc4907f8d391a2dad0525ce1a4bab4d9586405416eecf10e42bec758
 sig=
 description=Zero-trust network manager with per-badge egress policy and post-quantum WireGuard tunnels.

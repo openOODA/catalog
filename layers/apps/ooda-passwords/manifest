@@ -1,9 +1,9 @@
 name=ooda-passwords
-version=0.4.0
+version=0.4.1
 caps=FsRead,FsWrite,Process,Env,Frame
 deps=ooda-standard
 payload=ooda-passwords.oo
 commit=
-sha256=5575cc585248c89f669774af3d7d8728c1f33299f92ba0a33cece007564e8340
+sha256=d595bd4c3eb8140bdb3686d182298873f6f04439267fb7836bdbf560ce9aabd7
 sig=
 description=Offline encrypted password manager backed by ooda-vault and auto-burning clipboard.

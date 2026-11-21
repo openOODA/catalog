@@ -1,9 +1,9 @@
 name=ooda-compositor
-version=0.7.0
+version=0.7.1
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-compositor.oo
 commit=
-sha256=9dddffdec62e393799d0a71bb0f5922a68fa8f770a402c242f8575ece80d9cd3
+sha256=064f40fbc0a380cf0bf18a90be0545ce50f8de827d366640fceca27f4bf6408f
 sig=
 description=Wayland desktop compositor with hardware privacy LED gates, screen-share blackout, and touch gestures.

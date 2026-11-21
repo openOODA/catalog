@@ -1,9 +1,9 @@
 name=ooda-read
-version=0.3.0
+version=0.3.1
 caps=FsRead,FsWrite,Process,Env,Time
 deps=ooda-standard
 payload=ooda-read.oo
 commit=
-sha256=9432dab0a9595e165e834e150cbbd82101dbae7ec49a056ff1e64161365d895e
+sha256=a913ac402ec3f9527b260987620de44d1c29e7d5b57b0cace61176db67189fbf
 sig=
 description=Syntax-highlighted file viewer and pager for source code, logs, and documentation.

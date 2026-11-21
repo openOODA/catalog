@@ -1,9 +1,9 @@
 name=ooda-files
-version=0.5.0
+version=0.5.1
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-files.oo
 commit=
-sha256=59b71e777af0f6cf71a55012e8fa6d41141b60358b2e49ba358294442b803cd7
+sha256=251e562e92d45fd398097d7eeed8e656473ec5041b4f3eb3fbce91cbebb7d59d
 sig=
 description=Fast graphical and terminal file manager with capability-scoped directory access.

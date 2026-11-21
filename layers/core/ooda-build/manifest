@@ -1,9 +1,9 @@
 name=ooda-build
-version=0.2.0
+version=0.2.2
 caps=FsRead,FsWrite,Process,Env,Time
 deps=ooda-standard
 payload=ooda-build.oo
 commit=
-sha256=cdffd31486ff6c4797fe818d6c6ce2cb754029bc453f4e81a862e28b2326351a
+sha256=8ba7ae4ce50fccd6fff5c99956af18cb3b4a87a5603bbc3d0d176469b0fc4ff5
 sig=
 description=Deterministic build driver and reproducible artifact graph runner for .oo projects.

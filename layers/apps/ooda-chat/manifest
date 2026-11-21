@@ -1,9 +1,9 @@
 name=ooda-chat
-version=0.4.0
+version=0.4.1
 caps=FsRead,FsWrite,Process,Env,Frame
 deps=ooda-standard
 payload=ooda-chat.oo
 commit=
-sha256=c6248b581797fdb9524e2d9bd552c3daa64939f25a77e889ed7ef748e550d471
+sha256=9bf320b31e8a44bd924e73bd147c841c9fd5b05c3eb0f0d990e26d5d74354a13
 sig=
 description=End-to-end encrypted messaging client with post-quantum key agreement.

@@ -1,9 +1,9 @@
 name=ooda-disk
-version=0.3.0
+version=0.3.1
 caps=FsRead,FsWrite,Process,Env,Time
 deps=ooda-standard
 payload=ooda-disk.oo
 commit=
-sha256=718c705cc148b220bd33134e2d8b878a958ddc311f7f814587ec84ec82281a20
+sha256=a0ce51a3526859e8abab4026b6c87a9a79cce927884ebd8b73f4a01f7f996602
 sig=
 description=Block storage, partition layout, SMART health, and encrypted volume management utility.

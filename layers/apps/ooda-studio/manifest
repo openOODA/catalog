@@ -1,9 +1,9 @@
 name=ooda-studio
-version=0.4.0
+version=0.4.1
 caps=FsRead,FsWrite,Process,Env,Frame
 deps=ooda-standard
 payload=ooda-studio.oo
 commit=
-sha256=8ae0b97376f13923b9ad07e7a716b971a0eb6cc64b3e02e651d631de54aeb2fb
+sha256=c5a0c03614ae988442a0dc1a44130783dab22ae25faa83a06c047e52fbe19387
 sig=
 description=Non-linear video, audio, and screen-recording production suite.

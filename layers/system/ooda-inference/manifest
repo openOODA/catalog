@@ -1,9 +1,9 @@
 name=ooda-inference
-version=0.10.1
+version=0.10.2
 caps=Process,Bind,Tcp,Fs,FsRead,FsWrite,Env,Gpu
 deps=ooda-standard
 payload=ooda-inference.oo
 commit=
-sha256=1b0e5249faaf38200ce68079437ca4cc871d0fe95ffc0631a6b725d963f3c474
+sha256=2d9d4b2a9dec2a07e5e3583e1f5908fca4e6524bac1c491b3ae62ef02af720dc
 sig=
 description=Local AI model inference server supporting GPU acceleration and capability-bounded tool access.

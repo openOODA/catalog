@@ -1,9 +1,9 @@
 name=ooda-version
-version=0.2.0
+version=0.2.1
 caps=FsRead,FsWrite,Net,Tcp,Process,Env,Time
 deps=ooda-standard
 payload=ooda-version.oo
 commit=
-sha256=e35670ae28cba74b1a99f38e38da83759542ee9034f975fc609e6fbc1ab01b66
+sha256=4a4d70deed70138911d07a506be4aad8059d4787bb3a47168555c14a1697df49
 sig=
 description=Version control, signed release tagging, and repository history utility.

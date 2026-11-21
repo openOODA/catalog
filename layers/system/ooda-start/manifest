@@ -1,9 +1,9 @@
 name=ooda-start
-version=0.9.0
+version=0.9.1
 caps=Process,FsRead,FsWrite
 deps=ooda-standard
 payload=ooda-start.oo
 commit=
-sha256=0a1ef7343db9935af8f6f09d03857b26a418b6ea3fecaa98ec7b469ddc10c7c9
+sha256=5ff6da6c0aec24cb1b6f6fa7d7d98cc0b157da2dcd5795ec3a4419ff2d7f3861
 sig=
 description=Deterministic service supervisor and session init manager for openOODA services.

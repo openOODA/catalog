@@ -1,9 +1,9 @@
 name=ooda-archive
-version=0.3.0
+version=0.3.2
 caps=FsRead,FsWrite,Process,Env
 deps=ooda-standard
 payload=ooda-archive.oo
 commit=
-sha256=6e3c5912fab7b36f2588aa9c3d68e8e7d842a7f7e23dc17b123c06be8fff2f44
+sha256=eb67556a06b66a6964c2a8c3df79612db5fbf80fab6bfe50b6041742a46ed7ac
 sig=
 description=Capability-confined archive creator and extractor for tar, zip, and compressed bundles.
