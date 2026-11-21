@@ -6,3 +6,4 @@ payload=ooda-kernel.oo
 commit=
 sha256=4bd114ea6da9180a8b3cae1eb85ca758cb7f55c216b93f2036216e8df957d2e8
 sig=
+description=Capability microkernel with IOMMU DMA bounce guards, DRAM zeroization, and CXL 3.0 support.

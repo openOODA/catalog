@@ -6,3 +6,4 @@ payload=ooda-machine.oo
 commit=
 sha256=34a840eb893a30d9e721c3d376cd0fb370da7eedfe5ab99589a191d2638ecc11
 sig=
+description=Virtual machine hypervisor manager and guest lifecycle controller.

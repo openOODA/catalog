@@ -6,3 +6,4 @@ payload=ooda-browser.oo
 commit=
 sha256=ac7e28c9a9c030d8dde05bec59398c2232744cfdfb1ec48d110056c6d63c6c2b
 sig=
+description=Privacy-first web browser with strict capability isolation and zero telemetry.

@@ -6,3 +6,4 @@ payload=ooda-commander.oo
 commit=
 sha256=19b81c08e8153dd68517ed718ad13353776bb06fb7e4e9997e026bbfddd04ae2
 sig=
+description=Real-time tactical strategy game built on ooda-engine's deterministic grid-sim pipeline.

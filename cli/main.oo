@@ -17,7 +17,7 @@ import "core/cat_manifest.oo";
 import "core/cat_index.oo";
 
 fn cat_help() -> String {
-    return "catalog 2.0.0 - openOODA signed package index & group profile verifier\n" +
+    return "catalog 2.1.0 - openOODA signed package index & group profile verifier\n" +
         "usage: catalog <verify|sync|about|theme> [root]\n\n" +
         "  verify [root]   check index->dirs->manifests->payloads->digests, groups, sums, sig\n" +
         "  sync   [root]   regenerate descriptors, manifests, index, index.sig from index rows\n" +
@@ -27,7 +27,7 @@ fn cat_help() -> String {
 }
 
 fn cat_about() -> String {
-    return "catalog 2.0.0 (openOODA catalog)\n" +
+    return "catalog 2.1.0 (openOODA catalog)\n" +
         "Binary       : catalog\n" +
         "Organization : openOODA (https://github.com/openOODA/catalog)\n" +
         "Summary      : Signed package index & group profile verifier/sync\n" +
@@ -50,13 +50,15 @@ fn cat_theme(args: List[String]) -> Int {
         return 2;
     }
     let p: OoThemePalette = ootheme_resolve(tn);
-    println(ootheme_tui_frame(p, "catalog", "2.0.0", "catalog", "signed index verifier"));
+    println(ootheme_tui_frame(p, "catalog", "2.1.0", "catalog", "signed index verifier"));
     return 0;
 }
 
-fn cat_manifest_text(name: String, ver: String, caps: String, deps: String, sha: String) -> String {
-    return "name=" + name + "\nversion=" + ver + "\ncaps=" + caps + "\ndeps=" + deps +
+fn cat_manifest_text(name: String, ver: String, caps: String, deps: String, sha: String, desc: String) -> String {
+    let mut out: String = "name=" + name + "\nversion=" + ver + "\ncaps=" + caps + "\ndeps=" + deps +
         "\npayload=" + name + ".oo\ncommit=\nsha256=" + sha + "\nsig=\n";
+    if chars_len(desc) > 0 { out = out + "description=" + desc + "\n"; }
+    return out;
 }
 
 fn cat_verify(fs: &FsReadCap, root: String) -> Int {
@@ -114,10 +116,12 @@ fn cat_sync_pkg(fs: &FsReadCap, fw: &FsWriteCap, lroot: String, f: List[String])
     let layer: String = list_get(parts, list_len(parts) - 2);
     let pay: String = cat_descriptor(name, layer, ver, caps, deps);
     let sha: String = sha256_hex(pay);
+    let omr: Result[String, String] = oo_read_file(fs, dir + "/manifest");
+    let desc: String = cat_field(match omr { Ok(s) => s, Err(_) => "" }, "description");
     let w1: Result[Void, String] = oo_write_file(fw, dir + "/" + name + ".oo", pay);
     if w1.is_err() { return ""; }
     let w2: Result[Void, String] = oo_write_file(fw, dir + "/manifest",
-        cat_manifest_text(name, ver, caps, deps, sha));
+        cat_manifest_text(name, ver, caps, deps, sha, desc));
     if w2.is_err() { return ""; }
     return name + "|" + ver + "|" + caps + "|" + deps + "|" + sha;
 }

@@ -6,3 +6,4 @@ payload=ooda-provenance.oo
 commit=
 sha256=0a44733dbd6a8aaaa214e4222f26b6efd8b4794a18fe55a79f0d69c812e412bd
 sig=
+description=Supply-chain attestation and provenance verification using TPM2, SEV-SNP, and Merkle trees.

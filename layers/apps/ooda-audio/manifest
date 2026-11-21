@@ -6,3 +6,4 @@ payload=ooda-audio.oo
 commit=
 sha256=e3765ebe921fccda8ae240d5dbf409c08720db15d72ce1d5569cb30997059951
 sig=
+description=Digital audio workstation, mixer, and real-time voice/MIDI processing studio.

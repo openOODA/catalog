@@ -6,3 +6,4 @@ payload=ooda-bus.oo
 commit=
 sha256=7b329d2e3db9c20327519db50b301515652b77509cdcbbc812849d3e1eb8fcd8
 sig=
+description=Capability-checked local IPC message bus for inter-service pub/sub and RPC routing.

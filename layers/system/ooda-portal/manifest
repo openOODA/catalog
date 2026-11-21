@@ -6,3 +6,4 @@ payload=ooda-portal.oo
 commit=
 sha256=f391de545d772a826fb6ce81bf294f86d828b27fbf7660a309bac3548d42c390
 sig=
+description=Sandboxed desktop portal broker handling file pickers, accessibility bus, and auto-burning clipboard.

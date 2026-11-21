@@ -6,3 +6,4 @@ payload=ooda-vault.oo
 commit=
 sha256=fd3723f08081783431c436c80d15d316680cef45904e0cd97d977fca7fc32604
 sig=
+description=Secret redaction, IFC taint filtering, PII scrubbing, and encrypted credential vault.

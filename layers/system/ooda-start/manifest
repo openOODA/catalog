@@ -6,3 +6,4 @@ payload=ooda-start.oo
 commit=
 sha256=40556617aff1bc1022d349ece83b72a28d5a239b93fd05a9c4a12682d9fc45ee
 sig=
+description=Deterministic service supervisor and session init manager for openOODA services.

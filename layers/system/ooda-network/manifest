@@ -6,3 +6,4 @@ payload=ooda-network.oo
 commit=
 sha256=92c24ba746104fbc459cdaaccd93fb1846de7df1a829c41fb20e5959066f3ad4
 sig=
+description=Zero-trust network manager with per-badge egress policy and post-quantum WireGuard tunnels.

@@ -6,3 +6,4 @@ payload=ooda-screensaver.oo
 commit=
 sha256=bf90adec6bd3277fee3c9eac80e8a899ea8894c95adf8198b2b46650d8aa64b0
 sig=
+description=Wayland screensaver and session locker featuring 51 procedural visual scenes.

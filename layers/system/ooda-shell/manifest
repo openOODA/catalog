@@ -6,3 +6,4 @@ payload=ooda-shell.oo
 commit=
 sha256=85bebb4813159d0131b02cabb2c876961dd89a92f5fec1da9730e58a4bbaccd7
 sig=
+description=Interactive command shell with structured pipelines, capability inspection, and ootheme prompts.

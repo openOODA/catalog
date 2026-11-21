@@ -6,3 +6,4 @@ payload=ooda-disk.oo
 commit=
 sha256=718c705cc148b220bd33134e2d8b878a958ddc311f7f814587ec84ec82281a20
 sig=
+description=Block storage, partition layout, SMART health, and encrypted volume management utility.

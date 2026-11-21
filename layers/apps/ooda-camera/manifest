@@ -6,3 +6,4 @@ payload=ooda-camera.oo
 commit=
 sha256=fd6985871360fe6b070f2b75b5728cd3569025d0ee28718ba87c8588e5fce6d5
 sig=
+description=Privacy-aware camera capture app with hardware LED gating and automatic EXIF/GPS stripping.

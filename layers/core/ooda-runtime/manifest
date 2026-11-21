@@ -6,3 +6,4 @@ payload=ooda-runtime.oo
 commit=
 sha256=6b98f854cb6b468ae6fab039c7d150e6c1da43245d05a82d8d30126130c28731
 sig=
+description=Zero-ambient-authority native runtime library (libooda-runtime.a) with capability locks and 27-syscall ABI.

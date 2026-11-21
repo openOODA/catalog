@@ -6,3 +6,4 @@ payload=ooda-connect.oo
 commit=
 sha256=8c7c27a7f0f3cda3324dd556432d9eba6d6a274b50a3104acd312fed8e39d559
 sig=
+description=Secure peer-to-peer device pairing, file transfer, and clipboard sync over encrypted channels.

@@ -6,3 +6,4 @@ payload=ooda-compiler.oo
 commit=
 sha256=940489e0cd1581a628b3652528bc765602d934e55f78c1d03b512cf78fd8b53b
 sig=
+description=Native .oo language compiler targeting Linux x86_64 and x86_64-openooda via LLVM.

@@ -6,3 +6,4 @@ payload=ooda-passwords.oo
 commit=
 sha256=5575cc585248c89f669774af3d7d8728c1f33299f92ba0a33cece007564e8340
 sig=
+description=Offline encrypted password manager backed by ooda-vault and auto-burning clipboard.

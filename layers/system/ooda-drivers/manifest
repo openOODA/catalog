@@ -6,3 +6,4 @@ payload=ooda-drivers.oo
 commit=
 sha256=f66c9c7ae640398604d422226040e3755d2dc57d15d14fb04aad11a0a797f8f7
 sig=
+description=Hardware driver suite for storage, network, USB firewall, virtio, and GPU/accelerator devices.

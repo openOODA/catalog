@@ -6,3 +6,4 @@ payload=ooda.oo
 commit=
 sha256=12bc5a0bf682bb3d5dfdcbc452416b0387e5f50d16a468727380360235a432b5
 sig=
+description=Flagship openOODA master CLI, workspace orchestrator, and constitutional quick-card runner.

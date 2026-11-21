@@ -6,3 +6,4 @@ payload=ooda-sign.oo
 commit=
 sha256=fabf00b1beae400a470c1315b7c6a5cf832ceb466d15a218eeb9b65c4daec9e4
 sig=
+description=Post-quantum ML-DSA/Ed25519 cryptographic signing, verification, and mTLS credential utility.

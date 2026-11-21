@@ -6,3 +6,4 @@ payload=ooda-chat.oo
 commit=
 sha256=c6248b581797fdb9524e2d9bd552c3daa64939f25a77e889ed7ef748e550d471
 sig=
+description=End-to-end encrypted messaging client with post-quantum key agreement.

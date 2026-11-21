@@ -6,3 +6,4 @@ payload=ooda-web.oo
 commit=
 sha256=3c854bb34a5712401db15f28357bfa308372820a10a0376916dc70e3009b51a8
 sig=
+description=Capability-gated HTTP/HTTPS client, local web server, and web diagnostics tool.

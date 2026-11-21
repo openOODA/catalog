@@ -6,3 +6,4 @@ payload=ooda-player.oo
 commit=
 sha256=446290a54dd8e4b656d052406024b6be5783157352e83f8c855024a20909e88c
 sig=
+description=Hardware-friendly audio and video media player with metadata privacy scrubbing.

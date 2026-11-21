@@ -6,3 +6,4 @@ payload=ooda-edit.oo
 commit=
 sha256=b64c4bf5af86db7ecdea755a951ffbd0b3326952b0e8dbb57c92a2a260aeb4f9
 sig=
+description=Modal and mouse-friendly text and code editor with ootheme syntax highlighting.

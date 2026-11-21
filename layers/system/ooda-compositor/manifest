@@ -6,3 +6,4 @@ payload=ooda-compositor.oo
 commit=
 sha256=725218dde4a2f0dcaa3f6532a7d2d8a5518e6f718c368b8cc4ca39862740910d
 sig=
+description=Wayland desktop compositor with hardware privacy LED gates, screen-share blackout, and touch gestures.

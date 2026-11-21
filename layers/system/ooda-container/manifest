@@ -6,3 +6,4 @@ payload=ooda-container.oo
 commit=
 sha256=bb0b7f707a4ed536a6b666cbc27dfa4ebe6557cbd15067f0b0f9b65f604ee75f
 sig=
+description=Lightweight capability-confined container runtime with isolated namespaces and resource quotas.

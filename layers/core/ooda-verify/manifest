@@ -6,3 +6,4 @@ payload=ooda-verify.oo
 commit=
 sha256=9dff49c34f98196ef5750db30f8f1cc3ec58d24b433d5b605cf1d32a616f6bc9
 sig=
+description=Eight-hat static verifier, security auditor, shape-ladder enforcer, and debugger for .oo repositories.

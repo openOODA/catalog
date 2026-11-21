@@ -6,3 +6,4 @@ payload=ooda-voxel.oo
 commit=
 sha256=7e2d8d74846d57c842778934970afb64f5e5e7300445e37c488c8fac4cc4360e
 sig=
+description=Procedural 3D voxel sandbox and builder powered by ooda-engine's volumetric pipeline.

@@ -6,3 +6,4 @@ payload=ooda-engine.oo
 commit=
 sha256=01b6424485835c7a0eaf0bcf01160d0e1416d6b4011a7377e54354cac2bdd042
 sig=
+description=Deterministic game and simulation engine with 2D pixel, grid-sim, 3D voxel, and Netlock rollback pipelines.

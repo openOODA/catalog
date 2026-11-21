@@ -6,3 +6,4 @@ payload=ooda-strike.oo
 commit=
 sha256=aaab1ff0a27d540f3c7419b8530ff18925785523149e80e94d64955ce66eee55
 sig=
+description=Fast-paced 2D arena action game powered by ooda-engine and deterministic physics.

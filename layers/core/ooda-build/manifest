@@ -6,3 +6,4 @@ payload=ooda-build.oo
 commit=
 sha256=cdffd31486ff6c4797fe818d6c6ce2cb754029bc453f4e81a862e28b2326351a
 sig=
+description=Deterministic build driver and reproducible artifact graph runner for .oo projects.

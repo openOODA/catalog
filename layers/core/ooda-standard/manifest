@@ -6,3 +6,4 @@ payload=ooda-standard.oo
 commit=
 sha256=fad8ffea6e6d85df9ff41f85d55c3df8843a949743a1cbeb997198b8deb315ab
 sig=
+description=Core openOODA standard library providing crypto, networking, filesystem, Wayland UI, and data primitives.

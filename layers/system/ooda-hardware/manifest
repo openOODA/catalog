@@ -6,3 +6,4 @@ payload=ooda-hardware.oo
 commit=
 sha256=2cf6236f9be5fb3f626433988e6b115a43c77a7de44e8320ce626e60d5798813
 sig=
+description=Hardware inventory, sensor telemetry, and RGB peripheral palette synchronization utility.

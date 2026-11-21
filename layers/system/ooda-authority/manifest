@@ -6,3 +6,4 @@ payload=ooda-authority.oo
 commit=
 sha256=206f6672de4c4c368f0ce81d04f5c5c59a7669b653246ee11c77ea8b65b03e2a
 sig=
+description=Capability policy authority, warrant issuer, and least-privilege delegation daemon.

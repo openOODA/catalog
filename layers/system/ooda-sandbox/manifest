@@ -6,3 +6,4 @@ payload=ooda-sandbox.oo
 commit=
 sha256=6ef0ed78a8e4b5bb9b942d806342b63a013be490c9a34a52a57473a42dafacb9
 sig=
+description=Process confinement launcher enforcing filesystem jails, seccomp filters, and capability attenuation.

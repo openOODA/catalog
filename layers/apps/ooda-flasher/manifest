@@ -6,3 +6,4 @@ payload=ooda-flasher.oo
 commit=
 sha256=939fbdcbf98901f9898be7a29e81f0c6243e1075631416fd7deeb6d7740ebbc1
 sig=
+description=Verified OS image writer and bootable USB drive flasher with SHA-256 checks.

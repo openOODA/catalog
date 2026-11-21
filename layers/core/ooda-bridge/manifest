@@ -6,3 +6,4 @@ payload=ooda-bridge.oo
 commit=
 sha256=a1413cfd33b290ddffd2dffbb536b4e3e27d8705e701e1034a9e18b0ef5d05f1
 sig=
+description=Capability-gated Model Context Protocol (MCP) broker and AI tool bridge.

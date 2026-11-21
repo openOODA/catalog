@@ -6,3 +6,4 @@ payload=ooda-package.oo
 commit=
 sha256=b9738ecc0fb7db58cadecb5a22fc2996844b4843a12cc3ff0b3524eadd53412c
 sig=
+description=Four-organization openOODA package manager, dependency solver, and verified source builder.

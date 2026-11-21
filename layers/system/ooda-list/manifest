@@ -6,3 +6,4 @@ payload=ooda-list.oo
 commit=
 sha256=2a139794de3e14ab4cee17affb31f84ee14481c7dd6038af632d88d0b613cfd9
 sig=
+description=Fast directory listing utility with capability badges, git awareness, and ootheme colors.

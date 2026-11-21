@@ -6,3 +6,4 @@ payload=ooda-language.oo
 commit=
 sha256=558d3e07360e35e4509c0b98831b5051930cc109a91be6ecc8e9c0bdf990557f
 sig=
+description=Language Server Protocol (LSP) diagnostics, completion, and symbol intelligence for .oo source.

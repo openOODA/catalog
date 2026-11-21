@@ -6,3 +6,4 @@ payload=ooda-inference.oo
 commit=
 sha256=2cd6bcc7911fdfd68c2973fb4c11501bbbbcca53814ce0d0d71b9aa9155d4f6e
 sig=
+description=Local AI model inference server supporting GPU acceleration and capability-bounded tool access.

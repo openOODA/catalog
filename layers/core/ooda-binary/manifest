@@ -6,3 +6,4 @@ payload=ooda-binary.oo
 commit=
 sha256=bf0542ebb561168f47869693b2e8dceea6147fbce5ff158863398b219a900ae2
 sig=
+description=ELF, PE, and Mach-O binary inspection, section analysis, and disassembly toolkit.
