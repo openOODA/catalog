@@ -1,9 +1,9 @@
 name=ooda-theme
-version=0.3.1
+version=0.3.2
 caps=FsRead,FsWrite,Process,Env,Hid,Usb
 deps=ooda-standard
 payload=ooda-theme.oo
 commit=
-sha256=89a12f999f5bbd9d3b5cc81a0cde7090a3d192ed49d5c8954570c9a4649e53b5
+sha256=5e69d6ba6c9f85c800fab43043fa2a672218950650a8db52425a05522a114753
 sig=
 description=Unified theme manager for 30 openOODA palettes, circadian dark/light switching, and TUI widgets.

@@ -1,9 +1,9 @@
 name=ooda-data
-version=0.3.1
+version=0.3.2
 caps=FsRead,FsWrite,Process,Env,Time
 deps=ooda-standard
 payload=ooda-data.oo
 commit=
-sha256=4260986797c29dc00507aec4ffd54ceaaa7eec0eeaf17ec1e8ec3e02fb7e756b
+sha256=0f7f08eec46d9d972e7af7689d2818b1da3399316401ff4a05b28aa97972ca58
 sig=
 description=Structured data inspection, transformation, and query tool for .oot, CSV, and table streams.

@@ -1,9 +1,9 @@
 name=ooda-screensaver
-version=5.3.1
+version=5.4.0
 caps=FsRead,FsWrite,Fs,Process,Bind,Time,Ffi,Arena,Alloc
 deps=ooda-standard
 payload=ooda-screensaver.oo
 commit=
-sha256=ec642bd68cfce46ed98e42cd7deb50600a0817af0e9f451d7ac0c9489913879c
+sha256=507e000a24d439b19b5b5c16792b7762ab41266dbba2a3f89ffcd64176c42162
 sig=
 description=Wayland screensaver and session locker featuring 51 procedural visual scenes.
