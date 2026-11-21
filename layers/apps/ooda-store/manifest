@@ -1,9 +1,9 @@
 name=ooda-store
-version=0.8.0
+version=0.8.1
 caps=FsRead,FsWrite,Fs,Process,Env,Ffi
 deps=ooda-standard
 payload=ooda-store.oo
 commit=
-sha256=a6ad467c0c8a06d8092229be84b115318cecdf869c732e1406ad521be73bf4b4
+sha256=f606fac08a2ea53c6d86fa67b7990490f5e3120bacdc01515c93805bac8fae51
 sig=
 description=Native Wayland software store with capability blast-radius inspector and opt-in Flatpak support.

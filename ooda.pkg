@@ -1,5 +1,5 @@
 name=catalog
-version=2.1.0
+version=2.2.0
 layer=openOODA
 category=Registry
 tags=index,manifest,groups,signing,verify,packages,layers,registry
