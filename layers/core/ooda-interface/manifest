@@ -1,9 +1,9 @@
 name=ooda-interface
-version=0.4.0
+version=0.5.0
 caps=FsRead,FsWrite,Fs,Process,Env,Time,Ffi
 deps=ooda-standard
 payload=ooda-interface.oo
 commit=
-sha256=f07dc4661ce9cb3dd007c4d00129791b528d8070be5112f3c513e4a436a1cacb
+sha256=1d873ff626a9966a6375b6431440ee737b4cdc4004e5e01b5e765b611029aafe
 sig=
 description=Multi-surface declarative .oot scene renderer for TUI, Wayland GUI, wearable, and vehicle displays.

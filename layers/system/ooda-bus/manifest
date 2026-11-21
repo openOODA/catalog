@@ -1,9 +1,9 @@
 name=ooda-bus
-version=0.11.0
+version=0.12.1
 caps=Process,Bind,Tcp,FsRead,FsWrite
 deps=ooda-standard
 payload=ooda-bus.oo
 commit=
-sha256=927dbce102f80d603abfffaf13c6847daafd8181697b1fd9e1251b25c62b2a77
+sha256=ec53d30205d73eef9da80a45b876e659354bccbdd4c6752c193d1880ea97b1a3
 sig=
 description=Capability-checked local IPC message bus for inter-service pub/sub and RPC routing.
