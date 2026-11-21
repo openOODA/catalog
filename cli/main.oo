@@ -15,6 +15,8 @@ import "ooda-standard/sec/mac/hmac.oo";
 import "ooda-standard/core/app/ui/ootheme.oo";
 import "core/cat_manifest.oo";
 import "core/cat_index.oo";
+import "ooda-standard/core/app/feedback_grp/fb_schema.oo";
+import "ooda-standard/core/app/feedback_grp/fb_cli.oo";
 
 fn cat_help() -> String {
     return "catalog 2.3.1 - openOODA signed package index & group profile verifier\n" +
@@ -159,6 +161,11 @@ fn cat_sync(fs: &FsReadCap, fw: &FsWriteCap, root: String) -> Int {
 }
 
 pub fn main(fs_r: &FsReadCap, fs_w: &FsWriteCap, args: List[String]) -> Int {
+    if (list_len(&args) > 0 && list_get(&args, 0) == "feedback")
+        || (list_len(&args) > 1 && list_get(&args, 0) == "--json" && list_get(&args, 1) == "feedback") {
+        let fmeta: FbAppMeta = fb_meta_new("catalog", "2.3.1", "openOODA", "cli", "");
+        return match fb_cli_run_pure(fmeta, &args) { Ok(rc) => rc, Err(_) => 2 };
+    }
     if list_len(args) == 0 {
         print(cat_help());
         return 0;
