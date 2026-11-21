@@ -1,6 +1,6 @@
-// # ooda-edit Catalog Descriptor (system)
+// # ooda-photos Catalog Descriptor (apps)
 //
-// Logline: Canonical signed registry descriptor for ooda-edit in system.
+// Logline: Canonical signed registry descriptor for ooda-photos in apps.
 // Setup: Emitted and re-derived by core/cat_index.oo; pure constant surface, zero caps.
 // Beats:
 //   1. cat_name/cat_layer/cat_version return the registered identity triple.
@@ -8,19 +8,19 @@
 //   3. cat_record joins the fields for cross-checks against the index row.
 
 pub fn cat_name() -> String {
-    return "ooda-edit";
+    return "ooda-photos";
 }
 
 pub fn cat_layer() -> String {
-    return "system";
+    return "apps";
 }
 
 pub fn cat_version() -> String {
-    return "0.4.0";
+    return "0.6.2";
 }
 
 pub fn cat_caps() -> String {
-    return "Process,FsRead,FsWrite,Env,Time";
+    return "FsRead,FsWrite,Fs,Process,Env,Frame,Ffi";
 }
 
 pub fn cat_deps() -> String {

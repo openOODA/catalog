@@ -9,7 +9,7 @@ BIN := bin/catalog
 TESTBIN := bin/test_functional
 TESTBIN2 := bin/test_refusal
 REPO_NAME := catalog
-VER := 2.2.0
+VER := 2.3.0
 SRC := $(shell find . -name '*.oo' -not -path './.git/*' -not -path './bin/*' -not -path './dist/*' -not -path './.ooda-cache/*' | sort)
 
 OODA_RUNTIME_ROOT ?= $(HOME)/.openooda/bin

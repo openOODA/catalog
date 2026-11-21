@@ -1,0 +1,9 @@
+name=ooda-photos
+version=0.6.2
+caps=FsRead,FsWrite,Fs,Process,Env,Frame,Ffi
+deps=ooda-standard
+payload=ooda-photos.oo
+commit=
+sha256=af8a5d3f9236b45148cc184553ec5505e831b3982a981919ef2cff52b58e3885
+sig=
+description=openOODA Photos GUI and image engine with layer frame codec for openOODA-apps apps layer
