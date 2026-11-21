@@ -1,9 +1,9 @@
 name=ooda-boot
-version=0.8.0
+version=0.9.0
 caps=FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,TpmCap,BlockCap,SignCap
 deps=ooda-standard
 payload=ooda-boot.oo
 commit=
-sha256=0b30d7bdea244f02f5786207930e31379a04853196c7b4a2aaa13620d8d56f51
+sha256=6006deb6cf3fa2a16650f4fe9ffea230797a419924274a00730ef51aa78eb1f8
 sig=
 description=Measured UEFI bootloader with TPM2, DICE, and Caliptra hardware root-of-trust attestation.
