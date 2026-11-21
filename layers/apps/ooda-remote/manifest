@@ -1,9 +1,9 @@
 name=ooda-remote
-version=0.4.0
+version=0.5.0
 caps=FsRead,FsWrite,Process,Env,Frame
 deps=ooda-standard
 payload=ooda-remote.oo
 commit=
-sha256=7ca9b56297fba636546c6352a7f8ea9ccd1043c4a6438c3eaad1d73ad0a897e4
+sha256=8b14daf0263e3b3b51f4aff42f135e4eb3d42ce2296b0b5201cc6ebb2ab0289d
 sig=
 description=Encrypted remote desktop and screen-sharing client with privacy blackout support.

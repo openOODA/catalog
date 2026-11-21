@@ -1,9 +1,9 @@
 name=ooda-container
-version=0.6.0
+version=0.7.0
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-container.oo
 commit=
-sha256=bb0b7f707a4ed536a6b666cbc27dfa4ebe6557cbd15067f0b0f9b65f604ee75f
+sha256=afe1e07587c05bc67874c749c600d28049446250f6bd4488456069cdb0fb1789
 sig=
 description=Lightweight capability-confined container runtime with isolated namespaces and resource quotas.

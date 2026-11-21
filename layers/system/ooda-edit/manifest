@@ -1,9 +1,9 @@
 name=ooda-edit
-version=0.3.0
+version=0.4.0
 caps=Process,FsRead,FsWrite,Env,Time
 deps=ooda-standard
 payload=ooda-edit.oo
 commit=
-sha256=b64c4bf5af86db7ecdea755a951ffbd0b3326952b0e8dbb57c92a2a260aeb4f9
+sha256=7df2555caa7857768d41ae7360a38f393d5d11dbafd698c0e34eec6f54c2d576
 sig=
 description=Modal and mouse-friendly text and code editor with ootheme syntax highlighting.
