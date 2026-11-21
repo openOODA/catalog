@@ -1,8 +1,8 @@
 name=ooda-container
-version=0.5.0
+version=0.6.0
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-container.oo
 commit=
-sha256=702c2f0a350dddfedb96d86ccc07175a1b2c22640354e5b3264fca0138a053f8
+sha256=bb0b7f707a4ed536a6b666cbc27dfa4ebe6557cbd15067f0b0f9b65f604ee75f
 sig=

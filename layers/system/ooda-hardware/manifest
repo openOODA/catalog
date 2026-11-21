@@ -1,8 +1,8 @@
 name=ooda-hardware
-version=0.7.0
+version=0.8.0
 caps=FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap
 deps=ooda-standard
 payload=ooda-hardware.oo
 commit=
-sha256=30bdf4595afeac444835e91e727e6bbf5581f81e81e97d5aadb20e84436aa8fd
+sha256=2cf6236f9be5fb3f626433988e6b115a43c77a7de44e8320ce626e60d5798813
 sig=

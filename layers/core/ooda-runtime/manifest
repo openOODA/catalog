@@ -1,8 +1,8 @@
 name=ooda-runtime
-version=5.7.0
+version=5.11.0
 caps=FsRead,Env
 deps=ooda-standard
 payload=ooda-runtime.oo
 commit=
-sha256=7d5615fe68d55864b9b0db25831f4108720ec65f55877724b2952ec79868c36f
+sha256=6b98f854cb6b468ae6fab039c7d150e6c1da43245d05a82d8d30126130c28731
 sig=

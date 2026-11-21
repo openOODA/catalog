@@ -1,8 +1,8 @@
 name=ooda-inference
-version=0.7.0
+version=0.9.0
 caps=Process,Bind,Tcp,Fs,FsRead,FsWrite,Env,Gpu
 deps=ooda-standard
 payload=ooda-inference.oo
 commit=
-sha256=87ec84acb497ca2df72a3be6671d8a5778e6d025dcfc8bd536b2712cc6681adf
+sha256=2cd6bcc7911fdfd68c2973fb4c11501bbbbcca53814ce0d0d71b9aa9155d4f6e
 sig=

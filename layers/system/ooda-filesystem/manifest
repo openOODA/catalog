@@ -1,8 +1,8 @@
 name=ooda-filesystem
-version=0.5.0
+version=0.6.0
 caps=Process,FsRead,FsWrite
 deps=ooda-standard
 payload=ooda-filesystem.oo
 commit=
-sha256=8bf8df63617d8abfdf3964929e8976a628c60ebfdc4a922a77bd39b9acc0b680
+sha256=a1b4d25fadbcde7cbc29f220192cb5ab7187b3d6a3d02e7b8db8e06b2abbde2b
 sig=

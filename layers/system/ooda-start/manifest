@@ -1,8 +1,8 @@
 name=ooda-start
-version=0.5.0
+version=0.8.0
 caps=Process,FsRead,FsWrite
 deps=ooda-standard
 payload=ooda-start.oo
 commit=
-sha256=e6c2b519e1427b2bd03e1cf87d01dc70f6f8683d7c3f020c629ccd1922d09c0b
+sha256=40556617aff1bc1022d349ece83b72a28d5a239b93fd05a9c4a12682d9fc45ee
 sig=

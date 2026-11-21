@@ -1,8 +1,8 @@
 name=ooda-verify
-version=0.6.0
+version=0.8.0
 caps=FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-verify.oo
 commit=
-sha256=3c6bb5f71e8f0f72b2a7053da2f7e3a5f3a87670e10ff2d5c245408e07847efb
+sha256=9dff49c34f98196ef5750db30f8f1cc3ec58d24b433d5b605cf1d32a616f6bc9
 sig=

@@ -1,8 +1,8 @@
 name=ooda-bus
-version=0.4.0
+version=0.9.0
 caps=Process,Bind,Tcp,FsRead,FsWrite
 deps=ooda-standard
 payload=ooda-bus.oo
 commit=
-sha256=4f1f9f5ca04bf1af7c043202b8598ffd72ddd0c096f4a3e74d10b9102d2d874e
+sha256=7b329d2e3db9c20327519db50b301515652b77509cdcbbc812849d3e1eb8fcd8
 sig=

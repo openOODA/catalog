@@ -1,8 +1,8 @@
 name=ooda-drivers
-version=0.7.0
+version=0.12.0
 caps=FsRead,FsWrite,Dma,Mmio,Pci,Irq,Usb,Frame
 deps=ooda-standard
 payload=ooda-drivers.oo
 commit=
-sha256=0a0db62b52a98f63e50980406156702f480635389eea71b7fc4baa0f870c452d
+sha256=f66c9c7ae640398604d422226040e3755d2dc57d15d14fb04aad11a0a797f8f7
 sig=
