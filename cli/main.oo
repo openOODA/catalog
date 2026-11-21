@@ -177,6 +177,10 @@ pub fn main(fs_r: &FsReadCap, fs_w: &FsWriteCap, args: List[String]) -> Int {
         print(cat_help());
         return 0;
     }
+    if verb == "-v" || verb == "--version" {
+        println("catalog 2.1.0");
+        return 0;
+    }
     println("ERR unknown argument: " + verb);
     return 2;
 }
