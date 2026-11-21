@@ -2,6 +2,8 @@
 
 Signed package registry and layer manifest index (`70` packages across `openOODA-core`, `openOODA-system`, and `openOODA-apps`) queried by [`ooda-package`](https://github.com/openOODA-core/ooda-package) for [openOODA](https://openooda.org).
 
+[![OODAC on StartupScores](https://startupscores.com/badge/oodac.svg?style=shield&v=combo&theme=dark)](https://startupscores.com/open-source/oodac)
+
 ## Structure
 
 ```text
