@@ -1,9 +1,9 @@
 name=ooda-portal
-version=0.6.1
+version=0.7.0
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-portal.oo
 commit=
-sha256=f47fb6bd787300dc360d3b7ae5f6bdf3ed7c7e32b1ad7844d6ce87bedba08a6b
+sha256=b35bddb9c2a5fcd2205c3813424a179f1b409f48b3fc3fe4bda4133830d01a1c
 sig=
 description=Sandboxed desktop portal broker handling file pickers, accessibility bus, and auto-burning clipboard.
