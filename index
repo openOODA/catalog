@@ -15,7 +15,7 @@ ooda-canvas|0.4.0|FsRead,FsWrite,Process,Env,Frame|ooda-standard|766eb223c49b720
 ooda-chat|0.4.0|FsRead,FsWrite,Process,Env,Frame|ooda-standard|c6248b581797fdb9524e2d9bd552c3daa64939f25a77e889ed7ef748e550d471
 ooda-commander|0.6.0|FsRead,FsWrite,Process,Env|ooda-standard|19b81c08e8153dd68517ed718ad13353776bb06fb7e4e9997e026bbfddd04ae2
 ooda-compiler|0.13.0|FsRead,FsWrite,Process,Env,Arena,CompilerRead|ooda-standard|643e54caed94dc5af6fb925ecc941c221bb551c3bb6e8913dcd1f2e980a9062b
-ooda-compositor|0.6.0|Process,FsRead,Env|ooda-standard|496092f34d2fbc4d0561827c050c3dbbe4cb037be277f49b5736b74e3d6b8b8e
+ooda-compositor|0.7.0|Process,FsRead,FsWrite,Env|ooda-standard|9dddffdec62e393799d0a71bb0f5922a68fa8f770a402c242f8575ece80d9cd3
 ooda-connect|0.8.0|FsRead,FsWrite,Tcp,Bind,Process,Rand,Env|ooda-standard|8c7c27a7f0f3cda3324dd556432d9eba6d6a274b50a3104acd312fed8e39d559
 ooda-container|0.7.0|Process,FsRead,FsWrite,Env|ooda-standard|afe1e07587c05bc67874c749c600d28049446250f6bd4488456069cdb0fb1789
 ooda-data|0.3.0|FsRead,FsWrite,Process,Env,Time|ooda-standard|88d03dbe5a5a1112e4851e3d9e2eb37d900189c5c6e14d8c1afc7b9f5b5b5f37
