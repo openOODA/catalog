@@ -67,4 +67,4 @@ ooda-vault|0.5.0|FsRead,FsWrite,Process,Env,Rand|ooda-standard|fd3723f0808178343
 ooda-verify|1.0.0|FsRead,FsWrite,Env,Process|ooda-standard|06191a8f2c0d29c70432915287b1de3bed658efa68b4bd869e322ca2e0683740
 ooda-version|0.2.0|FsRead,FsWrite,Net,Tcp,Process,Env,Time|ooda-standard|e35670ae28cba74b1a99f38e38da83759542ee9034f975fc609e6fbc1ab01b66
 ooda-voxel|0.2.0|FsRead,FsWrite,Process,Env|ooda-standard|7e2d8d74846d57c842778934970afb64f5e5e7300445e37c488c8fac4cc4360e
-ooda-web|0.4.0|Net,Tcp,Bind,FsRead,FsWrite,Process,Time,Env||3c854bb34a5712401db15f28357bfa308372820a10a0376916dc70e3009b51a8
+ooda-web|0.5.0|Net,Tcp,Bind,FsRead,FsWrite,Process,Time,Env|ooda-standard|c921f0dc07cb35f0f3cc55ab40bc11152ba9c983e564f87cbd2d74424657b6d9

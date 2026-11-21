@@ -1,9 +1,9 @@
 name=ooda-web
-version=0.4.0
+version=0.5.0
 caps=Net,Tcp,Bind,FsRead,FsWrite,Process,Time,Env
-deps=
+deps=ooda-standard
 payload=ooda-web.oo
 commit=
-sha256=3c854bb34a5712401db15f28357bfa308372820a10a0376916dc70e3009b51a8
+sha256=c921f0dc07cb35f0f3cc55ab40bc11152ba9c983e564f87cbd2d74424657b6d9
 sig=
 description=Capability-gated HTTP/HTTPS client, local web server, and web diagnostics tool.
