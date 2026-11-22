@@ -1,9 +1,9 @@
 name=ooda-terminal
-version=0.7.0
+version=0.8.0
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-terminal.oo
 commit=
-sha256=6cacba4f7167ea061c34e53be1c99b5b7b92440fc4433bd77f4ab66efbc00a06
+sha256=5e7491672fa07059a06e0f8ebc20eab75e31f471ff82673af76e61136f1b5e63
 sig=
-description=VT500 terminal emulator that replays a transcript into a styled cell grid, with a bitmap glyph raster, OSC 133 shell integration, and kitty graphics and sixel decoding.
+description=VT500 terminal emulator that replays a transcript or a live child into a styled cell grid, with a bitmap glyph raster, OSC 133 shell integration, and kitty graphics and sixel decoding.
