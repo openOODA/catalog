@@ -1,9 +1,9 @@
 name=ooda-terminal
-version=0.5.1
+version=0.6.0
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-terminal.oo
 commit=
-sha256=6a37011e524ac031cf7003e381aed42033438a2d8e29238d738b7ccdb2c92090
+sha256=2a970f36827fbb7a42bb45a9447409477ff98d559012be64f60d2a83c15691c3
 sig=
-description=GPU-friendly Wayland terminal emulator with ootheme palettes and fast TrueType rendering.
+description=VT500 terminal emulator with a styled cell grid, a bitmap glyph raster, OSC 133 shell integration, and kitty graphics and sixel decoding.
