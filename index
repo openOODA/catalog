@@ -62,7 +62,7 @@ ooda-standard|2.14.1|||9b25db2498f429ea1baeef82763392085dc5868552e2bd65c1c8fb146
 ooda-start|0.9.1|Process,FsRead,FsWrite|ooda-standard|5ff6da6c0aec24cb1b6f6fa7d7d98cc0b157da2dcd5795ec3a4419ff2d7f3861
 ooda-strike|0.2.1|FsRead,FsWrite,Env|ooda-standard|07e6a5ec7927cee5b7590098845a3b5247f7221a1752f87e448ccaea302ff90e
 ooda-studio|0.4.1|FsRead,FsWrite,Process,Env,Frame|ooda-standard|c5a0c03614ae988442a0dc1a44130783dab22ae25faa83a06c047e52fbe19387
-ooda-terminal|0.9.0|Process,FsRead,FsWrite,Env|ooda-standard|b28a42ba190e4e320b6f73114cbf2081abc22fbbe954e67c6387bee76b569aa9
+ooda-terminal|0.9.1|Process,FsRead,FsWrite,Env|ooda-standard|b7b75c304204335e9919d5f5f3e7bbd93ad77a0b1ab7c4b655c3eec6153344ed
 ooda-text|0.4.2|FsRead,FsWrite,Sys,Process,Env,Time|ooda-standard|aaedaebce45e99e0b91d6f86c04dbb02088b66feb34941f0c6bdea7e17a698ec
 ooda-theme|0.3.2|FsRead,FsWrite,Process,Env,Hid,Usb|ooda-standard|5e69d6ba6c9f85c800fab43043fa2a672218950650a8db52425a05522a114753
 ooda-vault|0.5.1|FsRead,FsWrite,Process,Env,Rand|ooda-standard|f4f5f3c4d050f61c5e0b681cc320b05e906cc664951707674e9362b50445c38c
