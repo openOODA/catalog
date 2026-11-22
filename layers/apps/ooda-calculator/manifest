@@ -1,9 +1,9 @@
 name=ooda-calculator
-version=0.2.1
-caps=FsRead,Env
+version=0.3.0
+caps=FsRead,FsWrite,Fs,Process,Env,Ffi
 deps=ooda-standard
 payload=ooda-calculator.oo
 commit=
-sha256=2969b4914db6d872f663eb11b85dfaad4a88d25b51089f68af1c3939a085e638
+sha256=d0c949c481ff37cbfd4669989c3f3ff9a799047568ad72adc85fa3c2759fa659
 sig=
 description=Scientific and programmer calculator with exact arithmetic and unit conversions.

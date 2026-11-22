@@ -1,6 +1,6 @@
 # `@openOODA/catalog`
 
-Signed package registry and layer manifest index (`69` packages across `openOODA-core`, `openOODA-system`, and `openOODA-apps`) queried by [`ooda-package`](https://github.com/openOODA-core/ooda-package) for [openOODA](https://openooda.org).
+Signed package registry and layer manifest index (`70` packages across `openOODA-core`, `openOODA-system`, and `openOODA-apps`) queried by [`ooda-package`](https://github.com/openOODA-core/ooda-package) for [openOODA](https://openooda.org).
 
 ## Structure
 
@@ -9,9 +9,9 @@ catalog/
 ├── AGENTS.md
 ├── README.md
 ├── Makefile        # build / verify / test / sync / sums gates
-├── ooda.pkg        # catalog package manifest (name=catalog, version=2.4.1)
+├── ooda.pkg        # catalog package manifest (name=catalog, version=2.5.0)
 ├── anchor.oo       # root anchor re-exporting core/ conformance pages
-├── COMMIT_LEDGER   # canonical commit SHA ledger across all 69 product repos
+├── COMMIT_LEDGER   # canonical commit SHA ledger across all 70 product repos
 ├── cli/
 │   └── main.oo     # catalog binary: verify, sync, theme, about
 ├── core/
@@ -29,7 +29,7 @@ catalog/
 └── layers/
     ├── core/       # 15 @openOODA-core packages (incl. ooda, ooda-compiler, ooda-runtime, ooda-standard, ooda-package, ooda-language, ooda-bridge, ooda-verify)
     ├── system/     # 37 @openOODA-system OS, kernel, driver, desktop, cloud & AI inference packages
-    └── apps/       # 17 @openOODA-apps native desktop, studio & gaming applications
+    └── apps/       # 18 @openOODA-apps native desktop, studio & gaming applications
 ```
 
 Each `layers/{core,system,apps}/<pkg>/` directory holds a `manifest` and a

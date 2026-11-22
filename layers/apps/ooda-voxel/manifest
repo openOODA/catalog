@@ -1,9 +1,9 @@
 name=ooda-voxel
-version=0.2.0
+version=0.2.1
 caps=FsRead,FsWrite,Process,Env
 deps=ooda-standard
 payload=ooda-voxel.oo
 commit=
-sha256=7e2d8d74846d57c842778934970afb64f5e5e7300445e37c488c8fac4cc4360e
+sha256=d00dd8580ceb1ce97a524bb5d255caa37d425d570d93067e7fd89364d54d134e
 sig=
 description=Procedural 3D voxel sandbox and builder powered by ooda-engine's volumetric pipeline.
