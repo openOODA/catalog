@@ -19,7 +19,7 @@ import "ooda-standard/core/app/feedback_grp/fb_schema.oo";
 import "ooda-standard/core/app/feedback_grp/fb_cli.oo";
 
 fn cat_help() -> String {
-    return "catalog 2.5.0 - openOODA signed package index & group profile verifier\n" +
+    return "catalog 2.6.0 - openOODA signed package index & group profile verifier\n" +
         "usage: catalog <verify|sync|about|theme> [root]\n\n" +
         "  verify [root]   check index->dirs->manifests->payloads->digests, groups, sums, sig\n" +
         "  sync   [root]   regenerate descriptors, manifests, index, index.sig from index rows\n" +
@@ -29,7 +29,7 @@ fn cat_help() -> String {
 }
 
 fn cat_about() -> String {
-    return "catalog 2.5.0 (openOODA catalog)\n" +
+    return "catalog 2.6.0 (openOODA catalog)\n" +
         "Binary       : catalog\n" +
         "Organization : openOODA (https://github.com/openOODA/catalog)\n" +
         "Summary      : Signed package index & group profile verifier/sync\n" +
@@ -52,7 +52,7 @@ fn cat_theme(args: List[String]) -> Int {
         return 2;
     }
     let p: OoThemePalette = ootheme_resolve(tn);
-    println(ootheme_tui_frame(p, "catalog", "2.5.0", "catalog", "signed index verifier"));
+    println(ootheme_tui_frame(p, "catalog", "2.6.0", "catalog", "signed index verifier"));
     return 0;
 }
 
@@ -163,7 +163,7 @@ fn cat_sync(fs: &FsReadCap, fw: &FsWriteCap, root: String) -> Int {
 pub fn main(fs_r: &FsReadCap, fs_w: &FsWriteCap, args: List[String]) -> Int {
     if (list_len(&args) > 0 && list_get(&args, 0) == "feedback")
         || (list_len(&args) > 1 && list_get(&args, 0) == "--json" && list_get(&args, 1) == "feedback") {
-        let fmeta: FbAppMeta = fb_meta_new("catalog", "2.5.0", "openOODA", "cli", "");
+        let fmeta: FbAppMeta = fb_meta_new("catalog", "2.6.0", "openOODA", "cli", "");
         return match fb_cli_run_pure(fmeta, &args) { Ok(rc) => rc, Err(_) => 2 };
     }
     if list_len(args) == 0 {
@@ -185,7 +185,7 @@ pub fn main(fs_r: &FsReadCap, fs_w: &FsWriteCap, args: List[String]) -> Int {
         return 0;
     }
     if verb == "-v" || verb == "--version" {
-        println("catalog 2.5.0");
+        println("catalog 2.6.0");
         return 0;
     }
     println("ERR unknown argument: " + verb);

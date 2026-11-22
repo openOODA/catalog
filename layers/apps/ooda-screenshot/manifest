@@ -1,0 +1,9 @@
+name=ooda-screenshot
+version=0.1.0
+caps=FsRead,FsWrite,Fs,Process,Env,Time,Ffi
+deps=ooda-standard
+payload=ooda-screenshot.oo
+commit=
+sha256=c5b6452e3626e2f2c04e802fef445422aa82647cfca43e3e8b705295b94ea60f
+sig=
+description=Native Wayland Screenshot capture tool (Screen/Window/Region, timer delay) for openOODA.

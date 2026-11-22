@@ -1,0 +1,9 @@
+name=ooda-calendar
+version=0.1.0
+caps=FsRead,FsWrite,Fs,Process,Env,Time,Ffi
+deps=ooda-standard
+payload=ooda-calendar.oo
+commit=
+sha256=3974e9000a9c19e32fff53ba10e81a25a2dd6a38957a24d3cdd2e73ca56fc34b
+sig=
+description=Native Wayland Month/Week/Agenda Calendar with .oot persistence and personal-cloud sync for openOODA.

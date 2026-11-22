@@ -1,9 +1,9 @@
 name=ooda-flasher
-version=0.4.1
-caps=FsRead,FsWrite,Tcp,Process,Env,Frame
+version=0.5.0
+caps=FsRead,FsWrite,Fs,Tcp,Process,Env,Frame,Ffi
 deps=ooda-standard
 payload=ooda-flasher.oo
 commit=
-sha256=654ff94e44b1655cebb49b78cdb127a1f34f8f006ba1d8efa85caaee7945cb70
+sha256=8fac7baabe422a8bad3dcc38aa2db5ee205e49b9bec20e82564a5ae9b04e13d2
 sig=
 description=Verified OS image writer and bootable USB drive flasher with SHA-256 checks.

@@ -1,6 +1,6 @@
 # `@openOODA/catalog`
 
-Signed package registry and layer manifest index (`70` packages across `openOODA-core`, `openOODA-system`, and `openOODA-apps`) queried by [`ooda-package`](https://github.com/openOODA-core/ooda-package) for [openOODA](https://openooda.org).
+Signed package registry and layer manifest index (`72` packages across `openOODA-core`, `openOODA-system`, and `openOODA-apps`) queried by [`ooda-package`](https://github.com/openOODA-core/ooda-package) for [openOODA](https://openooda.org).
 
 ## Structure
 
@@ -9,9 +9,9 @@ catalog/
 ├── AGENTS.md
 ├── README.md
 ├── Makefile        # build / verify / test / sync / sums gates
-├── ooda.pkg        # catalog package manifest (name=catalog, version=2.5.0)
+├── ooda.pkg        # catalog package manifest (name=catalog, version=2.6.0)
 ├── anchor.oo       # root anchor re-exporting core/ conformance pages
-├── COMMIT_LEDGER   # canonical commit SHA ledger across all 70 product repos
+├── COMMIT_LEDGER   # canonical commit SHA ledger across all 72 product repos
 ├── cli/
 │   └── main.oo     # catalog binary: verify, sync, theme, about
 ├── core/
