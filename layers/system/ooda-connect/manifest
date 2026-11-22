@@ -1,9 +1,9 @@
 name=ooda-connect
-version=0.9.0
+version=0.10.0
 caps=FsRead,FsWrite,Tcp,Bind,Process,Rand,Env
 deps=ooda-standard
 payload=ooda-connect.oo
 commit=
-sha256=31287cb65b3a28c26232ac139af87055351029a51d680e8c891ab3b898074910
+sha256=31475dcf030567cde545e660a25eff3691e1be3ff53b5e0ba9f167a8bda5199b
 sig=
 description=Secure peer-to-peer device pairing, file transfer, and clipboard sync over encrypted channels.
