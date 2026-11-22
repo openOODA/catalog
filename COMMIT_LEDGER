@@ -40,10 +40,10 @@
   "openOODA-system/ooda-container": "1bfb724f61c089831ec49fe968deeea2f7276077",
   "openOODA-system/ooda-data": "07740f4c16799c2b42c34d96823fadb98b1f33bf",
   "openOODA-system/ooda-database": "127ef3eb7ce587a3e08eaec8ed33b1856526cb15",
-  "openOODA-system/ooda-disk": "1db10cea61c18a1adbef9bbdb7c2db590e6b6e4b",
+  "openOODA-system/ooda-disk": "ecba96326a773cc24e28699d9d657be4da15bb7e",
   "openOODA-system/ooda-drivers": "8ccc8f0539864749af833cf04a28f53a9eeff92e",
   "openOODA-system/ooda-files": "cfa93d4a81f9d717ef8f206c83de11637ac9ded8",
-  "openOODA-system/ooda-filesystem": "fe985a4a235046a737c365c357035d22e8b99fd4",
+  "openOODA-system/ooda-filesystem": "53fd6bedd2f3e681d889b7724d75758ee19c35df",
   "openOODA-system/ooda-firewall": "f9173db0cffeae6b865cbcd95dab3f022b0f93f4",
   "openOODA-system/ooda-hardware": "225f6e7e07b564416077a0a9a6d2f87bbcad2a95",
   "openOODA-system/ooda-health": "e8c29a5950d37091c97fdfd968985601e374ff4f",
@@ -67,5 +67,5 @@
   "openOODA-system/ooda-theme": "423b668d6b00df58238478f2141c49e2d0f3ba74",
   "openOODA-system/ooda-vault": "a4c1ca12977de2b7e67c3778eaa72e373a26c4dd",
   "openOODA-system/ooda-version": "81051d12d5deb7d9934a9a3f117934ff960f9ade",
-  "openOODA-system/ooda-web": "49d2ba85a84f1d56ab6dd570bd705edeacae2fce"
+  "openOODA-system/ooda-web": "d75b594c32cdd3f056c98019b9477e7501887f27"
 }

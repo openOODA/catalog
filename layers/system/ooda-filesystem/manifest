@@ -1,9 +1,9 @@
 name=ooda-filesystem
-version=0.7.1
+version=0.8.0
 caps=Process,FsRead,FsWrite
 deps=ooda-standard
 payload=ooda-filesystem.oo
 commit=
-sha256=5038fc9dce67107648067e394ce424eb2dfb968b0ee8e0013509ed3694a787c5
+sha256=883cea44e27eea567e97af9e9cb8f0cc2946d646cbfe4d9dc0d80c399b49c0b6
 sig=
 description=Content-addressed, crash-consistent filesystem tools and integrity checker.
