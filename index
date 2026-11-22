@@ -13,6 +13,7 @@ ooda-calendar|0.1.0|FsRead,FsWrite,Fs,Process,Env,Time,Ffi|ooda-standard|3974e90
 ooda-camera|0.6.0|FsRead,FsWrite,Fs,Process,Env,Time,Frame,Ffi|ooda-standard|7067ba82a6a98f383e02dc0ee1c0f1cb2cc0cb5f6aba564eeb9d82320ff24e06
 ooda-chat|0.4.1|FsRead,FsWrite,Process,Env,Frame|ooda-standard|9bf320b31e8a44bd924e73bd147c841c9fd5b05c3eb0f0d990e26d5d74354a13
 ooda-clock|0.1.0|FsRead,FsWrite,Fs,Process,Env,Time,Ffi|ooda-standard|ebc4bd8617b3cd5003269e96a2e6a9df339207a9ee744a93e57f8ff20738b725
+ooda-console|0.1.0|FsRead,FsWrite,Fs,Process,Env,Ffi|ooda-standard|e9ad586af762b4a73123e460c85071b8b42bee2c53a6f2ab90c231c98d1de06c
 ooda-commander|0.6.1|FsRead,FsWrite,Process,Env|ooda-standard|30cdeb01b949e8b581aceae608c9a5a6e8e972e9be9a545fd79f0818b3af669a
 ooda-compiler|0.13.3|FsRead,FsWrite,Process,Env,Arena,CompilerRead|ooda-standard|c7da0bc217f6fb036bad477db53dd1911208cae124a563723f4de8ea98aab849
 ooda-compositor|0.9.0|Process,FsRead,FsWrite,Env|ooda-standard|3ecb32f78bceb93fa4a1782c14e81abbb73db07b0941a904f4f7daf0899203ea
