@@ -9,7 +9,7 @@ catalog/
 ├── AGENTS.md
 ├── README.md
 ├── Makefile        # build / verify / test / sync / sums gates
-├── ooda.pkg        # catalog package manifest (name=catalog, version=2.6.0)
+├── ooda.pkg        # catalog package manifest (name=catalog, version=2.7.0)
 ├── anchor.oo       # root anchor re-exporting core/ conformance pages
 ├── COMMIT_LEDGER   # canonical commit SHA ledger across all 72 product repos
 ├── cli/

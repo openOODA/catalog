@@ -1,0 +1,9 @@
+name=ooda-media
+version=0.6.1
+caps=FsRead,FsWrite,Fs,Process,Env,Frame,Ffi
+deps=ooda-standard
+payload=ooda-media.oo
+commit=
+sha256=e4226ab53c3fc7e4caa57130dd23fba3e053b111719d5e5dd9a0784a4a3a953c
+sig=
+description=Unified Music and Video COSMIC Wayland player with .oot library, codecs, personal-cloud sync, and Feedback.

@@ -1,9 +1,0 @@
-name=ooda-player
-version=0.5.1
-caps=FsRead,FsWrite,Process,Env,Frame
-deps=ooda-standard
-payload=ooda-player.oo
-commit=
-sha256=da88f4b47f980de66899e3eb582c3d145d0e5d0ad95de4fdd9f423f7ee2eccbd
-sig=
-description=Hardware-friendly audio and video media player with metadata privacy scrubbing.

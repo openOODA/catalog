@@ -1,9 +1,9 @@
 name=ooda-camera
-version=0.5.1
-caps=FsRead,FsWrite,Process,Env,Frame
+version=0.6.0
+caps=FsRead,FsWrite,Fs,Process,Env,Time,Frame,Ffi
 deps=ooda-standard
 payload=ooda-camera.oo
 commit=
-sha256=bcf74a53afce1167d779a51280c3d0634f840aaa79279250df477a426ebe2d63
+sha256=7067ba82a6a98f383e02dc0ee1c0f1cb2cc0cb5f6aba564eeb9d82320ff24e06
 sig=
 description=Privacy-aware camera capture app with hardware LED gating and automatic EXIF/GPS stripping.
