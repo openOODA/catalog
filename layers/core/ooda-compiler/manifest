@@ -1,9 +1,9 @@
 name=ooda-compiler
-version=0.15.0
+version=0.16.0
 caps=FsRead,FsWrite,Process,Env,Arena,CompilerRead
 deps=ooda-standard
 payload=ooda-compiler.oo
 commit=
-sha256=4ced6b5d64c12c593988eb81adc1c98c26c0dd0b7a64ca0abed79f4a64ec292d
+sha256=d822f64664203d8891296b0a7ab08c691093391fe6d16bea800c8ace2f67da22
 sig=
 description=Native .oo language compiler targeting Linux x86_64 and x86_64-openooda via LLVM.

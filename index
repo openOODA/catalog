@@ -7,7 +7,7 @@ ooda-boot|0.9.1|FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,TpmCap,BlockCap,Sign
 ooda-bridge|0.7.2|FsRead,FsWrite,Process,Env,Tcp|ooda-standard|12ab5e26661d2560b77e8260330866c363345552d69cc30cca9e8176a1d1d9e0
 ooda-browser|0.4.1|FsRead,FsWrite,Tcp,Process,Env|ooda-standard|e73898c86a170783a0afd920ee97139f593718c295687412094ba4719b2db4e2
 ooda-build|0.2.2|FsRead,FsWrite,Process,Env,Time|ooda-standard|8ba7ae4ce50fccd6fff5c99956af18cb3b4a87a5603bbc3d0d176469b0fc4ff5
-ooda-bus|0.13.0|Process,Bind,Tcp,FsRead,FsWrite|ooda-standard|80fc4c652ea7226d75109260bec0a0ca9102c6abf5c4a73cb0fb752c7f6cda99
+ooda-bus|0.14.0|Process,Bind,Tcp,FsRead,FsWrite|ooda-standard|4db3fdd6b033c82cbe226229767f14bfeacae742119195b67efd1389564e8898
 ooda-calculator|0.3.0|FsRead,FsWrite,Fs,Process,Env,Ffi|ooda-standard|d0c949c481ff37cbfd4669989c3f3ff9a799047568ad72adc85fa3c2759fa659
 ooda-calendar|0.1.0|FsRead,FsWrite,Fs,Process,Env,Time,Ffi|ooda-standard|3974e9000a9c19e32fff53ba10e81a25a2dd6a38957a24d3cdd2e73ca56fc34b
 ooda-camera|0.6.0|FsRead,FsWrite,Fs,Process,Env,Time,Frame,Ffi|ooda-standard|7067ba82a6a98f383e02dc0ee1c0f1cb2cc0cb5f6aba564eeb9d82320ff24e06
@@ -15,7 +15,7 @@ ooda-chat|0.4.1|FsRead,FsWrite,Process,Env,Frame|ooda-standard|9bf320b31e8a44bd9
 ooda-clock|0.1.0|FsRead,FsWrite,Fs,Process,Env,Time,Ffi|ooda-standard|ebc4bd8617b3cd5003269e96a2e6a9df339207a9ee744a93e57f8ff20738b725
 ooda-console|0.1.0|FsRead,FsWrite,Fs,Process,Env,Ffi|ooda-standard|e9ad586af762b4a73123e460c85071b8b42bee2c53a6f2ab90c231c98d1de06c
 ooda-commander|0.6.1|FsRead,FsWrite,Process,Env|ooda-standard|30cdeb01b949e8b581aceae608c9a5a6e8e972e9be9a545fd79f0818b3af669a
-ooda-compiler|0.15.0|FsRead,FsWrite,Process,Env,Arena,CompilerRead|ooda-standard|4ced6b5d64c12c593988eb81adc1c98c26c0dd0b7a64ca0abed79f4a64ec292d
+ooda-compiler|0.16.0|FsRead,FsWrite,Process,Env,Arena,CompilerRead|ooda-standard|d822f64664203d8891296b0a7ab08c691093391fe6d16bea800c8ace2f67da22
 ooda-compositor|0.9.0|Process,FsRead,FsWrite,Env|ooda-standard|3ecb32f78bceb93fa4a1782c14e81abbb73db07b0941a904f4f7daf0899203ea
 ooda-connect|0.10.0|FsRead,FsWrite,Tcp,Bind,Process,Rand,Env|ooda-standard|31475dcf030567cde545e660a25eff3691e1be3ff53b5e0ba9f167a8bda5199b
 ooda-container|0.8.0|Process,FsRead,FsWrite,Env|ooda-standard|448a2c37edfcad83e347a84dd5cb7bfa395c3d9a4b7c8bb68dc2fa9ba0a5d687
@@ -34,7 +34,7 @@ ooda-hardware|0.10.1|FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap|
 ooda-health|0.5.1|Process,FsRead,FsWrite,Env|ooda-standard|6b2c3802d8b037775aede823e035b31a6182e51aa3924ae898fd6d2a9fc8b5dd
 ooda-inference|0.10.2|Process,Bind,Tcp,Fs,FsRead,FsWrite,Env,Gpu|ooda-standard|2d9d4b2a9dec2a07e5e3583e1f5908fca4e6524bac1c491b3ae62ef02af720dc
 ooda-interface|0.6.2|FsRead,FsWrite,Fs,Process,Env,Time,Ffi|ooda-standard|16d308e2ee53eeea5faa7d11b4a24e394e122b6c99be78ded145dc8bf4de4147
-ooda-kernel|0.17.0|FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap|ooda-standard|606c669af3a2f38b4a54b4523b45dfa9c9df441b82b7eb056fba60472b2bea7a
+ooda-kernel|0.18.0|FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap|ooda-standard|58e42057d864d6b49f86434673e163d1a90616f3da5d281465c56995d222052b
 ooda-language|0.5.1|FsRead,FsWrite,Process,Env,CompilerRead|ooda-standard|02be62e1ced5dc39a8d3974ae22d9df7146338b5b2150365f945886879d7228d
 ooda-list|0.3.2|FsRead,FsWrite,Process,Env,Time|ooda-standard|d081710306bfbc5920d6cce9267e20200fe6fc256a139a90aa246a260ba76fc4
 ooda-machine|0.3.2|FsRead,FsWrite,Process,Env,Time||1f84fff6ff627e3643bf9841c4f87a9fdb48d71f719d49e936a6d20d228bac31
@@ -51,7 +51,7 @@ ooda-portal|0.7.0|Process,FsRead,FsWrite,Env|ooda-standard|b35bddb9c2a5fcd2205c3
 ooda-provenance|0.3.2|FsRead,FsWrite,Process,Env,Time|ooda-standard|faef9460a035efc691bcc9445eb0c7a27f035fee2a7631fcddf77a8bfa1f9c36
 ooda-read|0.3.2|FsRead,FsWrite,Process,Env,Time|ooda-standard|d54c8da6a6487c00d749906901e27061d53e70b382748d503b0233af29124584
 ooda-remote|0.5.1|FsRead,FsWrite,Process,Env,Frame|ooda-standard|d4905f0aa07bc01f74ac74cc8ebeaa11fa98914461753855088d6598962f0d69
-ooda-runtime|5.16.0|FsRead,Env|ooda-standard|1f170387357fb244234f43fa13d130785699d58649469978db475e10e319a389
+ooda-runtime|5.17.0|FsRead,Env|ooda-standard|656e39d9707fe41f9b4b83515e93ff339ac70b84b10cc368087b32d0da5348a7
 ooda-sandbox|0.4.1|FsRead,FsWrite,Process,Env,Time|ooda-standard|afb69a64d82a27c8bbf78de23a79f2209cfb96cd8b04c8c3b8d625fa5b70368b
 ooda-screensaver|5.4.0|FsRead,FsWrite,Fs,Process,Bind,Time,Ffi,Arena,Alloc|ooda-standard|507e000a24d439b19b5b5c16792b7762ab41266dbba2a3f89ffcd64176c42162
 ooda-screenshot|0.1.0|FsRead,FsWrite,Fs,Process,Env,Time,Ffi|ooda-standard|c5b6452e3626e2f2c04e802fef445422aa82647cfca43e3e8b705295b94ea60f
@@ -59,7 +59,7 @@ ooda-settings|0.6.3|FsRead,FsWrite,Fs,Process,Env,Ffi|ooda-standard|493e3c3914b9
 ooda-shell|2.0.3|Bind,FsRead,FsWrite,Process,Sys,Env,Time,Alloc,Thread,Ffi|ooda-standard|41289a6e25163708a7f875271a5ee1a5b67070ae8aa638dc17ce51d59d04d712
 ooda-sign|0.3.2|FsRead,FsWrite,Process,Env,Time|ooda-standard|a441fb50d17fbc4c94cfe725a02d7ea3e249a0e70ab0927f3554054e5c86d160
 ooda-software|0.9.0|FsRead,FsWrite,Fs,Process,Env,Ffi|ooda-standard|b31c0ab71e3c873560945afb06dd868583dd8342cc3e71f3d19e749409d6e474
-ooda-standard|2.16.0|||ec1688415b5f98c2ff7d5057826fbe0c78bebf270bb29e4fcc0a175a74ce3dc9
+ooda-standard|2.17.0|||595b9f9373ac3c3a2b4f5ea061b9092c855bcdeb8fb0308adaa745df0dcbf36d
 ooda-start|0.9.1|Process,FsRead,FsWrite|ooda-standard|5ff6da6c0aec24cb1b6f6fa7d7d98cc0b157da2dcd5795ec3a4419ff2d7f3861
 ooda-strike|0.2.1|FsRead,FsWrite,Env|ooda-standard|07e6a5ec7927cee5b7590098845a3b5247f7221a1752f87e448ccaea302ff90e
 ooda-studio|0.4.1|FsRead,FsWrite,Process,Env,Frame|ooda-standard|c5a0c03614ae988442a0dc1a44130783dab22ae25faa83a06c047e52fbe19387
