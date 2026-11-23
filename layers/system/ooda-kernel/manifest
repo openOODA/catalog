@@ -1,9 +1,9 @@
 name=ooda-kernel
-version=0.18.0
+version=0.19.0
 caps=FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap
 deps=ooda-standard
 payload=ooda-kernel.oo
 commit=
-sha256=58e42057d864d6b49f86434673e163d1a90616f3da5d281465c56995d222052b
+sha256=35a62acf8a85f95e599f35eb00ead0b4865737670e9bd03b4266ac1ecf5bc9d6
 sig=
 description=Capability microkernel with IOMMU DMA bounce guards, DRAM zeroization, and CXL 3.0 support.

@@ -1,9 +1,9 @@
 name=ooda-firewall
-version=0.7.1
+version=0.8.0
 caps=FsRead,FsWrite,Process,Env,Time,Net,Alloc
 deps=ooda-standard
 payload=ooda-firewall.oo
 commit=
-sha256=c33527b865f4e75857c19344d94c19e20ff243d900b4f9fd94206ab57d39c677
+sha256=0618946b83252da28104164c516c02db631fd79b49daf232551ccb79c43593a2
 sig=
 description=Active cyber defense firewall with eBPF anomaly detection, canary tripwires, honeypots, and instant airgap.
