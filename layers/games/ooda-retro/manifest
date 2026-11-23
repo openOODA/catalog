@@ -1,0 +1,9 @@
+name=ooda-retro
+version=0.2.2
+caps=FsRead,FsWrite,Process,Env
+deps=ooda-standard
+payload=ooda-retro.oo
+commit=
+sha256=9a223e6defc87100c2060be186d4144707c46c377f93ce7fa741435a86903bcd
+sig=
+description=Capability-jailed multi-system ROM & homebrew emulator powered by ooda-interface/ooda-engine

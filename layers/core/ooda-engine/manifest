@@ -1,9 +1,0 @@
-name=ooda-engine
-version=0.3.2
-caps=FsRead,FsWrite,Process,Env
-deps=ooda-standard
-payload=ooda-engine.oo
-commit=
-sha256=b6798637b732aabaae39cbd69434897bcd9bf612b36e72ec7826bee80c79762e
-sig=
-description=Deterministic game and simulation engine with 2D pixel, grid-sim, 3D voxel, and Netlock rollback pipelines.

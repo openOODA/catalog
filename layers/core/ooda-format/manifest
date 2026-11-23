@@ -1,9 +1,0 @@
-name=ooda-format
-version=0.2.2
-caps=FsRead,FsWrite,Env
-deps=ooda-standard
-payload=ooda-format.oo
-commit=
-sha256=e942e4998d1316faa0884a02d6ff21658395abf264f3479b6d4699b7d6647db0
-sig=
-description=Pure-.oo wire codecs, archive formats, and structured data serialization suite.

@@ -1,0 +1,9 @@
+name=ooda-version
+version=0.2.3
+caps=FsRead,FsWrite,Net,Tcp,Process,Env,Time
+deps=ooda-standard
+payload=ooda-version.oo
+commit=
+sha256=13d20df2f0c347c9a9b511ed49047dfc321f02d6292d5c65fbc0cb213b56c0d1
+sig=
+description=Native pure-.oo Git-compatible object-store VCS with signed commits and smart-HTTP

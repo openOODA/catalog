@@ -1,9 +1,9 @@
 name=ooda-browser
-version=0.4.1
-caps=FsRead,FsWrite,Tcp,Process,Env
+version=0.7.0
+caps=FsRead,FsWrite,Fs,Tcp,Process,Env,Ffi
 deps=ooda-standard
 payload=ooda-browser.oo
 commit=
-sha256=e73898c86a170783a0afd920ee97139f593718c295687412094ba4719b2db4e2
+sha256=2174ad5a16dda13008a72f1d584b890eeee306b79030a8a8dffd327fecc12b25
 sig=
-description=Privacy-first web browser with strict capability isolation and zero telemetry.
+description=Capability-secured document browser with a COSMIC Wayland window for local files and http or https pages

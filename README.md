@@ -1,6 +1,6 @@
 # `@openOODA/catalog`
 
-Signed package registry and layer manifest index (`72` packages across `openOODA-core`, `openOODA-system`, and `openOODA-apps`) queried by [`ooda-package`](https://github.com/openOODA-core/ooda-package) for [openOODA](https://openooda.org).
+Signed package registry and layer manifest index (`65` packages across `openOODA-core`, `openOODA-system`, `openOODA-apps`, and `openOODA-games`) queried by [`ooda-package`](https://github.com/openOODA-core/ooda-package) for [openOODA](https://openooda.org).
 
 ## Structure
 
@@ -9,9 +9,9 @@ catalog/
 ├── AGENTS.md
 ├── README.md
 ├── Makefile        # build / verify / test / sync / sums gates
-├── ooda.pkg        # catalog package manifest (name=catalog, version=2.7.0)
+├── ooda.pkg        # catalog package manifest (name=catalog, version=2.8.0)
 ├── anchor.oo       # root anchor re-exporting core/ conformance pages
-├── COMMIT_LEDGER   # canonical commit SHA ledger across all 72 product repos
+├── COMMIT_LEDGER   # canonical commit SHA ledger across all 65 product repos
 ├── cli/
 │   └── main.oo     # catalog binary: verify, sync, theme, about
 ├── core/
@@ -27,12 +27,13 @@ catalog/
 ├── registry.pub    # Registry verification public key
 ├── SHA256SUMS      # Master checksums mirrored from the install@hub release
 └── layers/
-    ├── core/       # 15 @openOODA-core packages (incl. ooda, ooda-compiler, ooda-runtime, ooda-standard, ooda-package, ooda-language, ooda-bridge, ooda-verify)
-    ├── system/     # 37 @openOODA-system OS, kernel, driver, desktop, cloud & AI inference packages
-    └── apps/       # 18 @openOODA-apps native desktop, studio & gaming applications
+    ├── core/       # 11 @openOODA-core packages (incl. ooda, ooda-compiler, ooda-runtime, ooda-standard, ooda-package, ooda-language, ooda-bridge, ooda-verify, ooda-version)
+    ├── system/     # 26 @openOODA-system OS, kernel, driver, desktop, cloud & AI inference packages
+    ├── apps/       # 19 @openOODA-apps native desktop & terminal applications
+    └── games/      # 9 @openOODA-games engine & native games titles
 ```
 
-Each `layers/{core,system,apps}/<pkg>/` directory holds a `manifest` and a
+Each `layers/{core,system,apps,games}/<pkg>/` directory holds a `manifest` and a
 `<pkg>.oo` **signed descriptor** — emitted byte-for-byte by `core/cat_index.oo`'s
 `cat_descriptor`. The `index` row's `sha256` binds the manifest, descriptor
 bytes, and signed entry together; nothing in the tree is trusted without
@@ -61,6 +62,7 @@ ooda-package group list
 ooda-package install @core
 ooda-package install @system
 ooda-package install @apps
+ooda-package install @games
 ooda-package install @workstation
 ooda-package install @all
 ```

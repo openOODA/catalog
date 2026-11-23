@@ -6,4 +6,4 @@ payload=ooda-chat.oo
 commit=
 sha256=9bf320b31e8a44bd924e73bd147c841c9fd5b05c3eb0f0d990e26d5d74354a13
 sig=
-description=End-to-end encrypted messaging client with post-quantum key agreement.
+description=chat client with room ring and seals minting FrameCap for openOODA-apps apps layer

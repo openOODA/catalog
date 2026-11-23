@@ -6,4 +6,4 @@ payload=ooda-remote.oo
 commit=
 sha256=d4905f0aa07bc01f74ac74cc8ebeaa11fa98914461753855088d6598962f0d69
 sig=
-description=Encrypted remote desktop and screen-sharing client with privacy blackout support.
+description=virtual machine manager UI over compute cells minting FrameCap for openOODA-apps apps layer

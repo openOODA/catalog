@@ -136,6 +136,7 @@ pub fn cat_groups_scan(fs: &FsReadCap, lroot: String, gsrc: String) -> Int {
         if layer == "core" { grp = "core"; }
         if layer == "system" { grp = "system"; }
         if layer == "apps" { grp = "apps"; }
+        if layer == "games" { grp = "games"; }
         let mut j: Int = 0;
         while j < list_len(glines) {
             let ln: String = str_trim(list_get(glines, j));
@@ -178,8 +179,7 @@ pub fn cat_sums_scan(idx_src: String, sums_src: String) -> Int {
                 if str_ends_with(asset, "-linux-x86_64") {
                     stem = str_slice(asset, 0, chars_len(asset) - 13);
                 }
-                let is_rt: Bool = str_starts_with(asset, "libooda-runtime") ||
-                    str_starts_with(asset, "liboodar");
+                let is_rt: Bool = str_starts_with(asset, "libooda-runtime");
                 if is_rt && str_ends_with(asset, ".a") {
                     stem = "ooda-runtime";
                 }

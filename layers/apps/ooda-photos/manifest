@@ -6,4 +6,4 @@ payload=ooda-photos.oo
 commit=
 sha256=d52d8cc289c01df7981f6be6aa763ddfcc97c2ab8886243a77665a18cd8824c8
 sig=
-description=Native Wayland Photos gallery and image engine with layer frame codec and personal-cloud sync.
+description=Native Wayland Photos gallery and image viewer with personal-cloud sync for openOODA

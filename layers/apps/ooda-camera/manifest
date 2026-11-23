@@ -6,4 +6,4 @@ payload=ooda-camera.oo
 commit=
 sha256=7067ba82a6a98f383e02dc0ee1c0f1cb2cc0cb5f6aba564eeb9d82320ff24e06
 sig=
-description=Privacy-aware camera capture app with hardware LED gating and automatic EXIF/GPS stripping.
+description=COSMIC Wayland Camera app with Photo/Video/QR modes, automatic EXIF/GPS scrub, ISP pipeline, and Feedback

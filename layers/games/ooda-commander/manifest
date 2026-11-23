@@ -1,0 +1,9 @@
+name=ooda-commander
+version=0.6.2
+caps=FsRead,FsWrite,Process,Env
+deps=ooda-standard
+payload=ooda-commander.oo
+commit=
+sha256=cde905ee0ddf68af34120e32ad1651cdd338deb535d155ccc9d1ab6ec1e0d79c
+sig=
+description=Deterministic RTS, factory automation, and board strategy suite.

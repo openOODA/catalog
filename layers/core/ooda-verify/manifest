@@ -1,9 +1,9 @@
 name=ooda-verify
-version=1.0.1
+version=1.0.2
 caps=FsRead,FsWrite,Env,Process
 deps=ooda-standard
 payload=ooda-verify.oo
 commit=
-sha256=720ed24a3d336c81534a938424400f0ab924ce3c08b0222adc0e650c61d064f0
+sha256=eeb4fb6555220ba60eb8110d9f50795e0cec6591c4d042a18996292c189f00af
 sig=
-description=Eight-hat static verifier, security auditor, shape-ladder enforcer, and debugger for .oo repositories.
+description=Canonical 8-Hat Zero-Trust Capability-Attenuated OODA Verification & Debugger Host (white, gray, blue, purple, green, black, red, yellow, cycle, dbg, trace, replay)

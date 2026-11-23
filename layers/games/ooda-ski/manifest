@@ -1,0 +1,9 @@
+name=ooda-ski
+version=0.1.0
+caps=FsRead,FsWrite,Fs,Process,Env,Ffi,Time,Thread
+deps=ooda-standard
+payload=ooda-ski.oo
+commit=
+sha256=ace3c16a3b1b96f731a8597984422575ec682f0ddccd46acec7cc28cad36539a
+sig=
+description=ooda-ski - pixel-art alpine downhill survival toy, pure openOODA

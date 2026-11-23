@@ -1,9 +1,0 @@
-name=ooda-console
-version=0.1.0
-caps=FsRead,FsWrite,Fs,Process,Env,Ffi
-deps=ooda-standard
-payload=ooda-console.oo
-commit=
-sha256=e9ad586af762b4a73123e460c85071b8b42bee2c53a6f2ab90c231c98d1de06c
-sig=
-description=apps-layer GUI terminal front end that runs a child in a PTY and renders its VT500 output through the shared ooda-standard terminal engine.

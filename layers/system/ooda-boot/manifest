@@ -6,4 +6,4 @@ payload=ooda-boot.oo
 commit=
 sha256=a680441cdc1d062990295ac32853c31fdc83dea5d6485c7729641df01d3da088
 sig=
-description=Measured UEFI bootloader with TPM2, DICE, and Caliptra hardware root-of-trust attestation.
+description=UEFI PE32+ bootloader (BOOTX64.EFI), GOP/ACPI/DTB loader, and ELF64 physical segment stager (consolidating ooda-kernel-boot)

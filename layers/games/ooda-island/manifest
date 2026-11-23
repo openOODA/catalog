@@ -1,0 +1,9 @@
+name=ooda-island
+version=0.2.1
+caps=FsRead,FsWrite,Fs,Process,Env,Ffi,Time,Alloc
+deps=ooda-standard
+payload=ooda-island.oo
+commit=
+sha256=3eb92b1132ea1fd86b8a1d67ab363e2515f4ea4ec25f8e8c15b79be3bbd46412
+sig=
+description=Deterministic 2.5D Sprite-Stacking Pixel-Art Island Diorama Explorer & Sandbox

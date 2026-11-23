@@ -6,4 +6,4 @@ payload=ooda-flasher.oo
 commit=
 sha256=8fac7baabe422a8bad3dcc38aa2db5ee205e49b9bec20e82564a5ae9b04e13d2
 sig=
-description=Verified OS image writer and bootable USB drive flasher with SHA-256 checks.
+description=bootable ISO/raw USB and SD image flasher (POSIX /dev/sdX and /dev/mmcblkX, host-native physical-drive paths) with SHA-256 + ML-DSA-65 verification, a dual-platform removable-device safety lock, O_DIRECT + fsync raw writes with SHA-256 read-back, managed-runtime raw writes on the non-POSIX host, and drive restore over TUI and Wayland modes

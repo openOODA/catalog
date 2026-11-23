@@ -6,4 +6,4 @@ payload=ooda-theme.oo
 commit=
 sha256=5e69d6ba6c9f85c800fab43043fa2a672218950650a8db52425a05522a114753
 sig=
-description=Unified theme manager for 30 openOODA palettes, circadian dark/light switching, and TUI widgets.
+description=Unified theme engine, 25+ semantic presets, 48 tokens, and hardware RGB controller

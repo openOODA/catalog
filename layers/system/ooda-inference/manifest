@@ -6,4 +6,4 @@ payload=ooda-inference.oo
 commit=
 sha256=2d9d4b2a9dec2a07e5e3583e1f5908fca4e6524bac1c491b3ae62ef02af720dc
 sig=
-description=Local AI model inference server supporting GPU acceleration and capability-bounded tool access.
+description=Pure .oo local LLM/VLM inference daemon, OOVFS-v2 NVMe VMO streamer, and TPM2 attested runner

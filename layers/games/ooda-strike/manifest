@@ -1,0 +1,9 @@
+name=ooda-strike
+version=0.2.2
+caps=FsRead,FsWrite,Env
+deps=ooda-standard
+payload=ooda-strike.oo
+commit=
+sha256=182ea14fe4ca7582d8ba99de0e250527016b765acb5e3f446692f5c0b213cae8
+sig=
+description=64-bit Q32.32 6-DoF space combat and capital-ship simulator

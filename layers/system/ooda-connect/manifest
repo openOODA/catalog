@@ -6,4 +6,4 @@ payload=ooda-connect.oo
 commit=
 sha256=31475dcf030567cde545e660a25eff3691e1be3ff53b5e0ba9f167a8bda5199b
 sig=
-description=Secure peer-to-peer device pairing, file transfer, and clipboard sync over encrypted channels.
+description=Unified forward-secret OOH2 ssh/scp/sftp, OOM2 mesh/relay/dns/quorum, service connector, and OOCAP1 ownership tool

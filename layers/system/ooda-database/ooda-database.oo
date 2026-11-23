@@ -20,7 +20,7 @@ pub fn cat_version() -> String {
 }
 
 pub fn cat_caps() -> String {
-    return "FsRead,FsWrite,Net";
+    return "FsRead,FsWrite,Net,Process";
 }
 
 pub fn cat_deps() -> String {

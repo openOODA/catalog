@@ -1,9 +1,0 @@
-name=ooda-list
-version=0.3.2
-caps=FsRead,FsWrite,Process,Env,Time
-deps=ooda-standard
-payload=ooda-list.oo
-commit=
-sha256=d081710306bfbc5920d6cce9267e20200fe6fc256a139a90aa246a260ba76fc4
-sig=
-description=Fast directory listing utility with capability badges, git awareness, and ootheme colors.

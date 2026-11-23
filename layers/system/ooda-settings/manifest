@@ -6,4 +6,4 @@ payload=ooda-settings.oo
 commit=
 sha256=493e3c3914b9480b74fe6205c718737fc58192977e9e380c749adee8e4aae4d5
 sig=
-description=Unified desktop and system settings control center for displays, input, privacy, and themes.
+description=Unified control center for display layout, themes, audio routing, network, and capability policies

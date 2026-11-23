@@ -1,9 +1,0 @@
-name=ooda-machine
-version=0.3.2
-caps=FsRead,FsWrite,Process,Env,Time
-deps=
-payload=ooda-machine.oo
-commit=
-sha256=1f84fff6ff627e3643bf9841c4f87a9fdb48d71f719d49e936a6d20d228bac31
-sig=
-description=Virtual machine hypervisor manager and guest lifecycle controller.

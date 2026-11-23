@@ -1,9 +1,0 @@
-name=ooda-provenance
-version=0.3.2
-caps=FsRead,FsWrite,Process,Env,Time
-deps=ooda-standard
-payload=ooda-provenance.oo
-commit=
-sha256=faef9460a035efc691bcc9445eb0c7a27f035fee2a7631fcddf77a8bfa1f9c36
-sig=
-description=Supply-chain attestation and provenance verification using TPM2, SEV-SNP, and Merkle trees.

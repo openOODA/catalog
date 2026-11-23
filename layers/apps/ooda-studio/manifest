@@ -6,4 +6,4 @@ payload=ooda-studio.oo
 commit=
 sha256=c5a0c03614ae988442a0dc1a44130783dab22ae25faa83a06c047e52fbe19387
 sig=
-description=Non-linear video, audio, and screen-recording production suite.
+description=pure-.oo IDE workbench with LSP panel minting FrameCap for openOODA-apps apps layer

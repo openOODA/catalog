@@ -1,9 +1,9 @@
 name=ooda-software
-version=0.9.0
+version=0.10.0
 caps=FsRead,FsWrite,Fs,Process,Env,Ffi
 deps=ooda-standard
 payload=ooda-software.oo
 commit=
-sha256=b31c0ab71e3c873560945afb06dd868583dd8342cc3e71f3d19e749409d6e474
+sha256=6c6811b3a2bbc97d3725e4b91a85282339b0e4eac8376656259a9b3a81f2c02f
 sig=
-description=Native Wayland Software center and capability blast-radius inspector with personal-cloud sync.
+description=Desktop and CLI Software center with WebApp isolation, Bazaar/Flatpak blast-radius inspection, and sync

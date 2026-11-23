@@ -6,4 +6,4 @@ payload=ooda-web.oo
 commit=
 sha256=a680103db7ba712b7f82a5fce1db8a3cacccd1f68dc944b7909574d955d62ae0
 sig=
-description=Capability-gated HTTP/HTTPS client, local web server, and web diagnostics tool.
+description=Unified capability-bounded HTTP/WebSocket/GraphQL/server/Admin UI/CDN/gateway CLI under explicit TcpCap, BindCap, FsReadCap, FsWriteCap, ProcessCap, TimeCap, and EnvCap.

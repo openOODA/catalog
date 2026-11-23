@@ -1,9 +1,9 @@
 name=ooda-shell
-version=2.0.3
+version=2.2.0
 caps=Bind,FsRead,FsWrite,Process,Sys,Env,Time,Alloc,Thread,Ffi
 deps=ooda-standard
 payload=ooda-shell.oo
 commit=
-sha256=41289a6e25163708a7f875271a5ee1a5b67070ae8aa638dc17ce51d59d04d712
+sha256=a9a51ad78db4c6cd7fc1408b8534b330d814632c643da1a94dcaf01be4671b2f
 sig=
-description=Interactive command shell with structured pipelines, capability inspection, and ootheme prompts.
+description=Capability-bounded openOODA native ooda-shell utility with date and tty/clear tools (SH)

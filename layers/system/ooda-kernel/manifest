@@ -6,4 +6,4 @@ payload=ooda-kernel.oo
 commit=
 sha256=35a62acf8a85f95e599f35eb00ead0b4865737670e9bd03b4266ac1ecf5bc9d6
 sig=
-description=Capability microkernel with IOMMU DMA bounce guards, DRAM zeroization, and CXL 3.0 support.
+description=openOODA Exokernel CPU & Memory Multiplexer (shared-memory OODA upcall scheduler, CSpace/CDT, badged IPC, W^X MMU/IOMMU, microVM/trace)

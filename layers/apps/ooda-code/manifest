@@ -1,0 +1,9 @@
+name=ooda-code
+version=0.3.1
+caps=FsRead,FsWrite,Process,Env,Net,Ffi,Time
+deps=ooda-standard
+payload=ooda-code.oo
+commit=
+sha256=4ba7c47376abb674e7131c358487665a948170e9bf8e3d346536908b36128e83
+sig=
+description=BYOK coding agent TUI with vault-sealed keys and multicall personas for openOODA-apps apps layer

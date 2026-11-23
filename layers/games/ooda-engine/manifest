@@ -1,0 +1,9 @@
+name=ooda-engine
+version=0.3.3
+caps=FsRead,FsWrite,Process,Env
+deps=ooda-standard
+payload=ooda-engine.oo
+commit=
+sha256=d53d5d973a179af8a712b9682fcc11890030519d04b23658e8b4241cc1949f24
+sig=
+description=Deterministic 2D/3D/Voxel/6-DoF simulation, procgen, rollback netcode and multimodal AI engine.

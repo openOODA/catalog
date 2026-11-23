@@ -1,0 +1,9 @@
+name=ooda-capella
+version=0.1.0
+caps=FsWrite,Fs,Process,Env,Ffi,Time,Thread
+deps=ooda-standard
+payload=ooda-capella.oo
+commit=
+sha256=3ad3ff7a047facff910878fa423d53768b64e9d670fb6385d23fed015a3009d3
+sig=
+description=Capella Sortie - pixel-art FreeSpace 2 nebula dogfight flying toy, pure openOODA

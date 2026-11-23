@@ -1,9 +1,9 @@
 name=ooda-health
-version=0.5.1
-caps=Process,FsRead,FsWrite,Env
+version=0.6.0
+caps=Process,FsRead,FsWrite,Env,Time
 deps=ooda-standard
 payload=ooda-health.oo
 commit=
-sha256=6b2c3802d8b037775aede823e035b31a6182e51aa3924ae898fd6d2a9fc8b5dd
+sha256=cd88c0f81589a0f4f812fd4ee8b1318501fec1ae2f9894bcc936c0ef475fca96
 sig=
-description=System health monitor tracking CPU, memory, thermal, battery, and service readiness.
+description=Autonomous health watchdog, latency probes, telemetry metrics/spans, scrubbing, fencing, and process ops

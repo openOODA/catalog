@@ -1,9 +1,0 @@
-name=ooda-binary
-version=0.2.2
-caps=FsRead,Env
-deps=ooda-standard
-payload=ooda-binary.oo
-commit=
-sha256=99789d7cdba006e6df331dfaabb918a4865f898b683b747cfc110b824a4c8514
-sig=
-description=ELF, PE, and Mach-O binary inspection, section analysis, and disassembly toolkit.

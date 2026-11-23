@@ -1,0 +1,9 @@
+name=ooda-arcade
+version=0.2.2
+caps=FsRead,FsWrite,Process,Env
+deps=ooda-standard
+payload=ooda-arcade.oo
+commit=
+sha256=b2bea6fa18b61aff91d9fe69ee67293dddb8ae062ba6d7f5525df158b9090dea
+sig=
+description=2D/2.5D action platformer, metroidvania and rollback fighter powered by ooda-interface/ooda-engine

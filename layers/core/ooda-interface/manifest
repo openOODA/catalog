@@ -6,4 +6,4 @@ payload=ooda-interface.oo
 commit=
 sha256=16d308e2ee53eeea5faa7d11b4a24e394e122b6c99be78ded145dc8bf4de4147
 sig=
-description=Multi-surface declarative .oot scene renderer for TUI, Wayland GUI, wearable, and vehicle displays.
+description=Unified declarative and immediate-mode 4-surface UI and accessibility toolkit.

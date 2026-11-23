@@ -1,9 +1,0 @@
-name=ooda-disk
-version=0.4.0
-caps=FsRead,FsWrite,Process,Env,Time
-deps=ooda-standard
-payload=ooda-disk.oo
-commit=
-sha256=b10a06fe155706cf6daabfbe3d42f216b781058b8daa02e0a3df62381b74ff3a
-sig=
-description=Block storage, partition layout, SMART health, and encrypted volume management utility.

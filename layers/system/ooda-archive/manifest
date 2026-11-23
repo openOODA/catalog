@@ -6,4 +6,4 @@ payload=ooda-archive.oo
 commit=
 sha256=eb67556a06b66a6964c2a8c3df79612db5fbf80fab6bfe50b6041742a46ed7ac
 sig=
-description=Capability-confined archive creator and extractor for tar, zip, and compressed bundles.
+description=Deterministic reproducible archive builder, compressor, ZipSlip-safe extractor, and structured binary pack suite

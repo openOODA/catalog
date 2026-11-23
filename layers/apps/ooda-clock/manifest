@@ -6,4 +6,4 @@ payload=ooda-clock.oo
 commit=
 sha256=ebc4bd8617b3cd5003269e96a2e6a9df339207a9ee744a93e57f8ff20738b725
 sig=
-description=Native Wayland World Clock, Alarms, Stopwatch, and Timer with personal-cloud sync for openOODA.
+description=Native Wayland Clock, Alarms, Stopwatch, and Timer with personal-cloud sync for openOODA.

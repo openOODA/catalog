@@ -1,9 +1,0 @@
-name=ooda-sandbox
-version=0.4.1
-caps=FsRead,FsWrite,Process,Env,Time
-deps=ooda-standard
-payload=ooda-sandbox.oo
-commit=
-sha256=afb69a64d82a27c8bbf78de23a79f2209cfb96cd8b04c8c3b8d625fa5b70368b
-sig=
-description=Process confinement launcher enforcing filesystem jails, seccomp filters, and capability attenuation.

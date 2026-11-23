@@ -1,9 +1,0 @@
-name=ooda-arcade
-version=0.2.1
-caps=FsRead,FsWrite,Process,Env
-deps=ooda-standard
-payload=ooda-arcade.oo
-commit=
-sha256=b416e0e8d52ce1c8fe1062614d0c5c1af450a334020528ee3bfb5bc4686975f0
-sig=
-description=Retro 2D arcade game collection powered by ooda-engine with deterministic replays.

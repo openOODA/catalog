@@ -6,4 +6,4 @@ payload=ooda-office.oo
 commit=
 sha256=f06c13732d0f22cb19543c48443014c34d5a49c9f74bd2d7867a328b298e75e9
 sig=
-description=Lightweight document, spreadsheet, and presentation productivity suite.
+description=rich document editor with page model for openOODA-apps

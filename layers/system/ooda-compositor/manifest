@@ -6,4 +6,4 @@ payload=ooda-compositor.oo
 commit=
 sha256=775e8849ba8264d9ecbc4e5ca6232de0dff701a9d08d7029a9eb10805fdf872a
 sig=
-description=Wayland desktop compositor with hardware privacy LED gates, screen-share blackout, and touch gestures.
+description=Pure native VMO tiling and floating compositor with 8-16ms input lane and isolated ooda-gateway-wayland

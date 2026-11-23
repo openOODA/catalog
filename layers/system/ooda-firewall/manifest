@@ -6,4 +6,4 @@ payload=ooda-firewall.oo
 commit=
 sha256=0618946b83252da28104164c516c02db631fd79b49daf232551ccb79c43593a2
 sig=
-description=Active cyber defense firewall with eBPF anomaly detection, canary tripwires, honeypots, and instant airgap.
+description=Stateful packet filtering, firewalld/nftables zone rules, IDS/canary/honeypot active defense, and KEV shield

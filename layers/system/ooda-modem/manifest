@@ -1,9 +1,0 @@
-name=ooda-modem
-version=0.2.2
-caps=FsRead,FsWrite
-deps=ooda-standard
-payload=ooda-modem.oo
-commit=
-sha256=54ebd47fc59238227c0b7e9c25f8519fe9a4ed76032ab5e92329a4a1f3cea8b7
-sig=
-description=Cellular WWAN modem manager with IOMMU-isolated baseband DMA boundaries.
