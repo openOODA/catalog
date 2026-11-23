@@ -1,9 +1,9 @@
 name=ooda-panel
-version=0.6.1
+version=0.6.2
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-panel.oo
 commit=
-sha256=3994eda5fcbb9a3c708cd7038d306922920bcb8950ab842fabc54b2a6211a696
+sha256=63fe8b77774c664eb07f87b7ca33288736b2c4f7b78e4b6b7b39d4665b3568e0
 sig=
 description=Desktop panel, launcher bar, system tray, and on-screen virtual keyboard (OSK).
