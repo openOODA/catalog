@@ -1,9 +1,9 @@
 name=ooda-hardware
-version=0.11.0
-caps=FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap
+version=0.12.1
+caps=FsReadCap,FsWriteCap,EnvCap,RandCap,FrameCap,DmaCap,MmioCap,IrqCap
 deps=ooda-standard
 payload=ooda-hardware.oo
 commit=
-sha256=66d2374c44fdcc8b82726c2998f4bb0edf7922703cae4ff13bde69d24118025c
+sha256=d4a81f492e1d4d394cdb92554e0842eb5c00b90a2981debb3f072d90fc0561a5
 sig=
 description=openOODA HAL (x86_64/ARM64/RISC-V) and FsReadCap hardware inventory (hw,audio,battery,bt,dmesg,lspci,lsusb,sensors)

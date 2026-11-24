@@ -1,9 +1,9 @@
 name=ooda-files
-version=0.5.3
-caps=Process,FsRead,FsWrite,Env
+version=0.6.1
+caps=Process,FsRead,FsWrite,Env,Rand
 deps=ooda-standard
 payload=ooda-files.oo
 commit=
-sha256=7c5361b51b2b976a7c16eb23e109f30fd71d66b5f1d24d31b65ac6acae55fb9a
+sha256=356fb27e4054de1acc842baa96cdf99228f13e1795a8655a54fbc97d38404592
 sig=
 description=Dual-pane spatial and Miller-column file manager with visual per-directory capability badges

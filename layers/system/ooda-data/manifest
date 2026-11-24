@@ -1,9 +1,9 @@
 name=ooda-data
-version=0.4.0
-caps=FsRead,FsWrite,Process,Env,Time
+version=0.5.1
+caps=FsRead,FsWrite,Process,Env,Time,Rand
 deps=ooda-standard
 payload=ooda-data.oo
 commit=
-sha256=b90de56b8801c7dab5d3000a8ddf3d089821712a433c0b3bc2a73eae6d676cca
+sha256=43656d8f2c2eded3fb8318ff76924cdbc980b4d85f9589ad17ed1062f6e811c1
 sig=
 description=Consolidated data query, CSV, XML, template, codec, digest, grep, sort, diff, patch, and stream reader engine

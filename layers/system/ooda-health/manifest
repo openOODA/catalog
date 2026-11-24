@@ -1,9 +1,9 @@
 name=ooda-health
-version=0.6.0
-caps=Process,FsRead,FsWrite,Env,Time
+version=0.7.1
+caps=Process,FsRead,FsWrite,Env,Time,Rand
 deps=ooda-standard
 payload=ooda-health.oo
 commit=
-sha256=cd88c0f81589a0f4f812fd4ee8b1318501fec1ae2f9894bcc936c0ef475fca96
+sha256=9c5502007bec18f7b2d3627c929fa5af046c9780baecae47600bfc1d9c3d9251
 sig=
 description=Autonomous health watchdog, latency probes, telemetry metrics/spans, scrubbing, fencing, and process ops

@@ -1,9 +1,9 @@
 name=ooda-start
-version=0.10.0
-caps=Process,FsRead,FsWrite,Env,Time
+version=0.11.1
+caps=Process,FsRead,FsWrite,Env,Time,Rand
 deps=ooda-standard
 payload=ooda-start.oo
 commit=
-sha256=a388142f8d2da331a794e22ff69781011b60f42fae7ae59890a12c5a2268b99f
+sha256=b0488746706da05db5d7c37461738f1f5d0428342e1005cae75e7c3c079c1243
 sig=
 description=PID 1 system supervisor, capability service manager, logs, power, cron, clock, and watch

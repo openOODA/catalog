@@ -1,9 +1,9 @@
 name=ooda-filesystem
-version=0.9.0
-caps=Process,FsRead,FsWrite,Env,Time
+version=0.10.1
+caps=Process,FsRead,FsWrite,Env,Time,Rand
 deps=ooda-standard
 payload=ooda-filesystem.oo
 commit=
-sha256=e4c7aa6fceca771c12baf6d8bf7bb8e0bab9ff7b8caf8189c238608ea4534226
+sha256=21a1408cd6e86d61cbc62b215d5c8763649138fc4e95a67ebfe3a3808645fcdc
 sig=
 description=Unified capability filesystem, OOVFS-v2 CoW store, OODA-Pool NAS, directory discovery/sync, block/mount/fsck/fs ops, and CapReg64 ACL suite

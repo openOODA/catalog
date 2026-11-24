@@ -16,11 +16,11 @@ pub fn cat_layer() -> String {
 }
 
 pub fn cat_version() -> String {
-    return "0.11.0";
+    return "0.12.1";
 }
 
 pub fn cat_caps() -> String {
-    return "FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap";
+    return "FsReadCap,FsWriteCap,EnvCap,RandCap,FrameCap,DmaCap,MmioCap,IrqCap";
 }
 
 pub fn cat_deps() -> String {
