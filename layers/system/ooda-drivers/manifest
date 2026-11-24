@@ -1,9 +1,9 @@
 name=ooda-drivers
-version=0.19.0
+version=0.20.0
 caps=FsRead,FsWrite,Dma,Mmio,Pci,Irq,Usb,Frame,Rand
 deps=ooda-standard
 payload=ooda-drivers.oo
 commit=
-sha256=42adb21459b209dfe6eeddbe37e89099191df95d0287baea4e233f0491511072
+sha256=9e8ea78618fe072c8625c2f62aab1e02ab56aae2a9bad37ee1cbbe48988b99f7
 sig=
 description=Unified openOODA hardware driver suite covering I/O, accelerators, networking, cellular baseband modem, storage, and VirtIO

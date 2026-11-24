@@ -1,9 +1,9 @@
 name=ooda-runtime
-version=5.18.0
+version=5.19.0
 caps=FsRead,Env
 deps=ooda-standard
 payload=ooda-runtime.oo
 commit=
-sha256=a9bc65d5ebc3316b71a9cae5c9a48433c482f6b4a102dfe5548b44201c9f0fa4
+sha256=6594a145d6144289dc1d3f2d3057bf38e2eff9e754622a7741f43dab8d430ee4
 sig=
 description=Zero-ambient-authority native runtime library (libooda-runtime.a) with capability locks and 27-syscall ABI.
