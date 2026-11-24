@@ -1,9 +1,9 @@
 name=ooda-theme
-version=0.3.2
+version=0.4.0
 caps=FsRead,FsWrite,Process,Env,Hid,Usb
 deps=ooda-standard
 payload=ooda-theme.oo
 commit=
-sha256=5e69d6ba6c9f85c800fab43043fa2a672218950650a8db52425a05522a114753
+sha256=56a8acd5c0fa311b78775a57ef056eb7796323518a9a406ceeeb404801adf4e0
 sig=
 description=Unified theme engine, 25+ semantic presets, 48 tokens, and hardware RGB controller
