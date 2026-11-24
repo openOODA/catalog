@@ -1,4 +1,4 @@
-ooda|2.18.1|FsRead,FsWrite,Process,Env,Time,Alloc|ooda-standard|e01c719d668eba864aa96c182ea8cd16c09b6007148d1753df5bba273b9c0971
+ooda|2.18.2|FsRead,FsWrite,Process,Env,Time,Alloc|ooda-standard|887b5efc45e86f45d7645ea5598c05fd6c022d5348b28f6e26af97422cd631c9
 ooda-arcade|0.2.2|FsRead,FsWrite,Process,Env|ooda-standard|b2bea6fa18b61aff91d9fe69ee67293dddb8ae062ba6d7f5525df158b9090dea
 ooda-archive|0.3.2|FsRead,FsWrite,Process,Env|ooda-standard|eb67556a06b66a6964c2a8c3df79612db5fbf80fab6bfe50b6041742a46ed7ac
 ooda-authority|0.7.0|Process,FsRead,FsWrite,Env|ooda-standard|cd41b60cc54b9743c6b61f64265962b2add7990f6e8d861ec33d5ab8d14a915f
@@ -14,10 +14,11 @@ ooda-chat|0.4.1|FsRead,FsWrite,Process,Env,Frame|ooda-standard|9bf320b31e8a44bd9
 ooda-clock|0.1.0|FsRead,FsWrite,Fs,Process,Env,Time,Ffi|ooda-standard|ebc4bd8617b3cd5003269e96a2e6a9df339207a9ee744a93e57f8ff20738b725
 ooda-code|0.3.1|FsRead,FsWrite,Process,Env,Net,Ffi,Time|ooda-standard|4ba7c47376abb674e7131c358487665a948170e9bf8e3d346536908b36128e83
 ooda-commander|0.6.2|FsRead,FsWrite,Process,Env|ooda-standard|cde905ee0ddf68af34120e32ad1651cdd338deb535d155ccc9d1ab6ec1e0d79c
-ooda-compiler|0.17.1|FsRead,FsWrite,Process,Env,Arena,CompilerRead|ooda-standard|aada5b12ce74c0e804a8c8e916a72053792c00e96d00ac790cb2f06808fcf2bd
+ooda-compiler|0.17.2|FsRead,FsWrite,Process,Env,Arena,CompilerRead|ooda-standard|7b50d941d18976dda0fc78588d0636a873cab11aeefe8aaa3a0a4402bb003c40
 ooda-compositor|0.14.0|Process,FsRead,FsWrite,Env|ooda-standard|3cf30d48d09a439a066f4732276f0cd0dd850f84a4697d66d43799d0c529048b
-ooda-connect|0.10.0|FsRead,FsWrite,Tcp,Bind,Process,Rand,Env|ooda-standard|31475dcf030567cde545e660a25eff3691e1be3ff53b5e0ba9f167a8bda5199b
+ooda-connect|0.10.1|FsRead,FsWrite,Tcp,Bind,Process,Rand,Env|ooda-standard|60a3f5286c3a9af1010091607a46743dac8acd9dd4ca2ca8fe57a8c94707a414
 ooda-container|0.10.0|Process,FsRead,FsWrite,Env,Time|ooda-standard|860248ac50d44630c43db584fd4c05c271909031bc598deb712d2c4d5a9be6f2
+ooda-dashboard|0.1.0|Tcp,Bind,FsRead,FsWrite,Process,Time,Env|ooda-standard|58b6ab9ba777a48b9e9d464f854b662d583d90752fe86fb2e105a6e643f90d62
 ooda-data|0.5.1|FsRead,FsWrite,Process,Env,Time,Rand|ooda-standard|43656d8f2c2eded3fb8318ff76924cdbc980b4d85f9589ad17ed1062f6e811c1
 ooda-database|0.4.4|FsRead,FsWrite,Net,Process|ooda-standard|f43d16be56f8377d4ad000ab314568868c5470681509660d35ebf14383075922
 ooda-drivers|0.20.0|FsRead,FsWrite,Dma,Mmio,Pci,Irq,Usb,Frame,Rand|ooda-standard|9e8ea78618fe072c8625c2f62aab1e02ab56aae2a9bad37ee1cbbe48988b99f7
@@ -37,7 +38,7 @@ ooda-media|0.7.0|FsRead,FsWrite,Fs,Process,Env,Frame,Ffi|ooda-standard|0ca41b976
 ooda-network|0.12.0|Process,Bind,Tcp,Udp,FsRead,FsWrite,Env|ooda-standard|87d4705cb5c79aaf6047b5bfc07505f117f315895de7ba3e699462a16c9b7f38
 ooda-notepad|0.6.4|Process,FsRead,FsWrite,Fs,Env,Time,Ffi|ooda-standard|c51502321fbf23695f505975689647e9b755353815cd9513df6998392cfe7697
 ooda-office|0.4.1|FsRead,FsWrite,Process,Env,Frame|ooda-standard|f06c13732d0f22cb19543c48443014c34d5a49c9f74bd2d7867a328b298e75e9
-ooda-package|2.18.0|FsRead,FsWrite,Net,Process,Env,Ffi|ooda-standard|fe0afab35d6f7ae9cc070e2c59ccb80ea03aa389c3683a1203bb5329a53a279f
+ooda-package|2.18.1|FsRead,FsWrite,Net,Process,Env,Ffi|ooda-standard|2f8fc61cd0c6ea2fb86ffad05835113601f0e99ca2bb530eda7fa5c75005c3f0
 ooda-panel|0.8.0|Process,FsRead,FsWrite,Env|ooda-standard|793aa52b202e4e75c4166c486792a7d91d3147508b5808e5897b659f47b5a245
 ooda-passwords|0.5.0|FsRead,FsWrite,Fs,Process,Env,Time,Frame,Ffi|ooda-standard|d90e3e693fee16eda187d8151d257b7d4ccce7c699dbe85fb194693ccc9c5a6f
 ooda-photos|0.7.0|FsRead,FsWrite,Fs,Process,Env,Frame,Ffi|ooda-standard|d52d8cc289c01df7981f6be6aa763ddfcc97c2ab8886243a77665a18cd8824c8
@@ -62,4 +63,4 @@ ooda-vault|0.5.1|FsRead,FsWrite,Process,Env,Rand|ooda-standard|f4f5f3c4d050f61c5
 ooda-verify|1.0.2|FsRead,FsWrite,Env,Process|ooda-standard|eeb4fb6555220ba60eb8110d9f50795e0cec6591c4d042a18996292c189f00af
 ooda-version|0.2.3|FsRead,FsWrite,Net,Tcp,Process,Env,Time|ooda-standard|13d20df2f0c347c9a9b511ed49047dfc321f02d6292d5c65fbc0cb213b56c0d1
 ooda-voxel|0.3.2|FsRead,FsWrite,Fs,Process,Env,Ffi,Time,Alloc|ooda-standard|cbac9d29bd4876ab2e1c7c68832d20d8c6754d7bb9a4f0336b351251a756524a
-ooda-web|0.7.0|Net,Tcp,Bind,FsRead,FsWrite,Process,Time,Env|ooda-standard|688510b54f595734aa397b1081d7b6a44e8010c29b071422037db1b9d02fdb42
+ooda-web|0.8.0|Net,Tcp,Bind,FsRead,FsWrite,Process,Time,Env|ooda-standard|39a272ae3101de0b308af39333b9ebb3f154250f5d6a751c2ac94ff2058d730d

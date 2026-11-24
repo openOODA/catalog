@@ -18,12 +18,12 @@
   "openOODA-apps/ooda-software": "7d0be637820ac068507e72c775435e3109dbe5c9",
   "openOODA-apps/ooda-studio": "b752e10bb32c4fcf118554c2207bac97ef4e2b13",
   "openOODA-apps/ooda-terminal": "a5d074b5987cdc42586491d224d90847893e31c5",
-  "openOODA-core/ooda": "0d01384a61aa2e5a970b3ea3293ed1efb25b909b",
+  "openOODA-core/ooda": "51ea372147fff5e0fc1aaf929856521bd2ded8e4",
   "openOODA-core/ooda-bridge": "e63acff6f4893a14032da7ed4f9f86e8dd24e279",
-  "openOODA-core/ooda-compiler": "326b2db4e3d7d798ad1b09e61059e9cf0a7ddc3c",
+  "openOODA-core/ooda-compiler": "73dc47d72c4392b226b66d7c4533e96345c2a764",
   "openOODA-core/ooda-interface": "2a7218ea1f2d619bcee60ffb94123a6325a9a8d2",
   "openOODA-core/ooda-language": "bd566202d726ec241d9a0a0a9f17c7543970e586",
-  "openOODA-core/ooda-package": "e28d848db7beea7c65b1216b58c9267199037e1e",
+  "openOODA-core/ooda-package": "e333610a5066d147cc2643b8bc4f5f8fbcf4bd9d",
   "openOODA-core/ooda-runtime": "a57cadee05cabcdf1c39a0f615a3f07f96d9cc3a",
   "openOODA-core/ooda-sign": "8327b36b1f2afeeac8442714136cf80d7c902c44",
   "openOODA-core/ooda-standard": "821cf2a95295e632a37424ca9f8633771ef7e35b",
@@ -43,8 +43,9 @@
   "openOODA-system/ooda-boot": "1b8dea7da45078c2f1109ba1cdbd87d146530bb3",
   "openOODA-system/ooda-bus": "55da12727633372917213683411900c85121c768",
   "openOODA-system/ooda-compositor": "618af47c5bbe26f648e6306ad68496e423164993",
-  "openOODA-system/ooda-connect": "5ef97d8f5b0220ab55609d7849a6b41f990e5832",
+  "openOODA-system/ooda-connect": "c48c2b852ede3124eef84cfbefe68a58aa888f01",
   "openOODA-system/ooda-container": "63df9657c688b7fbdec9e9fc1beb6948e2000e6a",
+  "openOODA-system/ooda-dashboard": "6f6e775774b12d9f375d66a8d947f1a8ccedc5bf",
   "openOODA-system/ooda-data": "67ca24c7d29e1b06f92c77d07e73ea8f8b327682",
   "openOODA-system/ooda-database": "89bfba0e47aaad4176c208137b6a07d0581416d7",
   "openOODA-system/ooda-drivers": "00ce8d1f9a29f178658b98e2eda1d824f8f9fc2b",
@@ -63,5 +64,5 @@
   "openOODA-system/ooda-start": "3a5654e5f1e73c7b18340f5173ff6853f6cb7d50",
   "openOODA-system/ooda-theme": "c09dc0b3299b68094b5bf0d98ba66f3ef7a633f6",
   "openOODA-system/ooda-vault": "a4c1ca12977de2b7e67c3778eaa72e373a26c4dd",
-  "openOODA-system/ooda-web": "1a48d4009a33e7820d8ddeb7708b08a68939487e"
+  "openOODA-system/ooda-web": "2c4ce2a7c893bd20e913a9a360bccd5f08d3639e"
 }

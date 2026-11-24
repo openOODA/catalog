@@ -1,9 +1,9 @@
 name=ooda
-version=2.18.1
+version=2.18.2
 caps=FsRead,FsWrite,Process,Env,Time,Alloc
 deps=ooda-standard
 payload=ooda.oo
 commit=
-sha256=e01c719d668eba864aa96c182ea8cd16c09b6007148d1753df5bba273b9c0971
+sha256=887b5efc45e86f45d7645ea5598c05fd6c022d5348b28f6e26af97422cd631c9
 sig=
 description=Flagship openOODA master CLI, workspace orchestrator, and constitutional quick-card runner.

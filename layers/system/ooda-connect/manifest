@@ -1,9 +1,9 @@
 name=ooda-connect
-version=0.10.0
+version=0.10.1
 caps=FsRead,FsWrite,Tcp,Bind,Process,Rand,Env
 deps=ooda-standard
 payload=ooda-connect.oo
 commit=
-sha256=31475dcf030567cde545e660a25eff3691e1be3ff53b5e0ba9f167a8bda5199b
+sha256=60a3f5286c3a9af1010091607a46743dac8acd9dd4ca2ca8fe57a8c94707a414
 sig=
 description=Unified forward-secret OOH2 ssh/scp/sftp, OOM2 mesh/relay/dns/quorum, service connector, and OOCAP1 ownership tool

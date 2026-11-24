@@ -4,7 +4,7 @@
 #
 # One group per line: `@name = pkg pkg pkg ...`. `@all` expands to every
 # product package across the 4 product organizations (@core, @system, @apps,
-# @games; 65 packages total). `@desktop` / `@workstation` install the full
+# @games; 66 packages total). `@desktop` / `@workstation` install the full
 # OS + userland stack.
 # install.sh and ooda-package expand these names against the release pool at
 # https://github.com/openOODA/install/releases/latest/download/ — group
@@ -13,7 +13,7 @@
 # the install-time selection contract.
 
 @core = ooda ooda-bridge ooda-compiler ooda-interface ooda-language ooda-package ooda-runtime ooda-sign ooda-standard ooda-verify ooda-version
-@system = ooda-archive ooda-authority ooda-boot ooda-bus ooda-compositor ooda-connect ooda-container ooda-data ooda-database ooda-drivers ooda-filesystem ooda-firewall ooda-hardware ooda-health ooda-inference ooda-kernel ooda-network ooda-panel ooda-portal ooda-screensaver ooda-settings ooda-shell ooda-start ooda-theme ooda-vault ooda-web
+@system = ooda-archive ooda-authority ooda-boot ooda-bus ooda-compositor ooda-connect ooda-container ooda-dashboard ooda-data ooda-database ooda-drivers ooda-filesystem ooda-firewall ooda-hardware ooda-health ooda-inference ooda-kernel ooda-network ooda-panel ooda-portal ooda-screensaver ooda-settings ooda-shell ooda-start ooda-theme ooda-vault ooda-web
 @apps = ooda-browser ooda-calculator ooda-calendar ooda-camera ooda-chat ooda-clock ooda-code ooda-files ooda-flasher ooda-media ooda-notepad ooda-office ooda-passwords ooda-photos ooda-remote ooda-screenshot ooda-software ooda-studio ooda-terminal
 @games = ooda-arcade ooda-capella ooda-commander ooda-engine ooda-island ooda-retro ooda-ski ooda-strike ooda-voxel
 @desktop = @core @system @apps @games

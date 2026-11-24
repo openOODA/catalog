@@ -1,0 +1,9 @@
+name=ooda-dashboard
+version=0.1.0
+caps=Tcp,Bind,FsRead,FsWrite,Process,Time,Env
+deps=ooda-standard
+payload=ooda-dashboard.oo
+commit=
+sha256=58b6ab9ba777a48b9e9d464f854b662d583d90752fe86fb2e105a6e643f90d62
+sig=
+description=Capability-bounded web, TCP port, and ooda-connect-facing system dashboard under explicit TcpCap, BindCap, FsReadCap, FsWriteCap, ProcessCap, TimeCap, and EnvCap.

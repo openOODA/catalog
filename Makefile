@@ -167,7 +167,7 @@ test: $(BIN)
 	@$(ENV) $(OODA_COMPILER) build tests/test_refusal.oo -o $(TESTBIN2) > /dev/null
 	@OODA_LEAK_CHECK=1 PATH=/nonexistent $(ENV) ./$(TESTBIN) | grep -q "PASS: functional" && echo "PASS: functional suite under PATH=/nonexistent + OODA_LEAK_CHECK=1"
 	@OODA_LEAK_CHECK=1 PATH=/nonexistent $(ENV) ./$(TESTBIN2) | grep -q "PASS: refusal" && echo "PASS: refusal suite under PATH=/nonexistent + OODA_LEAK_CHECK=1"
-	@PATH=/nonexistent $(ENV) ./$(BIN) verify . | grep -q "PASS: catalog verify (65 packages)" && echo "PASS: catalog verify ."
+	@PATH=/nonexistent $(ENV) ./$(BIN) verify . | grep -q "PASS: catalog verify (66 packages)" && echo "PASS: catalog verify ."
 	@rc=0; PATH=/nonexistent $(ENV) ./$(BIN) verify /nonexistent_refuse > /dev/null 2>&1 || rc=$$?; [ "$$rc" != "0" ] && echo "PASS: verify missing root refused"
 	@rc=0; PATH=/nonexistent $(ENV) ./$(BIN) bogusverb > /dev/null 2>&1 || rc=$$?; [ "$$rc" = "2" ] && echo "PASS: unknown verb refuses with exit 2"
 	@PATH=/nonexistent $(ENV) ./$(BIN) --help | grep -q "$(REPO_NAME) $(VER)" && echo "PASS: --help"

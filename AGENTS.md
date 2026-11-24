@@ -1,6 +1,6 @@
 # catalog (openOODA) — Signed Package Index & Group Profiles
 
-Canonical signed registry of the openOODA 5-organization, 65-package set
+Canonical signed registry of the openOODA 5-organization, 66-package set
 (`openOODA-core` 11, `openOODA-system` 26, `openOODA-apps` 19, `openOODA-games` 9), queried by
 [`ooda-package`](https://github.com/openOODA-core/ooda-package) resolve/install
 and mirrored onto the `openOODA/install@hub` release. `catalog` is an
@@ -14,8 +14,8 @@ surface that binds them.
 `catalog` owns exactly these 15 root entries, and nothing else:
 
 - `AGENTS.md`, `README.md`, `Makefile`, `ooda.pkg`, `anchor.oo` — repo surface.
-- `COMMIT_LEDGER` — canonical commit SHA map across all 65 product repos.
-- `index` — one `name|version|caps|deps|sha256` row per active package (65 rows).
+- `COMMIT_LEDGER` — canonical commit SHA map across all 66 product repos.
+- `index` — one `name|version|caps|deps|sha256` row per active package (66 rows).
 - `index.sig` — HMAC-SHA256 (`ooda-local-pm`) over the `index` body bytes.
 - `registry.pub` — registry verification public key (minisign).
 - `groups.oot` — `@group` selection profiles (`@core @system @apps @games @desktop @workstation @all`).
@@ -70,6 +70,6 @@ files/dir + fns/file + params/fn, `16` min lines/file (import shims exempt),
 make build && make test            # bin/catalog + functional/refusal suites + verify
 make verify                        # full page/file/academy/shape/link/ooda-compiler + catalog gates
 make sync                          # regenerate descriptors/manifests/index/index.sig
-./bin/catalog verify .             # PASS: catalog verify (65 packages)
+./bin/catalog verify .             # PASS: catalog verify (66 packages)
 ~/.openooda/bin/ooda-verify cycle . --json   # quorum_mask=255 required
 ```
