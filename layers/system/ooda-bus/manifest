@@ -1,9 +1,9 @@
 name=ooda-bus
-version=0.15.0
+version=0.16.0
 caps=Process,Bind,Tcp,FsRead,FsWrite
 deps=ooda-standard
 payload=ooda-bus.oo
 commit=
-sha256=061fd7357f8df15b7b5095d518099f4f9287e89c4389745cfcaa2cb7aeebe884
+sha256=018a34d47da07ef5420f9dcc16beb03680a1aa076277abe918d275e30b2fbccb
 sig=
 description=System-wide IPC message broker connecting system daemons, devices, and agents
