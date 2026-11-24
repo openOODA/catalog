@@ -1,9 +1,9 @@
 name=ooda-kernel
-version=0.20.1
+version=0.21.0
 caps=FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,MmioCap,IrqCap
 deps=ooda-standard
 payload=ooda-kernel.oo
 commit=
-sha256=c4f0e426a9a4957aaf1443af4e0268811b6a7eb218cd6a59c78343ab3d4e0b06
+sha256=6efc5a88077ec7296aaeb51c1fd17a3101dfb6ad757e999a4903e1c79b3ffb59
 sig=
 description=openOODA Exokernel CPU & Memory Multiplexer (shared-memory OODA upcall scheduler, CSpace/CDT, badged IPC, W^X MMU/IOMMU, microVM/trace)
