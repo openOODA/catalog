@@ -1,9 +1,9 @@
 name=ooda-voxel
-version=0.3.1
+version=0.3.2
 caps=FsRead,FsWrite,Fs,Process,Env,Ffi,Time,Alloc
 deps=ooda-standard
 payload=ooda-voxel.oo
 commit=
-sha256=8432936c5363a487c30209a37d7fe9e0155c6735f0d55c545a28c53bf047c0d4
+sha256=cbac9d29bd4876ab2e1c7c68832d20d8c6754d7bb9a4f0336b351251a756524a
 sig=
 description=Original 3D Voxel Sandbox, 144+ Hz Arena FPS & Co-op Raid Shooter

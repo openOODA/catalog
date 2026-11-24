@@ -1,9 +1,9 @@
 name=ooda-database
-version=0.4.3
+version=0.4.4
 caps=FsRead,FsWrite,Net,Process
 deps=ooda-standard
 payload=ooda-database.oo
 commit=
-sha256=d58bf7d1eff7b67e9789b69e76d9a9e983ea241747edf7462b0c6df63f3cffc8
+sha256=f43d16be56f8377d4ad000ab314568868c5470681509660d35ebf14383075922
 sig=
 description=Distributed database with embedded SQL engine and bounded key-value storage

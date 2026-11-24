@@ -1,9 +1,9 @@
 name=ooda-software
-version=0.10.0
+version=0.10.1
 caps=FsRead,FsWrite,Fs,Process,Env,Ffi
 deps=ooda-standard
 payload=ooda-software.oo
 commit=
-sha256=6c6811b3a2bbc97d3725e4b91a85282339b0e4eac8376656259a9b3a81f2c02f
+sha256=e40adc522ef5807917cb0c119bb7f55496c87b877227590ae5912a1be0a0074d
 sig=
 description=Desktop and CLI Software center with WebApp isolation, Bazaar/Flatpak blast-radius inspection, and sync
