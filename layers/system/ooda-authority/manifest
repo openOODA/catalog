@@ -1,9 +1,9 @@
 name=ooda-authority
-version=0.6.1
+version=0.7.0
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-authority.oo
 commit=
-sha256=ecba8e435a18c19b7183036c7462a1e511e6a6008e8b069f29456680365e6c48
+sha256=cd41b60cc54b9743c6b61f64265962b2add7990f6e8d861ec33d5ab8d14a915f
 sig=
 description=Seat sessions, capability policy, admin elevation, federated identity, and consent governance

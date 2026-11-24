@@ -1,9 +1,9 @@
 name=ooda-shell
-version=2.3.1
+version=2.4.0
 caps=Bind,FsRead,FsWrite,Process,Sys,Env,Time,Rand,Alloc,Thread,Ffi
 deps=ooda-standard
 payload=ooda-shell.oo
 commit=
-sha256=8d7ae2b7ab8bdafa204f8a03bd9af9918e44b5eb937d47f68606b8a50f63829f
+sha256=a43f1a596c96b003ad72c5a154928df5ed7024384438a6ac8dbde700a188bf10
 sig=
 description=Capability-bounded openOODA native ooda-shell utility with date and tty/clear tools (SH)
