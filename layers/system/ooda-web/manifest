@@ -1,9 +1,9 @@
 name=ooda-web
-version=0.6.0
+version=0.7.0
 caps=Net,Tcp,Bind,FsRead,FsWrite,Process,Time,Env
 deps=ooda-standard
 payload=ooda-web.oo
 commit=
-sha256=a680103db7ba712b7f82a5fce1db8a3cacccd1f68dc944b7909574d955d62ae0
+sha256=688510b54f595734aa397b1081d7b6a44e8010c29b071422037db1b9d02fdb42
 sig=
 description=Unified capability-bounded HTTP/WebSocket/GraphQL/server/Admin UI/CDN/gateway CLI under explicit TcpCap, BindCap, FsReadCap, FsWriteCap, ProcessCap, TimeCap, and EnvCap.

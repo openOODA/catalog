@@ -1,9 +1,9 @@
 name=ooda-interface
-version=0.6.2
+version=0.7.0
 caps=FsRead,FsWrite,Fs,Process,Env,Time,Ffi
 deps=ooda-standard
 payload=ooda-interface.oo
 commit=
-sha256=16d308e2ee53eeea5faa7d11b4a24e394e122b6c99be78ded145dc8bf4de4147
+sha256=67559d709eb3d797a0c8d5fc0104fceb354ca8f3e99960150bf99d101ce958e3
 sig=
 description=Unified declarative and immediate-mode 4-surface UI and accessibility toolkit.

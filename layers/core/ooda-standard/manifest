@@ -1,9 +1,9 @@
 name=ooda-standard
-version=2.19.0
+version=2.20.0
 caps=
 deps=
 payload=ooda-standard.oo
 commit=
-sha256=eb9611c0ec64b31a82a5ec741f0ba39bb20e6cf48d3dcab00b35927acebf0dca
+sha256=938836975f383965f22bf58f3fe5551d816b5ec2d34244528994bf7b0beb7311
 sig=
 description=Core openOODA standard library providing crypto, networking, filesystem, Wayland UI, and data primitives.

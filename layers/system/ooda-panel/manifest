@@ -1,9 +1,9 @@
 name=ooda-panel
-version=0.6.2
+version=0.7.0
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-panel.oo
 commit=
-sha256=63fe8b77774c664eb07f87b7ca33288736b2c4f7b78e4b6b7b39d4665b3568e0
+sha256=9833108ff692ca563a37dda1f101e3f2ef48d8f41f29415480289c52177e4789
 sig=
 description=Top status panel, workspace pill strip, system tray, clock, and active capability indicator bar
