@@ -1,9 +1,9 @@
 name=ooda-studio
-version=0.4.1
+version=0.5.0
 caps=FsRead,FsWrite,Process,Env,Frame
 deps=ooda-standard
 payload=ooda-studio.oo
 commit=
-sha256=c5a0c03614ae988442a0dc1a44130783dab22ae25faa83a06c047e52fbe19387
+sha256=76234bd9be468c5cd03bfb0e49c56b751946e405483162d0af025c828672bc21
 sig=
 description=pure-.oo IDE workbench with LSP panel minting FrameCap for openOODA-apps apps layer

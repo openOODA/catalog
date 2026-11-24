@@ -1,9 +1,9 @@
 name=ooda-compositor
-version=0.13.0
+version=0.14.0
 caps=Process,FsRead,FsWrite,Env
 deps=ooda-standard
 payload=ooda-compositor.oo
 commit=
-sha256=b5d6ab5f5752f0a559d22889c432caa8f4c788f90185685b6eefdcbb0bc26994
+sha256=3cf30d48d09a439a066f4732276f0cd0dd850f84a4697d66d43799d0c529048b
 sig=
 description=Pure native VMO tiling and floating compositor with 8-16ms input lane and isolated ooda-gateway-wayland

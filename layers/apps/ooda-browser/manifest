@@ -1,9 +1,9 @@
 name=ooda-browser
-version=0.7.0
+version=0.8.0
 caps=FsRead,FsWrite,Fs,Tcp,Process,Env,Ffi
 deps=ooda-standard
 payload=ooda-browser.oo
 commit=
-sha256=2174ad5a16dda13008a72f1d584b890eeee306b79030a8a8dffd327fecc12b25
+sha256=f2c7da5d2034e275daf22da35693efb255008eed82b4da3eb367ae15065f33b4
 sig=
 description=Capability-secured document browser with a COSMIC Wayland window for local files and http or https pages

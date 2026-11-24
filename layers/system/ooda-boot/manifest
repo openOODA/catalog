@@ -1,9 +1,9 @@
 name=ooda-boot
-version=0.10.0
+version=0.11.0
 caps=FsReadCap,FsWriteCap,EnvCap,FrameCap,DmaCap,TpmCap,BlockCap,SignCap
 deps=ooda-standard
 payload=ooda-boot.oo
 commit=
-sha256=640a84ee56972b726303336c147584b3fce97a6df6b8bf7de13ada9db12004d7
+sha256=b7f35fdb144205fc521160a60989b854665d344d465bf89ed7d27b73f0b00204
 sig=
 description=UEFI PE32+ bootloader (BOOTX64.EFI), GOP/ACPI/DTB loader, and ELF64 physical segment stager (consolidating ooda-kernel-boot)
