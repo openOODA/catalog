@@ -20,7 +20,7 @@
   "openOODA-apps/ooda-terminal": "a5d074b5987cdc42586491d224d90847893e31c5",
   "openOODA-core/ooda": "824cc126943902fe9f39083ef5b9ce24ab6cd3f5",
   "openOODA-core/ooda-bridge": "e63acff6f4893a14032da7ed4f9f86e8dd24e279",
-  "openOODA-core/ooda-compiler": "31084c563a9e6d3efc82258512ea86627c16c3fc",
+  "openOODA-core/ooda-compiler": "c45e89ea6a24d4f0b12c4fd40cdf390df20efb20",
   "openOODA-core/ooda-interface": "2a7218ea1f2d619bcee60ffb94123a6325a9a8d2",
   "openOODA-core/ooda-language": "bd566202d726ec241d9a0a0a9f17c7543970e586",
   "openOODA-core/ooda-package": "e74db70b34e5e2314b060d387c2c95afa06d2587",
