@@ -14,7 +14,7 @@ ooda-chat|0.4.1|FsRead,FsWrite,Process,Env,Frame|ooda-standard|9bf320b31e8a44bd9
 ooda-clock|0.1.0|FsRead,FsWrite,Fs,Process,Env,Time,Ffi|ooda-standard|ebc4bd8617b3cd5003269e96a2e6a9df339207a9ee744a93e57f8ff20738b725
 ooda-code|0.3.1|FsRead,FsWrite,Process,Env,Net,Ffi,Time|ooda-standard|4ba7c47376abb674e7131c358487665a948170e9bf8e3d346536908b36128e83
 ooda-commander|0.6.2|FsRead,FsWrite,Process,Env|ooda-standard|cde905ee0ddf68af34120e32ad1651cdd338deb535d155ccc9d1ab6ec1e0d79c
-ooda-compiler|0.26.0|FsRead,FsWrite,Process,Env,Arena,CompilerRead|ooda-standard|cf8366808de9401fdbf5c65ed7caca3d72363afe4c8bb8a88cac8f33e92f555f
+ooda-compiler|0.27.0|FsRead,FsWrite,Process,Env,Arena,CompilerRead|ooda-standard|4e122416bfb6076703129d99b88fff6155410b2f42aaf6b08d6eec4f1174bc0e
 ooda-compositor|0.14.0|Process,FsRead,FsWrite,Env|ooda-standard|3cf30d48d09a439a066f4732276f0cd0dd850f84a4697d66d43799d0c529048b
 ooda-connect|0.10.1|FsRead,FsWrite,Tcp,Bind,Process,Rand,Env|ooda-standard|60a3f5286c3a9af1010091607a46743dac8acd9dd4ca2ca8fe57a8c94707a414
 ooda-container|0.10.0|Process,FsRead,FsWrite,Env,Time|ooda-standard|860248ac50d44630c43db584fd4c05c271909031bc598deb712d2c4d5a9be6f2
