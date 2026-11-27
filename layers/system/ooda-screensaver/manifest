@@ -1,9 +1,9 @@
 name=ooda-screensaver
-version=5.10.1
+version=5.11.0
 caps=FsRead,FsWrite,Fs,Process,Bind,Time,Ffi,Arena,Gpu
 deps=ooda-standard
 payload=ooda-screensaver.oo
 commit=
-sha256=d6788ce78704e8dcdfb6a2f1ef35f6b03d6b511e08b0062c0ff06a98f86ddbe8
+sha256=eaa6d7862d090b80cdc6ac5744599109dda0c381079b1fd39e9ab36ced49cd94
 sig=
 description=Capability-secured 51-scene 8-bit ASCII screensaver, display-matched Wayland daemon, and session-lock engine
