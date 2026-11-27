@@ -1,9 +1,9 @@
 name=ooda-package
-version=2.18.2
+version=2.19.0
 caps=FsRead,FsWrite,Net,Process,Env,Ffi
 deps=ooda-standard
 payload=ooda-package.oo
 commit=
-sha256=242125897cec44c0339fa1fad2136aab2f7e955ce19fb41ee50cd0e1f7a01e2e
+sha256=8b0c4d33a77b78cb95894530a0328f5fee470c339075b90cead50d896c942bca
 sig=
 description=Four-organization openOODA package manager, dependency solver, and verified source builder.
