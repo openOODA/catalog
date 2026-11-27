@@ -26,7 +26,7 @@
   "openOODA-core/ooda-package": "0c92fb7767e0cc189647f33766505286d4da5aa2",
   "openOODA-core/ooda-runtime": "f6fddbc84c7e6140206b60236999e4bf004154ce",
   "openOODA-core/ooda-sign": "8327b36b1f2afeeac8442714136cf80d7c902c44",
-  "openOODA-core/ooda-standard": "f75bf67c901dae925d1a0fd231c0c9fa395b4ff8",
+  "openOODA-core/ooda-standard": "801decc4e19622d3f10d2c12943a531a774483a4",
   "openOODA-core/ooda-verify": "d4354b4212b692e67074e0f89225eaa67662253a",
   "openOODA-core/ooda-version": "55630ccf33a99ac6abf8836311df64270bfa3739",
   "openOODA-games/ooda-arcade": "6a784c1d0a91dc96074b146ef7138735bcdc7691",
