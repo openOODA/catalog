@@ -16,7 +16,7 @@ pub fn cat_layer() -> String {
 }
 
 pub fn cat_version() -> String {
-    return "5.9.1";
+    return "5.10.0";
 }
 
 pub fn cat_caps() -> String {
