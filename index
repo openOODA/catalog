@@ -38,7 +38,7 @@ ooda-media|0.7.0|FsRead,FsWrite,Fs,Process,Env,Frame,Ffi|ooda-standard|0ca41b976
 ooda-network|0.12.0|Process,Bind,Tcp,Udp,FsRead,FsWrite,Env|ooda-standard|87d4705cb5c79aaf6047b5bfc07505f117f315895de7ba3e699462a16c9b7f38
 ooda-notepad|0.6.4|Process,FsRead,FsWrite,Fs,Env,Time,Ffi|ooda-standard|c51502321fbf23695f505975689647e9b755353815cd9513df6998392cfe7697
 ooda-office|0.4.1|FsRead,FsWrite,Process,Env,Frame|ooda-standard|f06c13732d0f22cb19543c48443014c34d5a49c9f74bd2d7867a328b298e75e9
-ooda-package|2.20.2|FsRead,FsWrite,Net,Process,Env,Ffi,Time|ooda-standard|b2c9ed92329fa3df51c3c2f170f1171ac776e7dc64c551d0631baa45a4a3c776
+ooda-package|2.21.0|FsRead,FsWrite,Net,Process,Env,Ffi,Time|ooda-standard|d32841839610587ddfd582787251655d81bbb5108a1531454d6a52354003c2a9
 ooda-panel|0.8.0|Process,FsRead,FsWrite,Env|ooda-standard|793aa52b202e4e75c4166c486792a7d91d3147508b5808e5897b659f47b5a245
 ooda-passwords|0.5.0|FsRead,FsWrite,Fs,Process,Env,Time,Frame,Ffi|ooda-standard|d90e3e693fee16eda187d8151d257b7d4ccce7c699dbe85fb194693ccc9c5a6f
 ooda-photos|0.7.0|FsRead,FsWrite,Fs,Process,Env,Frame,Ffi|ooda-standard|d52d8cc289c01df7981f6be6aa763ddfcc97c2ab8886243a77665a18cd8824c8
